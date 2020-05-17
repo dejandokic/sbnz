@@ -5,6 +5,8 @@ import com.sample.model.AllyChampion;
 import com.sample.model.EnemyChampion;
 import com.sample.AdviceStorage;
 
+global com.sample.AdviceStorage adviceStorage;
+
 rule "Ally strong early, enemy isn't"
 	when
 		$ally : AllyChampion(
@@ -17,24 +19,6 @@ rule "Ally strong early, enemy isn't"
 			goodEarly == false
 		)
 	then
-		System.out.println("jojo");
 		modify($ally){setPlayType("aggro");}
 end
 
-rule "Jugg vs Jugg, ally hardCC + hardEngage, ally aggro"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane: lane,
-			hardCC == true,
-			hardEngage == true,
-			playType == "aggro"
-		)
-		$enemy : EnemyChampion(
-			lane == $allyLane,
-			role == "juggernaut"
-		)
-	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against another juggernaut, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. Be careful as they have high sustain, and killing them will often prove difficult in a 1v1 situation.");
-end
