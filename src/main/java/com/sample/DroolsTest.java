@@ -19,7 +19,7 @@ public class DroolsTest {
     	    KieContainer kContainer = ks.getKieClasspathContainer();
         	KieSession kSession = kContainer.newKieSession("ksession-rules");
         	
-        	//kSession.setGlobal("adviceStorage", new AdviceStorage());
+        	kSession.setGlobal("adviceStorage", new AdviceStorage());
 
             // go !
             /*Message message = new Message();
