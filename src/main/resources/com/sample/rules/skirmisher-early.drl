@@ -1,0 +1,1365 @@
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.model.EnemyChampion;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+//Skirmisher
+//
+//    aggro
+//
+//        vs Juggernaut
+
+rule "Skirmisher vs Juggernaut, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+rule "Skirmisher vs Juggernaut, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+rule "Skirmisher vs Juggernaut, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+//        vs Diver
+
+rule "Skirmisher vs Diver, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present to much of a problem given your sustainability in fights.");
+end
+
+rule "Skirmisher vs Diver, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against divers, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. Be careful as divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present to much of a problem given your sustainability in fights.");
+end
+
+rule "Skirmisher vs Diver, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against divers, it will be difficult for you to trade fairly as they can out maneuver you, but given your sustainability you should be able to trade in extended trades. Be careful as divers are highly mobile and can put pressure on you quite quickly.");
+end
+
+//        vs Assassin
+
+rule "Skirmisher vs Assassin, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as assassins are rather mobile and can burst you down when you least expect it, but they shouldn’t present to much of a problem given your sustainability in fights.");
+end
+
+rule "Skirmisher vs Assassin, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. Be careful as assassins are rather mobile and can burst you down when you least expect it, but they shouldn’t present to much of a problem given your sustainability in fights.");
+end
+
+rule "Skirmisher vs Assassin, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, it will be difficult for you to trade fairly as they can out maneuver you, but given your sustainability you should be able to trade in extended trades. Be careful as assassins are rather mobile and can burst you down when you least expect it.");
+end
+
+//        vs Skirmisher
+
+rule "Skirmisher vs Skirmisher, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skirmisher, you will have to rely on your hard engages and CC to secure trades in your favor. Even though skirmishers are not as mobile, they have the toolkit to deal with every situation, so be careful when you engage.");
+end
+
+rule "Skirmisher vs Skirmisher, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skirmisher, you will have to rely on your CC and wits to secure trades in your favor. Even though skirmishers are not as mobile, they have the toolkit to deal with every situation, so be careful when you engage.");
+end
+
+rule "Skirmisher vs Skirmisher, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skirmisher, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out, but know that even though skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+end
+
+//        vs Marksman
+
+rule "Skirmisher vs Marksman, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you will have to rely on your hard engages and CC to secure trades in your favor. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so know that timing of trades is important here.");
+end
+
+rule "Skirmisher vs Marksman, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you will have to rely on your CC and wits to secure trades in your favor. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so know that timing of trades is important here.");
+end
+
+rule "Skirmisher vs Marksman, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so know that timing of trades is important here.");
+end
+
+//        vs Burst
+
+rule "Skirmisher vs Burst, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you will have to rely on your hard engages and CC to secure trades in your favor. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so know that timing of trades is important here.");
+end
+
+rule "Skirmisher vs Burst, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you will have to rely on your CC and wits to secure trades in your favor. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so know that timing of trades is important here.");
+end
+
+rule "Skirmisher vs Burst, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so know that timing of trades is important here.");
+end
+
+//        vs Battlemage
+
+rule "Skirmisher vs Battlemage, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you will have to rely on your hard engages and CC to secure trades in your favor. Battlemages have highly sustainable damage so you need to be careful in prolonged fights. Timing of trades is important here.");
+end
+
+rule "Skirmisher vs Battlemage, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you will have to rely on your CC and wits to secure trades in your favor. Battlemages have highly sustainable damage so you need to be careful in prolonged fights. Timing of trades is important here.");
+end
+
+rule "Skirmisher vs Battlemage, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. Battlemages have highly sustainable damage so you need to be careful in prolonged fights. Timing of trades is important here.");
+end
+
+//        vs Artillery
+
+rule "Skirmisher vs Artillery, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you will have to rely on your hard engages and CC to secure trades in your favor. Using their poke and long range you will get punished all the time, so try to get in close.Timing of trades is important here.");
+end
+
+rule "Skirmisher vs Artillery, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you will have to rely on your CC and wits to secure trades in your favor. Using their poke and long range you will get punished all the time, so try to get in close. Timing of trades is important here.");
+end
+
+rule "Skirmisher vs Artillery, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. Using their poke and long range you will get punished all the time, so try to get in close. Timing of trades is important here.");
+end
+
+//        vs Vanguard
+
+rule "Skirmisher vs Vanguard, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against. ");
+end
+
+rule "Skirmisher vs Vanguard, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+rule "Skirmisher vs Vanguard, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You have defensive tools to get you out of trades so use it to get in and get out, but know with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+//        vs Warden
+
+rule "Skirmisher vs Warden, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Impenetrable tanks, with a lot of sustain and it will feel like it’s almost impossible to defeat them.");
+end
+
+rule "Skirmisher vs Warden, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you will have a disadvantage with your lack of mobility and engage, so try to use your CC to secure trades in your favor. Impenetrable tanks, with a lot of sustain and it will feel like it’s almost impossible to defeat them.");
+end
+
+rule "Skirmisher vs Warden, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You have defensive tools to get you out of trades so use it to get in and get out, but know that they are impenetrable tanks, with a lot of sustain and it will feel like it’s almost impossible to defeat them.");
+end
+
+//        vs Catcher
+
+rule "Skirmisher vs Catcher, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you will have to rely on your hard engages and CC to secure trades in your favor. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them, so be careful when you engage.");
+end
+
+rule "Skirmisher vs Catcher, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you will have to rely on your CC and wits to secure trades in your favor. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them, so be careful when you engage.");
+end
+
+rule "Skirmisher vs Catcher, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them, so be careful when you engage.");
+end
+
+//        vs Enchanter
+
+rule "Skirmisher vs Enchanter, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you will have to rely on your hard engages and CC to secure trades in your favor. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+rule "Skirmisher vs Enchanter, ally hardCC and no hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you will have to rely on your CC and wits to secure trades in your favor. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+rule "Skirmisher vs Enchanter, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, it will be hard to get out of the fights even. You have defensive tools to get you out of trades so use it to get in and get out quickly. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+//    end aggro
+
+
+    
+//    def
+//
+//        vs Juggernaut
+
+rule "Skirmisher vs Juggernaut, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so use your CC to keep them at bay and if control the lane with waveclear. Do not be afraid to trade, since you also have a fair bit of sustain, but know it will be hard to go for a kill.");
+end
+
+rule "Skirmisher vs Juggernaut, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so use your CC to keep them at bay and do not be afraid to trade, since you also have a fair bit of sustain, but know it will be hard to go for a kill.");
+end
+
+rule "Skirmisher vs Juggernaut, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Diver
+
+rule "Skirmisher vs Diver, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, so use your CC to keep them at bay and if control the lane with waveclear. Do not be afraid to trade, since you also have a fair bit of sustain, but know that their all ins hurt.");
+end
+
+rule "Skirmisher vs Diver, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position.  They can engage quickly for a lot of damage, so use your CC to keep them at bay and do not be afraid to trade, since you also have a fair bit of sustain, but know that their all ins hurt.");
+end
+
+rule "Skirmisher vs Diver, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Assassin
+
+rule "Skirmisher vs Assassin, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so use your CC to keep them at bay and if control the lane with waveclear. Do not be afraid to trade, since you also have a fair bit of sustain, but know that their all ins hurt.");
+end
+
+rule "Skirmisher vs Assassin, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so use your CC to keep them at bay and do not be afraid to trade, since you also have a fair bit of sustain, but know that their all ins hurt.");
+end
+
+rule "Skirmisher vs Assassin, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Skirmisher
+
+rule "Skirmisher vs Skirmisher, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skrimisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so use your CC to keep them at bay and control the lane with waveclear. Do not be afraid to trade, since you also have a fair bit of sustain, but know it will be hard to go for a kill.");
+end
+
+rule "Skirmisher vs Skirmisher, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skrimisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so use your CC to keep them at bay and do not be afraid to trade, since you also have a fair bit of sustain, but know it will be hard to go for a kill.");
+end
+
+rule "Skirmisher vs Skirmisher, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skrimisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Marksman
+
+rule "Skirmisher vs Marksman, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, so use your CC to keep them at bay and control the lane with waveclear. Do not be afraid to trade, since you have a fair bit of sustain, but avoid extended fights.");
+end
+
+rule "Skirmisher vs Marksman, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, so use your CC to keep them at bay and do not be afraid to trade, since you have a fair bit of sustain, but avoid extended fights.");
+end
+
+rule "Skirmisher vs Marksman, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Burst
+
+rule "Skirmisher vs Burst, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC to keep them at bay and control the lane with waveclear. Do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging when their abilities are off cooldown.");
+end
+
+rule "Skirmisher vs Burst, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC to keep them at bay and do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging when their abilities are off cooldown.");
+end
+
+rule "Skirmisher vs Burst, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Battlemage
+
+rule "Skirmisher vs Battlemage, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, so use your CC to keep them at bay and control the lane with waveclear. Do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging in prolonged fights.");
+end
+
+rule "Skirmisher vs Battlemage, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, so use your CC to keep them at bay and do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging in prolonged fights.");
+end
+
+rule "Skirmisher vs Battlemage, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Artillery
+
+rule "Skirmisher vs Artillery, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so use your CC when you can trade safely control the lane with waveclear.");
+end
+
+rule "Skirmisher vs Artillery, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so use your CC when you have a chance to trade, since you have a fair bit of sustain, but avoid engaging in prolonged fights.");
+end
+
+rule "Skirmisher vs Artillery, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Vanguard
+
+rule "Skirmisher vs Vanguard, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so use your CC to trade and control the lane with waveclear.");
+end
+
+rule "Skirmisher vs Vanguard, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so use your CC to trade since you also have a fair bit of sustain.");
+end
+
+rule "Skirmisher vs Vanguard, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Warden
+
+rule "Skirmisher vs Warden, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to trade and control the lane with waveclear.");
+end
+
+rule "Skirmisher vs Warden, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to trade since you also have a fair bit of sustain.");
+end
+
+rule "Skirmisher vs Warden, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Catcher
+
+rule "Skirmisher vs Catcher, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, so use your CC to keep them at bay and control the lane with waveclear. Do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging when their abilities are off cooldown.");
+end
+
+rule "Skirmisher vs Catcher, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, so use your CC to keep them at bay and do not be afraid to trade, since you have a fair bit of sustain, but avoid engaging when their abilities are off cooldown.");
+end
+
+rule "Skirmisher vs Catcher, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, and even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//        vs Enchanter
+
+rule "Skirmisher vs Enchanter, ally hardCC and waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. Use your CC when you can trade safely control the lane with waveclear.");
+end
+
+rule "Skirmisher vs Enchanter, ally hardCC and no waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly . Use your CC when you have a chance to trade, since you have a fair bit of sustain, but avoid engaging in prolonged fights.");
+end
+
+rule "Skirmisher vs Enchanter, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. Even with your sustain you can get outraded easily, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+//    end def
+
