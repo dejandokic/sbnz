@@ -27,7 +27,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -63,7 +68,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -99,7 +109,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -128,7 +143,12 @@
             "jungle": false,
             "mid": false,
             "adc": false,
-            "support": true
+            "support": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "role": {
             "hardCC": true,
@@ -171,7 +191,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -207,7 +232,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -243,7 +273,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -279,7 +314,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -315,7 +355,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -351,7 +396,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -387,7 +437,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -423,7 +478,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -459,7 +519,53 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Brand",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -495,7 +601,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -531,7 +642,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -567,7 +683,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -603,7 +724,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -639,7 +765,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -675,7 +806,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -711,7 +847,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -747,7 +888,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -783,7 +929,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -819,7 +970,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -855,7 +1011,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -891,7 +1052,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -927,7 +1093,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -963,7 +1134,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -999,7 +1175,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1035,7 +1216,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -1071,7 +1257,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1107,7 +1298,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1116,7 +1312,7 @@
         }
     },
     {
-        "name": "Gankplank",
+        "name": "Gangplank",
         "class": {
             "juggernaut": true,
             "diver": false,
@@ -1143,7 +1339,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -1179,7 +1380,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -1215,7 +1421,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -1251,7 +1462,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1287,7 +1503,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1323,7 +1544,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1359,7 +1585,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -1395,7 +1626,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -1431,7 +1667,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -1467,7 +1708,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1503,7 +1749,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1539,7 +1790,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1575,7 +1831,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -1611,7 +1872,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1647,7 +1913,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1683,7 +1954,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1719,7 +1995,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1755,7 +2036,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1791,7 +2077,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -1827,7 +2118,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1863,7 +2159,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1899,7 +2200,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -1935,7 +2241,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -1971,7 +2282,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2007,7 +2323,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2043,7 +2364,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2079,7 +2405,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2115,7 +2446,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -2151,7 +2487,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2187,7 +2528,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2223,7 +2569,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2259,7 +2610,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2295,7 +2651,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2331,7 +2692,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2367,7 +2733,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2403,7 +2774,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2439,7 +2815,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2475,7 +2856,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2511,7 +2897,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2547,7 +2938,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -2583,7 +2979,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2619,7 +3020,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2655,7 +3061,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2691,7 +3102,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2727,7 +3143,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -2763,7 +3184,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2799,7 +3225,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2835,7 +3266,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2871,7 +3307,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -2907,7 +3348,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -2943,7 +3389,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -2979,7 +3430,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3015,7 +3471,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3051,7 +3512,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3087,7 +3553,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3123,7 +3594,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3159,7 +3635,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3195,7 +3676,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -3231,7 +3717,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3267,7 +3758,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3303,7 +3799,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3339,7 +3840,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3375,7 +3881,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3411,7 +3922,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": true
         },
         "game": {
             "early": false,
@@ -3447,7 +3963,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3483,7 +4004,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -3519,7 +4045,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3555,7 +4086,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3591,7 +4127,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3627,7 +4168,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3663,7 +4209,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3699,7 +4250,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -3735,7 +4291,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -3771,7 +4332,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3807,7 +4373,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3843,7 +4414,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3879,7 +4455,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3915,7 +4496,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -3951,7 +4537,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -3987,7 +4578,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4023,7 +4619,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4059,7 +4660,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4095,7 +4701,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4131,7 +4742,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4167,7 +4783,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4203,7 +4824,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4239,7 +4865,12 @@
             "hardEngage": true,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4275,7 +4906,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4311,7 +4947,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4347,7 +4988,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -4383,7 +5029,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -4419,7 +5070,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4455,7 +5111,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4491,7 +5152,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4527,7 +5193,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4563,7 +5234,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4599,7 +5275,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4635,7 +5316,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4671,7 +5357,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4707,7 +5398,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4743,7 +5439,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4779,7 +5480,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4815,7 +5521,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4851,7 +5562,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4887,7 +5603,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -4923,7 +5644,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -4959,7 +5685,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": false,
@@ -4995,7 +5726,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -5031,7 +5767,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
         },
         "game": {
             "early": true,
@@ -5067,7 +5808,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -5103,7 +5849,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": false,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -5139,7 +5890,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": false,
@@ -5175,7 +5931,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": true,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -5211,7 +5972,12 @@
             "hardEngage": false,
             "disengage": true,
             "poke": false,
-            "waveclear": true
+            "waveclear": true,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
@@ -5247,7 +6013,12 @@
             "hardEngage": false,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
         },
         "game": {
             "early": true,
@@ -5283,7 +6054,12 @@
             "hardEngage": true,
             "disengage": false,
             "poke": true,
-            "waveclear": false
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
         },
         "game": {
             "early": true,
