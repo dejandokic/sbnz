@@ -1,5 +1,8 @@
 package com.sample;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -28,16 +31,24 @@ public class DroolsTest {
             kSession.insert(message);*/
         	
         	AllyChampion ally = new AllyChampion();
+        	ally.setName("jo1");
         	ally.setLane("top");
         	ally.setRole("juggernaut");
         	ally.setGoodEarly(true);
         	ally.setHardCC(true);
         	ally.setHardEngage(true);
+        	List<String> badAgainst = new ArrayList<String>();
+        	badAgainst.add(ally.getName());
+        	ally.setBadAgainst(badAgainst);
         	
         	EnemyChampion enemy = new EnemyChampion();
+        	enemy.setName("jo2");
         	enemy.setLane("top");
         	enemy.setRole("juggernaut");
         	enemy.setGoodEarly(false);
+        	List<String> goodAgainst = new ArrayList<String>();
+        	goodAgainst.add(enemy.getName());
+        	enemy.setGoodAgainst(goodAgainst);
         	
         	kSession.insert(ally);
         	kSession.insert(enemy);
