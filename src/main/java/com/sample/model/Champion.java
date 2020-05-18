@@ -20,6 +20,8 @@ public class Champion {
 	private boolean sustain;
 	private boolean utility;
 	private boolean mobility;
+	private boolean aoeDamage;
+	private boolean splitPush;
 
 	private List<String> goodAgainst;
 	private List<String> badAgainst;
@@ -134,6 +136,22 @@ public class Champion {
 
 	public void setMobility(boolean mobility) {
 		this.mobility = mobility;
+	}
+	
+	public boolean getAoeDamage() {
+		return aoeDamage;
+	}
+
+	public void setAoeDamage(boolean aoeDamage) {
+		this.aoeDamage = aoeDamage;
+	}
+	
+	public boolean getSplitPush() {
+		return splitPush;
+	}
+
+	public void setSplitPush(boolean splitPush) {
+		this.splitPush = splitPush;
 	}
 
 	public List<String> getGoodAgainst() {
