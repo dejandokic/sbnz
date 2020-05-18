@@ -9,6 +9,7 @@ import org.kie.api.runtime.KieSession;
 
 import com.sample.model.AllyChampion;
 import com.sample.model.EnemyChampion;
+import com.sample.model.TeamComposition;
 
 /**
  * This is a sample class to launch a rule.
@@ -35,8 +36,10 @@ public class DroolsTest {
         	ally.setLane("top");
         	ally.setRole("juggernaut");
         	ally.setGoodEarly(true);
+        	ally.setSustain(true);
         	ally.setHardCC(true);
         	ally.setHardEngage(true);
+        	ally.setSplitPush(true);
         	List<String> badAgainst = new ArrayList<String>();
         	badAgainst.add(ally.getName());
         	ally.setBadAgainst(badAgainst);
@@ -50,8 +53,11 @@ public class DroolsTest {
         	goodAgainst.add(enemy.getName());
         	enemy.setGoodAgainst(goodAgainst);
         	
+        	TeamComposition tc = new TeamComposition("splitPush");
+        	
         	kSession.insert(ally);
         	kSession.insert(enemy);
+        	kSession.insert(tc);
         	
             kSession.fireAllRules();
         } catch (Throwable t) {

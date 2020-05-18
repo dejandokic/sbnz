@@ -8,6 +8,11 @@ public class TeamComposition {
 		composition = "splitPush";
 	}
 	
+	public TeamComposition(String composition) {
+		super();
+		this.composition = composition;
+	}
+
 	public String getComposition() {
 		return composition;
 	}
