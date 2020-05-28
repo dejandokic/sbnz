@@ -15,8 +15,8 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public class RegisteredUser extends User {
 
-   public RegisteredUser(String username, String email, String password, String firstName, String lastName) {
-      super(username, password, email, firstName, lastName);
+   public RegisteredUser(String username, String email, String password, String name) {
+      super(username, password, email, name);
       this.authorities.add(Role.REGISTERED_USER);
    }
 }

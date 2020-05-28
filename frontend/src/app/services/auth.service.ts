@@ -11,7 +11,6 @@ export interface IUserRegister {
   password: string;
   email: string;
   name: string;
-  role: number;
 }
 
 interface IFullToken {
@@ -31,8 +30,8 @@ export interface IToken {
 export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
-  private readonly signUpLink = `http://localhost:${PORT}/api/auth/register`;
-  private readonly loginLink = `http://localhost:${PORT}/api/auth/login`;
+  private readonly signUpLink = `http://localhost:${PORT}/api/users`;
+  private readonly loginLink = `http://localhost:${PORT}/api/auth`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -56,8 +55,7 @@ export class AuthService {
         username: registerUser.username,
         email: registerUser.email,
         password: registerUser.password,
-        name: registerUser.name,
-        role: registerUser.role
+        fullname: registerUser.name
       }
     );
   }

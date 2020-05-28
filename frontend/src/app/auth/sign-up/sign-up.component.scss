@@ -1,0 +1,22 @@
+.main {
+  margin-top: 30px;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.centralError {
+  font-size: 16px;
+  color: red;
+  text-align: center;
+}
+
+.submitButton {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

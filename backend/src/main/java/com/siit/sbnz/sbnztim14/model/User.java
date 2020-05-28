@@ -57,16 +57,11 @@ public class User {
    protected String email;
 
    /**
-    * First name of the user
+    * Name of the user
     */
    @Column(nullable = false)
-   protected String firstName;
+   protected String fullname;
 
-   /**
-    * Last name of the user
-    */
-   @Column(nullable = false)
-   protected String lastName;
 
    /**
     * Authorities collection of the user
@@ -77,12 +72,11 @@ public class User {
    @Enumerated(EnumType.STRING)
    protected Collection<Role> authorities = new ArrayList<>();
 
-   public User(String username, String email, String password, String firstName, String lastName) {
+   public User(String username, String email, String password, String name) {
       this.username = username;
       this.password = password;
       this.email = email;
-      this.firstName = firstName;
-      this.lastName = lastName;
+      this.fullname = name;
       this.authorities = new ArrayList<>();
    }
 

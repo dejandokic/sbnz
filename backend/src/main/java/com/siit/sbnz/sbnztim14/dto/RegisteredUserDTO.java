@@ -15,20 +15,17 @@ public class RegisteredUserDTO {
     private String username;
     private String password;
     private String email;
-    private String firstName;
-    private String lastName;
+    private String fullname;
 
-    private String phone;
 
     public RegisteredUserDTO(RegisteredUser registeredUser) {
         this.username = registeredUser.getUsername();
         this.email = registeredUser.getEmail();
-        this.firstName = registeredUser.getFirstName();
-        this.lastName = registeredUser.getLastName();
+        this.fullname = registeredUser.getFullname();
         this.password = registeredUser.getPassword();
     }
 
     public RegisteredUser convertToEntity() {
-        return new RegisteredUser(username, password, email, firstName, lastName);
+        return new RegisteredUser(username, password, email, fullname);
     }
 }

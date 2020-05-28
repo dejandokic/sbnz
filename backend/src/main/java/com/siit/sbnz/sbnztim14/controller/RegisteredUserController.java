@@ -33,6 +33,7 @@ public class RegisteredUserController {
     @PostMapping
     public ResponseEntity handleCreate(@RequestBody RegisteredUserDTO dto) {
         dto.setPassword(passwordEncoder.encode(dto.getPassword()));
+        System.out.println(dto.getPassword());
         final RegisteredUser registeredUser = registeredUserService.create(dto.convertToEntity());
         return new ResponseEntity<>(registeredUser.getId(), HttpStatus.CREATED);
     }

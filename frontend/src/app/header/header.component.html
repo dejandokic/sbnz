@@ -1,1 +1,27 @@
-<p>header works!</p>
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <button mat-button color="accent" routerLink="/">
+    <span class="mat-title" style="font-weight: 500;">SBNZ Project</span>
+  </button>
+
+  <span class="spacer"></span>
+
+  <!-- Header for unregistered user -->
+  <div *ngIf="!isAuthenticated">
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/sign-up">Sign up</button>
+  </div>
+
+  <!-- Header for admin -->
+  <div *ngIf="isAuthenticated && role==='ADMIN'">
+    <button mat-button routerLink="/edit">Select admin</button>
+    <button mat-button routerLink="/logout" (click)="onLogout()">Logout</button>
+  </div>
+
+
+  <!-- Header for registered_user -->
+  <div *ngIf="isAuthenticated && role==='REGISTERED_USER'">
+    <button mat-button routerLink="/preview">Select user</button>
+    <button mat-button routerLink="/logout" (click)="onLogout()">Logout</button>
+  </div>
+
+</mat-toolbar>
