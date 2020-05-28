@@ -1,0 +1,2167 @@
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.model.EnemyChampion;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+//Assassin vs Juggernaut (aggro)
+
+rule "Assassin vs Juggernaut, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, they will struggle against your hard engages and mobility but you will have a hard time getting out of fights on a fair trade. Using your CC you can secure trades in your favor, but know that juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+rule "Assassin vs Juggernaut, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut you will have a hard time getting out of fights on a fair trade, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know that juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation");
+end
+
+rule "Assassin vs Juggernaut, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly, but know that juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+rule "Assassin vs Juggernaut, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, they will struggle against your hard engages and mobility but you will have a hard time getting out of fights on a fair trade as juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+rule "Assassin vs Juggernaut, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them in a 1v1 situation.");
+end
+
+
+
+//Assassin vs Diver (aggro)
+
+rule "Assassin vs Diver, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, they will struggle against your hard engages but they will match your mobility easily. Using your CC you can secure trades in your favor, but know that divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Diver, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver you will have a hard time getting out of fights on a fair trade, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know that divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Diver, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly, but know that divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Diver, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, they will struggle against your hard engages but match your mobility. You will have a hard time getting out of fights on a fair trade as divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Diver, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+
+
+//Assassin vs Assassin (aggro)
+
+rule "Assassin vs Assassin, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, they could struggle against your hard engages but they will match your mobility easily. Using your CC you can secure trades in your favor, but know they are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Assassin, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin you will have a hard time getting the upper hand, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know they are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Assassin, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin you will have a hard time getting the upper hand, use CC wisely to secure trades in your favor getting in and out of trades quickly, but they are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Assassin, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, they can struggle against your hard engages but match your mobility. You will have a hard time getting out of fights on a fair trade assassins are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+rule "Assassin vs Assassin, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that they are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you engage when kills are assured.");
+end
+
+
+
+//Assassin vs Skirmisher (aggro)
+
+rule "Assassin vs Skirmisher, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, they will match your hard engages but struggle against mobility. Using your CC you can secure trades in your favor, but know that even though skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+end
+
+rule "Assassin vs Skirmisher, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher you will have a hard time getting out of fights on a fair trade, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know that even though skirmishers are not as mobile, but they have the toolkit to deal with every situation");
+end
+
+rule "Assassin vs Skirmisher, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly, but know that even though skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+end
+
+rule "Assassin vs Skirmisher, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, they will match your hard engages but struggle against mobility, so you will have a hard time getting out of fights on a fair trade. Even though skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+end
+
+rule "Assassin vs Skirmisher, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that even though skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+end
+
+
+
+//Assassin vs Marksman (aggro)
+
+rule "Assassin vs Marksman, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, but know that marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+rule "Assassin vs Marksman, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman you will be in a disadvantage in trades, use your poke to get them low and CC wisely to secure kills easily, but know that marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+rule "Assassin vs Marksman, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly. Know that marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+rule "Assassin vs Marksman, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they can punish you easily. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+rule "Assassin vs Marksman, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+
+
+//Assassin vs Burst (aggro)
+
+rule "Assassin vs Burst, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, but know that bursters have a lot of CC, and once you are locked down they will burst you with ease.");
+end
+
+rule "Assassin vs Burst, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you will be in a disadvantage in trades, use your poke to get them low and CC wisely to secure kills easily, but know that bursters have a lot of CC, and once you are locked down they will burst you with ease.");
+end
+
+rule "Assassin vs Burst, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly. Know that bursters have a lot of CC, and once you are locked down they will burst you with ease.");
+end
+
+rule "Assassin vs Burst, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they can punish you easily. Bursters have a lot of CC, and once you are locked down they will burst you with ease.");
+end
+
+rule "Assassin vs Burst, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that bursters have a lot of CC, and once you are locked down they will burst you with ease");
+end
+
+
+
+//Assassin vs Battlemage (aggro)
+
+rule "Assassin vs Battlemage, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, but know that with their highly sustainable damage you need to be careful in prolonged fights.");
+end
+
+rule "Assassin vs Battlemage, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you will be in a disadvantage in trades, use your poke to get them low and CC wisely to secure kills easily, but know that with their highly sustainable damage you need to be careful in prolonged fights.");
+end
+
+rule "Assassin vs Battlemage, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly. Know that with their highly sustainable damage you need to be careful in prolonged fights.");
+end
+
+rule "Assassin vs Battlemage, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they can punish you easily. With their highly sustainable damage you need to be careful in prolonged fights.");
+end
+
+rule "Assassin vs Battlemage, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that with their highly sustainable damage you need to be careful in prolonged fights.");
+end
+
+
+//Assassin vs Artillery (aggro)
+
+rule "Assassin vs Artillery, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, but know that using their poke and long range you will get punished all the time, so try to get in close");
+end
+
+rule "Assassin vs Artillery, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you will be in a disadvantage in trades, use your poke to get them low and CC wisely to secure kills easily, but know that using their poke and long range you will get punished all the time, so try to get in close.");
+end
+
+rule "Assassin vs Artillery, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly. Know that using their poke and long range you will get punished all the time, so try to get in close.");
+end
+
+rule "Assassin vs Artillery, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they can punish you easily. Using their poke and long range you will get punished all the time, so try to get in close.");
+end
+
+rule "Assassin vs Artillery, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that using their poke and long range you will get punished all the time, so try to get in close.");
+end
+
+
+
+//Assassin vs Vanguard (aggro)
+
+rule "Assassin vs Vanguard, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, they will struggle against your hard engages and mobility but you will have a hard time getting out of fights on a fair trade. Using your CC you can secure trades in your favor, but know that with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+rule "Assassin vs Vanguard, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard you will have a hard time getting out of fights on a fair trade, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know that with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+rule "Assassin vs Vanguard, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly, but know that with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+rule "Assassin vs Vanguard, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, they will struggle against your hard engages and mobility but you will have a hard time getting out of fights on a fair trade as with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+rule "Assassin vs Vanguard, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+
+
+//Assassin vs Warden (aggro)
+
+rule "Assassin vs Warden, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, they will struggle against your hard engages and mobility but you will have a hard time bursting them down. Using your CC you can secure trades in your favor, but know that they are impenetrable tanks, with a lot of sustain and it will be almost impossible to burst them down.");
+end
+
+rule "Assassin vs Warden, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden you will have a hard time getting out of fights on a fair trade, use your poke to get them low and CC wisely to secure trades in your favor getting in and out of trades quickly, but know that they are impenetrable tanks, with a lot of sustain and it will be almost impossible to burst them down.");
+end
+
+rule "Assassin vs Warden, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly, but know that they are impenetrable tanks, with a lot of sustain and it will be almost impossible to burst them down.");
+end
+
+rule "Assassin vs Warden, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, they will struggle against your hard engages and mobility but you will have a hard time getting out of fights on a fair trade because that they are impenetrable tanks, with a lot of sustain and it will be almost impossible to burst them down.");
+end
+
+rule "Assassin vs Warden, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that they are impenetrable tanks, with a lot of sustain and it will be almost impossible to burst them down.");
+end
+
+
+
+//Assassin vs Catcher (aggro)
+
+rule "Assassin vs Catcher, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, but know that they specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+rule "Assassin vs Catcher, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you will be in a disadvantage in trades, use your poke to get them low and CC wisely to secure kills easily, but know that they specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them");
+end
+
+rule "Assassin vs Catcher, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher you will have a hard time getting out of fights on a fair trade, use CC wisely to secure trades in your favor getting in and out of trades quickly. Know that they specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+rule "Assassin vs Catcher, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they can punish you easily. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+rule "Assassin vs Catcher, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, it will be difficult for you to trade fairly even if you have an advantage but that doesn’t mean it is impossible. You are more mobile so use it to get in and get out of trades, but know that they specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+
+
+//Assassin vs Enchanter (aggro)
+
+rule "Assassin vs Enchanter, ally hardCC and hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, they will struggle against your hard engages and mobility. Using your CC you can secure trades in your favor, because they are quite fragile on their own, but with their wast utility they can keep themselves and others safe");
+end
+
+rule "Assassin vs Enchanter, ally hardCC and poke, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == true,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you will be in a disadvantage in ranged trades. Use your poke to get them low and CC wisely to secure kills easily, because they are quite fragile on their own, but with their wast utility they can keep themselves and others safe");
+end
+
+rule "Assassin vs Enchanter, ally hardCC, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter use your CC wisely to secure trades in your favor getting in and out of trades quickly. Know that they are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+rule "Assassin vs Enchanter, ally hardEngage, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == true,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, they will have a hard time against your hard engages and mobility, but you shouldn’t overstep as they still have the ranged advantage. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe");
+end
+
+rule "Assassin vs Enchanter, ally nothing, ally aggro"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false,
+			poke == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, it will be difficult for you to trade fairly evenly at range, even with the advantage. You are more mobile so use it to get in and get out of trades, but know that they are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+
+
+//Assassin vs Juggernaut (def)
+
+rule "Assassin vs Juggernaut, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so use your CC to keep them at bay and if needed disengage to escape, so do not be afraid to trade but know it will be hard to burst them down for a kill.");
+end
+
+rule "Assassin vs Juggernaut, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so use your CC to keep them at bay and be careful when you trade as they can’t be bursted down.");
+end
+
+rule "Assassin vs Juggernaut, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Juggernaut, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Diver (def)
+
+rule "Assassin vs Diver, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage so use your CC to keep them at bay and if needed disengage to escape, so do not be afraid to trade but know it will be hard to burst them down for a kill.");
+end
+
+rule "Assassin vs Diver, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, so use your CC to keep them at bay and be careful when you trade as they can’t be bursted down.");
+end
+
+rule "Assassin vs Diver, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, so play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Diver, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Assassin (def)
+
+rule "Assassin vs Assassin, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with so use your CC to keep them at bay and if needed disengage to escape, so do not be afraid to trade but know it will be hard to burst them down for a kill.");
+end
+
+rule "Assassin vs Assassin, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, with their hard engage and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so use your CC to keep them at bay and be careful when you trade as they can’t be bursted down.");
+end
+
+rule "Assassin vs Assassin, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, with their hard engage and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill");
+end
+
+rule "Assassin vs Assassin, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another assassin, with their hard engage and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Skirmisher (def)
+
+rule "Assassin vs Skirmisher, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so use your CC to keep them at bay and if needed disengage to escape");
+end
+
+rule "Assassin vs Skirmisher, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so use your CC to keep them at bay and be careful when you trade as they can’t be bursted down");
+end
+
+rule "Assassin vs Skirmisher, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Skirmisher, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Marksman (def)
+
+rule "Assassin vs Marksman, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, so use your CC when they engage to trade damage back and disengage when the trade goes south.");
+end
+
+rule "Assassin vs Marksman, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. Use your CC to keep them at bay and avoid extended fights.");
+end
+
+rule "Assassin vs Marksman, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. Play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Marksman, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Burst (def)
+
+rule "Assassin vs Burst, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC when they engage to trade damage back and disengage when the trade goes south.");
+end
+
+rule "Assassin vs Burst, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. Use your CC to keep them at bay and avoid extended fights.");
+end
+
+rule "Assassin vs Burst, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. Play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Burst, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Battlemage (def)
+
+rule "Assassin vs Battlemage, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, so use your CC when they engage to trade damage back and disengage when the trade goes south.");
+end
+
+rule "Assassin vs Battlemage, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. Use your CC to keep them at bay and avoid extended fights.");
+end
+
+rule "Assassin vs Battlemage, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. Play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Battlemage, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Artillery (def)
+
+rule "Assassin vs Artillery, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so use your CC when you find an opportunity trade damage back and disengage when they go for the kill.");
+end
+
+rule "Assassin vs Artillery, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so use your CC when you find an opportunity trade damage.");
+end
+
+rule "Assassin vs Artillery, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. Play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Artillery, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Vanguard (def)
+
+rule "Assassin vs Vanguard, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so use your CC to trade and if needed disengage to escape");
+end
+
+rule "Assassin vs Vanguard, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so use your CC to trade and be careful as they can’t be bursted down.");
+end
+
+rule "Assassin vs Vanguard, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so play on your side of the lane, using waveclearing to balance the wave push and trade more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Vanguard, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so trade a bit while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Warden (def)
+
+rule "Assassin vs Warden, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to trade and if needed disengage to escape.");
+end
+
+rule "Assassin vs Warden, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to trade and be careful as they can’t be bursted down.");
+end
+
+rule "Assassin vs Warden, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so play on your side of the lane, using waveclearing to balance the wave push and trade more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Warden, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so trade a bit while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Catcher (def)
+
+rule "Assassin vs Catcher, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, so use your CC when they engage to trade damage back and disengage when the trade goes south.");
+end
+
+rule "Assassin vs Catcher, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. Use your CC to keep them at bay and avoid extended fights");
+end
+
+rule "Assassin vs Catcher, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. Play on your side of the lane, using waveclearing to balance the wave push and play more aggressively only when their abilitites are off cooldown while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Catcher, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, so play more aggressively than while awaiting assistance from your jungler for a kill.");
+end
+
+
+
+
+//Assassin vs Enchanter (def)
+
+rule "Assassin vs Enchanter, ally hardCC and disengage, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == true,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. Use your CC when you find an opportunity trade damage back and disengage when they go for the kill.");
+end
+
+rule "Assassin vs Enchanter, ally hardCC, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly . Use your CC when you find an opportunity trade damage.");
+end
+
+rule "Assassin vs Enchanter, ally waveclear, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. Play on your side of the lane, using waveclearing to balance the wave push and play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+rule "Assassin vs Enchanter, ally nothing, ally def"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == false,
+			disengage == false,
+			waveclear == false,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelesll. Go for trades but still play more passively while awaiting assistance from your jungler for a kill.");
+end
+
+
+
