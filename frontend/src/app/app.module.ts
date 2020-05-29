@@ -15,6 +15,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { NewRulesComponent } from './new-rules/new-rules.component';
+import { NewRulesEarlyComponent } from './new-rules/new-rules-early/new-rules-early.component';
+import { NewRulesMidLateComponent } from './new-rules/new-rules-mid-late/new-rules-mid-late.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { MainPageComponent } from './main-page/main-page.component';
     LoginComponent,
     SignUpComponent,
     ErrorPageComponent,
-    MainPageComponent
+    MainPageComponent,
+    NewRulesComponent,
+    NewRulesEarlyComponent,
+    NewRulesMidLateComponent
   ],
   imports: [
     BrowserModule,

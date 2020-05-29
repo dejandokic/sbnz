@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+  // const imgBase = 'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png'
+
   constructor() { }
 
   ngOnInit() {

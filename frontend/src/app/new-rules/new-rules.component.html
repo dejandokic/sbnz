@@ -1,0 +1,6 @@
+<div fxLayout="column">
+  <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selectedIndex">
+    <mat-tab label="Early Game rules"><app-new-rules-early></app-new-rules-early></mat-tab>
+    <mat-tab label="Mid/Late Game rules"><app-new-rules-mid-late (tabChanged)="tabChanged($event)"></app-new-rules-mid-late></mat-tab>
+  </mat-tab-group>
+</div>
