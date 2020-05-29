@@ -1,66 +1,52 @@
 <div class="main_strategy">
+  <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
   <div class="strategy">
       <div class="team">
         <h2>Your team</h2>
         <div class="team__mine">
           <div class="champ team__mine__champ1">
-              <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Aatrox.png" alt="champ" />
-                <h4>TOP</h4>
-              </div>
-                <select name="champ1">
-                  <option value="volvo">Annie</option>
-                  <option value="saab">Ezreal</option>
-                  <option value="fiat">Malzahar</option>
-                  <option value="audi">Udyr</option>
-              </select>
+            <div style="display: flex;">
+              <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyTop.name+'.png'" alt="champ" />
+              <h4>TOP</h4>
             </div>
+            <select formControlName="allyTop">
+              <option *ngFor="let champ of champions.top" [value]="champ.name">{{champ.name}}</option>
+            </select>
+          </div>
             <div class="champ team__mine__champ2">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Aatrox.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyJungle.name+'.png'" alt="champ" />
                 <h4>JUNGLE</h4>
               </div>
-                <select name="champ2">
-                  <option value="volvo">Annie</option>
-                  <option value="saab">Ezreal</option>
-                  <option value="fiat">Malzahar</option>
-                  <option value="audi">Udyr</option>
+              <select formControlName="allyJungle">
+                <option *ngFor="let champ of champions.jungle" [value]="champ.name">{{champ.name}}</option>
               </select>
             </div>
             <div class="champ team__mine__champ3">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Aatrox.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyMid.name+'.png'" alt="champ" />
                 <h4>MID</h4>
               </div>
-                <select name="champ3">
-                  <option value="volvo">Annie</option>
-                  <option value="saab">Ezreal</option>
-                  <option value="fiat">Malzahar</option>
-                  <option value="audi">Udyr</option>
-              </select>
+                <select formControlName="allyMid">
+                  <option *ngFor="let champ of champions.mid" [value]="champ.name">{{champ.name}}</option>
+                </select>
             </div>
             <div class="champ team__mine__champ4">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Aatrox.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyADC.name+'.png'" alt="champ" />
                 <h4>ADC</h4>
               </div>
-                <select name="champ4">
-                  <option value="volvo">Annie</option>
-                  <option value="saab">Ezreal</option>
-                  <option value="fiat">Malzahar</option>
-                  <option value="audi">Udyr</option>
+              <select formControlName="allyADC">
+                <option *ngFor="let champ of champions.adc" [value]="champ.name">{{champ.name}}</option>
               </select>
             </div>
             <div class="champ team__mine__champ5">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allySupport.name+'.png'" alt="champ" />
                 <h4>SUPPORT</h4>
               </div>
-                <select name="champ5">
-                  <option value="volvo">Annie</option>
-                  <option value="saab">Ezreal</option>
-                  <option value="fiat">Malzahar</option>
-                  <option value="audi">Udyr</option>
+              <select formControlName="allySupport">
+                <option *ngFor="let champ of champions.support" [value]="champ.name">{{champ.name}}</option>
               </select>
             </div>
         </div>
@@ -73,66 +59,52 @@
         <div class="team__enemy">
           <div class="champ team__enemy__champ1">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.enemyTop.name+'.png'" alt="champ" />
                 <h4>TOP</h4>
               </div>
-              <select name="champ1">
-                <option value="volvo">Annie</option>
-                <option value="saab">Ezreal</option>
-                <option value="fiat">Malzahar</option>
-                <option value="audi">Udyr</option>
+              <select formControlName="enemyTop">
+                <option *ngFor="let champ of champions.top" [value]="champ.name">{{champ.name}}</option>
               </select>
           </div>
           <div class="champ team__enemy__champ2">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.enemyJungle.name+'.png'" alt="champ" />
                 <h4>JUNGLE</h4>
               </div>
-              <select name="champ1">
-                <option value="volvo">Annie</option>
-                <option value="saab">Ezreal</option>
-                <option value="fiat">Malzahar</option>
-                <option value="audi">Udyr</option>
+              <select formControlName="enemyJungle">
+                <option *ngFor="let champ of champions.jungle" [value]="champ.name">{{champ.name}}</option>
               </select>
           </div>
           <div class="champ team__enemy__champ3">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.enemyMid.name+'.png'" alt="champ" />
                 <h4>MID</h4>
               </div>
-              <select name="champ1">
-                <option value="volvo">Annie</option>
-                <option value="saab">Ezreal</option>
-                <option value="fiat">Malzahar</option>
-                <option value="audi">Udyr</option>
+              <select formControlName="enemyMid">
+                <option *ngFor="let champ of champions.mid" [value]="champ.name">{{champ.name}}</option>
               </select>
           </div>
           <div class="champ team__enemy__champ4">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.enemyADC.name+'.png'" alt="champ" />
                 <h4>ADC</h4>
               </div>
-              <select name="champ1">
-                <option value="volvo">Annie</option>
-                <option value="saab">Ezreal</option>
-                <option value="fiat">Malzahar</option>
-                <option value="audi">Udyr</option>
+              <select formControlName="enemyADC">
+                <option *ngFor="let champ of champions.adc" [value]="champ.name">{{champ.name}}</option>
               </select>
           </div>
           <div class="champ team__enemy__champ5">
               <div style="display: flex;">
-                <img src="http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/Alistar.png" alt="champ" />
+                <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.enemySupport.name+'.png'" alt="champ" />
                 <h4>SUPPORT</h4>
               </div>
-              <select name="champ1">
-                <option value="volvo">Annie</option>
-                <option value="saab">Ezreal</option>
-                <option value="fiat">Malzahar</option>
-                <option value="audi">Udyr</option>
+              <select formControlName="enemySupport">
+                <option *ngFor="let champ of champions.support" [value]="champ.name">{{champ.name}}</option>
               </select>
           </div>
         </div>
       </div>
-  </div>
-  <button class="btn btn_make_str">MAKE STRATEGY</button>
+    </div>
+    <button class="btn btn_make_str" type="submit">MAKE STRATEGY</button>
+  </form>
 </div>
