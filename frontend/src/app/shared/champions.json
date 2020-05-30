@@ -4633,7 +4633,7 @@
         }
     },
     {
-        "name": "Tahm",
+        "name": "TahmKench",
         "class": {
             "juggernaut": false,
             "diver": false,
@@ -5535,7 +5535,7 @@
         }
     },
     {
-        "name": "Wukong",
+        "name": "MonkeyKing",
         "class": {
             "juggernaut": false,
             "diver": true,
