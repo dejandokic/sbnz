@@ -45,6 +45,7 @@ export class NewRulesEarlyComponent implements OnInit {
       enemyRole: new FormControl(this.currentSelected.enemyRole, Validators.required),
       playType: new FormControl(this.currentSelected.playType, Validators.required),
       lane: new FormControl(this.currentSelected.lane, Validators.required),
+      advice: new FormControl('', Validators.required),
       playStyles: new FormArray([])
     });
 
@@ -107,13 +108,15 @@ export class NewRulesEarlyComponent implements OnInit {
     const playType = this.newRule.get('playType').value;
     const lane = this.newRule.get('lane').value;
     const playStyles = this.newRule.get('playStyles').value;
+    const advice = this.newRule.get('advice').value;
 
     const newRule = {
       allyRole,
       enemyRole,
       playType,
       lane,
-      playStyles
+      playStyles,
+      advice
     };
 
     console.log(newRule);
