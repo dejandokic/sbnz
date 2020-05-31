@@ -1,0 +1,51 @@
+<div class="main-rule">
+  <div class="main-rule-dialog">
+    <form [formGroup]="newRule" (ngSubmit)="onSubmit()">
+      <div style="display: flex; flex-direction: row;">
+        <div class="leftPart">
+          <div class="field">
+            <p>Ally role: </p>
+            <select formControlName="allyRole">
+              <option *ngFor="let role of champRole" [value]="role">{{role}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <p>Enemy role: </p>
+            <select formControlName="teamComposition">
+              <option *ngFor="let comp of teamComposition" [value]="comp">{{comp}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <p>Play type: </p>
+            <select formControlName="playType">
+              <option *ngFor="let type of playType" [value]="type">{{type}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <p>Lane: </p>
+            <select formControlName="lane">
+              <option *ngFor="let l of lanes" [value]="l">{{l}}</option>
+            </select>
+          </div>
+          <div class="field">
+            <p>Game Phase: </p>
+            <select formControlName="gamePhase">
+              <option *ngFor="let phase of gamePhase" [value]="phase">{{phase}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="rightPart" style="margin-top: 6px;">
+          <div *ngFor="let choice of checks; let i=index" class="col-md-2" style="margin-bottom: 4px;">
+            <label>
+              <input type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
+              {{choice.description}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <textarea rows="2" cols="84" formControlName="advice" placeholder="Enter advice" style="margin-left: 30px;"></textarea>
+      <div></div>
+      <button class="btn btn_make_str" type="submit">Create new rule</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,6070 @@
+[
+    {
+        "name": "Aatrox",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Ahri",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Akali",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Alistar",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Amumu",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Anivia",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Annie",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Aphelios",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Ashe",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "AurelionSol",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Azir",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Bard",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Blitzcrank",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Brand",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Braum",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Caitlyn",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Camille",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Cassiopeia",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Chogath",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Corki",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Darius",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Diana",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "DrMundo",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Draven",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Ekko",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Elise",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Evelynn",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Ezreal",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Fiddlesticks",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Fiora",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Fizz",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Galio",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Gangplank",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Garen",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Gnar",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Gragas",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Graves",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Hecarim",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Heimerdinger",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Illaoi",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Irelia",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Ivern",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Janna",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "JarvanIV",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Jax",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Jayce",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": true,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Jhin",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Jinx",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Kaisa",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Kalista",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Karma",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Karthus",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Kassadin",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Katarina",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Kayle",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Kayn",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Kennen",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Khazix",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Kindred",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Kled",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "KogMaw",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "LeBlanc",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "LeeSin",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Leona",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Lissandra",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Lucian",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Lulu",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Lux",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Malphite",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Malzahar",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Maokai",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "MasterYi",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "MissFortune",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Mordekaiser",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Morgana",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Nami",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Nasus",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Nautilus",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Neeko",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Nidalee",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Nocturne",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Nunu",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Olaf",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Orianna",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Ornn",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Pantheon",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Poppy",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Pyke",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Qiyana",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Quinn",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Rakan",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Rammus",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "RekSai",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Renekton",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Rengar",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Riven",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Rumble",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Ryze",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Sejuani",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Senna",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Sett",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Shaco",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "Shen",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Shyvana",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Singed",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Sion",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Sivir",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Skarner",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Sona",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Soraka",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Swain",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Sylas",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Syndra",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    },
+    {
+        "name": "TahmKench",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": true,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Taliyah",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Talon",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Taric",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Teemo",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Thresh",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Tristana",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Trundle",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Tryndamere",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "TwistedFate",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Twitch",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Udyr",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Urgot",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Varus",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Vayne",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Veigar",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Velkoz",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": true,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Vi",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Viktor",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Vladimir",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": true,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Volibear",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Warwick",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "MonkeyKing",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Xayah",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": true,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": true,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Xerath",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": true,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "XinZhao",
+        "class": {
+            "juggernaut": false,
+            "diver": true,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Yasuo",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": true,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": true
+        }
+    },
+    {
+        "name": "Yorick",
+        "class": {
+            "juggernaut": true,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": true,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": true
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Yuumi",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": false,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Zac",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": true,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": true,
+            "mid": false,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": false,
+            "waveclear": false,
+			"sustain": true,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Zed",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": true,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": true,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": false,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Ziggs",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": true,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": true,
+            "waveclear": true,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Zilean",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": true
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": true,
+            "poke": false,
+            "waveclear": true,
+			"sustain": false,
+			"utility": true,
+			"mobility": false,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": true,
+            "late": false
+        }
+    },
+    {
+        "name": "Zoe",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": true,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": false,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": false
+        },
+        "role": {
+            "hardCC": false,
+            "hardEngage": false,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": false,
+			"mobility": false,
+			"aoeDamage": false,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": true
+        }
+    },
+    {
+        "name": "Zyra",
+        "class": {
+            "juggernaut": false,
+            "diver": false,
+            "assassin": false,
+            "skirmisher": false,
+            "marksman": false,
+            "burst": false,
+            "battlemage": false,
+            "artillery": false,
+            "vanguard": false,
+            "warden": false,
+            "catcher": true,
+            "enchanter": false
+        },
+        "lane": {
+            "top": false,
+            "jungle": false,
+            "mid": true,
+            "adc": false,
+            "support": true
+        },
+        "role": {
+            "hardCC": true,
+            "hardEngage": true,
+            "disengage": false,
+            "poke": true,
+            "waveclear": false,
+			"sustain": false,
+			"utility": true,
+			"mobility": true,
+			"aoeDamage": true,
+			"split": false
+        },
+        "game": {
+            "early": true,
+            "mid": false,
+            "late": false
+        }
+    }
+]

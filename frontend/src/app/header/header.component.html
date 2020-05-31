@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="mat-elevation-z4" style="background-color: #303a4a">
+  <button mat-button color="accent" routerLink="/">
+    <span class="mat-title" style="font-weight: 500; color: bisque;">SBNZ Project</span>
+  </button>
+
+  <span class="spacer"></span>
+
+  <!-- Header for unregistered user -->
+  <div *ngIf="!isAuthenticated">
+    <button mat-button routerLink="/login">Login</button>
+    <button mat-button routerLink="/sign-up">Sign up</button>
+  </div>
+
+  <!-- Header for admin -->
+  <div *ngIf="isAuthenticated && role==='ADMIN'">
+    <button mat-button routerLink="/strategy">Strategy</button>
+    <button mat-button routerLink="/new-rules">Add Rules</button>
+    <button mat-button routerLink="/logout" (click)="onLogout()">Logout</button>
+  </div>
+
+
+  <!-- Header for registered_user -->
+  <div *ngIf="isAuthenticated && role==='REGISTERED_USER'">
+    <button mat-button routerLink="/strategy">Strategy</button>
+    <button mat-button routerLink="/logout" (click)="onLogout()">Logout</button>
+  </div>
+
+</mat-toolbar>
