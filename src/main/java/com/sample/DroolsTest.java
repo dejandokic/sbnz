@@ -25,14 +25,9 @@ public class DroolsTest {
         	
         	kSession.setGlobal("adviceStorage", new AdviceStorage());
 
-            // go !
-            /*Message message = new Message();
-            message.setMessage("Hello World");
-            message.setStatus(Message.HELLO);
-            kSession.insert(message);*/
-        	
+           
         	AllyChampion ally = new AllyChampion();
-        	ally.setName("jo1");
+        	ally.setName("Champion_1");
         	ally.setLane("top");
         	ally.setRole("juggernaut");
         	ally.setGoodEarly(true);
@@ -45,7 +40,7 @@ public class DroolsTest {
         	ally.setBadAgainst(badAgainst);
         	
         	EnemyChampion enemy = new EnemyChampion();
-        	enemy.setName("jo2");
+        	enemy.setName("Champion_2");
         	enemy.setLane("top");
         	enemy.setRole("juggernaut");
         	enemy.setGoodEarly(false);
@@ -65,6 +60,41 @@ public class DroolsTest {
         }
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static class Message {
 
         public static final int HELLO = 0;

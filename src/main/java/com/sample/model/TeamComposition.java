@@ -5,7 +5,8 @@ public class TeamComposition {
 	private String composition = "";
 	
 	public TeamComposition() {
-		composition = "splitPush";
+		//Default value
+		composition = "attack";
 	}
 	
 	public TeamComposition(String composition) {
