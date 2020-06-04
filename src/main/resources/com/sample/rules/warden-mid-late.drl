@@ -12,14 +12,12 @@ global com.sample.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Warden, mid-late game, (split push), ally hardCC + sustain + splitPush"
+rule "Warden, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
 			$allyLane : lane,
-			hardCC == true,
-			sustain == true,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -29,14 +27,12 @@ rule "Warden, mid-late game, (split push), ally hardCC + sustain + splitPush"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a split push comp your job is to push lanes whilist pressuring them to take you down. You have a lot of hard CC so engages on you can be stopped easily, and with your sustain you will be able to whistand in a lane for a long time.");
 end
 
-rule "Warden, mid-late game, (split push), ally hardCC + sustain"
+rule "Warden, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
 			$allyLane : lane,
-			hardCC == true,
-			sustain == true,
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -49,14 +45,12 @@ end
 
 // Siege
 
-rule "Warden, mid-late game, (siege), ally hardCC + sustain"
+rule "Warden, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
-			$allyLane : lane,
-			hardCC == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -68,14 +62,12 @@ end
 
 // Protect
 
-rule "Warden, mid-late game, (protect), ally hardCC + sustain"
+rule "Warden, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
-			$allyLane : lane,
-			hardCC == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -86,15 +78,13 @@ end
 
 // Attack
 
-rule "Warden, mid-late game, (attack), ally hardCC + hardEngage + sustain"
+rule "Warden, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
 			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true,
-			sustain == true
+			hardCC == true
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -104,57 +94,19 @@ rule "Warden, mid-late game, (attack), ally hardCC + hardEngage + sustain"
 end
 
 
-rule "Warden, mid-late game, (attack), ally hardCC + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "warden",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in an attack comp your focus is to get the enemy backline to attack you and to stop their frontline from advancing. You have your hard CC to prevent their engages and escapes and with your sustain you will be hard to take down, so will be a constant treat.");
-end
-
 // Catch
 
 
-rule "Warden, mid-late game, (catch), ally hardCC + hardEngage + sustain"
+rule "Warden, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "warden",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
 		)
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a catch comp your job is to engage and start up fights when the enemy is broken apart. Your hard engages and excellent CC can lock the enemy down, preventing their escape. You are very tanky with your sustain as well, so do not be afraid to engage when you see the opportunity.");
-end
-
-
-rule "Warden, mid-late game, (catch), ally hardCC + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "warden",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a catch comp your job is to engage and start up fights when the enemy is broken apart. Your hard CC can lock the enemy down preventing their escape and with your sustain you are very tanky so do not be afraid to engage when you see the opportunity.");
 end

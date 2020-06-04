@@ -11,15 +11,12 @@ global com.sample.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear + disengage/sustain + splitPush"
+rule "Battlemage, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == true || sustain == true,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -29,110 +26,14 @@ rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear + disenga
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn’t be a problem and with your waveclear pushing lanes should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
-rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear + splitPush"
+
+
+rule "Battlemage, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == false && sustain == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn’t be a problem and with your waveclear pushing lanes should be a breeze. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally hardCC + disengage/sustain + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			disengage == true || sustain == true,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn’t be a problem and with your sustain or disengage you can escape fights when they get to dangerous. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally waveclear + disengage/sustain + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			disengage == true || sustain == true,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have your waveclear to push lanes with ease and your sustain or disengage to escape fights when they get to dangerous. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally disengage/sustain + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == true || sustain == true,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of sustain and disengage to escape fights when they get to dangerous, but be careful not to overextend. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == fals && sustain == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You do have a lot of sustainable damage that can be used overtime, but be careful of being overrun by the enemy team.");
-end
-
-
-
-
-
-
-rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear + disengage/sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == true || sustain == true,
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -142,109 +43,15 @@ rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear + disenga
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn’t be a problem and with your waveclear putting pressure on the enemy should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
-rule "Battlemage, mid-late game, (split push), ally hardCC + waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == false && sustain == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn’t be a problem and with your waveclear pressuring lanes should be a breeze. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally hardCC + disengage/sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			disengage == true || sustain == true,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn’t be a problem and with your sustain or disengage you can escape fights when they get to dangerous. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally waveclear + disengage/sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			disengage == true || sustain == true,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You have your waveclear to pressure lanes with ease and your sustain or disengage to escape fights when they get to dangerous. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally disengage/sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == true || sustain == true,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You have a lot of sustain and disengage to escape fights when they get to dangerous, but be careful not to overextend. ");
-end
-
-rule "Battlemage, mid-late game, (split push), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == fals && sustain == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can’t stop your solo laners from pushing. You do have a lot of sustainable damage that can be used overtime, but be careful of being overrun by the enemy team.");
-end
-
-
 // Siege
 
 
-rule "Battlemage, mid-late game, (siege), ally hardCC + waveclear"
+rule "Battlemage, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			poke == false
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -254,90 +61,14 @@ rule "Battlemage, mid-late game, (siege), ally hardCC + waveclear"
 end
 
 
-rule "Battlemage, mid-late game, (siege), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a siege comp your focus should be on preventing enemies from engaging and threatening them in prolonged fights. You have a lot of hard CC to lock the enemy down and prevent hard engages on your towers.");
-end
-
-
-rule "Battlemage, mid-late game, (siege), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a siege comp your focus should be on preventing enemies from engaging and threatening them in prolonged fights. You have waveclear to prevent hard pushes to your towers and to counter push if needed.");
-end
-
-
-rule "Battlemage, mid-late game, (siege), ally poke"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			poke == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a siege comp your focus should be on preventing enemies from engaging and threatening them in prolonged fights. You have a lot of poke so try to use it on defense to prevent attacks or offense to push them away without a teamfight.");
-end
-
-
-rule "Battlemage, mid-late game, (siege), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a siege comp your focus should be on preventing enemies from engaging and threatening them in prolonged fights. You have a lot of sustainable damage, but it shouldn’t come to teamfights, so avoid it.");
-end
-
-
-
 // Protect
 
-rule "Battlemage, mid-late game, (protect), ally hardCC + disengage + sustain"
+rule "Battlemage, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -346,120 +77,14 @@ rule "Battlemage, mid-late game, (protect), ally hardCC + disengage + sustain"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have a lot of hard CC so lock down frontliners that try to get to your backline, using sustain to keep yourself longer in fights. With your disengage you can escape with your teammates when needed.");
 end
 
-rule "Battlemage, mid-late game, (protect), ally hardCC + disengage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == true,
-			sustain == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have a lot of hard CC so lock down frontliners that try to get to your backline, using your disengage to escape with your teammates when needed.");
-end
-
-rule "Battlemage, mid-late game, (protect), ally hardCC + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have a lot of hard CC so lock down frontliners that try to get to your backline, using sustain to keep yourself longer in fights. ");
-end
-
-rule "Battlemage, mid-late game, (protect), ally disengage + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == true,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have sustain to keep yourself longer in fights and with your disengage you can escape with your teammates when needed.");
-end
-
-rule "Battlemage, mid-late game, (protect), ally disengage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == true,
-			sustain == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have sustain to keep yourself longer in fights but be careful of overextending, since you lack the mobility to escape.");
-end
-
-rule "Battlemage, mid-late game, (protect), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have your disengage so you can escape with your teammates when needed, but since you lack tankines do not position yourself to forward. ");
-end
-
-rule "Battlemage, mid-late game, (protect), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == false,
-			sustain == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a protect comp your position is to protect the carry at all costs. You have a lot of damage, but since you lack the tankines be careful not to position yourself to forward as not to get killed immediately.");
-end
-
-
 // Attack
 
-rule "Battlemage, mid-late game, (attack), ally hardCC + hardEngage"
+rule "Battlemage, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true,
-			sustain == false
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -468,102 +93,14 @@ rule "Battlemage, mid-late game, (attack), ally hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. You have a hard engage to initiate fights forcefully, and a lot of hard CC to keep the enemies within your reach. ");
 end
 
-rule "Battlemage, mid-late game, (attack), ally hardCC + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. You have a lot of hard CC to keep the enemies within your reach and sustain to stay in fights for a long time. ");
-end
-
-rule "Battlemage, mid-late game, (attack), ally hardEngage + sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == true,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. You have a hard engage to initiate fights forcefully and a lot of sustain to stay in fights for a long time. ");
-end
-
-rule "Battlemage, mid-late game, (attack), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false,
-			sustain == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. You have a lot of hard CC to keep the enemies within your reach and deal damage to them for the duration. ");
-end
-
-rule "Battlemage, mid-late game, (attack), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false,
-			sustain == true
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. Sustain is your main weapon to stay in fights for a long time and devastate enemies. ");
-end
-
-rule "Battlemage, mid-late game, (attack), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false,
-			sustain == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in an attack comp your job is to be the sustainable damage dealer for the team. Since you need to stay in fights for a longer time, avoiding frontline might be the best, as to keep yourself viable for a longer time.");
-end
-
-
 // Catch
 
-rule "Battlemage, mid-late game, (catch), ally hardCC + hardEngage"
+rule "Battlemage, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
 		)
 		$composition : TeamComposition(
 			composition == "catch"
@@ -571,37 +108,3 @@ rule "Battlemage, mid-late game, (catch), ally hardCC + hardEngage"
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a catch comp your position is to engage and fight enemy teams when they are not grouped up. You have your hard engages to start up fights and overwhelming CC to keep them within your reach.");
 end
-
-rule "Battlemage, mid-late game, (catch), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a catch comp your position is to engage and fight enemy teams when they are not grouped up. You have overwhelming CC to keep them within your reach and prevent escaping, but be careful of overstaying your welcome.");
-end
-
-
-rule "Battlemage, mid-late game, (catch), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a catch comp your position is to engage and fight enemy teams when they are not grouped up. You have a lot of sustainable damage, but be careful of not getting to close to the enemy.");
-end
-
