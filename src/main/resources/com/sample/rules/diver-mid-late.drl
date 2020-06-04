@@ -13,15 +13,12 @@ global com.sample.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 
-rule "Diver, mid-late game, (split push), ally mobility + disengage + splitPush"
+rule "Diver, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			disengage == true,
-			splitPush == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "splitPush"
@@ -31,70 +28,15 @@ rule "Diver, mid-late game, (split push), ally mobility + disengage + splitPush"
 end
 
 
-rule "Diver, mid-late game, (split push), ally mobility + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			disengage == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a split push comp you should focus on pushing towers and making the enemy busy. With your mobility you can rotate easily, but be wary of the enemy team, as if they overwhelm you they can lock you down easily.");
-end
-
-
-rule "Diver, mid-late game, (split push), ally mobility + disengage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			disengage == true,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a split push comp you should focus on diving the backline and distracting the enemy team. With your mobility you can move in the map easily, and using your disengage bait out fights to give your team more time to push.");
-end
-
-
-rule "Diver, mid-late game, (split push), ally mobility"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			disengage == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a split push comp you should focus on diving the backline and distracting the enemy team. With your mobility you can move in the map easily, so try to irk the enemy team as much as possible.");
-end
-
-
 // SIEGE
 
 
-rule "Diver, mid-late game, (siege), ally hardCC"
+rule "Diver, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "diver",
-			$allyLane : lane,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -103,33 +45,16 @@ rule "Diver, mid-late game, (siege), ally hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a siege comp your position is to lock down enemies who come to close. It shouldn’t be an issue since with your hard CC the enemy backline will have trouble attacking your team freely.");
 end
 
-rule "Diver, mid-late game, (siege), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a siege comp your position is to lock down enemies who come to close. Since you are more than capable of getting to the backline, they will be vary afraid to attack with you there.");
-end
-
 
 // PROTECT
 
 
-rule "Diver, mid-late game, (protect), ally hardCC + disengage"
+rule "Diver, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "diver",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -138,50 +63,15 @@ rule "Diver, mid-late game, (protect), ally hardCC + disengage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a protect comp your position will be to defend the carries from the backline. You have a lot of CC so locking down the enemy attackers will not be an issue, and using your disengage you can provide your team with enough time to escape if needed.");
 end
 
-rule "Diver, mid-late game, (protect), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a protect comp your position will be to defend the carries from the backline. You have a lot of CC so locking down the enemy attackers will not be an issue, but be careful to not overstay the trades.");
-end
-
-rule "Diver, mid-late game, (protect), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a protect comp your position will be to defend the carries from the backline. You can reach the backline easily, but if you do not have enough damage you will not be successful in your mission.");
-end
-
-
 // ATTACK
 
 
-rule "Diver, mid-late game, (attack), ally hardCC + hardEngage"
+rule "Diver, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "diver",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -190,51 +80,15 @@ rule "Diver, mid-late game, (attack), ally hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in an attack comp your focus is to get to the enemy backline and devastate them. With your hard engages they will have trouble controlling your initiation and using your hard CC they will be easy to take care off.");
 end
 
-rule "Diver, mid-late game, (attack), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in an attack comp your focus is to get to the enemy backline and devastate them. With your hard CC they wont be able to escape your engages but you will need to find a way to get to the backline effectively. ");
-end
-
-rule "Diver, mid-late game, (attack), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in an attack comp your focus is to get to the enemy backline and devastate them. You are quite good at engaging so try to get to the backline as efficiently as possible to do maximum amounts of damage.");
-end
-
-
 // CATCH
 
 
-rule "Diver, mid-late game, (catch), ally mobility + hardCC + hardEngage"
+rule "Diver, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
@@ -242,38 +96,3 @@ rule "Diver, mid-late game, (catch), ally mobility + hardCC + hardEngage"
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a catch comp your focus should be to take out enemies when they least expect it to give your team a opportunity. With your hard engage they shouldn’t be able to escape your initiations, using your hard CC to lock them down for the kill. You are quite mobile so try to move around the map as much as possible.");
 end
-
-rule "Diver, mid-late game, (catch), ally mobility + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a catch comp your focus should be to take out enemies when they least expect it to give your team a opportunity. With your hard CC you can lock them down for the kill easily, but try to get to them first without them noticing. You are quite mobile so try to move around the map as much as possible.");
-end
-
-rule "Diver, mid-late game, (catch), ally mobility"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "diver",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a catch comp your focus should be to take out enemies when they least expect it to give your team a opportunity. You are quite mobile so try to move around the map as much as possible, attacking unexpected enemies and picking them off. ");
-end
-
