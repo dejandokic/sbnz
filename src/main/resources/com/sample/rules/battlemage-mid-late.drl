@@ -109,7 +109,7 @@ rule "Battlemage, mid-late game, (split push), ally splitPush"
 			$allyLane : lane,
 			hardCC == false,
 			waveclear == false,
-			disengage == fals && sustain == false,
+			disengage == false && sustain == false,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -222,7 +222,7 @@ rule "Battlemage, mid-late game, (split push), ally nothing"
 			$allyLane : lane,
 			hardCC == false,
 			waveclear == false,
-			disengage == fals && sustain == false,
+			disengage == false && sustain == false,
 			splitPush == false
 		)
 		$composition : TeamComposition(

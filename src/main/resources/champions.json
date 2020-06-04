@@ -3751,7 +3751,7 @@
             "early": false,
             "mid": false,
             "late": true
-        ,
+        },
 		"goodAgainst": [
 			"Gragas","Seth","Sylas"
 		],
