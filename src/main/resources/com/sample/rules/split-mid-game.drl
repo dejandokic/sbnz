@@ -1,0 +1,407 @@
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.model.EnemyChampion;
+import com.sample.model.TeamComposition;
+import com.sample.model.MidGame;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+
+// Split push 
+// split pusher
+// agro
+
+
+rule "Split push (split pusher), ally lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should take this opportunity to push the enemy laner and take their lane objectives, making him fall behind even more.");
+end
+
+
+rule "Split push (split pusher), enemy lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and wait for him to leave to push.");
+end
+
+rule "Split push (split pusher), ally lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to push other lanes or continue to pressure this one.");
+end
+
+rule "Split push (split pusher), enemy lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should change to a more defensive play style, but if they rotate continue playing aggressively and push the lane.");
+end
+
+
+// def
+
+rule "Split push (split pusher), ally lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should switch to a more aggressive platystyle to either rotate and push other lanes or push your opponents lane more.");
+end
+
+
+rule "Split push (split pusher), enemy lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills so ask for help from your team while he is there, but if he leaves the lane farm up and push the lane making him return and deny his impact on the rest of the team.");
+end
+
+rule "Split push (split pusher), ally lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to other lanes to push or continue to pressure this one by playing more aggressively.");
+end
+
+rule "Split push (split pusher), enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush == true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can’t handle them alone, but if they rotate push their lane more so they have to come back and defend.");
+end
+
+
+// OTHERS
+// agro
+
+rule "Split push (other), ally lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should take this opportunity to push the enemy laner and take their lane objectives, making him fall behind even more.");
+end
+
+
+rule "Split push (other), enemy lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and try to farm and catch up.");
+end
+
+rule "Split push (other), ally lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your team and push things together or help them out in a lane.");
+end
+
+rule "Split push (other), enemy lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should change to a more defensive play style, but if they rotate continue playing aggressively and rotate to your team as well.");
+end
+
+
+// def
+
+rule "Split push (other), ally lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should switch to a more aggressive platystyle to either rotate and help your team or push your opponents lane more.");
+end
+
+
+rule "Split push (other), enemy lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn’t help much, so ask for help from your team while trying to catch up.");
+end
+
+rule "Split push (other), ally lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to help the team with their lanes and force fights.");
+end
+
+rule "Split push (other), enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			splitPush != true,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can’t handle them alone, but if they rotate push their lane back or rotate to your team.");
+end
+
+
+// jungle
+
+rule "Split push (jungle), ally objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyObjectives >= enemyObjectives + 2				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You should try keeping up the pressure with objectives, keeping your split pusher close just in case they attempt to contest it.");
+end
+
+rule "Split push (jungle), enemy objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyObjectives >= allzObjectives + 2				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since you are losing in objectives, that means your team should try to stop or prolong their attempts to take them while your split pusher goes and wrecks havoc on their lanes.");
+end
