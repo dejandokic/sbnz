@@ -1,0 +1,37 @@
+package com.siit.sbnz.sbnztim14.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.List;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Champion {
+    private String name;
+    private String lane;
+    private String role;
+
+    private boolean goodEarly;
+    private boolean goodMid;
+    private boolean goodLate;
+
+    private boolean hardCC;
+    private boolean hardEngage;
+    private boolean disengage;
+    private boolean poke;
+    private boolean waveclear;
+    private boolean sustain;
+    private boolean utility;
+    private boolean mobility;
+    private boolean aoeDamage;
+    private boolean splitPush;
+
+    private List<String> goodAgainst;
+    private List<String> badAgainst;
+
+}

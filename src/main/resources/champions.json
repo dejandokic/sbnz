@@ -3751,7 +3751,7 @@
             "early": false,
             "mid": false,
             "late": true
-        ,
+        },
 		"goodAgainst": [
 			"Gragas","Seth","Sylas"
 		],
@@ -6900,7 +6900,7 @@
             "early": true,
             "mid": false,
             "late": true
-        ,
+        },
 		"goodAgainst": [
 			"Akali","Karma","Qiyana"
 		],
