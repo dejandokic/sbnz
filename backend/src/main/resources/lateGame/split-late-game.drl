@@ -1,0 +1,142 @@
+package lateGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.LateGame;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+
+// SPLIT PUSH
+
+rule "Split push, ally kills towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == true,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "In this situation just keep doing what you are doing since you are clearly dominating the game.");
+end
+
+rule "Split push, ally kills towers, enemy objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == true,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your split push comp, and your kill and tower lead, you shouldn�t have problems taking objectives by forcing them to defend towers from your split pusher or get their inhibitor open by contesting you.");
+end
+
+rule "Split push, ally kills objectives, enemy towers"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == false,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In a siege comp your push ability is excellent, so it�s time to use it efficiently and pressure multiple lanes simultaneously.");
+end
+
+rule "Split push, ally towers objectives, enemy kills"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == true,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Even without kills your team managed to take more objectives and towers, which is great, but in the end kills grant your more gold and the more items you buy the earlier you spike in strength. In your comp it isn�t necessary to have a lot of items to be effective but without proper items your split pusher will be slower and you can get outpushed easily so try to play a bit more aggressively and force teamfights on fewer opponents. ");
+end
+
+rule "Split push, ally kills, enemy towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == false,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Even with a kill lead your objective and tower control is rather weak, which will end up losing you the game. Use the strength you have, rotating and splitting on the map, and punish their attempts to catch you by making them miss crucial objectives or pressure on the map.");
+end
+
+rule "Split push, ally objectives, enemy kills towers"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == false,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn�t focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your split pusher to pressure them to defend against him, while you take kills in smaller scale teamfights or just overall make them chase you while towers are going down.");
+end
+
+rule "Split push, ally towers, enemy kills objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == true,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it�s not hard to pressure towers and make them run around the map, but if you lacks kills you will never be able to fight if they catch you so focus on smaller scale teamfights and map control.");
+end
+
+rule "Split push, enemy kills towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "splitPush",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == false,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Since you are lacking in overall map control and kills, only thing you can do is try to split up and make them chase you while you chip away at their towers. This will be a hard game to turn, but not impossible.");
+end
+

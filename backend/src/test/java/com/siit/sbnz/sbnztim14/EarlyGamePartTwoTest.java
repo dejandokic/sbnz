@@ -37,11 +37,6 @@ public class EarlyGamePartTwoTest {
 
     @Test
     public void firstTest() {
-
-//        kSession.insert(vayne);
-//        kSession.fireAllRules();
-//        assertTrue(championSelect.getEnemyTeamComposition().contains(CompositionType.adheavy));
-//        assertEquals(1, championSelect.getEnemyTeamComposition().size());
     }
 }
 

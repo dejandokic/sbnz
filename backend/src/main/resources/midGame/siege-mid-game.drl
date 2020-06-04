@@ -1,0 +1,220 @@
+package midGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.MidGame;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+
+// SIEGE
+// agro
+
+rule "Siege, ally lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should take this opportunity to push the enemy laner and take their lane objectives, making him fall behind even more.");
+end
+
+
+rule "Siege, enemy lane kills, ally agro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and denying his push attempts.");
+end
+
+rule "Siege, ally lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your team and push things together or help them out in a lane.");
+end
+
+rule "Siege, enemy lane towers, ally agro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "agro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should change to a more defensive play style, but if they rotate continue playing aggressively and rotate to your team as well.");
+end
+
+
+// def
+
+rule "Siege, ally lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should switch to a more aggressive platystyle to either rotate and help your team or push your opponents lane more.");
+end
+
+
+rule "Siege, enemy lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn�t help much, so ask for help from your team while you deny his push attempts.");
+end
+
+rule "Siege, ally lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers			
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your team and push things together or help the team with their lanes.");
+end
+
+rule "Siege, enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate to your team.");
+end
+
+
+// jungle
+
+rule "Siege (jungle), ally objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyObjectives >= enemyObjectives + 2				
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You should try keeping up the pressure with objectives, keeping your lane pressure and when they are defending make them chose what is more important.");
+end
+
+rule "Siege (jungle), enemy objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyObjectives >= allyObjectives + 2
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "Pushing waves is what your team does best, so attempt to take as many towers as possible while they go for a map objective or just deny their attempts by pressuring lanes.");
+end

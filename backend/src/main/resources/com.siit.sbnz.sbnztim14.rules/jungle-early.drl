@@ -1,0 +1,464 @@
+package com.siit.sbnz.sbnztim14.rules
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+
+rule "Juggernaut, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "juggernaut",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up since you have quite a bit of sustain and seizing the opportunity to counter gank. With your hard engage you have a good way to start up a fight, and using your CC you can lock down the target for the kill.");
+end
+
+
+rule "Juggernaut, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "juggernaut",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up you have quite a bit of sustain and seizing the opportunity to counter gank. With your CC you can lock down the target for the kill, but it will be hard to initiate the fight.");
+end
+
+
+rule "Juggernaut, ally hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "juggernaut",
+			$allyLane: lane,
+			hardEngage == true,
+			hardCC== false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up you have quite a bit of sustain and seizing the opportunity to counter gank. With your hard engage you have a good way to start up a fight, but you don’t have a way to keep the target in place, so the other laner needs to do his part.");
+end
+
+
+rule "Juggernaut, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "juggernaut",
+			$allyLane: lane,
+			hardEngage == false,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up you have quite a bit of sustain and seizing the opportunity to counter gank. Your engage is not great, so try to attack when the enemy laner pushes to hard and is vulnerable. ");
+end
+
+
+
+rule "Diver, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "diver",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at engaging fights, so focus on ganking. With your hard engage you can ensure the fight happenes even under the tower, and using your hard CC you can lock the enemy down for the kill. ");
+end
+
+
+rule "Diver, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "diver",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don’t have a great engage ability but using your hard CC you can lock the enemy down for the kill.");
+end
+
+
+rule "Diver, ally nothin"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "diver",
+			$allyLane: lane,
+			hardEngage == false,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don’t have a great engage ability but using your movement ability you can pressure the enemy laner easily.");
+end
+
+
+
+
+rule "Assassin, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your hard engages and strong CC to secure the kill.");
+end
+
+rule "Assassin, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "assassin",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your strong CC, so try to come up when they are pushing too hard.");
+end
+
+rule "Assassin, ally hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "assassin",
+			$allyLane: lane,
+			hardEngage == true,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your hard engages, but since you lack CC try to attack when they lack escapes. ");
+end
+
+rule "Assassin, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "assassin",
+			$allyLane: lane,
+			hardEngage == false,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don’t have any escape tools.");
+end
+
+
+
+
+
+
+rule "Skirmisher, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. With your hard engage you can engage pretty easily, and use followup CC to secure the kill.");
+end
+
+
+rule "Skirmisher, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. You lack the proper engage tools, but that’s why you can attack them when they are already misspositioning and not focused.");
+end
+
+
+rule "Skirmisher, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "skirmisher",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. With the lack of a good engage or CC, you will struggle to initiate fights but that doesn’t mean you can’t enter one that is already there.");
+end
+
+
+
+
+rule "Marksman, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "marksman",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a marksman jungling will be primarly focused on farming up and griding item. Your ganks will be good, since you have an engage tool but you should still opt to farm more. In case a fight happenes you have your CC to allow you to secure the kill.");
+end
+
+
+
+rule "Marksman, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "marksman",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a marksman jungling will be primarly focused on farming up and griding item. Your ganks will lack proper engage, but with your CC you shouldn’t have problems in fights that are already there, so try to enter lanes when your teammates start trades.");
+end
+
+
+
+rule "Marksman, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "marksman",
+			$allyLane: lane,
+			hardEngage == false,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a marksman jungling will be primarly focused on farming up and griding item. Your ganks will lack proper engage, so try to enter fights that are already happening or when enemies are not aware of your presence.");
+end
+
+
+
+rule "Burst, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "burst",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have excellent engage and good CC so ganks shouldn’t be an issue. Be careful of counterganks though.");
+end
+
+rule "Burst, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "burst",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have good CC so ganks shouldn’t be an issue if the enemy is not aware of you. Be careful of counterganks though.");
+end
+
+rule "Burst, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "burst",
+			$allyLane: lane,
+			hardCC == false,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You do not have proper engage tools, so try lane ganking of fighting misspositioned enemies.");
+end
+
+
+
+rule "Battlemage, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "battlemage",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a battlemage you should focus on farming a bit and ganking as well. Your strong suit would include engaging in fights and hard crowd controlling the enemies into a defeat. ");
+end
+
+
+rule "Battlemage, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "battlemage",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a battlemage you should focus on farming a bit and ganking as well. Your strong suit would include engaging in fights and dealing sustainable ammounts of damage throughout the lane.");
+end
+
+rule "Battlemage, ally hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "battlemage",
+			$allyLane: lane,
+			hardEngage == true,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a battlemage you should focus on farming a bit and ganking as well. You lack proper engage tools, but you do have a bit of CC, so try to fight enemies that are already fighting or are misspositioned.");
+end
+
+rule "Battlemage, ally nothing"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "battlemage",
+			$allyLane: lane,
+			hardEngage == false,
+			hardCC == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a battlemage you should focus on farming a bit and ganking as well. You lack proper engage tools, so try to fight enemies that are already fighting or are misspositioned.");
+end
+
+
+
+rule "Artillery, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "artillery",
+			$allyLane: lane,
+			hardCC == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an artillery, your focus should be to farm up and gather items. If you decide to gank, try to do it when enemies are already fighting since your engage is rather poor.");
+end
+
+
+
+rule "Vanguard, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "vanguard",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a vanguard, your focus should be to farm up, since you have quite a bit of sustain, and than gank lanes to help out. With your excellent engages and hard CC you should have no problems getting kills on unaware enemies.");
+end
+
+rule "Vanguard, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "vanguard",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a vanguard, your focus should be to farm up, since you have quite a bit of sustain, and than gank lanes to help out. With your hard CC you should have no problems counterganking or even engaging on unaware enemies. ");
+end
+
+
+
+rule "Warden, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "warden",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a warden your focus should be to farm up, since your sustain is great, and counter gank to help out laners who are attacked. You lack the damage to go for the kill, but with your hard engages and excellent CC you should be very helpful.");
+end
+
+rule "Warden, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "warden",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a warden your focus should be to farm up, since your sustain is great, and counter gank to help out laners who are attacked. You lack the damage to go for the kill, but with your excellent CC you should be very helpful as a protector.");
+end
+
+
+
+rule "Catcher, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "catcher",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As a catcher you should focus on ganking as much as you can. You lack the damage to go for the kill, but your excellent engages and great followup CC should ensure your laners do the rest.");
+end
+
+
+
+rule "Enchanter, ally hardCC + hardEngage"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "enchanter",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an enchanter your damage output is rather weak, so focus on farming. Your ganks can be useful, but focus on counterganking if you can, using your engage to secure kills or CC to defend from enemy attacks.");
+end
+
+
+
+rule "Enchanter, ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == "enchanter",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == false
+		)
+	then
+		//adviceStorage.addAdvice($allyLane, "early", "As an enchanter your damage output is rather weak, so focus on farming. Your ganks can be useful, but focus on counterganking if you can, using your CC to defend from enemy attacks.");
+end
+

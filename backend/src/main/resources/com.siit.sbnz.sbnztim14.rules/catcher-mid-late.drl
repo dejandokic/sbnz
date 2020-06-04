@@ -1,0 +1,210 @@
+package com.siit.sbnz.sbnztim14.rules
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+
+// SPLIT PUSH
+
+rule "Catcher, mid-late game, (split push), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a split push comp your job is to engage on enemies when they are going for your solo laners to gain an advantage. You have a lot of hard CC so preventing their escape shouldn’t be an issue and also with your utility you should be safe in trades. Use your disengage to escape fights when you attract more unwanted attention than you can handle.");
+end
+
+rule "Catcher, mid-late game, (split push), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a split push comp your job is to engage on enemies when they are going for your solo laners to gain an advantage. You have a lot of hard CC so preventing their escape shouldn’t be an issue and also with your utility you should be safe in trades. ");
+end
+
+rule "Catcher, mid-late game, (split push), ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == false,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a split push comp your job is to engage on enemies when they are going for your solo laners to gain an advantage. You have a lot of hard CC so preventing their escape shouldn’t be an issue but try to go with someone as you do lack damage for a potential kill.");
+end
+
+
+// Siege
+
+rule "Catcher, mid-late game, (siege), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a siege comp your focus should be to prevent enemies from engaging on your carries. You have a lot of CC so that shouldn’t be an issue, and with your utility you can definitely keep your team viable. Use disengages when you get caught by surprise to avoid death.");
+end
+
+rule "Catcher, mid-late game, (siege), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a siege comp your focus should be to prevent enemies from engaging on your carries. You have a lot of CC so that shouldn’t be an issue, and with your utility you can definitely keep your team viable. ");
+end
+
+rule "Catcher, mid-late game, (siege), ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == false,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a siege comp your focus should be to prevent enemies from engaging on your carries. You have a lot of CC so that shouldn’t be an issue, but since you are fairly squishy try to avoid open fights.");
+end
+
+
+// Protect
+
+rule "Catcher, mid-late game, (protect), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your utility wisely and sporadically, saving your CC for enemies that get to close. If they get through you, use disengages to save your team.");
+end
+
+rule "Catcher, mid-late game, (protect), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your utility wisely and sporadically, saving your CC for enemies that get to close and try to kill your carry.");
+end
+
+rule "Catcher, mid-late game, (protect), ally hardCC"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			utility == false,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your CC for enemies that get to close, but be careful not to waste it since you lack disengages to escape if the avoid it.");
+end
+
+
+// Attack
+
+rule "Catcher, mid-late game, (attack), ally hardCC + hardEngage + mobility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			hardEngage == true,
+			mobility == true
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in an attack comp your job is to be an initiator of fights. You have a lot of mobility, so try to get in close and using your hard engages get your team a head start. Use your hard CC to lock others down, whilist your team rains damage down on them.");
+end
+
+// Catch
+
+rule "Catcher, mid-late game, (catch), ally hardCC + hardEngage + mobility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "catcher",
+			$allyLane : lane,
+			hardCC == true,
+			hardEngage == true,
+			mobility == true
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a catch comp your focus should be to catch unaware enemies and weaken the enemy team by helping to take out one of their own before fights. You have hard engages and excellent CC so that shouldn’t be an issue, and with your mobility you can position on the map fairly quickly.");
+end
