@@ -13,14 +13,12 @@ global com.sample.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 
-rule "Assassin, mid-late game, (split push), ally mobility + hardCC + splitPush"
+rule "Assassin, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -30,31 +28,13 @@ rule "Assassin, mid-late game, (split push), ally mobility + hardCC + splitPush"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on pushing towers, whilist eliminating unaware enemies who come to stop you. You have a lot of hard cc, so they shouldn’t be hard to deal with if you can lock them down. With your mobility moving around the map is crucial.");
 end
 
-rule "Assassin, mid-late game, (split push), ally mobility + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on pushing towers, whilist eliminating unaware enemies who come to stop you. You are quite good at bursting weak enemies so avoid fighting bulkier opponents. With your mobility moving around the map is crucial.");
-end
 
-rule "Assassin, mid-late game, (split push), ally mobility + hardCC"
+rule "Assassin, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -64,36 +44,16 @@ rule "Assassin, mid-late game, (split push), ally mobility + hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on eliminating enemies that try to stop your solo laners. You have a lot of hard CC so it shouldn’t be a problem to kill unaware enemis and prevent them from escaping. With your mobility moving around the map shouldn’t be a problem.");
 end
 
-rule "Assassin, mid-late game, (split push), ally mobility"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on eliminating enemies that try to stop your solo laners. You have a lot of burst potential to kill unaware enemis but be careful of bulkier opponents. With your mobility moving around the map shouldn’t be a problem.");
-end
-
-
 
 // Siege
 
 
-rule "Assassin, mid-late game, (siege), ally hardCC"
+rule "Assassin, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -102,50 +62,16 @@ rule "Assassin, mid-late game, (siege), ally hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a siege comp your job is to prevent teamfights by killing their backline early. You have a lot of hard CC so they shouldn’t be able to escape you easily, but still be careful not to die in vain.");
 end
 
-rule "Assassin, mid-late game, (siege), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a siege comp your job is to prevent teamfights by killing their backline early. You have a lot of waveclear, so if killing the enemy is not an option use your abilities to help protect your objectives.");
-end
-
-rule "Assassin, mid-late game, (siege), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a siege comp your job is to prevent teamfights by killing their backline early. You got burst potential, but be careful and chose the time to strike them.");
-end
-
 
 // Protect
 
 
-rule "Assassin, mid-late game, (protect), ally hardCC + disengage"
+rule "Assassin, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -155,51 +81,15 @@ rule "Assassin, mid-late game, (protect), ally hardCC + disengage"
 end
 
 
-rule "Assassin, mid-late game, (protect), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a protect comp your position is to defend by attacking. You need to take out the enemy carries, so use your hard CC when you engage to prevent their escape and try to escape without taking to much damage.");
-end
-
-
-rule "Assassin, mid-late game, (protect), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a protect comp your position is to defend by attacking. You need to take out the enemy carries, so use your burst potential and try to escape without taking to much damage.");
-end
-
-
 // Attack
 
 
-rule "Assassin, mid-late game, (attack), ally hardCC + hardEngage"
+rule "Assassin, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -209,52 +99,16 @@ rule "Assassin, mid-late game, (attack), ally hardCC + hardEngage"
 end
 
 
-rule "Assassin, mid-late game, (attack), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in an attack comp your focus is to destroy the enemy backline. You have your hard CC to lock down and burst enemies with ease, but be careful against tankier opponents. ");
-end
-
-
-rule "Assassin, mid-late game, (attack), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in an attack comp your focus is to destroy the enemy backline. You have a lot of burst potential so try to kill enemies among the chaos of the teamfight.");
-end
-
 
 // Catch
 
 
-rule "Assassin, mid-late game, (catch), ally mobility + hardCC + hardEngage"
+rule "Assassin, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "assassin",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
@@ -262,38 +116,3 @@ rule "Assassin, mid-late game, (catch), ally mobility + hardCC + hardEngage"
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a catch comp your focus is to take out enemies before fights to give yourself an edge. You have a lot of CC and combining that with your hard engages, not many enemies should be able to avoid it. If things get out of hand use your mobility to reposition and try again.");
 end
-
-rule "Assassin, mid-late game, (catch), ally mobility + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a catch comp your focus is to take out enemies before fights to give yourself an edge. You have a lot of CC and burst, so not many enemies should sustain your attacks. If things get out of hand use your mobility to reposition and try again.");
-end
-
-rule "Assassin, mid-late game, (catch), ally mobility"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "assassin",
-			$allyLane : lane,
-			mobility == true,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a catch comp your focus is to take out enemies before fights to give yourself an edge. You have a lot of burst so try to go for weaker enemies first. If things get out of hand use your mobility to reposition and try again.");
-end
-
