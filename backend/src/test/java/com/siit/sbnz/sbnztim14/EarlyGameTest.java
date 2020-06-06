@@ -16,7 +16,7 @@ public class EarlyGameTest {
 
         KieServices ks = KieServices.Factory.get();
         KieContainer kieContainer = ks.getKieClasspathContainer();
-        KieSession kieSession = kieContainer.newKieSession("midGameSession");
+        KieSession kieSession = kieContainer.newKieSession("ksession-rules");
 
         kieSession.setGlobal("adviceStorage", new AdviceStorage());
 

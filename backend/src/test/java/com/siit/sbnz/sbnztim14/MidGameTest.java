@@ -22,7 +22,7 @@ public class MidGameTest {
 
         KieServices ks = KieServices.Factory.get();
         KieContainer kieContainer = ks.getKieClasspathContainer();
-        KieSession kieSession = kieContainer.newKieSession("midGameSession");
+        KieSession kieSession = kieContainer.newKieSession("ksession-rules");
 
         kieSession.setGlobal("adviceStorage", new AdviceStorage());
 
@@ -72,12 +72,10 @@ public class MidGameTest {
         midGame2.setEnemyTowers(3);
 
 
-
         MidGame midGame3 = new MidGame();
         midGame3.setLane("jungle");
         midGame3.setAllyObjectives(3);
         midGame3.setEnemyObjectives(0);
-
 
 
         MidGame midGame4 = new MidGame();
@@ -95,9 +93,6 @@ public class MidGameTest {
         midGame4.setEnemyKills(2);
         midGame4.setAllyTowers(1);
         midGame4.setEnemyTowers(1);
-
-
-
 
 
         kieSession.insert(ally);

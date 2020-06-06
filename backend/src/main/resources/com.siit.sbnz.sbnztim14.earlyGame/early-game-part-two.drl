@@ -1,0 +1,615 @@
+package com.siit.sbnz.sbnztim14.earlyGame;
+
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EarlyGamePartTwo;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+// Initialize warning count
+rule "Initialize warning count"
+    agenda-group "early-game-part-2"
+    salience 3
+    no-loop
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+			$allyLane: lane
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane
+        )
+	then
+	    modify($interaction){setLaneWarningCount(0)}
+end
+
+
+
+//  General lane state
+rule "Update warning count, laneState in problem"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneState == 1,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 3)}
+end
+
+//  ally def, you can try to be more aggressive,
+//  there is no rule for ally type aggro, because we shouldn't update warning count in that case
+rule "Update warning count, laneState normal"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneState == 2,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+
+rule "Update warning count, laneState winning"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneState == 3,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning -1)}
+end
+
+
+
+//  Enemy laner behavior
+rule "Update warning count, enemy behavior shove, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyInfo == 1,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+//  No change on warning count!
+//rule "Update warning count, enemy behavior freeze, allyType aggro"
+//    agenda-group "early-game-part-2"
+//    salience 2
+//	when
+//		$ally: AllyChampion (
+//		    lane != "jungle",
+//		    $allyLane: lane,
+//		    playType == "aggro"
+//		)
+//        $interaction: EarlyGamePartTwo (
+//            lane == $allyLane,
+//            enemyInfo == 2,
+//            $warning: laneWarningCount
+//        )
+//	then
+//	    modify($interaction){setLaneWarningCount($warning + 0)}
+//end
+
+rule "Update warning count, enemy behavior block, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyInfo == 3,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning -1)}
+end
+
+
+rule "Update warning count, enemy behavior shove, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyInfo == 1,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning -1)}
+end
+
+//  No change on warning count!
+//rule "Update warning count, enemy behavior freeze, allyType def"
+//    agenda-group "early-game-part-2"
+//    salience 2
+//	when
+//		$ally: AllyChampion (
+//		    lane != "jungle",
+//		    $allyLane: lane,
+//		    playType == "def"
+//		)
+//        $interaction: EarlyGamePartTwo (
+//            lane == $allyLane,
+//            enemyInfo == 2,
+//            $warning: laneWarningCount
+//        )
+//	then
+//	    modify($interaction){setLaneWarningCount($warning + 0)}
+//end
+
+rule "Update warning count, enemy behavior block, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyInfo == 3,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+
+
+//  Enemy jungler behavior
+rule "Update warning count, enemy jungler behavior rotate, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 1,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+rule "Update warning count, enemy jungler behavior counter jungle, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 2,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+rule "Update warning count, enemy jungler behavior farming, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 3,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus top lane and ally is on top, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 4,
+            lane == "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus top lane and ally isn't on top, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 4,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus mid lane and ally is on mid, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 5,
+            lane == "mid",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus mid lane and ally isn't on mid, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 5,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus bottom lane and ally is on bottom, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 6,
+            lane == "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus bottom lane and ally isn't on bottom, allyType aggro"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 6,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+
+// def
+rule "Update warning count, enemy jungler behavior rotate, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 1,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 1)}
+end
+
+rule "Update warning count, enemy jungler behavior counter jungle, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 2,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+rule "Update warning count, enemy jungler behavior farming, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 3,
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus top lane and ally is on top, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 4,
+            lane == "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus top lane and ally isn't on top, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 4,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus mid lane and ally is on mid, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 5,
+            lane == "mid",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus mid lane and ally isn't on mid, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 5,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+rule "Update warning count, enemy jungler behavior focus bottom lane and ally is on bottom, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 6,
+            lane == "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning - 2)}
+end
+
+rule "Update warning count, enemy jungler behavior focus bottom lane and ally isn't on bottom, allyType def"
+    agenda-group "early-game-part-2"
+    salience 2
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            enemyJunglerInfo == 6,
+            lane != "top",
+            $warning: laneWarningCount
+        )
+	then
+	    modify($interaction){setLaneWarningCount($warning + 1)}
+end
+
+
+rule "warning count 3 or more, change playType from aggro to def"
+    agenda-group "early-game-part-2"
+    salience 0
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "aggro"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneWarningCount > 2
+        )
+	then
+	    modify($ally){setPlayType("def")}
+	    // TODO: ADD MESSAGE
+	    System.out.println("PRAVILO");
+	    adviceStorage.addAdvice($allyLane, "early2", "POCNI DEFANZIVNIJE");
+end
+
+rule "warning count 3 or more, change playType from def to aggro"
+    agenda-group "early-game-part-2"
+    salience 0
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane,
+		    playType == "def"
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneWarningCount > 2
+        )
+	then
+	    modify($ally){setPlayType("aggro")}
+	    // TODO: ADD MESSAGE
+	    System.out.println("PRAVILO");
+	    adviceStorage.addAdvice($allyLane, "early2", "POCNI AGRESIVNIJE");
+end
+
+rule "warning count less than 0, keep it going"
+    agenda-group "early-game-part-2"
+    salience 0
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            laneWarningCount < 0
+        )
+	then
+	    // TODO: ADD MESSAGE
+	    System.out.println("PRAVILO");
+	    adviceStorage.addAdvice($allyLane, "early2", "SVE COOL");
+end
+
+rule "warning count between 0 and 2"
+    agenda-group "early-game-part-2"
+    salience 0
+	when
+		$ally: AllyChampion (
+		    lane != "jungle",
+		    $allyLane: lane
+		)
+        $interaction: EarlyGamePartTwo (
+            lane == $allyLane,
+            (laneWarningCount >= 0 && laneWarningCount <= 2)
+        )
+	then
+	    // TODO: ADD MESSAGE
+	    System.out.println("PRAVILO");
+	    adviceStorage.addAdvice($allyLane, "early2", "KAKO HOCES");
+
+end
+

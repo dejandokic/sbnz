@@ -1,0 +1,504 @@
+package com.siit.sbnz.sbnztim14.earlyGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+ 
+
+//Burst vs Juggernaut (aggro)
+
+
+rule "Burst vs Juggernaut, ally aggro"
+    agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them alone. ");
+end
+
+
+//Burst vs Diver (aggro)
+
+rule "Burst vs Diver, ally aggro"
+    agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Divers are highly mobile and can put pressure on you quite quickly, but with your CC and burst combination you should be able to take them out easily.");
+end
+
+
+
+
+//Burst vs Assassin (aggro)
+
+rule "Burst vs Assassin, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Assassins are rather mobile and can burst you down when you least expect it, but with your CC and burst combination you should be able to take them out easily.");
+end
+
+
+//Burst vs Skirmisher (aggro)
+
+rule "Burst vs Skirmisher, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Skirmishers are not as mobile, but they have the toolkit to deal with every situation, so be wary of that.");
+end
+
+
+//Burst vs Marksman (aggro)
+
+rule "Burst vs Marksman, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+				playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you need to be careful as distance doesn't help you in this matchup. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+end
+
+//Burst vs Burst (aggro)
+
+rule "Burst vs Burst, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another burster, you need to be careful as distance doesn't help you in this matchup. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so try to bait out their CC before trades.");
+end
+
+
+
+//Burst vs Battlemage (aggro)
+
+rule "Burst vs Battlemage, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you do have a slight range advantage. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Battlemages have their highly sustainable damage so you need to be careful in prolonged fights. Use your range to your advantage.");
+end
+
+
+
+
+//Burst vs Artillery (aggro)
+
+rule "Burst vs Artillery, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you are at a slight range disadvantage. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Using their poke and long range you will get punished all the time, so try to CC and burst them down quickly.");
+end
+
+//Burst vs Vanguard (aggro)
+
+rule "Burst vs Vanguard, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+end
+
+
+
+
+//Burst vs Warden (aggro)
+
+rule "Burst vs Warden, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. Impenetrable tanks, with a lot of sustain it will be almost impossible to burst them down.");
+end
+
+
+
+
+//Burst vs Catcher (aggro)
+
+rule "Burst vs Catcher, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you need to be careful as distance doesn't help you in this matchup. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+
+
+//Burst vs Enchanter (aggro)
+
+rule "Burst vs Enchanter, ally aggro"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you are at a slight range advantage. Your hard CC can secure them in place, so you can use your hard engages for kills and setting up ganks. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+
+
+//Burst vs Juggernaut (def)
+
+rule "Burst vs Juggernaut, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			hardCC == true,
+			waveclear == true,
+			disengage == true,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you need to understand that what they lack in mobility they make up in damage and sustain. They can lock you down and deal a lot of damage, so use your CC to keep them at bay and disengage from close fights. Do not be afraid to trade, since you have an range advantage  and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+//Burst vs Diver (def)
+
+rule "Burst vs Diver, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. They can engage quickly for a lot of damage, so use your CC to keep them at bay and disengage from close fights. Be careful how you trade, even if you have an range advantage because they can close the distance easily, so try to use waveclear to manipulate the wave into your side of the lane.");
+end
+
+
+//Burst vs Assassin (def)
+
+rule "Burst vs Assassin, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so use your CC to keep them at bay and disengage from close fights. Be careful how you trade, even if you have an range advantage because they can close the distance easily, so try to use waveclear to manipulate the wave into your side of the lane.");
+end
+
+//Burst vs Skirmisher (def)
+
+rule "Burst vs Skirmisher, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure, so use your CC to keep them at bay and disengage from close fights. Do not be afraid to trade, since you have an range advantage and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+//Burst vs Marksman (def)
+
+rule "Burst vs Marksman, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you have a burst potential and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+//Burst vs Burst (def)
+
+rule "Burst vs Burst, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you also have a burst potential and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+
+
+//Burst vs Battlemage (def)
+
+rule "Burst vs Battlemage, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you have burst potential and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+//Burst vs Artillery (def)
+
+rule "Burst vs Artillery, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you have burst potential and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+
+//Burst vs Vanguard (def)
+
+rule "Burst vs Vanguard, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range, so do not be afraid to trade since you have burst potential but don't play to aggressively.");
+end
+
+
+
+//Burst vs Warden (def)
+
+rule "Burst vs Warden, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "Warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to keep them at bay and disengage from close fights. Do not be afraid to trade, since you have an range advantage  and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+
+//Burst vs Catcher (def)
+
+rule "Burst vs Catcher, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "Catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade when they use their abilities and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
+
+//Burst vs Enchanter (def)
+
+rule "Burst vs Enchanter, ally def"
+	agenda-group "early-game-part-1"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "burst",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "Enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. Use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade when they use their abilities and with your waveclear you should be safe to farm from your side of the lane.");
+end
+
