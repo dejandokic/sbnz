@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package teamcomp
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -26,7 +26,7 @@ rule "Marksman, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldn’t be an issue, using your waveclear to prevent sieges and disengage when fights get to close.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldnï¿½t be an issue, using your waveclear to prevent sieges and disengage when fights get to close.");
 end
 
 // Siege

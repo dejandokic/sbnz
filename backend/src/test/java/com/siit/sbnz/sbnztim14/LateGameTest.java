@@ -13,7 +13,7 @@ public class LateGameTest {
 
         KieServices ks = KieServices.Factory.get();
         KieContainer kieContainer = ks.getKieClasspathContainer();
-        KieSession kieSession = kieContainer.newKieSession("lateGameSession");
+        KieSession kieSession = kieContainer.newKieSession("ksession-rules");
 
         kieSession.setGlobal("adviceStorage", new AdviceStorage());
 

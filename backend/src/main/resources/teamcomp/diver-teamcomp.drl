@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package teamcomp
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -24,7 +24,7 @@ rule "Diver, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a split push comp you should focus on pushing towers and making the enemy busy. With your mobility you can rotate easily, and using your disengage fights should be a problem, so risky plays aren’t an issue.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a split push comp you should focus on pushing towers and making the enemy busy. With your mobility you can rotate easily, and using your disengage fights should be a problem, so risky plays arenï¿½t an issue.");
 end
 
 
@@ -42,7 +42,7 @@ rule "Diver, mid-late game, (siege)"
 			composition == "siege"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a siege comp your position is to lock down enemies who come to close. It shouldn’t be an issue since with your hard CC the enemy backline will have trouble attacking your team freely.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a siege comp your position is to lock down enemies who come to close. It shouldnï¿½t be an issue since with your hard CC the enemy backline will have trouble attacking your team freely.");
 end
 
 
@@ -94,5 +94,5 @@ rule "Diver, mid-late game, (catch)"
 			composition == "catch"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a catch comp your focus should be to take out enemies when they least expect it to give your team a opportunity. With your hard engage they shouldn’t be able to escape your initiations, using your hard CC to lock them down for the kill. You are quite mobile so try to move around the map as much as possible.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a diver in a catch comp your focus should be to take out enemies when they least expect it to give your team a opportunity. With your hard engage they shouldnï¿½t be able to escape your initiations, using your hard CC to lock them down for the kill. You are quite mobile so try to move around the map as much as possible.");
 end

@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package teamcomp
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -73,7 +73,7 @@ rule "Warden, mid-late game, (protect)"
 			composition == "protect"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a protect comp your focus is to keep enemies away from your backline carry. You are very beefy and with your hard CC they shouldn’t ignore you. You have a lot of sustain, so you won’t be easy to take down.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a protect comp your focus is to keep enemies away from your backline carry. You are very beefy and with your hard CC they shouldnï¿½t ignore you. You have a lot of sustain, so you wonï¿½t be easy to take down.");
 end
 
 // Attack

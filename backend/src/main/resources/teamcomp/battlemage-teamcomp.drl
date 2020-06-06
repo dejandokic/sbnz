@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package teamcomp
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;

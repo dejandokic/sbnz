@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package teamcomp
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -24,7 +24,7 @@ rule "Skirmisher, mid-late game, (split push), splitPush"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to push towers and outsustain multiple enemies attacking you. You have a lot of hard CC so if someone gets close they shouldn’t be hard to deal with. As mentioned you do have sustain, so fighting and staying a bit longer in lane will not be an issue. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to push towers and outsustain multiple enemies attacking you. You have a lot of hard CC so if someone gets close they shouldnï¿½t be hard to deal with. As mentioned you do have sustain, so fighting and staying a bit longer in lane will not be an issue. ");
 end
 
 
@@ -40,7 +40,7 @@ rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to prolong fights so your team can push lanes. You have a lot of hard CC so if someone gets close they wouldn’t be to hard to deal with and using your sustain you can fight multiple opponents with ease.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to prolong fights so your team can push lanes. You have a lot of hard CC so if someone gets close they wouldnï¿½t be to hard to deal with and using your sustain you can fight multiple opponents with ease.");
 end
 
 

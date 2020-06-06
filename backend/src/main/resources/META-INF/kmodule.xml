@@ -2,7 +2,7 @@
 <kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <kbase name="rules" packages="com.siit.sbnz.sbnztim14.rules">
+    <kbase name="rules" packages="earlyGame, midGame, lateGame, teamcomp">
         <ksession name="ksession-rules"/>
     </kbase>
 
