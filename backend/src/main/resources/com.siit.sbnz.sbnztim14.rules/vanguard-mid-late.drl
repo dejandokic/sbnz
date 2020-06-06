@@ -12,14 +12,12 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Vanguard, mid-late game, (split push), ally hardCC + sustain + splitPush"
+rule "Vanguard, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
 			$allyLane : lane,
-			hardCC == true,
-			sustain == true,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -29,14 +27,12 @@ rule "Vanguard, mid-late game, (split push), ally hardCC + sustain + splitPush"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a vanguard in a split push comp your job is to push lanes whilist pressuring them to take you down. You have a lot of hard CC so engages on you can be stopped easily, and with your sustain you should be able to whistand in a lane for a long time.");
 end
 
-rule "Vanguard, mid-late game, (split push), ally hardCC + sustain"
+rule "Vanguard, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
 			$allyLane : lane,
-			hardCC == true,
-			sustain == true,
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -48,14 +44,12 @@ end
 
 // Siege
 
-rule "Vanguard, mid-late game, (siege), ally hardCC + sustain"
+rule "Vanguard, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
-			$allyLane : lane,
-			hardCC == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -67,14 +61,12 @@ end
 
 // Protect
 
-rule "Vanguard, mid-late game, (protect), ally hardCC + sustain"
+rule "Vanguard, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
-			$allyLane : lane,
-			hardCC == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -86,15 +78,12 @@ end
 
 // Attack
 
-rule "Vanguard, mid-late game, (attack), ally hardCC + hardEngage + sustain"
+rule "Vanguard, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -107,15 +96,12 @@ end
 // Catch
 
 
-rule "Vanguard, mid-late game, (catch), ally hardCC + hardEngage + sustain"
+rule "Vanguard, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "vanguard",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true,
-			sustain == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"

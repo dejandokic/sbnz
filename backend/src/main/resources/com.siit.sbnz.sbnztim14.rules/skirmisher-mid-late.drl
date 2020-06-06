@@ -12,14 +12,12 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC + splitPush"
+rule "Skirmisher, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -30,32 +28,12 @@ rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC + splitPush
 end
 
 
-rule "Skirmisher, mid-late game, (split push), ally sustain + splitPush"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to push towers and outsustain multiple enemies attacking you. As mentioned you do have sustain, so fighting and staying a bit longer in lane will not be an issue, but try to avoid enemies with a lot of CC.");
-end
-
-
 rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
+			$allyLane : lane,			
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -66,34 +44,15 @@ rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC"
 end
 
 
-rule "Skirmisher, mid-late game, (split push), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to prolong fights so your team can push lanes. You have a lot of sustain so you can fight multiple opponents and drag out fights as much as possible.");
-end
-
 
 // Siege
 
-rule "Skirmisher, mid-late game, (siege), ally sustain + hardCC"
+rule "Skirmisher, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -103,33 +62,14 @@ rule "Skirmisher, mid-late game, (siege), ally sustain + hardCC"
 end
 
 
-rule "Skirmisher, mid-late game, (siege), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a siege comp you should focus on preventing the enemy from reaching your backline. You have a lot of sustain to stay viable in fights for a long time, but since you are not as tanky as others be careful not to die to quickly.");
-end
-
-
 // Protect
 
-rule "Skirmisher, mid-late game, (protect), ally sustain + hardCC"
+rule "Skirmisher, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -138,33 +78,15 @@ rule "Skirmisher, mid-late game, (protect), ally sustain + hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a protect comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating and with your hard CC fights can be turned to your favor.");
 end
 
-rule "Skirmisher, mid-late game, (protect), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a protect comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating so do not be afraid to frontline for the team.");
-end
-
 
 // Attack
 
-rule "Skirmisher, mid-late game, (attack), ally sustain + hardCC"
+rule "Skirmisher, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -173,53 +95,18 @@ rule "Skirmisher, mid-late game, (attack), ally sustain + hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in an attack comp your position is to deal with the frontline while the others take down the carries. With your hard CC lock the tanks down, preventing them from moving from you. Do not worry since with your sustain you should be able to duel them easily.");
 end
 
-rule "Skirmisher, mid-late game, (attack), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in an attack comp your position is to deal with the frontline while the others take down the carries. With your sustain you should be able to duel them easily, but be careful to not let them slip away.");
-end
-
-
 // Catch
 
-rule "Skirmisher, mid-late game, (catch), ally sustain + hardCC"
+rule "Skirmisher, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
 		)
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a siege comp you should focus on preventing the enemy from reaching your backline. You have a lot of hard CC to stop them, and a lot of sustain to stay viable in fights for a long time.");
-end
-
-rule "Skirmisher, mid-late game, (catch), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "skirmisher",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a siege comp you should focus on preventing the enemy from reaching your backline. You have a lot of sustain to stay viable in fights for a long time, but since you are not as tanky as others be careful not to die to quickly.");
 end

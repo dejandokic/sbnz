@@ -12,14 +12,12 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Artillery, mid-late game, (split push), ally hardCC + waveclear"
+rule "Artillery, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "splitPush"
@@ -28,34 +26,14 @@ rule "Artillery, mid-late game, (split push), ally hardCC + waveclear"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a split push comp your focus is to put pressure on enemies when they are trying to go for your solo laners. With your hard CC you can keep yourself safe whilist using your waveclear for maximum pressure.");
 end
 
-rule "Artillery, mid-late game, (split push), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a split push comp your focus is to put pressure on enemies when they are trying to go for your solo laners. With your hard CC you can keep yourself safe whilist presenting yourself as a current threat on the map.");
-end
-
-
 // Siege
 
-rule "Artillery, mid-late game, (siege), ally hardCC + waveclear + poke"
+rule "Artillery, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			poke == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -65,34 +43,14 @@ rule "Artillery, mid-late game, (siege), ally hardCC + waveclear + poke"
 end
 
 
-rule "Artillery, mid-late game, (siege), ally hardCC + poke"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			poke == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a siege comp your one of the main parts of the team. You need to use your poke to get enemies to back away from the objectives, using hard CC in case enemies get close to keep a safe distance.");
-end
-
-
 // Protect
 
-rule "Artillery, mid-late game, (protect), ally hardCC + waveclear"
+rule "Artillery, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -101,33 +59,15 @@ rule "Artillery, mid-late game, (protect), ally hardCC + waveclear"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a protect comp your job is to get the enemies away from your team before they reach you. Since you are fairly ranged, you shouldn’t get close but in case they do get to you use your hard CC and devastate them. Waveclear should be fairly useful against enemies who shove lanes.");
 end
 
-rule "Artillery, mid-late game, (protect), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a protect comp your job is to get the enemies away from your team before they reach you. Since you are fairly ranged, you shouldn’t get close but in case they do get to you use your hard CC and devastate them. ");
-end
-
 
 // Attack
 
-rule "Artillery, mid-late game, (attack), ally hardCC + poke"
+rule "Artillery, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			poke == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -139,14 +79,12 @@ end
 
 // Catch
 
-rule "Artillery, mid-late game, (catch), ally hardCC + poke"
+rule "Artillery, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "artillery",
-			$allyLane : lane,
-			hardCC == true,
-			poke == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"

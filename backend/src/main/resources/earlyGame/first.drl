@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.rules
+package earlyGame
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -25,7 +25,7 @@ rule "Ally strong early, not countered"
 			name not memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("aggro")};
+		modify($ally){setPlayType("aggro");}
 end
 
 rule "Ally strong early, but countered"
@@ -42,7 +42,7 @@ rule "Ally strong early, but countered"
 			goodAgainst contains $allyName || name memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("def")}
+		modify($ally){setPlayType("def");}
 end
 
 rule "Ally weak early, enemy strong early"
@@ -57,7 +57,7 @@ rule "Ally weak early, enemy strong early"
 			goodEarly == true
 		)
 	then
-		modify($ally){setPlayType("def")}
+		modify($ally){setPlayType("def");}
 end
 
 rule "Ally weak early, countered"
@@ -74,7 +74,7 @@ rule "Ally weak early, countered"
 			goodAgainst contains $allyName || name memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("def")}
+		modify($ally){setPlayType("def");}
 end
 
 rule "Ally weak early, but not countered and enemy weak early"
@@ -93,7 +93,7 @@ rule "Ally weak early, but not countered and enemy weak early"
 			name not memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("aggro")}
+		modify($ally){setPlayType("aggro");}
 end
 
 // jungle

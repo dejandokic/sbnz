@@ -12,14 +12,12 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 
-rule "Juggernaut, mid-late game, (split push), ally sustain + hardCC + splitPush"
+rule "Juggernaut, mid-late game, (split push), splitPush"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
+			$allyLane : lane
 			splitPush == true
 		)
 		$composition : TeamComposition(
@@ -30,31 +28,12 @@ rule "Juggernaut, mid-late game, (split push), ally sustain + hardCC + splitPush
 end
 
 
-rule "Juggernaut, mid-late game, (split push), ally sustain + splitPush"
+rule "Juggernaut, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			splitPush == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "");
-end
-
-rule "Juggernaut, mid-late game, (split push), ally sustain + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
 			splitPush == false
 		)
 		$composition : TeamComposition(
@@ -65,36 +44,18 @@ rule "Juggernaut, mid-late game, (split push), ally sustain + hardCC"
 end
 
 
-rule "Juggernaut, mid-late game, (split push), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			splitPush == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "");
-end
 
 
 // SIEGE
 
 
 
-rule "Juggernaut, mid-late game, (siege), ally sustain + hardCC"
+rule "Juggernaut, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -103,34 +64,15 @@ rule "Juggernaut, mid-late game, (siege), ally sustain + hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a siege comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating and with your hard CC fights can be turned to your favor.");
 end
 
-rule "Juggernaut, mid-late game, (siege), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a siege comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating and with your decent damage you can turn fights easily.");
-end
-
-
 
 // PROTECT
 
-rule "Juggernaut, mid-late game, (protect), ally sustain + hardCC"
+rule "Juggernaut, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -139,34 +81,14 @@ rule "Juggernaut, mid-late game, (protect), ally sustain + hardCC"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a protect comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating and with your hard CC fights can be turned to your favor.");
 end
 
-rule "Juggernaut, mid-late game, (protect), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a protect comp your position is to defend your teammates in fights and protect objectives. You have a lot of sustain, so you can take a beating so do not be afraid to frontline for the team.");
-end
-
-
 // ATTACK
 
-rule "Juggernaut, mid-late game, (attack), ally sustain + hardCC + hardEngage"
+rule "Juggernaut, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -175,134 +97,21 @@ rule "Juggernaut, mid-late game, (attack), ally sustain + hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in an attack comp your focus is to deal as much damage as possible to the enemy team, devastating them in fights. Using your hard engage you can start fights and with hard CC you will be able to punish their misplays easily. ");
 end
 
-rule "Juggernaut, mid-late game, (attack), ally sustain + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in an attack comp your focus is to deal as much damage as possible to the enemy team, devastating them in fights. Using your hard CC you will be able to punish their misplays easily, but since you lack engage be careful to position yourself preemptively. ");
-end
-
-
-rule "Juggernaut, mid-late game, (attack), ally sustain + hardEngage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			hardEngage == true
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in an attack comp your focus is to deal as much damage as possible to the enemy team, devastating them in fights. Using your hard engage you can create fight opportunities for your team to take the lead.");
-end
-
-
-rule "Juggernaut, mid-late game, (attack), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in an attack comp your focus is to deal as much damage as possible to the enemy team, devastating them in fights. With your sustain you can outlast a lot of enemies in a fight so do not be afraid to attack.");
-end
-
-
 // CATCH
 
 
 
-rule "Juggernaut, mid-late game, (catch), ally sustain + hardCC + hardEngage"
+rule "Juggernaut, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane		
 		)
 		$composition : TeamComposition(
 			composition == "catch"
 		)
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a catch comp your focus should be to distract the enemy team whilst your teammates take them out unexpectedly. With your hard CC you can prolong fights, and using your hard engage you can start fights when the enemy is lacking in numbers.");
-end
-
-
-
-rule "Juggernaut, mid-late game, (catch), ally sustain + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a catch comp your focus should be to distract the enemy team whilst your teammates take them out unexpectedly. With your hard CC you can prolong fights, and using your sustain you will be able to survive for longer.");
-end
-
-
-rule "Juggernaut, mid-late game, (catch), ally sustain + hardEngage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			hardEngage == true
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a catch comp your focus should be to distract the enemy team whilst your teammates take them out unexpectedly. With your hard engage you can start fights when the enemy is lacking in numbers and outsustain anything they throw at you.");
-end
-
-
-
-rule "Juggernaut, mid-late game, (catch), ally sustain"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "juggernaut",
-			$allyLane : lane,
-			sustain == true,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a juggernaut in a catch comp your focus should be to distract the enemy team whilst your teammates take them out unexpectedly. With your hard engage you can start fights when the enemy is lacking in numbers and outsustain anything they throw at you.");
 end
 

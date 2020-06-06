@@ -10,6 +10,9 @@
         <ksession name="lateGameSession" />
     </kbase>
 
+    <kbase name="earlyGame" packages="earlyGame">
+        <ksession name="earlyGameSession" />
+    </kbase>
 
 
 </kmodule>

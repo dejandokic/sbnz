@@ -12,7 +12,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Marksman, mid-late game, (split push), ally hardCC + waveclear + disengage"
+rule "Marksman, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -29,85 +29,14 @@ rule "Marksman, mid-late game, (split push), ally hardCC + waveclear + disengage
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldn’t be an issue, using your waveclear to prevent sieges and disengage when fights get to close.");
 end
 
-rule "Marksman, mid-late game, (split push), ally waveclear + disengage"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			disengage == true
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. Use your waveclear to prevent sieges and for pushing towers, using disengage when fights get to close.");
-end
-
-rule "Marksman, mid-late game, (split push), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. Use your waveclear to prevent sieges and for pushing towers to put pressure on the enemies simultaneously as solo laners.");
-end
-
-rule "Marksman, mid-late game, (split push), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldn’t be an issue but try not to overextend. ");
-end
-
-rule "Marksman, mid-late game, (split push), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You are the primary source of damage, and should constantly try to pester the enemies.");
-end
-
 // Siege
 
-rule "Marksman, mid-late game, (siege), ally poke + waveclear"
+rule "Marksman, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "marksman",
-			$allyLane : lane,
-			poke == true,
-			waveclear == true,
-			hardCC == false
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -117,124 +46,16 @@ rule "Marksman, mid-late game, (siege), ally poke + waveclear"
 end
 
 
-rule "Marksman, mid-late game, (siege), ally poke + hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == true,
-			waveclear == false,
-			hardCC == true			
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. Using your poke you can do that with ease, using your hard CC to prevent engages and turn fights.");
-end
-
-
-rule "Marksman, mid-late game, (siege), ally hardCC + waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == false,
-			waveclear == true,
-			hardCC == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. Using your hard CC to prevent engages and turn fights and with your waveclear prevent pushes and siege towers.");
-end
-
-
-
-rule "Marksman, mid-late game, (siege), ally poke"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == true,
-			waveclear == false,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. Using your poke you can do that with ease, taking down opponents from afar preventing their attacks whilist pushing.");
-end
-
-
-rule "Marksman, mid-late game, (siege), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == false,
-			waveclear == true,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. Using your waveclear the enemies won’t be able to push towers and you should have a easy way of clearing waves for sieges.");
-end
-
-
-rule "Marksman, mid-late game, (siege), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == false,
-			waveclear == false,
-			hardCC == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. Using your hard CC you can prevent engages and ensure sieges are successful.");
-end
-
-rule "Marksman, mid-late game, (siege), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			poke == false,
-			waveclear == false,
-			hardCC == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a siege comp your main job is to prevent pushes and tear down opponents from far away. You are fairly squishy but as a main damage dealer you are still a big threat to them so stay back.");
-end
 
 
 // Protect
 
-rule "Marksman, mid-late game, (protect), ally hardCC + waveclear"
+rule "Marksman, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -243,66 +64,15 @@ rule "Marksman, mid-late game, (protect), ally hardCC + waveclear"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a protect comp you are the main source of damage. You have to stay alive as long as possible, and your hard cc should see to that. You do have waveclear as to protect yourself from pushes and keep your base alive.");
 end
 
-rule "Marksman, mid-late game, (protect), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a protect comp you are the main source of damage. You have to stay alive as long as possible, and your hard cc should see to that when the enemy gets to close.");
-end
-
-rule "Marksman, mid-late game, (protect), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a protect comp you are the main source of damage. You have waveclear to protect yourself from pushes and keep your base alive, but should still be in danger if caught by yourself.");
-end
-
-rule "Marksman, mid-late game, (protect), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a protect comp you are the main source of damage. Your team will try to keep you alive, so do not go anywhere alone and try to always position behind your team as to stay safe.");
-end
-
-
 
 // Attack
 
-rule "Marksman, mid-late game, (attack), ally hardCC + hardEngage"
+rule "Marksman, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -311,85 +81,19 @@ rule "Marksman, mid-late game, (attack), ally hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in an attack comp your position is be safe and supply damage to the team as long as possible. You have a hard engage that can give your team an opportunity to attack, and with your hard CC you can either keep yourself and others safe or secure kills.");
 end
 
-rule "Marksman, mid-late game, (attack), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in an attack comp your position is be safe and supply damage to the team as long as possible. With your hard CC you can either keep yourself and others safe or secure kills.");
-end
-
-rule "Marksman, mid-late game, (attack), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in an attack comp your position is be safe and supply damage to the team as long as possible. You are fairly squishy so try to stay back, and focus the closest enemy you can see.");
-end
-
 
 // Catch
 
-rule "Marksman, mid-late game, (catch), ally waveclear + disengage"
+rule "Marksman, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "marksman",
-			$allyLane : lane,
-			waveclear == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
 		)
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a catch comp your position is to prevent fights from happening whilist your teammates pick enemies one by one. With your waveclear you can sustain your base against multiple opponents and even counter push. Use your disengage when enemies get to close.");
-end
-
-rule "Marksman, mid-late game, (catch), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			waveclear == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a catch comp your position is to prevent fights from happening whilist your teammates pick enemies one by one. With your waveclear you can sustain your base against multiple opponents and even counter push. ");
-end
-
-rule "Marksman, mid-late game, (catch), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "marksman",
-			$allyLane : lane,
-			waveclear == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a catch comp your position is to prevent fights from happening whilist your teammates pick enemies one by one. You have a lot of damage so trade carefully while keeping a safe distance.");
 end
