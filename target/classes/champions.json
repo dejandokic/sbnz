@@ -38,7 +38,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Sylas","Nasus"
+		],
+		"badAgainst": [
+			"Darius","Renekton","Fiora"
+		]
     },
     {
         "name": "Ahri",
@@ -79,7 +85,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Irelia","Anivia"
+		],
+		"badAgainst": [
+			"Aurelion Sol","Zilean","Pyke"
+		]
     },
     {
         "name": "Akali",
@@ -120,7 +132,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lux","Neeko","Qiyana"
+		],
+		"badAgainst": [
+			"Anivia","Annie","Orianna"
+		]
     },
     {
         "name": "Alistar",
@@ -161,7 +179,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Braum","Yuumi","Karma"
+		],
+		"badAgainst": [
+			"Brand","Janna","Zyra"
+		]
     },
     {
         "name": "Amumu",
@@ -202,7 +226,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Rammus","Elise","Poppy"
+		],
+		"badAgainst": [
+			"Hecarim","Dr. Mundo","Kha'Zix"
+		]
     },
     {
         "name": "Anivia",
@@ -243,7 +273,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Rumble","Akali","Lissandra"
+		],
+		"badAgainst": [
+			"Qiyana","Pyke","Ahri"
+		]
     },
     {
         "name": "Annie",
@@ -284,7 +320,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Akali","Ryze"
+		],
+		"badAgainst": [
+			"Zilean","Pantheon","Morgana"
+		]
     },
     {
         "name": "Aphelios",
@@ -325,7 +367,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Kai'Sa","Sivir","Xayah"
+		],
+		"badAgainst": [
+			"Kog'Maw","Miss Fortune","Varus"
+		]
     },
     {
         "name": "Ashe",
@@ -366,7 +414,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Kai'Sa","Lucian","Vayne"
+		],
+		"badAgainst": [
+			"Draven","Syndra","Miss Fortune"
+		]
     },
     {
         "name": "Aurelion Sol",
@@ -407,7 +461,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Zoe","Azir","Sylas"
+		],
+		"badAgainst": [
+			"Veigar","Vladimir","Viktor"
+		]
     },
     {
         "name": "Azir",
@@ -448,7 +508,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Lux","Fizz"
+		],
+		"badAgainst": [
+			"Heimerdinger","Vel'Koz","Aurelion Sol"
+		]
     },
     {
         "name": "Bard",
@@ -489,7 +555,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lux","Shaco","Thresh"
+		],
+		"badAgainst": [
+			"Galio","Brand","Zilean"
+		]
     },
     {
         "name": "Blitzcrank",
@@ -530,7 +602,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lux","Seth","Xerath"
+		],
+		"badAgainst": [
+			"Maokai","Zilean","Taric"
+		]
     },
     {
         "name": "Brand",
@@ -571,7 +649,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Seth","Morgana","Lux"
+		],
+		"badAgainst": [
+			"Pyke","Shaco","Karma"
+		]
     },
     {
         "name": "Braum",
@@ -612,7 +696,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Seth","Lux","Swain"
+		],
+		"badAgainst": [
+			"Sona","Alistar","Taric"
+		]
     },
     {
         "name": "Caitlyn",
@@ -653,7 +743,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Xayah","Lucian","Sivir"
+		],
+		"badAgainst": [
+			"Yasuo","Twitch","Kalista"
+		]
     },
     {
         "name": "Camille",
@@ -694,7 +790,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Kayle","Kled"
+		],
+		"badAgainst": [
+			"Pantheon","Teemo","Malphite"
+		]
     },
     {
         "name": "Cassiopeia",
@@ -735,7 +837,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Corki","Irelia"
+		],
+		"badAgainst": [
+			"Cho'Gath","Annie","Pyke"
+		]
     },
     {
         "name": "Cho'Gath",
@@ -776,7 +884,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Vayne","Rumble","Kayn"
+		],
+		"badAgainst": [
+			"Cassiopeia","Fiora","Nasus"
+		]
     },
     {
         "name": "Corki",
@@ -817,7 +931,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Ziggs","Pantheon","Neeko"
+		],
+		"badAgainst": [
+			"Cassiopeia","Nocturne","Jayce"
+		]
     },
     {
         "name": "Darius",
@@ -858,7 +978,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Singed","Warwick","Garen"
+		],
+		"badAgainst": [
+			"Nocturne","Kennen","Quinn"
+		]
     },
     {
         "name": "Diana",
@@ -899,7 +1025,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Swain","LeBlanc","Irelia"
+		],
+		"badAgainst": [
+			"Vladimir","Jayce","Heimerdinger"
+		]
     },
     {
         "name": "Dr. Mundo",
@@ -940,7 +1072,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Elise","Sejuani","Hecarim"
+		],
+		"badAgainst": [
+			"Master Yi","Wukong","Shaco"
+		]
     },
     {
         "name": "Draven",
@@ -981,7 +1119,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Tristana","Sivir"
+		],
+		"badAgainst": [
+			"Kog'Maw","Jhin","Yasuo"
+		]
     },
     {
         "name": "Ekko",
@@ -1022,7 +1166,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Pantheon","Dr. Mundo"
+		],
+		"badAgainst": [
+			"Wukong","Rammus","Kha'Zix"
+		]
     },
     {
         "name": "Elise",
@@ -1063,7 +1213,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Udyr","Seth","Sylas"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Amumu","Rammus"
+		]
     },
     {
         "name": "Evelynn",
@@ -1104,7 +1260,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Twitch","Pantheon","Gragas"
+		],
+		"badAgainst": [
+			"Wukong","Nunu","Trundle"
+		]
     },
     {
         "name": "Ezreal",
@@ -1145,7 +1307,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Ziggs","Lucian","Tristana"
+		],
+		"badAgainst": [
+			"Yasuo","Veigar","Syndra"
+		]
     },
     {
         "name": "Fiddlesticks",
@@ -1186,7 +1354,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Twitch","Jax","Nidalee"
+		],
+		"badAgainst": [
+			"Volibear","Dr. Mundo","Nunu"
+		]
     },
     {
         "name": "Fiora",
@@ -1227,7 +1401,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Cho'Gath","Yorick","Irelia"
+		],
+		"badAgainst": [
+			"Gragas","Rengar","Wukong"
+		]
     },
     {
         "name": "Fizz",
@@ -1268,7 +1448,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Qiyana","Xerath","Veigar"
+		],
+		"badAgainst": [
+			"Kassadin","Renekton","Anivia"
+		]
     },
     {
         "name": "Galio",
@@ -1309,7 +1495,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Akali","Ryze","Azir"
+		],
+		"badAgainst": [
+			"Taliyah","Morgana","Lux"
+		]
     },
     {
         "name": "Gangplank",
@@ -1350,7 +1542,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Rumble","Cassiopeia","Illaoi"
+		],
+		"badAgainst": [
+			"Quinn","Volibear","Gragas"
+		]
     },
     {
         "name": "Garen",
@@ -1391,7 +1589,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Kayn","Jayce","Ryze"
+		],
+		"badAgainst": [
+			"Quinn","Cassiopeia","Cho'Gath"
+		]
     },
     {
         "name": "Gnar",
@@ -1432,7 +1636,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Mordekaiser","Ryze","Riven"
+		],
+		"badAgainst": [
+			"Rengar","Volibear","Kled"
+		]
     },
     {
         "name": "Gragas",
@@ -1473,7 +1683,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Udyr","Karthus","Dr. Mundo"
+		],
+		"badAgainst": [
+			"Ivern","Sylas","Twitch"
+		]
     },
     {
         "name": "Graves",
@@ -1514,7 +1730,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Pantheon","Nocturne"
+		],
+		"badAgainst": [
+			"Evelynn","Seth","Rengar"
+		]
     },
     {
         "name": "Hecarim",
@@ -1555,7 +1777,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Seth","Ivern"
+		],
+		"badAgainst": [
+			"Nocturne","Volibear","Dr. Mundo"
+		]
     },
     {
         "name": "Heimerdinger",
@@ -1596,7 +1824,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Azir","Sylas","Kassadin"
+		],
+		"badAgainst": [
+			"Xerath","Annie","Yasuo"
+		]
     },
     {
         "name": "Illaoi",
@@ -1637,7 +1871,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Dr. Mundo","Sylas","Akali"
+		],
+		"badAgainst": [
+			"Soraka","Kayle","Kennen"
+		]
     },
     {
         "name": "Irelia",
@@ -1678,7 +1918,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Trundle","Gangplank","Heimerdinger"
+		],
+		"badAgainst": [
+			"Ekko","Jax","Malphite"
+		]
     },
     {
         "name": "Ivern",
@@ -1719,7 +1965,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Amumu","Udyr"
+		],
+		"badAgainst": [
+			"Twitch","Shaco","Nocturne"
+		]
     },
     {
         "name": "Janna",
@@ -1760,7 +2012,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Nautilus","Seteh","Taric"
+		],
+		"badAgainst": [
+			"Maokai","Zyra","Swain"
+		]
     },
     {
         "name": "Jarvan IV",
@@ -1801,7 +2059,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Sylas","Sejuani"
+		],
+		"badAgainst": [
+			"Kayn","Master Yi","Wukong"
+		]
     },
     {
         "name": "Jax",
@@ -1842,7 +2106,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Irelia","Zac","Gragas"
+		],
+		"badAgainst": [
+			"Quinn","Kayn","Kennen"
+		]
     },
     {
         "name": "Jayce",
@@ -1883,7 +2153,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Akali","Riven","Pantheon"
+		],
+		"badAgainst": [
+			"Yasuo","Sion","Urgot"
+		]
     },
     {
         "name": "Jhin",
@@ -1924,7 +2200,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Kog'Maw","Varus","Xayah"
+		],
+		"badAgainst": [
+			"Yasuo","Twitch","Kalista"
+		]
     },
     {
         "name": "Jinx",
@@ -1965,7 +2247,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Kai'Sa","Tristana","Xayah"
+		],
+		"badAgainst": [
+			"Yasuo","Draven","Syndra"
+		]
     },
     {
         "name": "Kai'Sa",
@@ -2006,7 +2294,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Ezreal","Jhin"
+		],
+		"badAgainst": [
+			"Yasuo","Jinx","Draven"
+		]
     },
     {
         "name": "Kalista",
@@ -2047,7 +2341,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Syndra","Kai'Sa"
+		],
+		"badAgainst": [
+			"Vayne","Yasuo","Ashe"
+		]
     },
     {
         "name": "Karma",
@@ -2088,7 +2388,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Swain","Vel'Koz","Senna"
+		],
+		"badAgainst": [
+			"Alistar","Taric","Nami"
+		]
     },
     {
         "name": "Karthus",
@@ -2129,7 +2435,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Wukong","Sylas","Elise"
+		],
+		"badAgainst": [
+			"Nunu","Shyvana","Vi"
+		]
     },
     {
         "name": "Kassadin",
@@ -2170,7 +2482,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Xerath","Sylas","Akali"
+		],
+		"badAgainst": [
+			"Swain","Gragas","Garen"
+		]
     },
     {
         "name": "Katarina",
@@ -2211,7 +2529,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Renekton","Vel'Koz","Xerath"
+		],
+		"badAgainst": [
+			"Garen","Zilean","Anivia"
+		]
     },
     {
         "name": "Kayle",
@@ -2252,7 +2576,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Rumble","Yorick","Illaoi"
+		],
+		"badAgainst": [
+			"Pantheon","Camille","Quinn"
+		]
     },
     {
         "name": "Kayn",
@@ -2293,7 +2623,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Sejuani","Gragas","Pantheon"
+		],
+		"badAgainst": [
+			"Wukong","Rengar","Fiddlesticks"
+		]
     },
     {
         "name": "Kennen",
@@ -2334,7 +2670,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Akali","Jax","Ornn"
+		],
+		"badAgainst": [
+			"Garen","Poppy","Maokai"
+		]
     },
     {
         "name": "Kha'Zix",
@@ -2375,7 +2717,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Twitch","Jax","Ivern"
+		],
+		"badAgainst": [
+			"Nunu","Fiddlesticks","Volibear"
+		]
     },
     {
         "name": "Kindred",
@@ -2416,7 +2764,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Udyr","Hecarim"
+		],
+		"badAgainst": [
+			"Seth","Master Yi","Elise"
+		]
     },
     {
         "name": "Kled",
@@ -2457,7 +2811,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gnar","Akali","Rumble"
+		],
+		"badAgainst": [
+			"Vayne","Pantheon","Singed"
+		]
     },
     {
         "name": "Kog'Maw",
@@ -2498,7 +2858,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Aphelios","Veigar","Draven"
+		],
+		"badAgainst": [
+			"Cassiopeia","Jhin","Kalista"
+		]
     },
     {
         "name": "LeBlanc",
@@ -2539,7 +2905,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Pyke","Ziggs","Irelia"
+		],
+		"badAgainst": [
+			"Morgana","Diana","Kassadin"
+		]
     },
     {
         "name": "Lee Sin",
@@ -2580,7 +2952,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Sylas","Nidalee"
+		],
+		"badAgainst": [
+			"Seth","Rammus","Udyr"
+		]
     },
     {
         "name": "Leona",
@@ -2621,7 +2999,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Vel'Koz","Yuumi","Nautilus"
+		],
+		"badAgainst": [
+			"Shaco","Maokai","Brand"
+		]
     },
     {
         "name": "Lissandra",
@@ -2662,7 +3046,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Mordekaiser","Pyke","Akali"
+		],
+		"badAgainst": [
+			"Nocturne","Ziggs","Anivia"
+		]
     },
     {
         "name": "Lucian",
@@ -2703,7 +3093,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Xayah","Aphelios","Kog'Maw"
+		],
+		"badAgainst": [
+			"Draven","Miss Fortune","Ashe"
+		]
     },
     {
         "name": "Lulu",
@@ -2744,7 +3140,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lux","Xerath","Seth"
+		],
+		"badAgainst": [
+			"Sona","Senna","Maokai"
+		]
     },
     {
         "name": "Lux",
@@ -2785,7 +3187,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Senna","Alistar","Brand"
+		],
+		"badAgainst": [
+			"Galio","Ezreal","Shaco"
+		]
     },
     {
         "name": "Malphite",
@@ -2826,7 +3234,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Vayne","Pantheon","Akali"
+		],
+		"badAgainst": [
+			"Zac","Singed","Kassadin"
+		]
     },
     {
         "name": "Malzahar",
@@ -2867,7 +3281,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Heimerdinger","Aurelion Sol","Akali"
+		],
+		"badAgainst": [
+			"Akali","Nocturne","Ziggs"
+		]
     },
     {
         "name": "Maokai",
@@ -2908,7 +3328,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Kennen","Trundle","Akali"
+		],
+		"badAgainst": [
+			"Sion","Kayn","Illaoi"
+		]
     },
     {
         "name": "Master Yi",
@@ -2949,7 +3375,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Volibear","Gragas","Seth"
+		],
+		"badAgainst": [
+			"Skarner","Wukong","Pantheon"
+		]
     },
     {
         "name": "Miss Fortune",
@@ -2990,7 +3422,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Kai'Sa","Aphelios"
+		],
+		"badAgainst": [
+			"Yasuo","Syndra","Jinx"
+		]
     },
     {
         "name": "Mordekaiser",
@@ -3031,7 +3469,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Kennen","Tahm Kench","Hecarim"
+		],
+		"badAgainst": [
+			"Cassiopeia","Gragas","Vayne"
+		]
     },
     {
         "name": "Morgana",
@@ -3072,7 +3516,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Rakan","Lux","Leona"
+		],
+		"badAgainst": [
+			"Blitzcrank","Sona","Senna"
+		]
     },
     {
         "name": "Nami",
@@ -3113,7 +3563,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lux","Karma","Xerath"
+		],
+		"badAgainst": [
+			"Blitzcrank","Maokai","Janna"
+		]
     },
     {
         "name": "Nasus",
@@ -3154,7 +3610,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Shyvana","Pantheon","Gragas"
+		],
+		"badAgainst": [
+			"Lucian","Warwick","Trundle"
+		]
     },
     {
         "name": "Nautilus",
@@ -3195,7 +3657,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Xerath","Lux","Yuumi"
+		],
+		"badAgainst": [
+			"Taric","Sona","Janna"
+		]
     },
     {
         "name": "Neeko",
@@ -3236,7 +3704,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Ekko","Qiyana","Azir"
+		],
+		"badAgainst": [
+			"Xerath","Veigar","Akali"
+		]
     },
     {
         "name": "Nidalee",
@@ -3277,7 +3751,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Seth","Sylas"
+		],
+		"badAgainst": [
+			"Twitch","Master Yi","Jax"
+		]
     },
     {
         "name": "Nocturne",
@@ -3318,7 +3798,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Ivern","Vi","Pantheon"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Volibear","Udyr"
+		]
     },
     {
         "name": "Nunu",
@@ -3359,7 +3845,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Karthus","Sejuani","Wukong"
+		],
+		"badAgainst": [
+			"Twisted","Olaf","Amumu"
+		]
     },
     {
         "name": "Olaf",
@@ -3400,7 +3892,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Dr. Mundo","Jax"
+		],
+		"badAgainst": [
+			"Xin Zao","Shaco","Kha'Zix"
+		]
     },
     {
         "name": "Orianna",
@@ -3441,7 +3939,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Akali","Ryze","Sylas"
+		],
+		"badAgainst": [
+			"Heimerdinger","Cho'Gath","Mordekaiser"
+		]
     },
     {
         "name": "Ornn",
@@ -3482,7 +3986,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Yorick","Kassadin","Volibear"
+		],
+		"badAgainst": [
+			"Vayne","Yasuo","Soraka"
+		]
     },
     {
         "name": "Pantheon",
@@ -3523,7 +4033,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Azir","Xerath","LeBlanc"
+		],
+		"badAgainst": [
+			"Rumble","Corki","Cassiopeia"
+		]
     },
     {
         "name": "Poppy",
@@ -3564,7 +4080,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Akali","Kennen","Gangplank"
+		],
+		"badAgainst": [
+			"Yasuo","Rengar","Volibear"
+		]
     },
     {
         "name": "Pyke",
@@ -3605,7 +4127,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Vel'Koz","Brand","Galio"
+		],
+		"badAgainst": [
+			"Shaco","Zyra","Sona"
+		]
     },
     {
         "name": "Qiyana",
@@ -3646,7 +4174,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Irelia","Ryze","Twisted Fate"
+		],
+		"badAgainst": [
+			"Neeko","Fizz","Pantheon"
+		]
     },
     {
         "name": "Quinn",
@@ -3687,7 +4221,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Gangplank","Garen","Vladimir"
+		],
+		"badAgainst": [
+			"Mordekaiser","Tryndamere","Sion"
+		]
     },
     {
         "name": "Rakan",
@@ -3728,7 +4268,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Swain","Karma","Braum"
+		],
+		"badAgainst": [
+			"Maokai","Sona","Soraka"
+		]
     },
     {
         "name": "Rammus",
@@ -3769,7 +4315,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Twitch","Sylas","Ivern"
+		],
+		"badAgainst": [
+			"Kayn","Amumu","Master Yi"
+		]
     },
     {
         "name": "Rek'Sai",
@@ -3810,7 +4362,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Sejuani","Sylas"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Rammus","Ivern"
+		]
     },
     {
         "name": "Renekton",
@@ -3851,7 +4409,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Olaf","Tahm Kench","Nocturne"
+		],
+		"badAgainst": [
+			"Quinn","Kayn","Cassiopeia"
+		]
     },
     {
         "name": "Rengar",
@@ -3892,7 +4456,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Twitch","Sylas","Nidalee"
+		],
+		"badAgainst": [
+			"Poppy","Dr. Mundo","Vi"
+		]
     },
     {
         "name": "Riven",
@@ -3933,7 +4503,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Akali","Yasuo","Ryze"
+		],
+		"badAgainst": [
+			"Vayne","Teemo","Jayce"
+		]
     },
     {
         "name": "Rumble",
@@ -3974,7 +4550,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Zilean","Veigar"
+		],
+		"badAgainst": [
+			"Annie","Vel'Koz","Anivia"
+		]
     },
     {
         "name": "Ryze",
@@ -4015,7 +4597,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Neeko","Ziggs","Pantheon"
+		],
+		"badAgainst": [
+			"Pyke","Aurelion Sol","Talon"
+		]
     },
     {
         "name": "Sejuani",
@@ -4056,7 +4644,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Twitch","Rammus"
+		],
+		"badAgainst": [
+			"Kayn","Rek'Sai","Dr. Mundo"
+		]
     },
     {
         "name": "Senna",
@@ -4097,7 +4691,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Galio","Braum","Lulu"
+		],
+		"badAgainst": [
+			"Maokai","Zilean","Sona"
+		]
     },
     {
         "name": "Sett",
@@ -4138,7 +4738,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Rengar","Cho'Gath","Akali"
+		],
+		"badAgainst": [
+			"Karma","Soraka","Zac"
+		]
     },
     {
         "name": "Shaco",
@@ -4179,7 +4785,13 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Ivern","Sejuani","Xin Zao"
+		],
+		"badAgainst": [
+			"Nunu","Master Yi","Sylas"
+		]
     },
     {
         "name": "Shen",
@@ -4220,7 +4832,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Vayne","Pantheon","Trundle"
+		],
+		"badAgainst": [
+			"Olaf","Rengar","Kayn"
+		]
     },
     {
         "name": "Shyvana",
@@ -4261,7 +4879,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Gragas","Nocturne"
+		],
+		"badAgainst": [
+			"Wukong","Master Yi","Olaf"
+		]
     },
     {
         "name": "Singed",
@@ -4302,7 +4926,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Yorick","Yasuo","Kled"
+		],
+		"badAgainst": [
+			"Jayce","Darius","Ryze"
+		]
     },
     {
         "name": "Sion",
@@ -4343,7 +4973,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Nocturne","Trundle","Olaf"
+		],
+		"badAgainst": [
+			"Kayn","Cassiopeia","Volibear"
+		]
     },
     {
         "name": "Sivir",
@@ -4384,7 +5020,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Xayah","Kog'Maw","Syndra"
+		],
+		"badAgainst": [
+			"Yasuo","Twitch","Draven"
+		]
     },
     {
         "name": "Skarner",
@@ -4425,7 +5067,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Evelynn","Ekko","Lee Sin"
+		],
+		"badAgainst": [
+			"Fiddlesticks","Shyvana","Hecarim"
+		]
     },
     {
         "name": "Sona",
@@ -4466,7 +5114,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Galio","Xerath","Maokai"
+		],
+		"badAgainst": [
+			"Blitzcrank","Zilean","Janna"
+		]
     },
     {
         "name": "Soraka",
@@ -4507,7 +5161,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Swain","Braum","Galio"
+		],
+		"badAgainst": [
+			"Alistar","Blitzcrank","Xerath"
+		]
     },
     {
         "name": "Swain",
@@ -4548,7 +5208,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Ezreal","Jhin","Vayne"
+		],
+		"badAgainst": [
+			"Kai'Sa","Miss Fortune","Fiddlesticks"
+		]
     },
     {
         "name": "Sylas",
@@ -4589,7 +5255,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Jayce","Malphite","Cho'Gath"
+		],
+		"badAgainst": [
+			"Morgana","Heimerdinger","Aurelion Sol"
+		]
     },
     {
         "name": "Syndra",
@@ -4630,10 +5302,16 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Morgana","Mordekaiser","Ryze"
+		],
+		"badAgainst": [
+			"Swain","Ezreal","Zilean"
+		]
     },
     {
-        "name": "Tahm",
+        "name": "Tahm Kench",
         "class": {
             "juggernaut": false,
             "diver": false,
@@ -4671,7 +5349,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Alistar","Pyke","Miss Fortune"
+		],
+		"badAgainst": [
+			"Janna","Zyra","Varus"
+		]
     },
     {
         "name": "Taliyah",
@@ -4712,7 +5396,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Fiddlesticks","Wukong","Trundle"
+		],
+		"badAgainst": [
+			"Elise","Zac","Xin Zao"
+		]
     },
     {
         "name": "Talon",
@@ -4753,7 +5443,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Renekton","Ryze","Xerath"
+		],
+		"badAgainst": [
+			"Kayle","Nocturne","Qiyana"
+		]
     },
     {
         "name": "Taric",
@@ -4794,7 +5490,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Braum","Sett","Yuumi"
+		],
+		"badAgainst": [
+			"Vel'Koz","Janna","Swain"
+		]
     },
     {
         "name": "Teemo",
@@ -4835,7 +5537,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Karma","Kennen","Vayne"
+		],
+		"badAgainst": [
+			"Heimerdinger","Olaf","Quinn"
+		]
     },
     {
         "name": "Thresh",
@@ -4876,7 +5584,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Tahm Kench","Lucian","Yuumi"
+		],
+		"badAgainst": [
+			"Zilean","Xerath","Soraka"
+		]
     },
     {
         "name": "Tristana",
@@ -4917,7 +5631,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Ezreal","Sivir"
+		],
+		"badAgainst": [
+			"Yasuo","Draven","Vayne"
+		]
     },
     {
         "name": "Trundle",
@@ -4958,7 +5678,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Rammus","Karthus"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Nunu","Wukong"
+		]
     },
     {
         "name": "Tryndamere",
@@ -4999,7 +5725,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Illaoi","Pantheon"
+		],
+		"badAgainst": [
+			"Rengar","Vayne","Yasuo"
+		]
     },
     {
         "name": "Twisted Fate",
@@ -5040,7 +5772,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Corki","LeBlanc","Akali"
+		],
+		"badAgainst": [
+			"Ziggs","Nocturne","Heimerdinger"
+		]
     },
     {
         "name": "Twitch",
@@ -5081,7 +5819,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Sivir","Jhin"
+		],
+		"badAgainst": [
+			"Yasuo","Kalista","Kog'Maw"
+		]
     },
     {
         "name": "Udyr",
@@ -5122,7 +5866,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Nidalee","Sett"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Kindred","Xin Zao"
+		]
     },
     {
         "name": "Urgot",
@@ -5163,7 +5913,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Akali","Trundle","Pantheon"
+		],
+		"badAgainst": [
+			"Vayne","Shyvana","Sion"
+		]
     },
     {
         "name": "Varus",
@@ -5204,7 +5960,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Xayah","Lucian","Aphelios"
+		],
+		"badAgainst": [
+			"Xin Zao","Twitch","Kog'Maw"
+		]
     },
     {
         "name": "Vayne",
@@ -5245,7 +6007,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Kalista","Xayah","Tristana"
+		],
+		"badAgainst": [
+			"Ashe","Twitch","Miss Fortune"
+		]
     },
     {
         "name": "Veigar",
@@ -5286,7 +6054,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Aurelion Sol","Akali","Viktor"
+		],
+		"badAgainst": [
+			"Nocturne","Ziggs","Qiyana"
+		]
     },
     {
         "name": "Vel'Koz",
@@ -5327,7 +6101,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Azir","Lux"
+		],
+		"badAgainst": [
+			"Heimerdinger","Katarina","Zed"
+		]
     },
     {
         "name": "Vi",
@@ -5368,7 +6148,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Karthus","Jarvan IV"
+		],
+		"badAgainst": [
+			"Olaf","Ivern","Kindred"
+		]
     },
     {
         "name": "Viktor",
@@ -5409,7 +6195,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Neeko","Aurelion Sol","Pantheon"
+		],
+		"badAgainst": [
+			"Zilean","Mordekaiser","Pyke"
+		]
     },
     {
         "name": "Vladimir",
@@ -5450,7 +6242,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Malphite","Jayce","Lucian"
+		],
+		"badAgainst": [
+			"Swain","Nocturne","Tristana"
+		]
     },
     {
         "name": "Volibear",
@@ -5491,7 +6289,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Nocturne","Sylas","Rammus"
+		],
+		"badAgainst": [
+			"Jax","Olaf","Nunu"
+		]
     },
     {
         "name": "Warwick",
@@ -5532,7 +6336,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Ivern","Dr. Mundo"
+		],
+		"badAgainst": [
+			"Sett","Rengar","Kayn"
+		]
     },
     {
         "name": "Wukong",
@@ -5573,7 +6383,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Sylas","Dr. Mundo","Elise"
+		],
+		"badAgainst": [
+			"Ivern","Karthus","Nunu"
+		]
     },
     {
         "name": "Xayah",
@@ -5614,7 +6430,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Kai'Sa","Kalista","Tristana"
+		],
+		"badAgainst": [
+			"Varus","Vayne","Sivir"
+		]
     },
     {
         "name": "Xerath",
@@ -5655,7 +6477,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Neeko","Heimerdinger","Veigar"
+		],
+		"badAgainst": [
+			"Pantheon","Pyke","Fizz"
+		]
     },
     {
         "name": "Xin Zhao",
@@ -5696,7 +6524,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Gragas","Udyr","Sett"
+		],
+		"badAgainst": [
+			"Shaco","Twitch","Kayn"
+		]
     },
     {
         "name": "Yasuo",
@@ -5737,7 +6571,13 @@
             "early": false,
             "mid": true,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Kayle","Gangplank"
+		],
+		"badAgainst": [
+			"Darius","Riven","Renekton"
+		]
     },
     {
         "name": "Yorick",
@@ -5778,7 +6618,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Illaoi","Teemo","Gangplank"
+		],
+		"badAgainst": [
+			"Singed","Volibear","Kayle"
+		]
     },
     {
         "name": "Yuumi",
@@ -5819,7 +6665,13 @@
             "early": false,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Swain","Fiddlesticks","Xerath"
+		],
+		"badAgainst": [
+			"Galio","Maokai","Alistar"
+		]
     },
     {
         "name": "Zac",
@@ -5860,7 +6712,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Pantheon","Gragas","Sejuani"
+		],
+		"badAgainst": [
+			"Dr. Mundo","Kayn","Nunu"
+		]
     },
     {
         "name": "Zed",
@@ -5901,7 +6759,13 @@
             "early": false,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lucian","Ahri","Lux"
+		],
+		"badAgainst": [
+			"Renekton","Malphite","Camille"
+		]
     },
     {
         "name": "Ziggs",
@@ -5942,7 +6806,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Lissandra","Malzahar","Azir"
+		],
+		"badAgainst": [
+			"Galio","Corki","LeBlanc"
+		]
     },
     {
         "name": "Zilean",
@@ -5983,7 +6853,13 @@
             "early": true,
             "mid": true,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Galio","Lux","Rakan"
+		],
+		"badAgainst": [
+			"Xerath","Maokai","Soraka"
+		]
     },
     {
         "name": "Zoe",
@@ -6024,7 +6900,13 @@
             "early": true,
             "mid": false,
             "late": true
-        }
+        },
+		"goodAgainst": [
+			"Akali","Karma","Qiyana"
+		],
+		"badAgainst": [
+			"Aurelion Sol","Pyke","Malphite"
+		]
     },
     {
         "name": "Zyra",
@@ -6065,6 +6947,12 @@
             "early": true,
             "mid": false,
             "late": false
-        }
+        },
+		"goodAgainst": [
+			"Maokai","Lux","Vel'Koz"
+		],
+		"badAgainst": [
+			"Galio","Yuumi","Fiddlesticks"
+		]
     }
 ]

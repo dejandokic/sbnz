@@ -100,7 +100,7 @@ rule "Battlemage, mid-late game, (catch)"
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "battlemage",
-			$allyLane : lane,
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"

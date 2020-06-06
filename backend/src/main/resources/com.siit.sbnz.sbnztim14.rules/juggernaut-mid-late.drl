@@ -17,7 +17,7 @@ rule "Juggernaut, mid-late game, (split push), splitPush"
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "juggernaut",
-			$allyLane : lane
+			$allyLane : lane,
 			splitPush == true
 		)
 		$composition : TeamComposition(
