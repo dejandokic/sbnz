@@ -33,5 +33,11 @@ public class Champion {
 
     private List<String> goodAgainst;
     private List<String> badAgainst;
+    private List<String> allPossibleLanes;
+
+    @Override
+    public String toString() {
+        return this.getName() + " " + this.getLane() + " " + this.getRole();
+    }
 
 }
