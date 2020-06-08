@@ -27,7 +27,7 @@ rule "Ally strong early, not countered"
 			name not memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("aggro");}
+		modify($ally){setPlayType("aggro")}
 end
 
 rule "Ally strong early, but countered"
@@ -45,7 +45,7 @@ rule "Ally strong early, but countered"
 			goodAgainst contains $allyName || name memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("def");}
+		modify($ally){setPlayType("def")}
 end
 
 rule "Ally weak early, enemy strong early"
@@ -61,7 +61,7 @@ rule "Ally weak early, enemy strong early"
 			goodEarly == true
 		)
 	then
-		modify($ally){setPlayType("def");}
+		modify($ally){setPlayType("def")}
 end
 
 rule "Ally weak early, countered"
@@ -79,7 +79,7 @@ rule "Ally weak early, countered"
 			goodAgainst contains $allyName || name memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("def");}
+		modify($ally){setPlayType("def")}
 end
 
 rule "Ally weak early, but not countered and enemy weak early"
@@ -99,52 +99,47 @@ rule "Ally weak early, but not countered and enemy weak early"
 			name not memberOf $allyBadAgainst
 		)
 	then
-		modify($ally){setPlayType("aggro");}
+		modify($ally){setPlayType("aggro")}
 end
 
 // jungle
 
-rule "Jungle, 1v1 lane, laner aggro"
-	agenda-group "play-type"
+rule "Jungle, 2v1 lane aggro, 2v2 laner aggro"
+	agenda-group "jungle-play-type"
 	when
 		$ally : AllyChampion(
 			$allyLane: lane,
-			lane == "top" || lane == "mid",
-			playType == "aggro"
+			lane == "top" || lane == "mid" || lane == "adc",
+			$playType: playType
+		)
+		$jungler : AllyChampion(
+		    lane == "jungle",
+		    $early: goodEarly
+		)
+		$enemy : EnemyChampion(
+		    lane == "jungle",
+		    ($playType == "aggro" && ($early == true || ($early == false && goodEarly == false))) || ($playType == "def" && $early == true && goodEarly == false)
 		)
 	then
 		insert(new JungleEarlyPlayType($allyLane, "aggro"));
 
 end
 
-rule "Jungle, 1v1 lane, laner def, jungle strong early"
-	agenda-group "play-type"
+rule "Jungle, 2v1 lane aggro, 2v2 lane def"
+	agenda-group "jungle-play-type"
 	when
 		$ally : AllyChampion(
 			$allyLane: lane,
-			lane == "top" || lane == "mid",
-			playType == "def"
+			lane == "top" || lane == "mid" || lane == "adc",
+			$playType: playType
 		)
 		$jungler : AllyChampion(
 			lane == "jungle",
-			goodEarly == true
+		    $early: goodEarly
 		)
-	then
-		insert(new JungleEarlyPlayType($allyLane, "aggro"));
-
-end
-
-rule "Jungle, 1v1 lane, laner def, jungle weak early"
-	agenda-group "play-type"
-	when
-		$ally : AllyChampion(
-			$allyLane: lane,
-			lane == "top" || lane == "mid",
-			playType == "def"
-		)
-		$jungler : AllyChampion(
-			lane == "jungle",
-			goodEarly == false
+		$enemy : EnemyChampion(
+		    lane == "jungle",
+		    ($playType == "def" && (goodEarly == true || ($early == false && goodEarly == false))) || ($playType == "aggro" && $early == false && goodEarly == true)
 		)
 	then
 		insert(new JungleEarlyPlayType($allyLane, "def"));
