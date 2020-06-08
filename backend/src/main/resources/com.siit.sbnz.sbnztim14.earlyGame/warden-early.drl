@@ -5,9 +5,10 @@ import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
  
+global AdviceStorage adviceStorage;
 
  
-//---------------------- Off
+// ---------------------- Off
 		
 		
 rule "Warden vs Juggernaut, ally aggro"
@@ -24,7 +25,7 @@ rule "Warden vs Juggernaut, ally aggro"
 			role == "juggernaut"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as they have high sustain, so some trades wont go in your favor at all and prolonging trades will definitely result in your lose.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as they have high sustain, so some trades wont go in your favor at all and prolonging trades will definitely result in your lose.");
 end
 
 
@@ -44,7 +45,7 @@ rule "Warden vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be wary that divers are highly mobile and can put pressure on you quite quickly, but with your sustain they shouldn�t be a problem in shorter trades.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be wary that divers are highly mobile and can put pressure on you quite quickly, but with your sustain they shouldn't be a problem in shorter trades.");
 end
 
 
@@ -62,7 +63,7 @@ rule "Warden vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Assassins are rather mobile and can attempt to burst you down when you least expect it, but with your sustain they shouldn�t be able to. ");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Assassins are rather mobile and can attempt to burst you down when you least expect it, but with your sustain they shouldn't be able to. ");
 end
 
 
@@ -81,7 +82,7 @@ rule "Warden vs Skirmisher, ally aggro"
 			role == "skirmisher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, be careful how you engage as they can handle that fairly well, so try to use your CC to keep up the advantage in a fight. Be careful as even though skirmishers are not as mobile, but they have the toolkit to deal with every situation, so try to keep your trades short.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, be careful how you engage as they can handle that fairly well, so try to use your CC to keep up the advantage in a fight. Be careful as even though skirmishers are not as mobile, but they have the toolkit to deal with every situation, so try to keep your trades short.");
 end
 
 	
@@ -102,7 +103,7 @@ rule "Warden vs Marksman, ally aggro"
 			role == "marksman"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a marksman, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, and with your lack of damage it will be hard to deal with them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, and with your lack of damage it will be hard to deal with them.");
 end
 
 
@@ -121,7 +122,7 @@ rule "Warden vs Burst, ally aggro"
 			role == "burst"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a burster, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as bursters have a lot of CC and burst potential, but with your lack of damage it will be hard to deal with them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as bursters have a lot of CC and burst potential, but with your lack of damage it will be hard to deal with them.");
 end
 
 	
@@ -141,7 +142,7 @@ rule "Warden vs Battlemage, ally aggro"
 			role == "battlemage"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
 end
 
 
@@ -160,7 +161,7 @@ rule "Warden vs Artillery, ally aggro"
 			role == "artillery"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an artillery, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as with their poke and long range you will get punished all the time, so try to get in close.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as with their poke and long range you will get punished all the time, so try to get in close.");
 end
 
 
@@ -179,7 +180,7 @@ rule "Warden vs Vanguard, ally aggro"
 			role == "vanguard"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as with a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
 end
 
 			
@@ -197,7 +198,7 @@ rule "Warden vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against another warden, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as they are impenetrable tanks, with a lot of sustain and it will feel like it�s almost impossible to defeat them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another warden, with your engage and hard crowd control you can lock them down and set up small trades in your favor. Be careful as they are impenetrable tanks, with a lot of sustain and it will feel like it's almost impossible to defeat them.");
 end
 
 
@@ -216,7 +217,7 @@ rule "Warden vs Catcher, ally aggro"
 			role == "catcher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a burster, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. Be careful as catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
 end
 
 
@@ -235,11 +236,11 @@ rule "Warden vs Enchanter, ally aggro"
 			role == "enchanter"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, using your engage will give you an advantage to follow up and use your CC to set up kills or ganks for your jungler. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
 end
 
 
-//------------------- Def
+// ------------------- Def
 
 
 
@@ -257,7 +258,7 @@ rule "Warden vs Juggernaut, ally def"
 			role == "juggernaut"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with their hard CC and often hurtful trades you really need to be careful when you pick your fights. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with their hard CC and often hurtful trades you really need to be careful when you pick your fights. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 
 
@@ -276,7 +277,7 @@ rule "Warden vs Diver, ally def"
 			role == "diver"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you need to be careful how you position. They can engage quickly for a lot of damage, so you should be safe in trades with your sustain and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it as they can chase with their mobility.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you need to be careful how you position. They can engage quickly for a lot of damage, so you should be safe in trades with your sustain and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it as they can chase with their mobility.");
 end
 
 
@@ -296,7 +297,7 @@ rule "Warden vs Assassin, ally def"
 			role == "assassin"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so you should be safe in trades with your sustain and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it as they can chase with their mobility.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so you should be safe in trades with your sustain and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it as they can chase with their mobility.");
 end
 
 
@@ -315,7 +316,7 @@ rule "Warden vs Skirmisher, ally def"
 			role == "skirmisher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 
 
@@ -335,7 +336,7 @@ rule "Warden vs Marksman, ally def"
 			role == "marksman"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting in their attack range either way.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting in their attack range either way.");
 end
 	
 
@@ -357,7 +358,7 @@ rule "Warden vs Burst, ally def"
 			role == "burst"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting caught by their CC either way.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting caught by their CC either way.");
 end
 	
 
@@ -379,7 +380,7 @@ rule "Warden vs Battlemage, ally def"
 			role == "battlemage"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have a lot of sustain as well, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have a lot of sustain as well, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
 end
 	
 
@@ -399,7 +400,7 @@ rule "Warden vs Artillery, ally def"
 			role == "artillery"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. You have a lot of sustain as well, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. You have a lot of sustain as well, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
 end
 	
 
@@ -418,7 +419,7 @@ rule "Warden vs Vanguard, ally def"
 			role == "vanguard"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor, so saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh.");
 end
 	
 
@@ -439,7 +440,7 @@ rule "Warden vs Warden, ally def"
 			role == "warden"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against another warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh.");
 end
 	
 
@@ -459,7 +460,7 @@ rule "Warden vs Catcher, ally def"
 			role == "catcher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting caught by their CC either way.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid getting caught by their CC either way.");
 end
 	
 
@@ -478,7 +479,7 @@ rule "Warden vs Enchanter, ally def"
 			role == "enchanter"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have a lot of sustain, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have a lot of sustain, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but avoid fights altogether.");
 end
 	
  

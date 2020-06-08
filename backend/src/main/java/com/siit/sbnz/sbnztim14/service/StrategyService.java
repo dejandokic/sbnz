@@ -60,6 +60,12 @@ public class StrategyService {
         EnemyChampion enemy5 = new EnemyChampion(champion10);
 
         kSession = kieContainer.newKieSession("ksession-rules");
+
+        // Play type rules
+        kSession.getAgenda().getAgendaGroup("play-type").setFocus();
+        kSession.fireAllRules();
+
+        // Early game part 1 rules
         kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         // Insert ally
