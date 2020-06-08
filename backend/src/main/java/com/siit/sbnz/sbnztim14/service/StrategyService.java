@@ -1,9 +1,11 @@
 package com.siit.sbnz.sbnztim14.service;
 
 import com.siit.sbnz.sbnztim14.dto.FirstInteraction;
+import com.siit.sbnz.sbnztim14.dto.SecondInteraction;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.EarlyGamePartTwo;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
@@ -84,10 +86,38 @@ public class StrategyService {
 
         kSession.getAgenda().getAgendaGroup("early-game-part-1").setFocus();
         kSession.fireAllRules();
-        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
-        kSession.setGlobal("adviceStorage", new AdviceStorage());
+        return (AdviceStorage) kSession.getGlobal("adviceStorage");
+    }
 
-        return  adviceStorage;
+    public AdviceStorage getStrategyEarlyGamePartTwo(SecondInteraction secondInteraction) {
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
+        EarlyGamePartTwo topInteraction = new EarlyGamePartTwo(
+                "top",
+                secondInteraction.getTopLaneState(),
+                secondInteraction.getTopEnemyInfo(),
+                secondInteraction.getEnemyJunglerInfo()
+        );
+        EarlyGamePartTwo midInteraction = new EarlyGamePartTwo(
+                "mid",
+                secondInteraction.getMidLaneState(),
+                secondInteraction.getMidEnemyInfo(),
+                secondInteraction.getEnemyJunglerInfo()
+        );
+        EarlyGamePartTwo bottomInteraction = new EarlyGamePartTwo(
+                "adc",
+                secondInteraction.getBottomLaneState(),
+                secondInteraction.getBottomEnemyInfo(),
+                secondInteraction.getEnemyJunglerInfo()
+        );
+
+        kSession.insert(topInteraction);
+        kSession.insert(midInteraction);
+        kSession.insert(bottomInteraction);
+
+        kSession.getAgenda().getAgendaGroup("early-game-part-2").setFocus();
+        kSession.fireAllRules();
+
+        return (AdviceStorage) kSession.getGlobal("adviceStorage");
     }
 
 }

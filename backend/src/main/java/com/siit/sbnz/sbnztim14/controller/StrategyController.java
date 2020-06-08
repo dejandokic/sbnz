@@ -1,6 +1,7 @@
 package com.siit.sbnz.sbnztim14.controller;
 
 import com.siit.sbnz.sbnztim14.dto.FirstInteraction;
+import com.siit.sbnz.sbnztim14.dto.SecondInteraction;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.service.StrategyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,13 @@ public class StrategyController {
     @PreAuthorize("hasAuthority('REGISTERED_USER') or hasAuthority('ADMIN')")
     public ResponseEntity<List<String>> firstInteraction(@RequestBody FirstInteraction firstInteraction) {
         AdviceStorage adviceStorage = strategyService.getStrategyEarlyGamePartOne(firstInteraction);
+        return new ResponseEntity<>(adviceStorage.getAdvices(), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/interaction2")
+    @PreAuthorize("hasAuthority('REGISTERED_USER') or hasAuthority('ADMIN')")
+    public ResponseEntity<List<String>> secondInteraction(@RequestBody SecondInteraction secondInteraction) {
+        AdviceStorage adviceStorage = strategyService.getStrategyEarlyGamePartTwo(secondInteraction);
         return new ResponseEntity<>(adviceStorage.getAdvices(), HttpStatus.OK);
     }
 
