@@ -23,7 +23,7 @@ rule "Burst, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of CC so locking them down and killing them with your burst shouldn�t be hard. With your waveclear you can keep yourself safe in case they decide to push the tower while your solo laners are not there. Use disengage to escape close fights.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of CC so locking them down and killing them with your burst shouldn't be hard. With your waveclear you can keep yourself safe in case they decide to push the tower while your solo laners are not there. Use disengage to escape close fights.");
 end
 
 
@@ -41,7 +41,7 @@ rule "Burst, mid-late game, (siege)"
 			composition == "siege"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of poke and waveclear, so they shouldn�t be able to advance easily and using your hard CC you are a force to be reckoned with.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of poke and waveclear, so they shouldn't be able to advance easily and using your hard CC you are a force to be reckoned with.");
 end
 
 // Protect
@@ -96,6 +96,6 @@ rule "Burst, mid-late game, (catch)"
 			composition == "catch"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a catch comp you can assist with locking down and taking out unaware enemies to give your team an advantage. You have a hard engage so they shouldn�t be able to avoid you, and you have a lot of CC to control them and avoid unnecessary damage. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a catch comp you can assist with locking down and taking out unaware enemies to give your team an advantage. You have a hard engage so they shouldn't be able to avoid you, and you have a lot of CC to control them and avoid unnecessary damage. ");
 end
 

@@ -41,7 +41,7 @@ rule "Catch, ally kills towers, enemy objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your catch comp, and your kill and tower lead, you shouldn�t have problems taking objectives by eliminating some of them first making them unable to contest to you.");
+		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your catch comp, and your kill and tower lead, you shouldn't have problems taking objectives by eliminating some of them first making them unable to contest to you.");
 end
 
 rule "Catch, ally kills objectives, enemy towers"
@@ -57,7 +57,7 @@ rule "Catch, ally kills objectives, enemy towers"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In a catch comp your push ability isn�t the best, so by catching and killing some of them beforehand it shouldn�t be an issue to push towers then.");
+		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In a catch comp your push ability isn't the best, so by catching and killing some of them beforehand it shouldn't be an issue to push towers then.");
 end
 
 rule "Catch, ally towers objectives, enemy kills"
@@ -105,7 +105,7 @@ rule "Catch, ally objectives, enemy kills towers"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn�t focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your catch ability and map control, turning around the game by killing miss positioned enemies and slowly catching up in kills.");
+		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn't focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your catch ability and map control, turning around the game by killing miss positioned enemies and slowly catching up in kills.");
 end
 
 rule "Catch, ally towers, enemy kills objectives"
@@ -121,7 +121,7 @@ rule "Catch, ally towers, enemy kills objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it�s not recommended to engage in fights, so try to take them out separately and then force objectives while they cant contest.");
+		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it's not recommended to engage in fights, so try to take them out separately and then force objectives while they cant contest.");
 end
 
 rule "Catch, enemy kills towers objectives"

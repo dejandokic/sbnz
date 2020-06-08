@@ -27,7 +27,7 @@ rule "Artillery vs Juggernaut, ally aggro"
 			role == "juggernaut"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them alone.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them alone.");
 end
 
 //        vs Diver
@@ -46,7 +46,7 @@ rule "Artillery vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Be careful as divers are highly mobile and can put pressure on you quite quickly, so stay safe and poke from a distance.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Be careful as divers are highly mobile and can put pressure on you quite quickly, so stay safe and poke from a distance.");
 end
 
 //        vs Assassin
@@ -65,7 +65,7 @@ rule "Artillery vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you shouldn�t have problems as long as you stay out of their engage range. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Be careful as they are rather mobile and can burst you down when you least expect it, so stay safe and poke from a distance.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you shouldn't have problems as long as you stay out of their engage range. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Be careful as they are rather mobile and can burst you down when you least expect it, so stay safe and poke from a distance.");
 end
 
 //        vs Skirmisher
@@ -84,7 +84,7 @@ rule "Artillery vs Skirmisher, ally aggro"
 			role == "skirmisher"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Skirmishers are not as mobile, but they have the toolkit to deal with every situation, so try to not get caught in melee range.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Skirmishers are not as mobile, but they have the toolkit to deal with every situation, so try to not get caught in melee range.");
 end
 
 //        vs Marksman
@@ -103,7 +103,7 @@ rule "Artillery vs Marksman, ally aggro"
 			role == "marksman"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so try to stay out of their range.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so try to stay out of their range.");
 end
 
 //        vs Burst
@@ -122,7 +122,7 @@ rule "Artillery vs Burst, ally aggro"
 			role == "burst"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so try to stay out of their range.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Bursters have a lot of CC, and once you are locked down they will burst you with ease, so try to stay out of their range.");
 end
 
 
@@ -142,7 +142,7 @@ rule "Artillery vs Battlemage, ally aggro"
 			role == "battlemage"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
 end
 
 //        vs Artillery
@@ -206,7 +206,7 @@ rule "Artillery vs Vanguard,  ally aggro"
 			role == "vanguard"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With waveclear you can control the lane easily as well. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With waveclear you can control the lane easily as well. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
 end
 
 rule "Artillery vs Vanguard, ally hardCC and poke, no waveclear, ally aggro"
@@ -226,7 +226,7 @@ rule "Artillery vs Vanguard, ally hardCC and poke, no waveclear, ally aggro"
 			role == "vanguard"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
 end
 
 //        vs Warden
@@ -248,7 +248,7 @@ rule "Artillery vs Warden,  ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With waveclear you can control the lane easily as well. They are impenetrable tanks, with a lot of sustain so focus on poking them down.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With waveclear you can control the lane easily as well. They are impenetrable tanks, with a lot of sustain so focus on poking them down.");
 end
 
 rule "Artillery vs Warden, ally hardCC and poke, no waveclear, ally aggro"
@@ -268,7 +268,7 @@ rule "Artillery vs Warden, ally hardCC and poke, no waveclear, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. They are impenetrable tanks, with a lot of sustain so focus on poking them down.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. They are impenetrable tanks, with a lot of sustain so focus on poking them down.");
 end
 
 //        vs Catcher
@@ -290,7 +290,7 @@ rule "Artillery vs Catcher,  ally aggro"
 			role == "catcher"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
 end
 
 rule "Artillery vs Catcher, ally hardCC and poke, no waveclear, ally aggro"
@@ -310,7 +310,7 @@ rule "Artillery vs Catcher, ally hardCC and poke, no waveclear, ally aggro"
 			role == "catcher"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
 end
 
 //        vs Enchanter
@@ -329,7 +329,7 @@ rule "Artillery vs Enchanter, ally aggro"
 			role == "enchanter"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades. With weaveclear you can control the lane easily as well. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
 end
 
 //    end aggro

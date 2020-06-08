@@ -1,12 +1,18 @@
 package com.siit.sbnz.sbnztim14.service;
 
 import com.siit.sbnz.sbnztim14.dto.FirstInteraction;
+import com.siit.sbnz.sbnztim14.dto.FourthInteraction;
 import com.siit.sbnz.sbnztim14.dto.SecondInteraction;
+import com.siit.sbnz.sbnztim14.dto.ThirdInteraction;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.EarlyGamePartTwo;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.LateGame;
+import com.siit.sbnz.sbnztim14.model.MidGame;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +92,13 @@ public class StrategyService {
 
         kSession.getAgenda().getAgendaGroup("early-game-part-1").setFocus();
         kSession.fireAllRules();
-        return (AdviceStorage) kSession.getGlobal("adviceStorage");
+
+        TeamComposition teamComposition = getStrategyTeamComposition();
+
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+        adviceStorage.addAdvice("ALL", "None", "Your team composition is " + teamComposition.getComposition());
+
+        return adviceStorage;
     }
 
     public AdviceStorage getStrategyEarlyGamePartTwo(SecondInteraction secondInteraction) {
@@ -118,6 +130,69 @@ public class StrategyService {
         kSession.fireAllRules();
 
         return (AdviceStorage) kSession.getGlobal("adviceStorage");
+    }
+
+    private TeamComposition getStrategyTeamComposition() {
+        kSession.setGlobal("allyTeamComposition", new TeamComposition());
+
+        TeamCompositionProbability tcpAlly = new TeamCompositionProbability("ally");
+        TeamCompositionProbability tcpEnemy = new TeamCompositionProbability("enemy");
+        TeamCompositionProbability tcpFinal = new TeamCompositionProbability("final");
+
+        kSession.insert(tcpAlly);
+        kSession.insert(tcpEnemy);
+        kSession.insert(tcpFinal);
+
+        kSession.getAgenda().getAgendaGroup("composition-probability").setFocus();
+        kSession.fireAllRules();
+
+        return (TeamComposition) kSession.getGlobal("allyTeamComposition");
+    }
+
+    public AdviceStorage getStrategyEarlyGamePartThree(ThirdInteraction ti) {
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
+
+        MidGame midGameTopLane = new MidGame("top", ti.getTopAllyKills(), ti.getTopEnemyKills(), ti.getTopAllyTowers(),
+                ti.getTopEnemyTowers(), -1, -1);
+
+        MidGame midGameMidLane = new MidGame("mid", ti.getMidAllyKills(), ti.getMidEnemyKills(), ti.getMidAllyTowers(),
+                ti.getMidEnemyTowers(), -1, -1);
+
+        MidGame midGameBottomLane = new MidGame("adc", ti.getBottomAllyKills(), ti.getBottomEnemyKills(), ti.getBottomAllyTowers(),
+                ti.getBottomEnemyTowers(), -1, -1);
+
+        MidGame midGameJungler = new MidGame("jungle", -1, -1, -1, -1, ti.getAllyObjectives(), ti.getEnemyObjectives());
+
+        TeamComposition teamComposition = (TeamComposition) kSession.getGlobal("allyTeamComposition");
+
+        kSession.insert(midGameTopLane);
+        kSession.insert(midGameMidLane);
+        kSession.insert(midGameBottomLane);
+        kSession.insert(midGameJungler);
+        kSession.insert(teamComposition);
+
+        kSession.getAgenda().getAgendaGroup("mid-game").setFocus();
+        kSession.fireAllRules();
+
+        return (AdviceStorage) kSession.getGlobal("adviceStorage");
+    }
+
+
+    public AdviceStorage getStrategyEarlyGamePartFour(FourthInteraction fi) {
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
+
+        LateGame lateGame = new LateGame(fi.isTeamKillsLead(), fi.isTeamTowersLead(), fi.isTeamObjectivesLead());
+
+        kSession.insert(lateGame);
+
+        kSession.getAgenda().getAgendaGroup("late-game").setFocus();
+        kSession.fireAllRules();
+
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+
+        kSession.dispose();
+
+        return adviceStorage;
     }
 
 }

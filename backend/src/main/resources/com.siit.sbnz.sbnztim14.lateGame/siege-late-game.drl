@@ -42,7 +42,7 @@ rule "Siege, ally kills towers, enemy objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your siege comp, and your kill and tower lead, you shouldn�t have problems taking objectives by forcing them to defend towers or lose a lot or farm contesting you.");
+		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your siege comp, and your kill and tower lead, you shouldn't have problems taking objectives by forcing them to defend towers or lose a lot or farm contesting you.");
 end
 
 rule "Siege, ally kills objectives, enemy towers"
@@ -58,7 +58,7 @@ rule "Siege, ally kills objectives, enemy towers"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In a siege comp your push ability is excellent, so it�s time to use it efficiently and siege towers to win the game.");
+		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In a siege comp your push ability is excellent, so it's time to use it efficiently and siege towers to win the game.");
 end
 
 rule "Siege, ally towers objectives, enemy kills"
@@ -74,7 +74,7 @@ rule "Siege, ally towers objectives, enemy kills"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Even without kills your team managed to take more objectives and towers, which is great, but in the end kills grant your more gold and the more items you buy the earlier you spike in strength. In your comp, kills aren�t of a necessity but without proper items your siege ability will never be at it�s best potential so try to play a bit more aggressively when they push to get kills.");
+		adviceStorage.addAdvice($comp, "late", "Even without kills your team managed to take more objectives and towers, which is great, but in the end kills grant your more gold and the more items you buy the earlier you spike in strength. In your comp, kills aren't of a necessity but without proper items your siege ability will never be at it's best potential so try to play a bit more aggressively when they push to get kills.");
 end
 
 rule "Siege, ally kills, enemy towers objectives"
@@ -106,7 +106,7 @@ rule "Siege, ally objectives, enemy kills towers"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn�t focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your siege ability to defend their pushes while poking them from afar, turning around fights and racking up towers and kills with ease.");
+		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn't focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your siege ability to defend their pushes while poking them from afar, turning around fights and racking up towers and kills with ease.");
 end
 
 rule "Siege, ally towers, enemy kills objectives"
@@ -122,7 +122,7 @@ rule "Siege, ally towers, enemy kills objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it�s not hard to fight in lanes since you have a lot of waveclear, but if you lacks kills you will never be able to defend yourself properly.");
+		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it's not hard to fight in lanes since you have a lot of waveclear, but if you lacks kills you will never be able to defend yourself properly.");
 end
 
 rule "Siege, enemy kills towers objectives"

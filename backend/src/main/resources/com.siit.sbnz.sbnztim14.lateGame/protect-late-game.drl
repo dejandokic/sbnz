@@ -41,7 +41,7 @@ rule "Protect, ally kills towers, enemy objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your protect comp, and your kill and tower lead, you shouldn�t have problems taking objectives while they either deal with waves or die from you in fights.");
+		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your protect comp, and your kill and tower lead, you shouldn't have problems taking objectives while they either deal with waves or die from you in fights.");
 end
 
 rule "Protect, ally kills objectives, enemy towers"
@@ -105,7 +105,7 @@ rule "Protect, ally objectives, enemy kills towers"
 			teamObjectives == true
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn�t focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your teamfighting ability to take them out first, before safely taking other objectives or just try to contest things they push first since you will have an attackers advantage.");
+		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn't focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your teamfighting ability to take them out first, before safely taking other objectives or just try to contest things they push first since you will have an attackers advantage.");
 end
 
 rule "Protect, ally towers, enemy kills objectives"
@@ -121,7 +121,7 @@ rule "Protect, ally towers, enemy kills objectives"
 			teamObjectives == false
 		)
 	then
-		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it�s not hard to fight in teamfights since you have a lot of protection for your carry, but if he lacks kills he is not going to be able to defeat all of them before they get to him so farming up and gaining strength is the goal now.");
+		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it's not hard to fight in teamfights since you have a lot of protection for your carry, but if he lacks kills he is not going to be able to defeat all of them before they get to him so farming up and gaining strength is the goal now.");
 end
 
 rule "Protect, enemy kills towers objectives"
