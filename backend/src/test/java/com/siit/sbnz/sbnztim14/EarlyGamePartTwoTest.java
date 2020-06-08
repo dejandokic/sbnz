@@ -3,6 +3,7 @@ package com.siit.sbnz.sbnztim14;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.EarlyGamePartTwo;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.service.ChampionService;
 import org.junit.BeforeClass;
@@ -10,6 +11,8 @@ import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+
+import static org.junit.Assert.*;
 
 
 public class EarlyGamePartTwoTest {
@@ -32,23 +35,23 @@ public class EarlyGamePartTwoTest {
         Champion champion1 = championService.getChampionByName("Darius");
         champion1.setLane("top");
         Champion champion2 = championService.getChampionByName("Nasus");
-        champion1.setLane("top");
+        champion2.setLane("top");
         Champion champion3 = championService.getChampionByName("Rengar");
-        champion1.setLane("jungle");
+        champion3.setLane("jungle");
         Champion champion4 = championService.getChampionByName("Sejuani");
-        champion1.setLane("jungle");
+        champion4.setLane("jungle");
         Champion champion5 = championService.getChampionByName("Annie");
-        champion1.setLane("mid");
+        champion5.setLane("mid");
         Champion champion6 = championService.getChampionByName("Lux");
-        champion1.setLane("mid");
+        champion6.setLane("mid");
         Champion champion7 = championService.getChampionByName("Vayne");
-        champion1.setLane("adc");
+        champion7.setLane("adc");
         Champion champion8 = championService.getChampionByName("Varus");
-        champion1.setLane("adc");
+        champion8.setLane("adc");
         Champion champion9 = championService.getChampionByName("Zilean");
-        champion1.setLane("support");
+        champion9.setLane("support");
         Champion champion10 = championService.getChampionByName("Braum");
-        champion1.setLane("support");
+        champion10.setLane("support");
 
         // Ally team
         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
@@ -78,12 +81,32 @@ public class EarlyGamePartTwoTest {
         kSession.insert(enemy4);
         kSession.insert(enemy5);
 
-        kSession.getAgenda().getAgendaGroup("early-game-part-2").setFocus();
-        kSession.fireAllRules();
+        int enemyJunglerInfo = 4;
+        EarlyGamePartTwo topInteraction = new EarlyGamePartTwo("top", 1, 1, enemyJunglerInfo);
+        EarlyGamePartTwo midInteraction = new EarlyGamePartTwo("mid", 2, 3, enemyJunglerInfo);
+        EarlyGamePartTwo adcInteraction = new EarlyGamePartTwo("adc", 3, 2, enemyJunglerInfo);
 
+        kSession.insert(topInteraction);
+        kSession.insert(midInteraction);
+        kSession.insert(adcInteraction);
+
+        kSession.getAgenda().getAgendaGroup("early-game-part-2").setFocus();
+        int fired = kSession.fireAllRules();
         AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
 
-        System.out.println(adviceStorage.getAdvices().size());
+        assertEquals(11, fired);
+        assertEquals(3, adviceStorage.getAdvices().size());
+        
+        assertEquals("Darius", ally1.getName());
+        assertEquals("def", ally1.getPlayType());
+
+        assertEquals("Annie", ally3.getName());
+        assertEquals("aggro", ally3.getPlayType());
+
+        assertEquals("Vayne", ally4.getName());
+        assertEquals("aggro", ally4.getPlayType());
+
+        kSession.dispose();
     }
 }
 

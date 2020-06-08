@@ -15,6 +15,6 @@ public class AdviceStorage {
     private ArrayList<String> advices = new ArrayList<>();
 
     public void addAdvice(String lane, String period, String adviceText) {
-        advices.add(lane + " " + period + " " + adviceText);
+        advices.add("[" +  lane + ", " + period + "] " + adviceText);
     }
 }
