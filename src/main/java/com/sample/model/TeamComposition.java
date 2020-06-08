@@ -22,4 +22,9 @@ public class TeamComposition {
 		this.composition = comp;
 	}
 
+	@Override
+	public String toString() {
+		return "TeamComposition [composition=" + composition + "]";
+	}
+
 }
