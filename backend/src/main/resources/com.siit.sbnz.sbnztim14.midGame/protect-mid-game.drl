@@ -12,16 +12,16 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // PROTECT 
 // CARRY
-// agro
+// aggro
 
 
-rule "Protect (carry), ally lane kills, ally agro"
+rule "Protect (carry), ally lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane == "adc",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -36,13 +36,13 @@ rule "Protect (carry), ally lane kills, ally agro"
 end
 
 
-rule "Protect (carry), enemy lane kills, ally agro"
+rule "Protect (carry), enemy lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane == "adc",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -56,13 +56,13 @@ rule "Protect (carry), enemy lane kills, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "Since you are falling behind as a carry, it will not be wise to continue playing aggressive, so try playing more passively until you catch up.");
 end
 
-rule "Protect (carry), ally lane towers, ally agro"
+rule "Protect (carry), ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane == "adc",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -76,13 +76,13 @@ rule "Protect (carry), ally lane towers, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "With a tower lead, rotate to push other lanes, but be together with your team always.");
 end
 
-rule "Protect (carry), enemy lane towers, ally agro"
+rule "Protect (carry), enemy lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane == "adc",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -182,15 +182,15 @@ end
 
 
 // OTHERS
-// agro
+// aggro
 
-rule "Protect (other), ally lane kills, ally agro"
+rule "Protect (other), ally lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "adc" && lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -205,13 +205,13 @@ rule "Protect (other), ally lane kills, ally agro"
 end
 
 
-rule "Protect (other), enemy lane kills, ally agro"
+rule "Protect (other), enemy lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "adc" && lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -225,13 +225,13 @@ rule "Protect (other), enemy lane kills, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and wait to group up for fights.");
 end
 
-rule "Protect (other), ally lane towers, ally agro"
+rule "Protect (other), ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "adc" && lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -245,13 +245,13 @@ rule "Protect (other), ally lane towers, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your carry and push things together or help them out in a lane.");
 end
 
-rule "Protect (other), enemy lane towers, ally agro"
+rule "Protect (other), enemy lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "adc" && lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(

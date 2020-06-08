@@ -49,7 +49,7 @@ rule "Juggernaut, ally hardEngage"
 			hardCC== false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up you have quite a bit of sustain and seizing the opportunity to counter gank. With your hard engage you have a good way to start up a fight, but you don�t have a way to keep the target in place, so the other laner needs to do his part.");
+		adviceStorage.addAdvice($allyLane, "early", "As a juggernaut you should focus on farming up you have quite a bit of sustain and seizing the opportunity to counter gank. With your hard engage you have a good way to start up a fight, but you don't have a way to keep the target in place, so the other laner needs to do his part.");
 end
 
 
@@ -95,7 +95,7 @@ rule "Diver, ally hardCC"
 			hardEngage == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don�t have a great engage ability but using your hard CC you can lock the enemy down for the kill.");
+		adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don't have a great engage ability but using your hard CC you can lock the enemy down for the kill.");
 end
 
 
@@ -110,7 +110,7 @@ rule "Diver, ally nothin"
 			hardCC == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don�t have a great engage ability but using your movement ability you can pressure the enemy laner easily.");
+		adviceStorage.addAdvice($allyLane, "early", "As a diver you have have a lot of mobility and are quite good at undertower fights, so focus on ganking. You don't have a great engage ability but using your movement ability you can pressure the enemy laner easily.");
 end
 
 
@@ -169,7 +169,7 @@ rule "Assassin, ally nothing"
 			hardCC == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don�t have any escape tools.");
+		adviceStorage.addAdvice($allyLane, "early", "As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don't have any escape tools.");
 end
 
 
@@ -203,7 +203,7 @@ rule "Skirmisher, ally hardCC"
 			hardEngage == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. You lack the proper engage tools, but that�s why you can attack them when they are already misspositioning and not focused.");
+		adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. You lack the proper engage tools, but that's why you can attack them when they are already misspositioning and not focused.");
 end
 
 
@@ -218,7 +218,7 @@ rule "Skirmisher, ally nothing"
 			hardEngage == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. With the lack of a good engage or CC, you will struggle to initiate fights but that doesn�t mean you can�t enter one that is already there.");
+		adviceStorage.addAdvice($allyLane, "early", "As a skirmisher, you should focus on counter ganking and punishing bad map awareness. With the lack of a good engage or CC, you will struggle to initiate fights but that doesn't mean you can't enter one that is already there.");
 end
 
 
@@ -251,7 +251,7 @@ rule "Marksman, ally hardCC"
 			hardEngage == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a marksman jungling will be primarly focused on farming up and griding item. Your ganks will lack proper engage, but with your CC you shouldn�t have problems in fights that are already there, so try to enter lanes when your teammates start trades.");
+		adviceStorage.addAdvice($allyLane, "early", "As a marksman jungling will be primarly focused on farming up and griding item. Your ganks will lack proper engage, but with your CC you shouldn't have problems in fights that are already there, so try to enter lanes when your teammates start trades.");
 end
 
 
@@ -283,7 +283,7 @@ rule "Burst, ally hardCC + hardEngage"
 			hardEngage == true
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have excellent engage and good CC so ganks shouldn�t be an issue. Be careful of counterganks though.");
+		adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have excellent engage and good CC so ganks shouldn't be an issue. Be careful of counterganks though.");
 end
 
 rule "Burst, ally hardCC"
@@ -297,7 +297,7 @@ rule "Burst, ally hardCC"
 			hardEngage == false
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have good CC so ganks shouldn�t be an issue if the enemy is not aware of you. Be careful of counterganks though.");
+		adviceStorage.addAdvice($allyLane, "early", "As a bursters your focus will be on farming a bit and than ganking overreaching enemies. You have good CC so ganks shouldn't be an issue if the enemy is not aware of you. Be careful of counterganks though.");
 end
 
 rule "Burst, ally nothing"

@@ -17,6 +17,4 @@ public class MidGame {
     private int enemyTowers;
     private int allyObjectives;
     private int enemyObjectives;
-
-
 }

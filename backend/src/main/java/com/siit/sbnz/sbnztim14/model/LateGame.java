@@ -13,7 +13,4 @@ public class LateGame {
     private boolean teamKills;
     private boolean teamTowers;
     private boolean teamObjectives;
-
-
-
 }

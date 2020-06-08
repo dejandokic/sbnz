@@ -1,7 +1,10 @@
 package com.siit.sbnz.sbnztim14;
 
+import org.kie.api.KieServices;
+import org.kie.api.runtime.KieContainer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class SbnzTim14Application {
@@ -10,4 +13,8 @@ public class SbnzTim14Application {
 		SpringApplication.run(SbnzTim14Application.class, args);
 	}
 
+	@Bean
+	public KieContainer kieContainer() {
+		return KieServices.Factory.get().getKieClasspathContainer();
+	}
 }

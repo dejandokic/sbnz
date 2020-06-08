@@ -12,16 +12,16 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 // Split push 
 // split pusher
-// agro
+// aggro
 
 
-rule "Split push (split pusher), ally lane kills, ally agro"
+rule "Split push (split pusher), ally lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush == true,
 			$allyLane : lane
 		)
@@ -37,13 +37,13 @@ rule "Split push (split pusher), ally lane kills, ally agro"
 end
 
 
-rule "Split push (split pusher), enemy lane kills, ally agro"
+rule "Split push (split pusher), enemy lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush == true,
 			$allyLane : lane
 		)
@@ -58,13 +58,13 @@ rule "Split push (split pusher), enemy lane kills, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and wait for him to leave to push.");
 end
 
-rule "Split push (split pusher), ally lane towers, ally agro"
+rule "Split push (split pusher), ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush == true,
 			$allyLane : lane
 		)
@@ -79,13 +79,13 @@ rule "Split push (split pusher), ally lane towers, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to push other lanes or continue to pressure this one.");
 end
 
-rule "Split push (split pusher), enemy lane towers, ally agro"
+rule "Split push (split pusher), enemy lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush == true,
 			$allyLane : lane
 		)
@@ -190,15 +190,15 @@ end
 
 
 // OTHERS
-// agro
+// aggro
 
-rule "Split push (other), ally lane kills, ally agro"
+rule "Split push (other), ally lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush != true,
 			$allyLane : lane
 		)
@@ -214,13 +214,13 @@ rule "Split push (other), ally lane kills, ally agro"
 end
 
 
-rule "Split push (other), enemy lane kills, ally agro"
+rule "Split push (other), enemy lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush != true,
 			$allyLane : lane
 		)
@@ -235,13 +235,13 @@ rule "Split push (other), enemy lane kills, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and try to farm and catch up.");
 end
 
-rule "Split push (other), ally lane towers, ally agro"
+rule "Split push (other), ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush != true,
 			$allyLane : lane
 		)
@@ -256,13 +256,13 @@ rule "Split push (other), ally lane towers, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your team and push things together or help them out in a lane.");
 end
 
-rule "Split push (other), enemy lane towers, ally agro"
+rule "Split push (other), enemy lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			splitPush != true,
 			$allyLane : lane
 		)
