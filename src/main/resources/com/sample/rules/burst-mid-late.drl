@@ -12,15 +12,12 @@ global com.sample.AdviceStorage adviceStorage;
 
 // SPLIT PUSH
 
-rule "Burst, mid-late game, (split push), ally hardCC + waveclear + disengage"
+rule "Burst, mid-late game, (split push)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "splitPush"
@@ -29,87 +26,16 @@ rule "Burst, mid-late game, (split push), ally hardCC + waveclear + disengage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of CC so locking them down and killing them with your burst shouldn’t be hard. With your waveclear you can keep yourself safe in case they decide to push the tower while your solo laners are not there. Use disengage to escape close fights.");
 end
 
-rule "Burst, mid-late game, (split push), ally hardCC + waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of CC so locking them down and killing them with your burst shouldn’t be hard. With your waveclear you can keep yourself safe in case they decide to push the tower while your solo laners are not there. ");
-end
-
-rule "Burst, mid-late game, (split push), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of burst so killing of isolated enemies shouldn’t be hard. With your waveclear you can keep yourself safe in case they decide to push the tower while your solo laners are not there.");
-end
-
-rule "Burst, mid-late game, (split push), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of CC so locking them down and killing them with your burst shouldn’t be hard. Use CC for defense as well, if they try to use their number advantage if your solo laners are not there.");
-end
-
-rule "Burst, mid-late game, (split push), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "splitPush"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a split push comp your position is to take down enemies when fights are in your favor. You have a lot of burst so killing of isolated enemies shouldn’t be hard. With your map presence they shouldn’t engage carelessly, but you shouldn’t missposition either.");
-end
-
 
 // Siege
 
 
-rule "Burst, mid-late game, (siege), ally hardCC + waveclear + poke"
+rule "Burst, mid-late game, (siege)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			poke == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "siege"
@@ -118,113 +44,10 @@ rule "Burst, mid-late game, (siege), ally hardCC + waveclear + poke"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of poke and waveclear, so they shouldn’t be able to advance easily and using your hard CC you are a force to be reckoned with.");
 end
 
-rule "Burst, mid-late game, (siege), ally hardCC + waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have waveclear to clear minions so they shouldn’t be able to advance easily and push towers. Using your hard CC you can lock them down when they engage to turn the tables.");
-end
-
-rule "Burst, mid-late game, (siege), ally waveclear + poke"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			poke == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of poke and waveclear, so they shouldn’t be able to advance easily while you can tear them down from afar and keep your base safe.");
-end
-
-rule "Burst, mid-late game, (siege), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == false,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. Using your hard CC you can lock them down when they engage to turn the tables on them. ");
-end
-
-rule "Burst, mid-late game, (siege), ally poke"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			poke == true
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of poke so they shouldn’t be able to advance easily while you can tear them down from afar.");
-end
-
-rule "Burst, mid-late game, (siege), ally waveclear"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == true,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have waveclear so they shouldn’t be able to advance easily while you can keep your base safe and siege towers.");
-end
-
-rule "Burst, mid-late game, (siege), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			waveclear == false,
-			poke == false
-		)
-		$composition : TeamComposition(
-			composition == "siege"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a siege comp your job is to burst enemies that get to close and stop initiations. You have a lot of burst potential, so they need to be wary of you and your damage.");
-end
-
-
 // Protect
 
 
-rule "Burst, mid-late game, (protect), ally hardCC + disengage"
+rule "Burst, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -240,42 +63,10 @@ rule "Burst, mid-late game, (protect), ally hardCC + disengage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a protect comp your position is to keep enemies at bay with your presence. You have a lot of CC so their attacks should be easily stopped, and with your disengage you are fairly safe. ");
 end
 
-rule "Burst, mid-late game, (protect), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a protect comp your position is to keep enemies at bay with your presence. You have a lot of CC so their attacks should be easily stopped. Focus on keeping the carry alive. ");
-end
-
-rule "Burst, mid-late game, (protect), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			disengage == false
-		)
-		$composition : TeamComposition(
-			composition == "protect"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a protect comp your position is to keep enemies at bay with your presence. You have a lot of power, so any enemy that oversteps should be punished and pushed back.");
-end
-
 // Attack
 
 
-rule "Burst, mid-late game, (attack), ally hardCC + hardEngage"
+rule "Burst, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -291,51 +82,15 @@ rule "Burst, mid-late game, (attack), ally hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in an attack comp your focus is to kill them as fast as possible, while the fight is just starting. Use your hard engages to get in quickly and CC to lock them down for an easy burst. ");
 end
 
-rule "Burst, mid-late game, (attack), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in an attack comp your focus is to kill them as fast as possible, while the fight is just starting. Use your CC to lock them down for an easy burst, but be careful how you position since you are not the most mobile. ");
-end
-
-rule "Burst, mid-late game, (attack), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "attack"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in an attack comp your focus is to kill them as fast as possible, while the fight is just starting. Use your powers to burst down weak enemies, but be careful how you position since you are not as mobile.");
-end
-
-
-
 // Catch
 
 
-rule "Burst, mid-late game, (catch), ally hardCC + hardEngage"
+rule "Burst, mid-late game, (catch)"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
 			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "catch"
@@ -344,36 +99,3 @@ rule "Burst, mid-late game, (catch), ally hardCC + hardEngage"
 		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a catch comp you can assist with locking down and taking out unaware enemies to give your team an advantage. You have a hard engage so they shouldn’t be able to avoid you, and you have a lot of CC to control them and avoid unnecessary damage. ");
 end
 
-
-rule "Burst, mid-late game, (catch), ally hardCC"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a catch comp you can assist with locking down and taking out unaware enemies to give your team an advantage. You have a lot of CC to control them and avoid unnecessary damage, but be careful how you position to attack. ");
-end
-
-
-rule "Burst, mid-late game, (catch), ally nothing"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "burst",
-			$allyLane : lane,
-			hardCC == false,
-			hardEngage == false
-		)
-		$composition : TeamComposition(
-			composition == "catch"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a burster in a catch comp you can assist with locking down and taking out unaware enemies to give your team an advantage. You are quite strong and your burst potential should be fairly useful against isolated enemies. ");
-end

@@ -458,6 +458,7 @@ rule "Battlemage vs Warden, ally def"
 			role == "warden"
 		)
 	then
+	    System.out.println("hehe");
 		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain, so use your CC to keep them at bay and try to either disengage or outsustain their trades. Do not be afraid to trade, since you have an range advantage  and with your waveclear you should be safe to farm from your side of the lane.");
 end
 

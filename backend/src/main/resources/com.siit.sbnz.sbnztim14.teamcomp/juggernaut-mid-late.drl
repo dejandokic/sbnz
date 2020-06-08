@@ -13,9 +13,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 
 rule "Juggernaut, mid-late game, (split push), splitPush"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane,
 			splitPush == true
@@ -29,9 +29,9 @@ end
 
 
 rule "Juggernaut, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane,
 			splitPush == false
@@ -51,9 +51,9 @@ end
 
 
 rule "Juggernaut, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane
 		)
@@ -68,9 +68,9 @@ end
 // PROTECT
 
 rule "Juggernaut, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane
 		)
@@ -84,9 +84,9 @@ end
 // ATTACK
 
 rule "Juggernaut, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane
 		)
@@ -102,9 +102,9 @@ end
 
 
 rule "Juggernaut, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "juggernaut",
 			$allyLane : lane		
 		)

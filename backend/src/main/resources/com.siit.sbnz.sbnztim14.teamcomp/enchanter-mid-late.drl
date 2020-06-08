@@ -12,9 +12,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Enchanter, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "enchanter",
 			$allyLane : lane
 		)
@@ -30,9 +30,9 @@ end
 
 
 rule "Enchanter, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "enchanter",
 			$allyLane : lane
 		)
@@ -47,9 +47,9 @@ end
 
 
 rule "Enchanter, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "enchanter",
 			$allyLane : lane
 		)
@@ -64,9 +64,9 @@ end
 // Attack
 
 rule "Enchanter, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "enchanter",
 			$allyLane : lane
 		)
@@ -80,9 +80,9 @@ end
 // Catch
 
 rule "Enchanter, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "enchanter",
 			$allyLane : lane
 		)

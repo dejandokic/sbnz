@@ -14,9 +14,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 
 rule "Assassin, mid-late game, (split push), splitPush"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane,
 			splitPush == true
@@ -25,14 +25,14 @@ rule "Assassin, mid-late game, (split push), splitPush"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on pushing towers, whilist eliminating unaware enemies who come to stop you. You have a lot of hard cc, so they shouldn’t be hard to deal with if you can lock them down. With your mobility moving around the map is crucial.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on pushing towers, whilist eliminating unaware enemies who come to stop you. You have a lot of hard cc, so they shouldnï¿½t be hard to deal with if you can lock them down. With your mobility moving around the map is crucial.");
 end
 
 
 rule "Assassin, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane,
 			splitPush == false
@@ -41,7 +41,7 @@ rule "Assassin, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on eliminating enemies that try to stop your solo laners. You have a lot of hard CC so it shouldn’t be a problem to kill unaware enemis and prevent them from escaping. With your mobility moving around the map shouldn’t be a problem.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a split push comp you should focus on eliminating enemies that try to stop your solo laners. You have a lot of hard CC so it shouldnï¿½t be a problem to kill unaware enemis and prevent them from escaping. With your mobility moving around the map shouldnï¿½t be a problem.");
 end
 
 
@@ -49,9 +49,9 @@ end
 
 
 rule "Assassin, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane
 		)
@@ -59,7 +59,7 @@ rule "Assassin, mid-late game, (siege)"
 			composition == "siege"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a siege comp your job is to prevent teamfights by killing their backline early. You have a lot of hard CC so they shouldn’t be able to escape you easily, but still be careful not to die in vain.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an assassin in a siege comp your job is to prevent teamfights by killing their backline early. You have a lot of hard CC so they shouldnï¿½t be able to escape you easily, but still be careful not to die in vain.");
 end
 
 
@@ -67,9 +67,9 @@ end
 
 
 rule "Assassin, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane
 		)
@@ -85,9 +85,9 @@ end
 
 
 rule "Assassin, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane
 		)
@@ -104,9 +104,9 @@ end
 
 
 rule "Assassin, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "assassin",
 			$allyLane : lane
 		)

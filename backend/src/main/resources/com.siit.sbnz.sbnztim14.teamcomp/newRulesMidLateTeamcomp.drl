@@ -1,0 +1,34 @@
+package com.siit.sbnz.sbnztim14.teamcomp
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "battlemage, mid-late game, (attack), ally hardCC + waveclear + disengage"
+    agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "battlemage",
+			hardCC == true,
+			hardEngage == false,
+			poke == false,
+			waveclear == true,
+			disengage == true,
+			sustain == false,
+			utility == false,
+			mobility == false,
+			splitPush == false,
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "TEST");
+end
+
+

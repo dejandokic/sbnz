@@ -13,28 +13,25 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Marksman, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "marksman",
-			$allyLane : lane,
-			hardCC == true,
-			waveclear == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldn’t be an issue, using your waveclear to prevent sieges and disengage when fights get to close.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a marksman in a split push comp your job is to put pressure on the enemy while your solo laners get the job done. You have hard CC so locking down enemies who try to attack you shouldnï¿½t be an issue, using your waveclear to prevent sieges and disengage when fights get to close.");
 end
 
 // Siege
 
 rule "Marksman, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "marksman",
 			$allyLane : lane
 		)
@@ -51,9 +48,9 @@ end
 // Protect
 
 rule "Marksman, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "marksman",
 			$allyLane : lane
 		)
@@ -68,9 +65,9 @@ end
 // Attack
 
 rule "Marksman, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "marksman",
 			$allyLane : lane
 		)
@@ -85,9 +82,9 @@ end
 // Catch
 
 rule "Marksman, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "marksman",
 			$allyLane : lane
 		)

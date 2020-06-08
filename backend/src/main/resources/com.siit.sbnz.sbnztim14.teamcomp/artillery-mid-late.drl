@@ -13,6 +13,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Artillery, mid-late game, (split push)"
+    agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -29,6 +30,7 @@ end
 // Siege
 
 rule "Artillery, mid-late game, (siege)"
+    agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -46,6 +48,7 @@ end
 // Protect
 
 rule "Artillery, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -56,13 +59,14 @@ rule "Artillery, mid-late game, (protect)"
 			composition == "protect"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a protect comp your job is to get the enemies away from your team before they reach you. Since you are fairly ranged, you shouldn’t get close but in case they do get to you use your hard CC and devastate them. Waveclear should be fairly useful against enemies who shove lanes.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an artillery in a protect comp your job is to get the enemies away from your team before they reach you. Since you are fairly ranged, you shouldnï¿½t get close but in case they do get to you use your hard CC and devastate them. Waveclear should be fairly useful against enemies who shove lanes.");
 end
 
 
 // Attack
 
 rule "Artillery, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -80,6 +84,7 @@ end
 // Catch
 
 rule "Artillery, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
