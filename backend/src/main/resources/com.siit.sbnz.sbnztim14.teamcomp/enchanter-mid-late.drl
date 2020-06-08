@@ -1,0 +1,94 @@
+package com.siit.sbnz.sbnztim14.teamcomp
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+
+// SPLIT PUSH
+
+rule "Enchanter, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "enchanter",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a split push comp your position is to support your team while the solo laner pushes towers. You need to use your hard CC to keep enemies at bay, whilist using utility to keep your team safe. Use disengages when the enemy gets you by surprise to escape getting killed.");
+end
+
+
+// Siege
+
+
+rule "Enchanter, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "enchanter",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a siege comp your job is to help your team avoid unnecessary fights. Use your CC to control enemy engages, combining your disengages and utility to give your team enough time to escape fights.");
+end
+
+// Protect
+
+
+rule "Enchanter, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "enchanter",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your hard CC to keep enemies at bay, utilizing utility and disengages for your carry to stay alive.");
+end
+
+
+// Attack
+
+rule "Enchanter, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "enchanter",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in an attack comp your focus should be to assist your team in taking down enemies. Use your hard CC to prevent enemies escape and hard engages to assist in fight initiations. You have a lot of utility, so that should be helpful in sustaining your teams health.");
+end
+
+// Catch
+
+rule "Enchanter, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
+	when
+		$ally : AllyChampion(
+			role == "enchanter",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "");
+end

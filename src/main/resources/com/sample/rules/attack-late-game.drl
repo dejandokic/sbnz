@@ -1,0 +1,142 @@
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.model.EnemyChampion;
+import com.sample.model.TeamComposition;
+import com.sample.model.LateGame;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+
+// ATTACK
+
+rule "Attack, ally kills towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == true,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "In this situation just keep doing what you are doing since you are clearly dominating the game.");
+end
+
+rule "Attack, ally kills towers, enemy objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == true,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Objectives are a big part of the game, and without having Elder Dragon or Baron late game, games can be turned easily. With your attack comp, and your kill and tower lead, you shouldn’t have problems taking objectives by contesting them and forcing teamfights.");
+end
+
+rule "Attack, ally kills objectives, enemy towers"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == false,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "With poor tower control you will eventually lose the game, no matter how many kills your manage to get or how many objectives you take. In an attack comp your push ability isn’t the best, so by forcing teamfights and wining it shouldn’t be an issue to push towers then.");
+end
+
+rule "Attack, ally towers objectives, enemy kills"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == true,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Even without kills your team managed to take more objectives and towers, which is great, but in the end kills grant your more gold and the more items you buy the earlier you spike in strength. In your comp, kills are very important to play to your full potential, so try to force smaller scrims where you can scrap kills and then go for team fights when you are strong enough.");
+end
+
+rule "Attack, ally kills, enemy towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == true,
+			teamTowers == false,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Even with a kill lead your objective and tower control is rather weak, which will end up losing you the game. Use the strength you have, which is teamfight strength, and punish their attempts to take objectives/towers by contesting it and forcing fights.");
+end
+
+rule "Attack, ally objectives, enemy kills towers"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == false,
+			teamObjectives == true
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Having more objectives is a big help in the late game, but towers and kills will win the game in this case. You shouldn’t focus on Baron and Elder Dragon if that means you will give up towers and kills for nothing. Use your attack and engage ability to force fights when you have the advantage, turning around the game and racking up towers and kills with ease.");
+end
+
+rule "Attack, ally towers, enemy kills objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == true,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it’s not hard to engage in fights, but if you lacks kills you will never be able to take them out effectively so force smaller scrims first until you catch up.");
+end
+
+rule "Attack, enemy kills towers objectives"
+	agenda-group "late-game"
+	when
+		$composition : TeamComposition(
+			composition == "attack",
+			$comp: composition
+		)
+		$lateGame : LateGame(
+			teamKills == false,
+			teamTowers == false,
+			teamObjectives == false
+		)
+	then
+		adviceStorage.addAdvice($comp, "late", "Since you are lacking in overall map control and kills, only thing you can do is try to engage when they are lacking in numbers and avoid giving more objectives without contesting. This will be a hard game to turn, but not impossible.");
+end
+
