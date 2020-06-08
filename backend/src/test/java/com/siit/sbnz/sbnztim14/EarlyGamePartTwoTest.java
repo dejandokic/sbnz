@@ -27,7 +27,7 @@ public class EarlyGamePartTwoTest {
     }
 
     @Test
-    public void firstTest() {
+    public void changePlayTypeTest() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
         kSession.setGlobal("adviceStorage", new AdviceStorage());
 
@@ -96,7 +96,7 @@ public class EarlyGamePartTwoTest {
 
         assertEquals(11, fired);
         assertEquals(3, adviceStorage.getAdvices().size());
-        
+
         assertEquals("Darius", ally1.getName());
         assertEquals("def", ally1.getPlayType());
 

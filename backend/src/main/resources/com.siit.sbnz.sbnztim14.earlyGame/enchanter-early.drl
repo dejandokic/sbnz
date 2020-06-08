@@ -5,8 +5,7 @@ import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 
-global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
-
+global AdviceStorage adviceStorage;
 
 //----------------------- Off
 				
@@ -25,7 +24,7 @@ rule "Enchanter vs Juggernaut, ally aggro"
 			role == "juggernaut"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them. ");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them. ");
 end
 
 		
@@ -84,7 +83,7 @@ rule "Enchanter vs Skirmisher, ally aggro"
 			role == "skirmisher"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
 end
 
 rule "Enchanter vs Marksman, ally aggro"
@@ -174,7 +173,7 @@ rule "Enchanter vs Vanguard, ally aggro"
 			role == "vanguard"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
 end
 
 
@@ -193,7 +192,7 @@ rule "Enchanter vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Impenetrable tanks, with a lot of sustain and it will feel like it�s almost impossible to defeat them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, engage when the kill can be secured but utilize your utility for repositioning and staying safe. Impenetrable tanks, with a lot of sustain and it will feel like it's almost impossible to defeat them.");
 end
 
 rule "Enchanter vs Catcher, ally aggro"
@@ -232,7 +231,7 @@ end
 
 
 
-//------------------------------- Def
+// ------------------------------ Def
 
 
 rule "Enchanter vs Jugernaut, ally def"
@@ -325,7 +324,7 @@ rule "Enchanter vs Marksman, ally def"
 			role == "marksman"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
 end
 		
 
@@ -344,7 +343,7 @@ rule "Enchanter vs Burst, ally def"
 			role == "burst"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
 end
 		
 		
@@ -363,7 +362,7 @@ rule "Enchanter vs Battlemage, ally def"
 			role == "battlemage"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
 end
 		
 rule "Enchanter vs Artillery, ally def"
@@ -439,7 +438,7 @@ rule "Enchanter vs Catcher, ally def"
 			role == "catcher"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
 end
 		
 				
@@ -458,7 +457,7 @@ rule "Enchanter vs Enchanter, ally def"
 			role == "enchanter"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have utility as well, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have utility as well, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.");
 end
 		
 

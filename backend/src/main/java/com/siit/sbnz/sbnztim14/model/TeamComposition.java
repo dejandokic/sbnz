@@ -1,13 +1,10 @@
 package com.siit.sbnz.sbnztim14.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class TeamComposition {
 
     private String composition = "";
@@ -15,6 +12,16 @@ public class TeamComposition {
     public TeamComposition() {
         //Default value
         composition = "attack";
+    }
+
+    public TeamComposition(String composition) {
+        super();
+        this.composition = composition;
+    }
+
+    @Override
+    public String toString() {
+        return "TeamComposition [composition=" + composition + "]";
     }
 
 

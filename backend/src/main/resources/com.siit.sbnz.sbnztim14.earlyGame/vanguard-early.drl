@@ -5,9 +5,7 @@ import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 
-global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
-
-
+global AdviceStorage adviceStorage;
 
 //----------------------------- Vanguard
 //----------------------------- Off
@@ -44,7 +42,7 @@ rule "Vanguard vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and set up great trades in your favor. Divers are highly mobile and can put pressure on you quite quickly, but with your sustain they shouldn�t be a problem in shorter trades.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and set up great trades in your favor. Divers are highly mobile and can put pressure on you quite quickly, but with your sustain they shouldn't be a problem in shorter trades.");
 end
 
 
@@ -63,7 +61,7 @@ rule "Vanguard vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and set up great trades in your favor. Assassins are rather mobile and can attempt to burst you down when you least expect it, but with your sustain they shouldn�t be able to. ");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and set up great trades in your favor. Assassins are rather mobile and can attempt to burst you down when you least expect it, but with your sustain they shouldn't be able to. ");
 end
 
 
@@ -197,7 +195,7 @@ rule "Vanguard vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and set up trades in your favor. Be careful as they are impenetrable tanks, with a lot of sustain and it will feel like it�s almost impossible to defeat them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and set up trades in your favor. Be careful as they are impenetrable tanks, with a lot of sustain and it will feel like it's almost impossible to defeat them.");
 end
 
 
@@ -238,7 +236,7 @@ end
 
 
 		
-//------------------- Def
+// ------------------- Def
 
 
 
