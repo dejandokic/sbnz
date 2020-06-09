@@ -12,9 +12,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Catcher, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "catcher",
 			$allyLane : lane
 		)
@@ -22,15 +22,15 @@ rule "Catcher, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a split push comp your job is to engage on enemies when they are going for your solo laners to gain an advantage. You have a lot of hard CC so preventing their escape shouldn’t be an issue and also with your utility you should be safe in trades. Use your disengage to escape fights when you attract more unwanted attention than you can handle.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a split push comp your job is to engage on enemies when they are going for your solo laners to gain an advantage. You have a lot of hard CC so preventing their escape shouldn't be an issue and also with your utility you should be safe in trades. Use your disengage to escape fights when you attract more unwanted attention than you can handle.");
 end
 
 // Siege
 
 rule "Catcher, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "catcher",
 			$allyLane : lane
 		)
@@ -38,15 +38,15 @@ rule "Catcher, mid-late game, (siege)"
 			composition == "siege"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a siege comp your focus should be to prevent enemies from engaging on your carries. You have a lot of CC so that shouldn’t be an issue, and with your utility you can definitely keep your team viable. Use disengages when you get caught by surprise to avoid death.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a siege comp your focus should be to prevent enemies from engaging on your carries. You have a lot of CC so that shouldn't be an issue, and with your utility you can definitely keep your team viable. Use disengages when you get caught by surprise to avoid death.");
 end
 
 // Protect
 
 rule "Catcher, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "catcher",
 			$allyLane : lane
 		)
@@ -61,9 +61,9 @@ end
 // Attack
 
 rule "Catcher, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "catcher",
 			$allyLane : lane
 		)
@@ -77,9 +77,9 @@ end
 // Catch
 
 rule "Catcher, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "catcher",
 			$allyLane : lane
 		)
@@ -87,5 +87,5 @@ rule "Catcher, mid-late game, (catch)"
 			composition == "catch"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a catch comp your focus should be to catch unaware enemies and weaken the enemy team by helping to take out one of their own before fights. You have hard engages and excellent CC so that shouldn’t be an issue, and with your mobility you can position on the map fairly quickly.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a catcher in a catch comp your focus should be to catch unaware enemies and weaken the enemy team by helping to take out one of their own before fights. You have hard engages and excellent CC so that shouldn't be an issue, and with your mobility you can position on the map fairly quickly.");
 end

@@ -11,15 +11,15 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 
 // ATTACK
-// agro
+// aggro
 
-rule "Attack, ally lane kills, ally agro"
+rule "Attack, ally lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -34,13 +34,13 @@ rule "Attack, ally lane kills, ally agro"
 end
 
 
-rule "Attack, enemy lane kills, ally agro"
+rule "Attack, enemy lane kills, ally aggro"
 	agenda-group "mid-game"
 	salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -54,13 +54,13 @@ rule "Attack, enemy lane kills, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and ask for help to fight them off.");
 end
 
-rule "Attack, ally lane towers, ally agro"
+rule "Attack, ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(
@@ -74,13 +74,13 @@ rule "Attack, ally lane towers, ally agro"
 		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to be with your team and push things like objectives and towers with your teamfight ability.");
 end
 
-rule "Attack, enemy lane towers, ally agro"
+rule "Attack, enemy lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			playType == "agro",
+			playType == "aggro",
 			$allyLane : lane
 		)
 		$composition : TeamComposition(

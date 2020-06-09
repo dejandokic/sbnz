@@ -1,0 +1,11 @@
+
+package com.siit.sbnz.sbnztim14.earlyGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+
+

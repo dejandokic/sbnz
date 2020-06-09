@@ -18,6 +18,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { NewRulesComponent } from './new-rules/new-rules.component';
 import { NewRulesEarlyComponent } from './new-rules/new-rules-early/new-rules-early.component';
 import { NewRulesMidLateComponent } from './new-rules/new-rules-mid-late/new-rules-mid-late.component';
+import { NewRulesEarlyJungleComponent } from './new-rules/new-rules-early-jungle/new-rules-early-jungle.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NewRulesMidLateComponent } from './new-rules/new-rules-mid-late/new-rul
     MainPageComponent,
     NewRulesComponent,
     NewRulesEarlyComponent,
-    NewRulesMidLateComponent
+    NewRulesMidLateComponent,
+    NewRulesEarlyJungleComponent
   ],
   imports: [
     BrowserModule,

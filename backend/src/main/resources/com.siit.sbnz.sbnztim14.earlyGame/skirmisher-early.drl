@@ -47,7 +47,7 @@ rule "Skirmisher vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as divers are highly mobile and can put pressure on you quite quickly, but they shouldn’t present to much of a problem given your sustainability in fights.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as divers are highly mobile and can put pressure on you quite quickly, but they shouldn't present to much of a problem given your sustainability in fights.");
 end
 
 //        vs Assassin
@@ -66,7 +66,7 @@ rule "Skirmisher vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as assassins are rather mobile and can burst you down when you least expect it, but they shouldn’t present to much of a problem given your sustainability in fights.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Be careful as assassins are rather mobile and can burst you down when you least expect it, but they shouldn't present to much of a problem given your sustainability in fights.");
 end
 
 //        vs Skirmisher
@@ -201,7 +201,7 @@ rule "Skirmisher vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Impenetrable tanks, with a lot of sustain and it will feel like it’s almost impossible to defeat them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you will have a disadvantage with your lack of mobility but using your hard engages and CC you can secure trades in your favor. Impenetrable tanks, with a lot of sustain and it will feel like it's almost impossible to defeat them.");
 end
 
 //        vs Catcher

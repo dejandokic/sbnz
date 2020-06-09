@@ -13,9 +13,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Warden, mid-late game, (split push), splitPush"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
 			$allyLane : lane,
 			splitPush == true
@@ -28,9 +28,9 @@ rule "Warden, mid-late game, (split push), splitPush"
 end
 
 rule "Warden, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
 			$allyLane : lane,
 			splitPush == false
@@ -46,9 +46,9 @@ end
 // Siege
 
 rule "Warden, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
 			$allyLane : lane
 		)
@@ -63,9 +63,9 @@ end
 // Protect
 
 rule "Warden, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
 			$allyLane : lane
 		)
@@ -73,18 +73,17 @@ rule "Warden, mid-late game, (protect)"
 			composition == "protect"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a protect comp your focus is to keep enemies away from your backline carry. You are very beefy and with your hard CC they shouldn’t ignore you. You have a lot of sustain, so you won’t be easy to take down.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a warden in a protect comp your focus is to keep enemies away from your backline carry. You are very beefy and with your hard CC they shouldn't ignore you. You have a lot of sustain, so you won't be easy to take down.");
 end
 
 // Attack
 
 rule "Warden, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
-			$allyLane : lane,
-			hardCC == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"
@@ -98,9 +97,9 @@ end
 
 
 rule "Warden, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "warden",
 			$allyLane : lane
 		)

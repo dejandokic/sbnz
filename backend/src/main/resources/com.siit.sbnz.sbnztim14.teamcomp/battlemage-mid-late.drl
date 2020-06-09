@@ -12,9 +12,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Battlemage, mid-late game, (split push), splitPush"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane,
 			splitPush == true
@@ -23,15 +23,15 @@ rule "Battlemage, mid-late game, (split push), splitPush"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn�t be a problem and with your waveclear pushing lanes should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn't be a problem and with your waveclear pushing lanes should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
 
 
 rule "Battlemage, mid-late game, (split push)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane,
 			splitPush == false
@@ -40,16 +40,16 @@ rule "Battlemage, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can�t stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn�t be a problem and with your waveclear putting pressure on the enemy should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can't stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn't be a problem and with your waveclear putting pressure on the enemy should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
 // Siege
 
 
 rule "Battlemage, mid-late game, (siege)"
+    agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane
 		)
@@ -64,9 +64,9 @@ end
 // Protect
 
 rule "Battlemage, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane
 		)
@@ -80,9 +80,9 @@ end
 // Attack
 
 rule "Battlemage, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane
 		)
@@ -96,9 +96,9 @@ end
 // Catch
 
 rule "Battlemage, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "battlemage",
 			$allyLane : lane
 		)

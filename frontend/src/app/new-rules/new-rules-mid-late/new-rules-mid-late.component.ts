@@ -9,12 +9,9 @@ import { RulesService } from 'src/app/services/rules.service';
 })
 export class NewRulesMidLateComponent implements OnInit {
 
-  champRole = ['Juggernaut', 'Diver', 'Assassin', 'Skirmisher', 'Marksman', 'Burst',
-                'Battlemage', 'Artillery', 'Vanguard', 'Warden', 'Catcher', 'Enchanter'];
-  lanes = ['Top', 'Jungle', 'Mid', 'Bottom'];
-  playType = ['Aggro', 'Defensive'];
-  teamComposition = ['Attack', 'Protect', 'Catch', 'Poke', 'Split push'];
-  gamePhase = ['Mid', 'Late'];
+  champRole = ['juggernaut', 'diver', 'assassin', 'skirmisher', 'marksman', 'burst',
+                'battlemage', 'artillery', 'vanguard', 'warden', 'catcher', 'enchanter'];
+  teamComposition = ['attack', 'protect', 'catch', 'poke', 'splitPush'];
 
   newRule: FormGroup;
 
@@ -27,17 +24,12 @@ export class NewRulesMidLateComponent implements OnInit {
     {description: 'Sustain', value: 'sustain'},
     {description: 'Utility', value: 'utility'},
     {description: 'Mobility', value: 'mobility'},
-    {description: 'AOE Damage', value: 'aoeDamage'},
     {description: 'Split push', value: 'splitPush'}
-
   ];
 
   currentSelected = {
-    allyRole: 'Juggernaut',
-    teamComposition: 'Attack',
-    playType: 'Aggro',
-    lane: 'Top',
-    gamePhase: 'Mid'
+    allyRole: 'juggernaut',
+    teamComposition: 'attack',
   };
 
   constructor(private rulesService: RulesService) { }
@@ -46,10 +38,8 @@ export class NewRulesMidLateComponent implements OnInit {
     this.newRule = new FormGroup({
       allyRole: new FormControl(this.currentSelected.allyRole, Validators.required),
       teamComposition: new FormControl(this.currentSelected.teamComposition, Validators.required),
-      playType: new FormControl(this.currentSelected.playType, Validators.required),
-      lane: new FormControl(this.currentSelected.lane, Validators.required),
-      gamePhase: new FormControl(this.currentSelected.gamePhase, Validators.required),
       advice: new FormControl('', Validators.required),
+      ruleName: new FormControl('', Validators.required),
       playStyles: new FormArray([])
     });
 
@@ -65,30 +55,6 @@ export class NewRulesMidLateComponent implements OnInit {
       this.teamComposition.forEach((comp) => {
         if (comp === value) {
           this.currentSelected.teamComposition = comp;
-        }
-      });
-    });
-
-    this.newRule.get('gamePhase').valueChanges.subscribe((value: any) => {
-      this.gamePhase.forEach((phase) => {
-        if (phase === value) {
-          this.currentSelected.gamePhase = phase;
-        }
-      });
-    });
-
-    this.newRule.get('playType').valueChanges.subscribe((value: any) => {
-      this.playType.forEach((type) => {
-        if (type === value) {
-          this.currentSelected.playType = type;
-        }
-      });
-    });
-
-    this.newRule.get('lane').valueChanges.subscribe((value: any) => {
-      this.lanes.forEach((lane) => {
-        if (lane === value) {
-          this.currentSelected.lane = lane;
         }
       });
     });
@@ -117,27 +83,32 @@ export class NewRulesMidLateComponent implements OnInit {
 
     const allyRole = this.newRule.get('allyRole').value;
     const teamComposition = this.newRule.get('teamComposition').value;
-    const playType = this.newRule.get('playType').value;
-    const lane = this.newRule.get('lane').value;
     const playStyles = this.newRule.get('playStyles').value;
     const advice = this.newRule.get('advice').value;
-    const gamePhase = this.newRule.get('gamePhase').value;
+    const ruleName = this.newRule.get('ruleName').value;
 
     const newRule = {
-      allyRole,
-      teamComposition,
-      playType,
-      lane,
-      playStyles,
-      advice,
-      gamePhase
+      allyType: allyRole,
+      teamComp: teamComposition,
+      skillsName: ruleName,
+      hardCC: (playStyles.indexOf('hardCC') > -1) ? true : false,
+      hardEngage: (playStyles.indexOf('hardEngage') > -1) ? true : false,
+      poke: (playStyles.indexOf('poke') > -1) ? true : false,
+      waveclear: (playStyles.indexOf('waveclear') > -1) ? true : false,
+      disengage: (playStyles.indexOf('disengage') > -1) ? true : false,
+      sustain: (playStyles.indexOf('sustain') > -1) ? true : false,
+      utility: (playStyles.indexOf('utility') > -1) ? true : false,
+      mobility: (playStyles.indexOf('mobility') > -1) ? true : false,
+      splitPush: (playStyles.indexOf('splitPush') > -1) ? true : false,
+      advice
     };
 
     console.log(newRule);
 
-    this.rulesService.addMidLateRule(newRule).subscribe(
+    this.rulesService.addTeamCompositionRule(newRule).subscribe(
       resData => {
         console.log(resData);
+        this.newRule.reset();
       },
       error => {
         console.log(error);

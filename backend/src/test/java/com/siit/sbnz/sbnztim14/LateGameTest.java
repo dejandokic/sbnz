@@ -6,6 +6,8 @@ import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 
+import static org.junit.Assert.*;
+
 public class LateGameTest {
 
     @Test
@@ -31,7 +33,8 @@ public class LateGameTest {
         kieSession.fireAllRules();
 
         AdviceStorage adv = (AdviceStorage) kieSession.getGlobal("adviceStorage");
-        System.out.println(adv.getAdvices());
+
+        assertEquals("[catch, late] Even with a kill lead your objective and tower control is rather weak, which will end up losing you the game. Use the strength you have, which is your map control, and prevent their attempts to take objectives/towers by catching them off guard and killing them off separately.", adv.getAdvices().get(0));
 
 
 

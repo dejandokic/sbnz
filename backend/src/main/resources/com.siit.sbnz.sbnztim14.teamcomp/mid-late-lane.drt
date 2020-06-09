@@ -2,7 +2,6 @@ template header
 allyType
 teamComp
 skillsName
-playType
 hardCC
 hardEngage
 poke
@@ -29,24 +28,24 @@ template "early-lane"
 
 
 
-rule "@{allyType}, mid-late game, (@{teamComp}), ally @{skillsName}"
+rule "@{skillsName}"
+    agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "@{allyType}",
-			$allyLane : lane,
-			hardCC: @{hardCC},
-			hardEngage: @{hardEngage},
-			poke: @{poke},
-			waveclear: @{waveclear},
-			disengage: @{disengage},
-			sustain: @{sustain},
-			utility: @{utility},
-			mobility: @{mobility},
-			splitPush: @{splitPush}
+			hardCC == @{hardCC},
+			hardEngage == @{hardEngage},
+			poke == @{poke},
+			waveclear == @{waveclear},
+			disengage == @{disengage},
+			sustain == @{sustain},
+			utility == @{utility},
+			mobility == @{mobility},
+			splitPush == @{splitPush},
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
-			composition == @{teamComp}
+			composition == "@{teamComp}"
 		)
 	then
 		adviceStorage.addAdvice($allyLane, "mid-late", "@{advice}");

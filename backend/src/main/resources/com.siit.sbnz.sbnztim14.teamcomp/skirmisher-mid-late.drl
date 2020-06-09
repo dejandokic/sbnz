@@ -13,9 +13,9 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 // SPLIT PUSH
 
 rule "Skirmisher, mid-late game, (split push), splitPush"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane,
 			splitPush == true
@@ -24,14 +24,14 @@ rule "Skirmisher, mid-late game, (split push), splitPush"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to push towers and outsustain multiple enemies attacking you. You have a lot of hard CC so if someone gets close they shouldn’t be hard to deal with. As mentioned you do have sustain, so fighting and staying a bit longer in lane will not be an issue. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to push towers and outsustain multiple enemies attacking you. You have a lot of hard CC so if someone gets close they shouldn't be hard to deal with. As mentioned you do have sustain, so fighting and staying a bit longer in lane will not be an issue. ");
 end
 
 
 rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane,			
 			splitPush == false
@@ -40,7 +40,7 @@ rule "Skirmisher, mid-late game, (split push), ally sustain + hardCC"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to prolong fights so your team can push lanes. You have a lot of hard CC so if someone gets close they wouldn’t be to hard to deal with and using your sustain you can fight multiple opponents with ease.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a skirmisher in a split push comp your focus is to prolong fights so your team can push lanes. You have a lot of hard CC so if someone gets close they wouldn't be to hard to deal with and using your sustain you can fight multiple opponents with ease.");
 end
 
 
@@ -48,9 +48,9 @@ end
 // Siege
 
 rule "Skirmisher, mid-late game, (siege)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane
 		)
@@ -65,9 +65,9 @@ end
 // Protect
 
 rule "Skirmisher, mid-late game, (protect)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane
 		)
@@ -82,9 +82,9 @@ end
 // Attack
 
 rule "Skirmisher, mid-late game, (attack)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane
 		)
@@ -98,9 +98,9 @@ end
 // Catch
 
 rule "Skirmisher, mid-late game, (catch)"
+	agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(
-			lane != "jungle",
 			role == "skirmisher",
 			$allyLane : lane
 		)

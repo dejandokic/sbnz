@@ -22,14 +22,12 @@
             </select>
           </div>
           <div class="field">
-            <p>Lane: </p>
-            <select formControlName="lane">
-              <option *ngFor="let l of lanes" [value]="l">{{l}}</option>
-            </select>
+            <p>Rule name: </p>
+            <input type="text" formControlName="ruleName">
           </div>
         </div>
         <div class="rightPart" style="margin-top: 6px;">
-          <div *ngFor="let choice of checks; let i=index" class="col-md-2" style="margin-bottom: 4px;">
+          <div *ngFor="let choice of checks; let i=index" class="col-md-2" style="margin-bottom: 12px;">
             <label>
               <input type="checkbox" [value]="choice.value" (change)="onCheckChange($event)">
               {{choice.description}}

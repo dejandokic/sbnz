@@ -15,6 +15,8 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static org.junit.Assert.*;
+
 public class MidGameTest {
 
     @Test
@@ -106,11 +108,15 @@ public class MidGameTest {
         kieSession.insert(midGame4);
         kieSession.insert(midGame5);
         kieSession.insert(teamComposition);
+
         kieSession.getAgenda().getAgendaGroup("mid-game").setFocus();
-        kieSession.fireAllRules();
+        int rules = kieSession.fireAllRules();
 
         AdviceStorage adv = (AdviceStorage) kieSession.getGlobal("adviceStorage");
-        System.out.println(adv.getAdvices().size());
+
+        assertEquals(3, rules);
+        assertEquals(3, adv.getAdvices().size());
+
 
 
 

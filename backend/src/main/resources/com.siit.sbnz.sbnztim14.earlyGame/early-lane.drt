@@ -12,7 +12,7 @@ sustain
 utility
 advice
 
-package com.siit.sbnz.sbnztim14.teamcomp
+package com.siit.sbnz.sbnztim14.earlyGame
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -24,27 +24,28 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 template "early-lane"
 
 
-rule "@{allyType} vs @{enemyType}, ally @{skillsName}, ally @{playType}"
+rule "@{skillsName}"
+    agenda-group "early-game-part-1"
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
-			role == @{allyType},
+			role == "@{allyType}",
 			$allyLane: lane,
-			hardCC: @{hardCC},
-			hardEngage: @{hardEngage},
-			poke: @{poke},
-			waveclear: @{waveclear},
-			disengage: @{disengage},
-			sustain: @{sustain},
-			utility: @{utility},
-			playType == @{playType}
+			hardCC == @{hardCC},
+			hardEngage == @{hardEngage},
+			poke == @{poke},
+			waveclear == @{waveclear},
+			disengage == @{disengage},
+			sustain == @{sustain},
+			utility == @{utility},
+			playType == "@{playType}"
 		)
 		$enemy : EnemyChampion(
 			lane == $allyLane,
-			role == @{enemyType}
+			role == "@{enemyType}"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", @{advice});
+		adviceStorage.addAdvice($allyLane, "early", "@{advice}");
 end
 
 end template

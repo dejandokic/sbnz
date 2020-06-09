@@ -5,10 +5,9 @@ import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
  
- 
-//-------------------------- Off
+global AdviceStorage adviceStorage;
 
-
+// -------------------------- Off
 		
 rule "Catcher vs Juggernaut, ally aggro"
 	agenda-group "early-game-part-1"
@@ -24,11 +23,9 @@ rule "Catcher vs Juggernaut, ally aggro"
 			role == "juggernaut"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them. ");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Juggernauts can sustain a lot of damage, and even dish some back which makes it difficult to kill them. ");
 end
 
-
-		
 				
 rule "Catcher vs Diver, ally aggro"
 	agenda-group "early-game-part-1"
@@ -44,7 +41,7 @@ rule "Catcher vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a diver, you might have problems even if you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Be careful as divers are highly mobile and can put pressure on you quite quickly.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, you might have problems even if you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Be careful as divers are highly mobile and can put pressure on you quite quickly.");
 end
 
 
@@ -63,7 +60,7 @@ rule "Catcher vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you might have problems even if you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Be careful as assassins are rather mobile and can burst you down when you least expect it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you might have problems even if you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Be careful as assassins are rather mobile and can burst you down when you least expect it.");
 end
 
 
@@ -82,7 +79,7 @@ rule "Catcher vs Skirmisher, ally aggro"
 			role == "skirmisher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Skirmishers are not as mobile, but they have the toolkit to deal with every situation.");
 end
 
 
@@ -100,7 +97,7 @@ rule "Catcher vs Marksman, ally aggro"
 			role == "marksman"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you should be at a range disadvantage. Use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, you should be at a range disadvantage. Use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time.");
 end
 
 				
@@ -118,7 +115,7 @@ rule "Catcher vs Burst, ally aggro"
 			role == "burst"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a burster, you should be at a range disadvantage. Use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Bursters have a lot of CC, and once you are locked down they will burst you with ease.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, you should be at a range disadvantage. Use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Bursters have a lot of CC, and once you are locked down they will burst you with ease.");
 end
 	
 				
@@ -137,7 +134,7 @@ rule "Catcher vs Battlemage, ally aggro"
 			role == "battlemage"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Battlemages have their highly sustainable damage so you need to be careful in prolonged fights.");
 end
 
 rule "Catcher vs Artillery, ally aggro"
@@ -154,7 +151,7 @@ rule "Catcher vs Artillery, ally aggro"
 			role == "artillery"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Using their poke and long range you will get punished all the time, so try to position carefully.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Using their poke and long range you will get punished all the time, so try to position carefully.");
 end
 
 			
@@ -172,7 +169,7 @@ rule "Catcher vs Vanguard, ally aggro"
 			role == "vanguard"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. With a lot of sustain, they are quite hard to take down but with overall good damage can be hassle to fight against.");
 end
 
 							
@@ -190,7 +187,7 @@ rule "Catcher vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn�t have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Impenetrable tanks, with a lot of sustain and it will feel like it�s almost impossible to defeat them.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you shouldn't have problems as long as you stay at a safe distance. Your hard CC can secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Impenetrable tanks, with a lot of sustain and it will feel like it's almost impossible to defeat them.");
 end
 
 
@@ -210,7 +207,7 @@ rule "Catcher vs Catcher, ally aggro"
 			role == "catcher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against another catcher, use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them, so try to bait out their CC before trading.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another catcher, use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. Catchers specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them, so try to bait out their CC before trading.");
 end
 
 
@@ -230,12 +227,12 @@ rule "Catcher vs Enchanter, ally aggro"
 			role == "enchanter"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should use your hard CC to secure them in place, so you can use your poke to have free trades and engage when the kill can be secured. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
 end
 
 
 				
-//--------------------- Def
+// --------------------- Def
 
 
 	
@@ -253,7 +250,7 @@ rule "Catcher vs Juggernaut, ally def"
 			role == "juggernaut"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with their hard CC and often hurtful trades you really need to be careful and avoid fights at all cost. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a juggernaut, with their hard CC and often hurtful trades you really need to be careful and avoid fights at all cost. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 	
@@ -271,7 +268,7 @@ rule "Catcher vs Diver, ally def"
 			role == "diver"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you need to be careful how you position. They can engage quickly for a lot of damage, so you should be safe in distant trades with your utility and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you need to be careful how you position. They can engage quickly for a lot of damage, so you should be safe in distant trades with your utility and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 	
@@ -289,7 +286,7 @@ rule "Catcher vs Assassin, ally def"
 			role == "assassin"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so you should be safe in distant trades with your utility and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they engage for a kill, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. They are very mobile and hard to deal with, so you should be safe in distant trades with your utility and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they engage for a kill, but be careful to not waste it.");
 end
 		
 
@@ -308,7 +305,7 @@ rule "Catcher vs Skirmisher, ally def"
 			role == "skirmisher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -326,7 +323,7 @@ rule "Catcher vs Marksman, ally def"
 			role == "marksman"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to withstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -344,7 +341,7 @@ rule "Catcher vs Burst, ally def"
 			role == "burst"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -362,7 +359,7 @@ rule "Catcher vs Battlemage, ally def"
 			role == "battlemage"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -381,7 +378,7 @@ rule "Catcher vs Artillery, ally def"
 			role == "artillery"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. You have utility, but you should still be safe in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be careful against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. You have utility, but you should still be safe in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -399,7 +396,7 @@ rule "Catcher vs Vanguard, ally def"
 			role == "vanguard"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -418,7 +415,7 @@ rule "Catcher vs Warden, ally def"
 			role == "warden"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -436,7 +433,7 @@ rule "Catcher vs Catcher, ally def"
 			role == "catcher"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against another catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have utility, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have utility, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
 
@@ -456,7 +453,7 @@ rule "Catcher vs Enchanter, ally def"
 			role == "enchanter"
 		)
 	then
-		//adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have utility as well, so you shouldn�t be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have utility as well, so you shouldn't be punished in distant trades as much and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when trades become to harsh, but be careful to not waste it.");
 end
 		
  
