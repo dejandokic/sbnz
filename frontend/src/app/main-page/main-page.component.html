@@ -1,50 +1,70 @@
 <div class="container">
-<div class="main_strategy">
+<div class="main_strategy" *ngIf="isAuthenticated">
   <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
   <div class="strategy">
       <div class="team">
         <h2>Your team</h2>
         <div class="team__mine">
           <div class="champ team__mine__champ1">
-            <div style="display: flex;">
+            <div style="display: flex; align-items: center;">
               <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyTop.name+'.png'" alt="champ" />
               <h4>TOP</h4>
+              <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+                <option [value]="'aggro'">aggro</option>
+                <option [value]="'def'">def</option>
+              </select>
             </div>
             <select formControlName="allyTop">
               <option *ngFor="let champ of champions.top" [value]="champ.name">{{champ.name}}</option>
             </select>
           </div>
             <div class="champ team__mine__champ2">
-              <div style="display: flex;">
+              <div style="display: flex; align-items: center;">
                 <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyJungle.name+'.png'" alt="champ" />
                 <h4>JUNGLE</h4>
+                <select formControlName="allyJunglePrefer" style="margin-left: 20px;">
+                  <option [value]="'aggro'">aggro</option>
+                  <option [value]="'def'">def</option>
+                </select>
               </div>
               <select formControlName="allyJungle">
                 <option *ngFor="let champ of champions.jungle" [value]="champ.name">{{champ.name}}</option>
               </select>
             </div>
             <div class="champ team__mine__champ3">
-              <div style="display: flex;">
+              <div style="display: flex; align-items: center;">
                 <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyMid.name+'.png'" alt="champ" />
                 <h4>MID</h4>
+                <select formControlName="allyMidPrefer" style="margin-left: 20px;">
+                  <option [value]="'aggro'">aggro</option>
+                  <option [value]="'def'">def</option>
+                </select>
               </div>
                 <select formControlName="allyMid">
                   <option *ngFor="let champ of champions.mid" [value]="champ.name">{{champ.name}}</option>
                 </select>
             </div>
             <div class="champ team__mine__champ4">
-              <div style="display: flex;">
+              <div style="display: flex; align-items: center;">
                 <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allyADC.name+'.png'" alt="champ" />
                 <h4>ADC</h4>
+                <select formControlName="allyADCPrefer" style="margin-left: 20px;">
+                  <option [value]="'aggro'">aggro</option>
+                  <option [value]="'def'">def</option>
+                </select>
               </div>
               <select formControlName="allyADC">
                 <option *ngFor="let champ of champions.adc" [value]="champ.name">{{champ.name}}</option>
               </select>
             </div>
             <div class="champ team__mine__champ5">
-              <div style="display: flex;">
+              <div style="display: flex; align-items: center;">
                 <img [src]="'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/'+currentSelected.allySupport.name+'.png'" alt="champ" />
                 <h4>SUPPORT</h4>
+                <select formControlName="allySupportPrefer" style="margin-left: 20px;">
+                  <option [value]="'aggro'">aggro</option>
+                  <option [value]="'def'">def</option>
+                </select>
               </div>
               <select formControlName="allySupport">
                 <option *ngFor="let champ of champions.support" [value]="champ.name">{{champ.name}}</option>

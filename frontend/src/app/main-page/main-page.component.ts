@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IChampion } from '../services/strategy.service';
 import * as data from '../shared/champions.json';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { StrategyService } from '../services/strategy.service';
+import { Subscription } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit, OnDestroy {
   champs: any = (data as any).default;
   currentSelected = {
     allyTop: {name: 'Aatrox'},
@@ -21,8 +23,16 @@ export class MainPageComponent implements OnInit {
     enemyMid: {name: 'Ahri'},
     enemyJungle: {name: 'Aatrox'},
     enemyADC: {name: 'Aphelios'},
-    enemySupport: {name: 'Alistar'}
+    enemySupport: {name: 'Alistar'},
+    allyTopPrefer: {name: 'aggro'},
+    allyJunglePrefer: {name: 'aggro'},
+    allyMidPrefer: {name: 'aggro'},
+    allyADCPrefer: {name: 'aggro'},
+    allySupportPrefer: {name: 'aggro'}
   };
+
+  private userSub: Subscription;
+  isAuthenticated = false;
 
   champions: any = {
     top: [],
@@ -33,7 +43,7 @@ export class MainPageComponent implements OnInit {
   };
   champForm: FormGroup;
 
-  constructor(private strategyService: StrategyService) {}
+  constructor(private strategyService: StrategyService, private authService: AuthService) {}
 
   ngOnInit() {
     this.champForm = new FormGroup({
@@ -47,6 +57,15 @@ export class MainPageComponent implements OnInit {
       enemyMid: new FormControl('', Validators.required),
       enemyADC: new FormControl('', Validators.required),
       enemySupport: new FormControl('', Validators.required),
+      allyTopPrefer: new FormControl('', Validators.required),
+      allyJunglePrefer: new FormControl('', Validators.required),
+      allyMidPrefer: new FormControl('', Validators.required),
+      allyADCPrefer: new FormControl('', Validators.required),
+      allySupportPrefer: new FormControl('', Validators.required)
+    });
+
+    this.userSub = this.authService.user.subscribe(user => {
+      this.isAuthenticated = !!user;
     });
 
     this.champForm.get('allyTop').valueChanges.subscribe((value: any) => {
@@ -129,6 +148,26 @@ export class MainPageComponent implements OnInit {
       });
     });
 
+    this.champForm.get('allyTopPrefer').valueChanges.subscribe((value: any) => {
+      this.currentSelected.allyTopPrefer = value;
+    });
+
+    this.champForm.get('allyJunglePrefer').valueChanges.subscribe((value: any) => {
+      this.currentSelected.allyJunglePrefer = value;
+    });
+
+    this.champForm.get('allyMidPrefer').valueChanges.subscribe((value: any) => {
+      this.currentSelected.allyMidPrefer = value;
+    });
+
+    this.champForm.get('allyADCPrefer').valueChanges.subscribe((value: any) => {
+      this.currentSelected.allyADCPrefer = value;
+    });
+
+    this.champForm.get('allySupportPrefer').valueChanges.subscribe((value: any) => {
+      this.currentSelected.allySupportPrefer = value;
+    });
+
     this.champs.forEach((ch: any) => {
       const champ: IChampion = { name: ch.name };
       if (ch.lane && ch.lane.adc) {
@@ -158,8 +197,17 @@ export class MainPageComponent implements OnInit {
       enemyJungle: this.champions.jungle[0].name,
       enemyMid: this.champions.mid[0].name,
       enemyADC: this.champions.adc[0].name,
-      enemySupport: this.champions.support[0].name
+      enemySupport: this.champions.support[0].name,
+      allyTopPrefer: 'aggro',
+      allyJunglePrefer: 'aggro',
+      allyMidPrefer: 'aggro',
+      allyADCPrefer: 'aggro',
+      allySupportPrefer: 'aggro'
     });
+  }
+
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
   }
 
 
@@ -180,9 +228,17 @@ export class MainPageComponent implements OnInit {
     const enemyADC = this.champForm.get('enemyADC').value;
     const enemySupport = this.champForm.get('enemySupport').value;
 
-    const champsArray = [allyTop, allyJungle, allyMid, allyADC, allySupport, enemyTop, enemyJungle, enemyMid, enemyADC, enemySupport];
+    const allyTopPrefer = this.champForm.get('allyTopPrefer').value;
+    const allyJunglePrefer = this.champForm.get('allyJunglePrefer').value;
+    const allyMidPrefer = this.champForm.get('allyMidPrefer').value;
+    const allyADCPrefer = this.champForm.get('allyADCPrefer').value;
+    const allySupportPrefer = this.champForm.get('allySupportPrefer').value;
 
-    this.strategyService.getStrategy(champsArray).subscribe(
+
+    const champsArray = [allyTop, allyJungle, allyMid, allyADC, allySupport, enemyTop, enemyJungle, enemyMid, enemyADC, enemySupport];
+    const prefers = [allyTopPrefer, allyJunglePrefer, allyMidPrefer, allyADCPrefer, allySupportPrefer];
+
+    this.strategyService.getStrategy(champsArray, prefers).subscribe(
       resData => {
         console.log(resData);
       },
