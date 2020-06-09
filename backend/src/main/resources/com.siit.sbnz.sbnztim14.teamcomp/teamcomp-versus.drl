@@ -6,6 +6,7 @@ import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Split vs Split"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -20,6 +21,7 @@ rule "Split vs Split"
  end
 
 rule "Split vs Siege"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -35,6 +37,7 @@ rule "Split vs Siege"
 
 
 rule "Split vs Protect"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -51,6 +54,7 @@ rule "Split vs Protect"
 
 
 rule "Split vs Attack"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -66,6 +70,7 @@ rule "Split vs Attack"
 
 
 rule "Split vs Catch"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -84,6 +89,7 @@ rule "Split vs Catch"
 
 
 rule "Siege vs Split"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -98,6 +104,7 @@ rule "Siege vs Split"
  end
 
 rule "Siege vs Siege"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -113,6 +120,7 @@ rule "Siege vs Siege"
 
 
 rule "Siege vs Protect"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -129,6 +137,7 @@ rule "Siege vs Protect"
 
 
 rule "Siege vs Attack"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -144,6 +153,7 @@ rule "Siege vs Attack"
 
 
 rule "Siege vs Catch"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -162,6 +172,7 @@ rule "Siege vs Catch"
 
 
 rule "Protect vs Split"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -176,6 +187,7 @@ rule "Protect vs Split"
  end
 
 rule "Protect vs Siege"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -191,6 +203,7 @@ rule "Protect vs Siege"
 
 
 rule "Protect vs Protect"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -207,6 +220,7 @@ rule "Protect vs Protect"
 
 
 rule "Protect vs Attack"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -222,6 +236,7 @@ rule "Protect vs Attack"
 
 
 rule "Protect vs Catch"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -240,6 +255,7 @@ rule "Protect vs Catch"
 
 
 rule "Attack vs Split"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -254,6 +270,7 @@ rule "Attack vs Split"
  end
 
 rule "Attack vs Siege"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -269,6 +286,7 @@ rule "Attack vs Siege"
 
 
 rule "Attack vs Protect"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -285,6 +303,7 @@ rule "Attack vs Protect"
 
 
 rule "Attack vs Attack"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -300,6 +319,7 @@ rule "Attack vs Attack"
 
 
 rule "Attack vs Catch"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -318,6 +338,7 @@ rule "Attack vs Catch"
 
 
 rule "Catch vs Split"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -332,6 +353,7 @@ rule "Catch vs Split"
  end
 
 rule "Catch vs Siege"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -347,6 +369,7 @@ rule "Catch vs Siege"
 
 
 rule "Catch vs Protect"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -363,6 +386,7 @@ rule "Catch vs Protect"
 
 
 rule "Catch vs Attack"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",
@@ -378,6 +402,7 @@ rule "Catch vs Attack"
 
 
 rule "Catch vs Catch"
+ agenda-group "teamcomp-versus"
  when
     $allyTeam : TeamCompositionProbability(
         team == "final",

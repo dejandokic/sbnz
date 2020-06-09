@@ -70,13 +70,6 @@ public class StrategyService {
 
         kSession = kieContainer.newKieSession("ksession-rules");
 
-        // Play type rules
-        kSession.getAgenda().getAgendaGroup("play-type").setFocus();
-        kSession.fireAllRules();
-
-        // Early game part 1 rules
-        kSession.setGlobal("adviceStorage", new AdviceStorage());
-
         // Insert ally
         kSession.insert(ally1);
         kSession.insert(ally2);
@@ -91,10 +84,24 @@ public class StrategyService {
         kSession.insert(enemy4);
         kSession.insert(enemy5);
 
+        // Play type rules
+        kSession.getAgenda().getAgendaGroup("play-type").setFocus();
+        kSession.fireAllRules();
+
+        // Early game part 1 rules
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
+
         kSession.getAgenda().getAgendaGroup("early-game-part-1").setFocus();
         kSession.fireAllRules();
 
         TeamComposition teamComposition = getStrategyTeamComposition();
+
+        kSession.insert(teamComposition);
+        kSession.getAgenda().getAgendaGroup("teamcomp-role").setFocus();
+        kSession.fireAllRules();
+
+        kSession.getAgenda().getAgendaGroup("teamcomp-versus").setFocus();
+        kSession.fireAllRules();
 
         AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
         adviceStorage.addAdvice("ALL", "None", "Your team composition is " + teamComposition.getComposition());

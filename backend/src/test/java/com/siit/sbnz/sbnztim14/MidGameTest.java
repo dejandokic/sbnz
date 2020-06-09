@@ -57,7 +57,6 @@ public class MidGameTest {
         midGame.setEnemyKills(4);
         midGame.setAllyTowers(0);
         midGame.setEnemyTowers(2);
-        midGame.setAdviceGiven(false);
 
 
         MidGame midGame2 = new MidGame();
@@ -66,13 +65,11 @@ public class MidGameTest {
         midGame2.setEnemyKills(4);
         midGame2.setAllyTowers(1);
         midGame2.setEnemyTowers(3);
-        midGame2.setAdviceGiven(false);
 
         MidGame midGame3 = new MidGame();
         midGame3.setLane("jungle");
         midGame3.setAllyObjectives(3);
         midGame3.setEnemyObjectives(0);
-        midGame3.setAdviceGiven(false);
 
         MidGame midGame4 = new MidGame();
         midGame4.setLane("adc");
@@ -80,7 +77,6 @@ public class MidGameTest {
         midGame4.setEnemyKills(2);
         midGame4.setAllyTowers(1);
         midGame4.setEnemyTowers(1);
-        midGame4.setAdviceGiven(false);
 
 
         kieSession.insert(ally);
@@ -157,8 +153,6 @@ public class MidGameTest {
         midGame.setEnemyKills(4);
         midGame.setAllyTowers(0);
         midGame.setEnemyTowers(2);
-        midGame.setAdviceGiven(false);
-
 
         MidGame midGame2 = new MidGame();
         midGame2.setLane("mid");
@@ -166,13 +160,11 @@ public class MidGameTest {
         midGame2.setEnemyKills(4);
         midGame2.setAllyTowers(1);
         midGame2.setEnemyTowers(3);
-        midGame2.setAdviceGiven(false);
 
         MidGame midGame3 = new MidGame();
         midGame3.setLane("jungle");
         midGame3.setAllyObjectives(0);
         midGame3.setEnemyObjectives(0);
-        midGame3.setAdviceGiven(false);
 
         MidGame midGame4 = new MidGame();
         midGame4.setLane("adc");
@@ -180,7 +172,6 @@ public class MidGameTest {
         midGame4.setEnemyKills(2);
         midGame4.setAllyTowers(2);
         midGame4.setEnemyTowers(1);
-        midGame4.setAdviceGiven(false);
 
 
         kieSession.insert(ally);
