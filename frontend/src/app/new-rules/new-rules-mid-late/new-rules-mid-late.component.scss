@@ -27,13 +27,14 @@
 .field {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 6px;
+  width: 100%;
 
   & select {
     height: 50%;
-    width: 200px;
+    width: 190px;
     color: white;
     border-radius: 10px;
     margin-right: 20px;
@@ -41,6 +42,15 @@
     padding: 5px;
     background-color: rgb(255, 255, 255, 0.0);
 
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & input {
+    width: 200px;
+    height: 70%;
+    padding: 5px;
     &:focus {
       outline: none;
     }

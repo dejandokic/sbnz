@@ -28,7 +28,7 @@ template "early-lane"
 
 
 
-rule "@{allyType}, mid-late game, (@{teamComp}), ally @{skillsName}"
+rule "@{skillsName}"
     agenda-group "teamcomp-role"
 	when
 		$ally : AllyChampion(

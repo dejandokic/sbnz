@@ -1,6 +1,7 @@
 <div fxLayout="column" style="border-bottom: 0;">
   <mat-tab-group mat-align-tabs="center" [(selectedIndex)]="selectedIndex">
     <mat-tab style="color: white;" label="Early Game rules"><app-new-rules-early></app-new-rules-early></mat-tab>
-    <mat-tab label="Mid/Late Game rules"><app-new-rules-mid-late (tabChanged)="tabChanged($event)"></app-new-rules-mid-late></mat-tab>
+    <mat-tab label="Early Jungle rules"><app-new-rules-early-jungle (tabChanged)="tabChanged($event)"></app-new-rules-early-jungle></mat-tab>
+    <mat-tab label="Mid-late rules"><app-new-rules-mid-late (tabChanged)="tabChanged($event)"></app-new-rules-mid-late></mat-tab>
   </mat-tab-group>
 </div>

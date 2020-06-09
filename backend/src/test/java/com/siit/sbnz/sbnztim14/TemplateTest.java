@@ -47,7 +47,7 @@ public class TemplateTest {
         drl = "\n" + drl.substring(drl.indexOf("rule"));
 
         try {
-            Files.write(Paths.get("C:/Users/Dz0n1Pr0/Desktop/sbnz/backend/src/main/resources/com.siit.sbnz.sbnztim14.earlyGame/newRulesEarlyLane.drl"), drl.getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get("src/main/resources/com.siit.sbnz.sbnztim14.earlyGame/newRulesEarlyLane.drl"), drl.getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             throw new FileNotFoundException(e.toString());
         }
@@ -68,7 +68,7 @@ public class TemplateTest {
         drl = "\n" + drl.substring(drl.indexOf("rule"));
 
         try {
-            Files.write(Paths.get("C:/Users/Dz0n1Pr0/Desktop/sbnz/backend/src/main/resources/com.siit.sbnz.sbnztim14.earlyGame/newRulesJungleEarly.drl"), drl.getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get("src/main/resources/com.siit.sbnz.sbnztim14.earlyGame/newRulesJungleEarly.drl"), drl.getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             throw new FileNotFoundException(e.toString());
         }
@@ -89,7 +89,7 @@ public class TemplateTest {
         drl = "\n" + drl.substring(drl.indexOf("rule"));
 
         try {
-            Files.write(Paths.get("C:/Users/Dz0n1Pr0/Desktop/sbnz/backend/src/main/resources/com.siit.sbnz.sbnztim14.teamcomp/newRulesMidLateTeamcomp.drl"), drl.getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get("src/main/resources/com.siit.sbnz.sbnztim14.teamcomp/newRulesMidLateTeamcomp.drl"), drl.getBytes(), StandardOpenOption.APPEND);
         }catch (IOException e) {
             throw new FileNotFoundException(e.toString());
         }

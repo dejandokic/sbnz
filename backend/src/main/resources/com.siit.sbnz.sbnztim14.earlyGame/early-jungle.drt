@@ -20,7 +20,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 template "early-jungle"
 
-rule "@{allyType}, ally @{skillsName}"
+rule "@{skillsName}"
     agenda-group "early-game-part-1"
 	when
 		$ally : AllyChampion(

@@ -3,15 +3,15 @@ import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { RulesService } from 'src/app/services/rules.service';
 
 @Component({
-  selector: 'app-new-rules-mid-late',
-  templateUrl: './new-rules-mid-late.component.html',
-  styleUrls: ['./new-rules-mid-late.component.scss']
+  selector: 'app-new-rules-early-jungle',
+  templateUrl: './new-rules-early-jungle.component.html',
+  styleUrls: ['./new-rules-early-jungle.component.scss']
 })
-export class NewRulesMidLateComponent implements OnInit {
+export class NewRulesEarlyJungleComponent implements OnInit {
 
   champRole = ['juggernaut', 'diver', 'assassin', 'skirmisher', 'marksman', 'burst',
                 'battlemage', 'artillery', 'vanguard', 'warden', 'catcher', 'enchanter'];
-  teamComposition = ['attack', 'protect', 'catch', 'poke', 'splitPush'];
+  playType = ['aggro', 'defensive'];
 
   newRule: FormGroup;
 
@@ -22,14 +22,11 @@ export class NewRulesMidLateComponent implements OnInit {
     {description: 'Poke', value: 'poke'},
     {description: 'Waveclear', value: 'waveclear'},
     {description: 'Sustain', value: 'sustain'},
-    {description: 'Utility', value: 'utility'},
-    {description: 'Mobility', value: 'mobility'},
-    {description: 'Split push', value: 'splitPush'}
+    {description: 'Utility', value: 'utility'}
   ];
 
   currentSelected = {
-    allyRole: 'juggernaut',
-    teamComposition: 'attack',
+    allyRole: 'juggernaut'
   };
 
   constructor(private rulesService: RulesService) { }
@@ -37,7 +34,6 @@ export class NewRulesMidLateComponent implements OnInit {
   ngOnInit() {
     this.newRule = new FormGroup({
       allyRole: new FormControl(this.currentSelected.allyRole, Validators.required),
-      teamComposition: new FormControl(this.currentSelected.teamComposition, Validators.required),
       advice: new FormControl('', Validators.required),
       ruleName: new FormControl('', Validators.required),
       playStyles: new FormArray([])
@@ -47,14 +43,6 @@ export class NewRulesMidLateComponent implements OnInit {
       this.champRole.forEach((role) => {
         if (role === value) {
           this.currentSelected.allyRole = role;
-        }
-      });
-    });
-
-    this.newRule.get('teamComposition').valueChanges.subscribe((value: any) => {
-      this.teamComposition.forEach((comp) => {
-        if (comp === value) {
-          this.currentSelected.teamComposition = comp;
         }
       });
     });
@@ -82,30 +70,24 @@ export class NewRulesMidLateComponent implements OnInit {
     }
 
     const allyRole = this.newRule.get('allyRole').value;
-    const teamComposition = this.newRule.get('teamComposition').value;
     const playStyles = this.newRule.get('playStyles').value;
     const advice = this.newRule.get('advice').value;
     const ruleName = this.newRule.get('ruleName').value;
 
     const newRule = {
       allyType: allyRole,
-      teamComp: teamComposition,
       skillsName: ruleName,
+      advice,
       hardCC: (playStyles.indexOf('hardCC') > -1) ? true : false,
       hardEngage: (playStyles.indexOf('hardEngage') > -1) ? true : false,
       poke: (playStyles.indexOf('poke') > -1) ? true : false,
       waveclear: (playStyles.indexOf('waveclear') > -1) ? true : false,
       disengage: (playStyles.indexOf('disengage') > -1) ? true : false,
       sustain: (playStyles.indexOf('sustain') > -1) ? true : false,
-      utility: (playStyles.indexOf('utility') > -1) ? true : false,
-      mobility: (playStyles.indexOf('mobility') > -1) ? true : false,
-      splitPush: (playStyles.indexOf('splitPush') > -1) ? true : false,
-      advice
+      utility: (playStyles.indexOf('utility') > -1) ? true : false
     };
 
-    console.log(newRule);
-
-    this.rulesService.addTeamCompositionRule(newRule).subscribe(
+    this.rulesService.addEarlyJungleRule(newRule).subscribe(
       resData => {
         console.log(resData);
         this.newRule.reset();
