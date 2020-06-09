@@ -24,7 +24,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 template "early-lane"
 
 
-rule "@{allyType} vs @{enemyType}, ally @{skillsName}, ally @{playType}"
+rule "@{skillsName}"
     agenda-group "early-game-part-1"
     salience 5
 	when

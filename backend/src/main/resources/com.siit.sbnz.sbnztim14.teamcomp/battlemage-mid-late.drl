@@ -24,7 +24,7 @@ rule "Battlemage, mid-late game, (split push), splitPush"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn�t be a problem and with your waveclear pushing lanes should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to push towers and distract enemies. You have a lot of hard CC so fighting shouldn't be a problem and with your waveclear pushing lanes should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
 
@@ -42,7 +42,7 @@ rule "Battlemage, mid-late game, (split push)"
 			composition == "splitPush"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can�t stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn�t be a problem and with your waveclear putting pressure on the enemy should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a battlemage in a split push comp your job is to put sustainable pressure on the enemy team so they can't stop your solo laners from pushing. You have a lot of hard CC so fighting shouldn't be a problem and with your waveclear putting pressure on the enemy should be a breeze. Use your sustain or disengage to escape fights when they get to dangerous. ");
 end
 
 // Siege

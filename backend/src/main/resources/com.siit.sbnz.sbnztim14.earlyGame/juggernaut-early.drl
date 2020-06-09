@@ -49,7 +49,7 @@ rule "Juggernaut vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are highly mobile and can put pressure on you quite quickly, but they shouldn�t present a problem with your sustain.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are highly mobile and can put pressure on you quite quickly, but they shouldn't present a problem with your sustain.");
 end
 
 //        vs Assassin
@@ -69,7 +69,7 @@ rule "Juggernaut vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are rather mobile and can burst you down when you get low, but they shouldn�t present a problem with your sustain.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are rather mobile and can burst you down when you get low, but they shouldn't present a problem with your sustain.");
 end
 
 //        vs Skirmisher
@@ -192,7 +192,7 @@ rule "Juggernaut vs Vanguard, ally aggro"
 			role == "vanguard"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With a lot of sustain, they are quite hard to take down and with overall good damage can be hassle to fight against, but shouldn�t be hard for you to deal with.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With a lot of sustain, they are quite hard to take down and with overall good damage can be hassle to fight against, but shouldn't be hard for you to deal with.");
 end
 
 
@@ -213,7 +213,7 @@ rule "Juggernaut vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and deal decent amounts of damage. They are impenetrable tanks, with a lot of sustain and it will feel like it is impossible to defeat them, but it shouldn�t discourage you.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and deal decent amounts of damage. They are impenetrable tanks, with a lot of sustain and it will feel like it is impossible to defeat them, but it shouldn't discourage you.");
 end
 
 //        vs Catcher

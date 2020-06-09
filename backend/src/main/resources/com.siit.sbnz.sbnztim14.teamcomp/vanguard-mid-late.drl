@@ -76,7 +76,7 @@ rule "Vanguard, mid-late game, (protect)"
 			composition == "protect"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid-late", "As a vanguard in a protect comp your focus is to keep enemies away from your backline carry. You are fairly beefy, with a bit of damage so combining it with your hard CC they shouldn�t ignore you. You have sustain, so you won�t be easy to take down as well.");
+		adviceStorage.addAdvice($allyLane, "mid-late", "As a vanguard in a protect comp your focus is to keep enemies away from your backline carry. You are fairly beefy, with a bit of damage so combining it with your hard CC they shouldn't ignore you. You have sustain, so you won't be easy to take down as well.");
 end
 
 

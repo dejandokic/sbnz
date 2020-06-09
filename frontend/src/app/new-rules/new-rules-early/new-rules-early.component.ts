@@ -9,10 +9,9 @@ import { RulesService } from 'src/app/services/rules.service';
 })
 export class NewRulesEarlyComponent implements OnInit {
 
-  champRole = ['Juggernaut', 'Diver', 'Assassin', 'Skirmisher', 'Marksman', 'Burst',
-                'Battlemage', 'Artillery', 'Vanguard', 'Warden', 'Catcher', 'Enchanter'];
-  lanes = ['Top', 'Jungle', 'Mid', 'Bottom'];
-  playType = ['Aggro', 'Defensive'];
+  champRole = ['juggernaut', 'diver', 'assassin', 'skirmisher', 'marksman', 'burst',
+                'battlemage', 'artillery', 'vanguard', 'warden', 'catcher', 'enchanter'];
+  playType = ['aggro', 'def'];
 
   newRule: FormGroup;
 
@@ -23,18 +22,13 @@ export class NewRulesEarlyComponent implements OnInit {
     {description: 'Poke', value: 'poke'},
     {description: 'Waveclear', value: 'waveclear'},
     {description: 'Sustain', value: 'sustain'},
-    {description: 'Utility', value: 'utility'},
-    {description: 'Mobility', value: 'mobility'},
-    {description: 'AOE Damage', value: 'aoeDamage'},
-    {description: 'Split push', value: 'splitPush'}
-
+    {description: 'Utility', value: 'utility'}
   ];
 
   currentSelected = {
-    allyRole: 'Juggernaut',
-    enemyRole: 'Juggernaut',
-    playType: 'Aggro',
-    lane: 'Top'
+    allyRole: 'juggernaut',
+    enemyRole: 'juggernaut',
+    playType: 'aggro'
   };
 
   constructor(private rulesService: RulesService) { }
@@ -44,8 +38,8 @@ export class NewRulesEarlyComponent implements OnInit {
       allyRole: new FormControl(this.currentSelected.allyRole, Validators.required),
       enemyRole: new FormControl(this.currentSelected.enemyRole, Validators.required),
       playType: new FormControl(this.currentSelected.playType, Validators.required),
-      lane: new FormControl(this.currentSelected.lane, Validators.required),
       advice: new FormControl('', Validators.required),
+      ruleName: new FormControl('', Validators.required),
       playStyles: new FormArray([])
     });
 
@@ -69,14 +63,6 @@ export class NewRulesEarlyComponent implements OnInit {
       this.playType.forEach((type) => {
         if (type === value) {
           this.currentSelected.playType = type;
-        }
-      });
-    });
-
-    this.newRule.get('lane').valueChanges.subscribe((value: any) => {
-      this.lanes.forEach((lane) => {
-        if (lane === value) {
-          this.currentSelected.lane = lane;
         }
       });
     });
@@ -106,24 +92,29 @@ export class NewRulesEarlyComponent implements OnInit {
     const allyRole = this.newRule.get('allyRole').value;
     const enemyRole = this.newRule.get('enemyRole').value;
     const playType = this.newRule.get('playType').value;
-    const lane = this.newRule.get('lane').value;
     const playStyles = this.newRule.get('playStyles').value;
     const advice = this.newRule.get('advice').value;
+    const ruleName = this.newRule.get('ruleName').value;
 
     const newRule = {
-      allyRole,
-      enemyRole,
+      allyType: allyRole,
+      enemyType: enemyRole,
+      skillsName: ruleName,
       playType,
-      lane,
-      playStyles,
-      advice
+      advice,
+      hardCC: (playStyles.indexOf('hardCC') > -1) ? true : false,
+      hardEngage: (playStyles.indexOf('hardEngage') > -1) ? true : false,
+      poke: (playStyles.indexOf('poke') > -1) ? true : false,
+      waveclear: (playStyles.indexOf('waveclear') > -1) ? true : false,
+      disengage: (playStyles.indexOf('disengage') > -1) ? true : false,
+      sustain: (playStyles.indexOf('sustain') > -1) ? true : false,
+      utility: (playStyles.indexOf('utility') > -1) ? true : false
     };
-
-    console.log(newRule);
 
     this.rulesService.addEarlyRule(newRule).subscribe(
       resData => {
         console.log(resData);
+        this.newRule.reset();
       },
       error => {
         console.log(error);

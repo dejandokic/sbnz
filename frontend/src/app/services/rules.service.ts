@@ -4,26 +4,30 @@ import { PORT } from '../shared/constants';
 
 @Injectable({ providedIn: 'root' })
 export class RulesService {
-  private readonly newEarlyGameRule = `http://localhost:${PORT}/early-game`;
-  private readonly newMidLateGameRule = `http://localhost:${PORT}/mid-late-game`;
+  private readonly newEarlyGameRule = `http://localhost:${PORT}/api/new-rule/early-game`;
+  private readonly newEarlyJungleRule = `http://localhost:${PORT}/api/new-rule/jungle`;
+  private readonly newTeamCompositionRule = `http://localhost:${PORT}/api/new-rule/team-composition`;
 
   constructor(private http: HttpClient) {}
 
   addEarlyRule(rule: any) {
     return this.http.post<any>(
       this.newEarlyGameRule,
-      {
-        rule
-      }
+      rule
     );
   }
 
-  addMidLateRule(rule: any) {
+  addEarlyJungleRule(rule: any) {
     return this.http.post<any>(
-      this.newMidLateGameRule,
-      {
-        rule
-      }
+      this.newEarlyJungleRule,
+      rule
+    );
+  }
+
+  addTeamCompositionRule(rule: any) {
+    return this.http.post<any>(
+      this.newTeamCompositionRule,
+      rule
     );
   }
 }

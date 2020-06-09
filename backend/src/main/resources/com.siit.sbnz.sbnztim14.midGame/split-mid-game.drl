@@ -111,7 +111,6 @@ rule "Split push (split pusher), enemy lane kills and towers, ally aggro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and wait for him to leave to push.");
 end
 
-
 rule "Split push (split pusher), ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0

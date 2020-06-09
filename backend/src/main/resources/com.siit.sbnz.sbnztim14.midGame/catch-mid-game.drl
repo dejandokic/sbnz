@@ -104,7 +104,6 @@ rule "Catch, enemy lane kills and towers, ally aggro"
 		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills and towers, so try not to give up a bigger lead so switch to a more defensive playstyle if they stay, but continue aggresivly if you follow up on a rotation.");
 end
 
-
 rule "Catch, ally lane towers, ally aggro"
 	agenda-group "mid-game"
 	salience 0

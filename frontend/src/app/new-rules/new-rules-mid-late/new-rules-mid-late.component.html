@@ -16,22 +16,8 @@
             </select>
           </div>
           <div class="field">
-            <p>Play type: </p>
-            <select formControlName="playType">
-              <option *ngFor="let type of playType" [value]="type">{{type}}</option>
-            </select>
-          </div>
-          <div class="field">
-            <p>Lane: </p>
-            <select formControlName="lane">
-              <option *ngFor="let l of lanes" [value]="l">{{l}}</option>
-            </select>
-          </div>
-          <div class="field">
-            <p>Game Phase: </p>
-            <select formControlName="gamePhase">
-              <option *ngFor="let phase of gamePhase" [value]="phase">{{phase}}</option>
-            </select>
+            <p>Rule name: </p>
+            <input type="text" formControlName="ruleName">
           </div>
         </div>
         <div class="rightPart" style="margin-top: 6px;">

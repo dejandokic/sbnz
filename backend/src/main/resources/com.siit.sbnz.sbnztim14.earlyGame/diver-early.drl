@@ -48,7 +48,7 @@ rule "Diver vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against another diver, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are highly mobile and can put pressure on you quite quickly, but they shouldn�t present a problem if you control the situation first.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another diver, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are highly mobile and can put pressure on you quite quickly, but they shouldn't present a problem if you control the situation first.");
 end
 
 //        vs Assassin
@@ -68,7 +68,7 @@ rule "Diver vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are rather mobile and can burst you down when you least expect it, but they shouldn�t present a problem if you control the situation first.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are rather mobile and can burst you down when you least expect it, but they shouldn't present a problem if you control the situation first.");
 end
 
 

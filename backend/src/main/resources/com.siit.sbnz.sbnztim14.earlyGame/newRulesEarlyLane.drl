@@ -6,28 +6,7 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
-rule "battlemage vs warden, ally hardCC + waveclear + disengage, ally def"
-    agenda-group "early-game-part-1"
-	when
-		$ally : AllyChampion(
-			lane != "jungle",
-			role == "battlemage",
-			$allyLane: lane,
-			hardCC == true,
-			hardEngage == false,
-			poke == false,
-			waveclear == true,
-			disengage == true,
-			sustain == false,
-			utility == false,
-			playType == "def"
-		)
-		$enemy : EnemyChampion(
-			lane == $allyLane,
-			role == "warden"
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "early", "TEST");
-end
+
+
 
 
