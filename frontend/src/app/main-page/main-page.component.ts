@@ -60,6 +60,42 @@ export class MainPageComponent implements OnInit, OnDestroy {
     bottom: ''
   };
 
+  iter3Form: FormGroup;
+
+  iter3Current = {
+    topAllyKills: '',
+    topEnemyKills: '',
+    topAllyTowers: '',
+    topEnemyTowers: '',
+    midAllyKills: '',
+    midEnemyKills: '',
+    midAllyTowers: '',
+    midEnemyTowers: '',
+    bottomAllyKills: '',
+    bottomEnemyKills: '',
+    bottomAllyTowers: '',
+    bottomEnemyTowers: '',
+    allyObjectives: '',
+    enemyObjectives: ''
+  };
+
+  iter3Results = {
+    top: '',
+    jungle: '',
+    mid: '',
+    bottom: ''
+  };
+
+  iter4Form: FormGroup;
+
+  iter4Current = {
+    killsLead: '',
+    towersLead: '',
+    objectivesLead: ''
+  };
+
+  iter4Result = '';
+
 
   private userSub: Subscription;
   isAuthenticated = false;
@@ -94,13 +130,36 @@ export class MainPageComponent implements OnInit, OnDestroy {
     });
 
     this.iter2Form = new FormGroup({
-      topLaneState: new FormControl('Excellent', Validators.required),
-      midLaneState: new FormControl('Excellent', Validators.required),
-      bottomLaneState: new FormControl('Excellent', Validators.required),
-      topEnemyInfo: new FormControl('Shove', Validators.required),
-      midEnemyInfo: new FormControl('Shove', Validators.required),
-      bottomEnemyInfo: new FormControl('Shove', Validators.required),
-      enemyJunglerInfo: new FormControl('Rotate', Validators.required)
+      topLaneState: new FormControl('', Validators.required),
+      midLaneState: new FormControl('', Validators.required),
+      bottomLaneState: new FormControl('', Validators.required),
+      topEnemyInfo: new FormControl('', Validators.required),
+      midEnemyInfo: new FormControl('', Validators.required),
+      bottomEnemyInfo: new FormControl('', Validators.required),
+      enemyJunglerInfo: new FormControl('', Validators.required)
+    });
+
+    this.iter3Form = new FormGroup({
+      topAllyKills: new FormControl('', Validators.required),
+      topEnemyKills: new FormControl('', Validators.required),
+      topAllyTowers: new FormControl('', Validators.required),
+      topEnemyTowers: new FormControl('', Validators.required),
+      midAllyKills: new FormControl('', Validators.required),
+      midEnemyKills: new FormControl('', Validators.required),
+      midAllyTowers: new FormControl('', Validators.required),
+      midEnemyTowers: new FormControl('', Validators.required),
+      bottomAllyKills: new FormControl('', Validators.required),
+      bottomEnemyKills: new FormControl('', Validators.required),
+      bottomAllyTowers: new FormControl('', Validators.required),
+      bottomEnemyTowers: new FormControl('', Validators.required),
+      allyObjectives: new FormControl('', Validators.required),
+      enemyObjectives: new FormControl('', Validators.required)
+    });
+
+    this.iter4Form = new FormGroup({
+      killsLead: new FormControl('', Validators.required),
+      towersLead: new FormControl('', Validators.required),
+      objectivesLead: new FormControl('', Validators.required)
     });
 
     this.userSub = this.authService.user.subscribe(user => {
@@ -236,6 +295,78 @@ export class MainPageComponent implements OnInit, OnDestroy {
       this.iter2Current.enemyJunglerInfo = value;
     });
 
+    // iter 3
+
+    this.iter3Form.get('topAllyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.topAllyKills = value;
+    });
+
+    this.iter3Form.get('topEnemyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.topEnemyKills = value;
+    });
+
+    this.iter3Form.get('topAllyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.topAllyTowers = value;
+    });
+
+    this.iter3Form.get('topEnemyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.topEnemyTowers = value;
+    });
+
+    this.iter3Form.get('midAllyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.midAllyKills = value;
+    });
+
+    this.iter3Form.get('midEnemyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.midEnemyKills = value;
+    });
+
+    this.iter3Form.get('midAllyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.midAllyTowers = value;
+    });
+
+    this.iter3Form.get('midEnemyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.midEnemyTowers = value;
+    });
+
+    this.iter3Form.get('bottomAllyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.bottomAllyKills = value;
+    });
+
+    this.iter3Form.get('bottomEnemyKills').valueChanges.subscribe((value: any) => {
+      this.iter3Current.bottomEnemyKills = value;
+    });
+
+    this.iter3Form.get('bottomAllyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.bottomAllyTowers = value;
+    });
+
+    this.iter3Form.get('bottomEnemyTowers').valueChanges.subscribe((value: any) => {
+      this.iter3Current.bottomEnemyTowers = value;
+    });
+
+    this.iter3Form.get('allyObjectives').valueChanges.subscribe((value: any) => {
+      this.iter3Current.allyObjectives = value;
+    });
+
+    this.iter3Form.get('enemyObjectives').valueChanges.subscribe((value: any) => {
+      this.iter3Current.enemyObjectives = value;
+    });
+
+    // iter4
+    this.iter4Form.get('killsLead').valueChanges.subscribe((value: any) => {
+      this.iter4Current.killsLead = value;
+    });
+
+    this.iter4Form.get('towersLead').valueChanges.subscribe((value: any) => {
+      this.iter4Current.towersLead = value;
+    });
+
+    this.iter4Form.get('objectivesLead').valueChanges.subscribe((value: any) => {
+      this.iter4Current.objectivesLead = value;
+    });
+
+
     this.champs.forEach((ch: any) => {
       const champ: IChampion = { name: ch.name };
       if (ch.lane && ch.lane.adc) {
@@ -281,6 +412,29 @@ export class MainPageComponent implements OnInit, OnDestroy {
       bottomLaneState: '3',
       bottomEnemyInfo: '1',
       enemyJunglerInfo: '1'
+    });
+
+    this.iter3Form.patchValue({
+      topAllyKills: 0,
+      topEnemyKills: 0,
+      topAllyTowers: 0,
+      topEnemyTowers: 0,
+      midAllyKills: 0,
+      midEnemyKills: 0,
+      midAllyTowers: 0,
+      midEnemyTowers: 0,
+      bottomAllyKills: 0,
+      bottomEnemyKills: 0,
+      bottomAllyTowers: 0,
+      bottomEnemyTowers: 0,
+      allyObjectives: 0,
+      enemyObjectives: 0
+    });
+
+    this.iter4Form.patchValue({
+      killsLead: 'Ally team',
+      towersLead: 'Ally team',
+      objectivesLead: 'Ally team'
     });
   }
 
@@ -395,6 +549,94 @@ export class MainPageComponent implements OnInit, OnDestroy {
     );
   }
 
+  onSubmitIter3() {
+    if (this.iter3Form.invalid) {
+      return;
+    }
 
+    const topAllyKills = this.iter3Form.get('topAllyKills').value;
+    const topEnemyKills = this.iter3Form.get('topEnemyKills').value;
+    const topAllyTowers = this.iter3Form.get('topAllyTowers').value;
+    const topEnemyTowers = this.iter3Form.get('topEnemyTowers').value;
+    const midAllyKills = this.iter3Form.get('midAllyKills').value;
+    const midEnemyKills = this.iter3Form.get('midEnemyKills').value;
+    const midAllyTowers = this.iter3Form.get('midAllyTowers').value;
+    const midEnemyTowers = this.iter3Form.get('midEnemyTowers').value;
+    const bottomAllyKills = this.iter3Form.get('bottomAllyKills').value;
+    const bottomEnemyKills = this.iter3Form.get('bottomEnemyKills').value;
+    const bottomAllyTowers = this.iter3Form.get('bottomAllyTowers').value;
+    const bottomEnemyTowers = this.iter3Form.get('bottomEnemyTowers').value;
+    const allyObjectives = this.iter3Form.get('allyObjectives').value;
+    const enemyObjectives = this.iter3Form.get('enemyObjectives').value;
+
+    const info = [topAllyKills, topEnemyKills, topAllyTowers, topEnemyTowers, midAllyKills, midEnemyKills, midAllyTowers,
+      midEnemyTowers, bottomAllyKills, bottomEnemyKills, bottomAllyTowers, bottomEnemyTowers, allyObjectives, enemyObjectives];
+
+    this.strategyService.iter3(info).subscribe(
+      resData => {
+        let content = [];
+        let lane = [];
+        let message = '';
+        let laneMessage = '';
+
+        this.iter3Results = {
+          top: '',
+          jungle: '',
+          mid: '',
+          bottom: ''
+        };
+
+        resData.forEach((data: string) => {
+          content = data.split(']');
+          message = content[1];
+          lane = content[0].split(',');
+          laneMessage = lane[0];
+          laneMessage = laneMessage.substr(1);
+          console.log(laneMessage, '  ', message);
+          if (laneMessage === 'top') {
+            this.iter3Results.top += message;
+          } else if (laneMessage === 'mid') {
+            this.iter3Results.mid += message;
+          } else if (laneMessage === 'adc') {
+            this.iter3Results.bottom += message;
+          } else if (laneMessage === 'jungle') {
+            this.iter3Results.jungle += message;
+          }
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  onSubmitIter4() {
+    if (this.iter4Form.invalid) {
+      return;
+    }
+    const killsLead = (this.iter4Form.get('killsLead').value === 'Ally team') ? true : false;
+    const towersLead = (this.iter4Form.get('towersLead').value === 'Ally team') ? true : false;
+    const objectivesLead = (this.iter4Form.get('objectivesLead').value === 'Ally team') ? true : false;
+
+    const info = [killsLead, towersLead, objectivesLead];
+
+    this.strategyService.iter4(info).subscribe(
+      resData => {
+        let content = [];
+        let lane = [];
+        let message = '';
+
+        resData.forEach((data: string) => {
+          content = data.split(']');
+          message = content[1];
+          lane = content[0].split(',');
+          this.iter4Result = message;
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
 }

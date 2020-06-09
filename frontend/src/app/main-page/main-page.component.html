@@ -223,116 +223,74 @@
   <h4>Bottom play type advice: </h4><p>{{iter2Results.bottom}}</p>
 </div>
 <div class="interaction-3" *ngIf="isAuthenticated">
-  <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
+  <form [formGroup]="iter3Form" (ngSubmit)="onSubmitIter3()">
   <div class="interaction-2-row">
     <div class="interaction-2-col">
       <h3>Top</h3>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between; align-items: center;">
         Ally kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="topAllyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="topEnemyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="topAllyTowers" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="topEnemyTowers" style="margin-left: 10px;">
       </div>
     </div>
     <div class="interaction-2-col">
       <h3>Mid</h3>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="midAllyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="midEnemyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="midAllyTowers" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="midEnemyTowers" style="margin-left: 10px;">
       </div>
     </div>
     <div class="interaction-2-col">
       <h3>Bottom</h3>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="bottomAllyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy kills:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="bottomEnemyKills" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="bottomAllyTowers" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy towers:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="bottomEnemyTowers" style="margin-left: 10px;">
       </div>
     </div>
     <div class="interaction-2-col">
       <h3>Jungle</h3>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Ally objectives:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="allyObjectives" style="margin-left: 10px;">
       </div>
-      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px; width: 100%; justify-content: space-between;">
         Enemy objectives:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
-        </select>
+        <input type="number" placeholder="Ally kills" formControlName="enemyObjectives" style="margin-left: 10px;">
       </div>
     </div>
   </div>
@@ -341,34 +299,35 @@
 </div>
 <div class="results" *ngIf="isAuthenticated">
   <h2 style="text-align: center;">Mid game</h2>
-  <h4>Top advice: </h4><p>{{interactionOneResults.mid}}</p>
-  <h4>Mid advice: </h4><p>{{interactionOneResults.mid}}</p>
-  <h4>Bottom advice: </h4><p>{{interactionOneResults.mid}}</p>
+  <h4>Top advice: </h4><p>{{iter3Results.top}}</p>
+  <h4>Jungle advice: </h4><p>{{iter3Results.jungle}}</p>
+  <h4>Mid advice: </h4><p>{{iter3Results.mid}}</p>
+  <h4>Bottom advice: </h4><p>{{iter3Results.bottom}}</p>
 </div>
 <div class="interaction-4" *ngIf="isAuthenticated">
-  <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
+  <form [formGroup]="iter4Form" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmitIter4()">
   <div class="interaction-2-row">
     <div class="interaction-2-col">
       <h3>General</h3>
       <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
         Team kills lead:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
+        <select formControlName="killsLead" style="margin-left: 20px;">
+          <option [value]="'Ally team'">Ally team</option>
+          <option [value]="'Enemy team'">Enemy team</option>
         </select>
       </div>
       <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
         Team towers lead:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
+        <select formControlName="towersLead" style="margin-left: 20px;">
+          <option [value]="'Ally team'">Ally team</option>
+          <option [value]="'Enemy team'">Enemy team</option>
         </select>
       </div>
       <div style="display: flex; flex-direction: row;">
         Team objectives lead:
-        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
-          <option [value]="'aggro'">aggro</option>
-          <option [value]="'def'">def</option>
+        <select formControlName="objectivesLead" style="margin-left: 20px;">
+          <option [value]="'Ally team'">Ally team</option>
+          <option [value]="'Enemy team'">Enemy team</option>
         </select>
       </div>
     </div>
@@ -378,6 +337,6 @@
 </div>
 <div class="results" *ngIf="isAuthenticated">
   <h2 style="text-align: center;">Late game</h2>
-  <h4>General advice: </h4><p>{{interactionOneResults.mid}}</p>
+  <h4>General advice: </h4><p>{{iter4Result}}</p>
 </div>
 </div>

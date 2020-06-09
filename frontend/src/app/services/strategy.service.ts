@@ -75,6 +75,7 @@ export class StrategyService {
   }
 
   iter3(info) {
+    console.log(info);
     return this.http.post<any>(
       this.strategyInteraction3,
       {

@@ -13,6 +13,7 @@ import com.siit.sbnz.sbnztim14.model.LateGame;
 import com.siit.sbnz.sbnztim14.model.MidGame;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
+import net.bytebuddy.asm.Advice;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -188,11 +189,12 @@ public class StrategyService {
         kSession.getAgenda().getAgendaGroup("late-game").setFocus();
         kSession.fireAllRules();
 
-        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+//        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+//        kSession.dispose();
+//        return adviceStorage;
 
-        kSession.dispose();
+        return (AdviceStorage) kSession.getGlobal("adviceStorage");
 
-        return adviceStorage;
     }
 
 }
