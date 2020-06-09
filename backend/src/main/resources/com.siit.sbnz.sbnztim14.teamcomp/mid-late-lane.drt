@@ -24,12 +24,13 @@ import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 
-template "early-lane"
+template "mid-late-lane"
 
 
 
 rule "@{allyType}, mid-late game, (@{teamComp}), ally @{skillsName}"
     agenda-group "teamcomp-role"
+	salience 5
 	when
 		$ally : AllyChampion(
 			role == "@{allyType}",

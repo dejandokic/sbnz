@@ -26,6 +26,7 @@ template "early-lane"
 
 rule "@{allyType} vs @{enemyType}, ally @{skillsName}, ally @{playType}"
     agenda-group "early-game-part-1"
+    salience 5
 	when
 		$ally : AllyChampion(
 			lane != "jungle",

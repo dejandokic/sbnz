@@ -13,6 +13,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Burst vs Juggernaut, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -33,6 +34,7 @@ end
 
 rule "Burst vs Diver, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -55,6 +57,7 @@ end
 
 rule "Burst vs Assassin, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -75,6 +78,7 @@ end
 
 rule "Burst vs Skirmisher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -95,6 +99,7 @@ end
 
 rule "Burst vs Marksman, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -114,6 +119,7 @@ end
 
 rule "Burst vs Burst, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -135,6 +141,7 @@ end
 
 rule "Burst vs Battlemage, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -157,6 +164,7 @@ end
 
 rule "Burst vs Artillery, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -176,6 +184,7 @@ end
 
 rule "Burst vs Vanguard, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -198,6 +207,7 @@ end
 
 rule "Burst vs Warden, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -220,6 +230,7 @@ end
 
 rule "Burst vs Catcher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -241,6 +252,7 @@ end
 
 rule "Burst vs Enchanter, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -262,6 +274,7 @@ end
 
 rule "Burst vs Juggernaut, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -285,6 +298,7 @@ end
 
 rule "Burst vs Diver, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -305,6 +319,7 @@ end
 
 rule "Burst vs Assassin, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -324,6 +339,7 @@ end
 
 rule "Burst vs Skirmisher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -344,6 +360,7 @@ end
 
 rule "Burst vs Marksman, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -363,6 +380,7 @@ end
 
 rule "Burst vs Burst, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -385,6 +403,7 @@ end
 
 rule "Burst vs Battlemage, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -404,6 +423,7 @@ end
 
 rule "Burst vs Artillery, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -425,6 +445,7 @@ end
 
 rule "Burst vs Vanguard, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -446,6 +467,7 @@ end
 
 rule "Burst vs Warden, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -467,6 +489,7 @@ end
 
 rule "Burst vs Catcher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -487,6 +510,7 @@ end
 
 rule "Burst vs Enchanter, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",

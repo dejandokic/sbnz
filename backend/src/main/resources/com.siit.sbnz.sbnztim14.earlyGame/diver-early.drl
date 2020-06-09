@@ -15,6 +15,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Diver vs Juggernaut, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -34,6 +35,7 @@ end
 
 rule "Diver vs Diver, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -46,13 +48,14 @@ rule "Diver vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against another diver, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem if you control the situation first.");
+		adviceStorage.addAdvice($allyLane, "early", "Against another diver, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are highly mobile and can put pressure on you quite quickly, but they shouldnï¿½t present a problem if you control the situation first.");
 end
 
 //        vs Assassin
 
 rule "Diver vs Assassin, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -65,7 +68,7 @@ rule "Diver vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are rather mobile and can burst you down when you least expect it, but they shouldn’t present a problem if you control the situation first.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, you will have an advantage by using your CC to secure trades in your favor, but know how and when to engage to secure a kill. They are rather mobile and can burst you down when you least expect it, but they shouldnï¿½t present a problem if you control the situation first.");
 end
 
 
@@ -73,6 +76,7 @@ end
 
 rule "Diver vs Skirmisher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -92,6 +96,7 @@ end
 
 rule "Diver vs Marksman, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -112,6 +117,7 @@ end
 
 rule "Diver vs Burst, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -131,6 +137,7 @@ end
 
 rule "Diver vs Battlemage, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -150,6 +157,7 @@ end
 
 rule "Diver vs Artillery, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -169,6 +177,7 @@ end
 
 rule "Diver vs Vanguard, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -188,6 +197,7 @@ end
 
 rule "Diver vs Warden, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -208,6 +218,7 @@ end
 
 rule "Diver vs Catcher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -227,6 +238,7 @@ end
 
 rule "Diver vs Enchanter, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -252,6 +264,7 @@ end
 
 rule "Diver vs Juggernaut, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -271,6 +284,7 @@ end
 
 rule "Diver vs Diver, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -291,6 +305,7 @@ end
 
 rule "Diver vs Assassin, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -310,6 +325,7 @@ end
 
 rule "Diver vs Skirmisher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -329,6 +345,7 @@ end
 
 rule "Diver vs Marksman, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -349,6 +366,7 @@ end
 
 rule "Diver vs Burst, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -368,6 +386,7 @@ end
 
 rule "Diver vs Battlemage, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -388,6 +407,7 @@ end
 
 rule "Diver vs Artillery, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -407,6 +427,7 @@ end
 
 rule "Diver vs Vanguard, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -426,6 +447,7 @@ end
 
 rule "Diver vs Warden, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -445,6 +467,7 @@ end
 
 rule "Diver vs Catcher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -465,6 +488,7 @@ end
 
 rule "Diver vs Enchanter, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",

@@ -15,6 +15,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Diver, mid-late game, (split push)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "diver",
@@ -33,6 +34,7 @@ end
 
 rule "Diver, mid-late game, (siege)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "diver",
@@ -51,6 +53,7 @@ end
 
 rule "Diver, mid-late game, (protect)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "diver",
@@ -68,6 +71,7 @@ end
 
 rule "Diver, mid-late game, (attack)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "diver",
@@ -85,6 +89,7 @@ end
 
 rule "Diver, mid-late game, (catch)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "diver",

@@ -15,6 +15,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Juggernaut vs Juggernaut, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -35,6 +36,7 @@ end
 
 rule "Juggernaut vs Diver, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -47,13 +49,14 @@ rule "Juggernaut vs Diver, ally aggro"
 			role == "diver"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are highly mobile and can put pressure on you quite quickly, but they shouldn’t present a problem with your sustain.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are highly mobile and can put pressure on you quite quickly, but they shouldnï¿½t present a problem with your sustain.");
 end
 
 //        vs Assassin
 
 rule "Juggernaut vs Assassin, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -66,13 +69,14 @@ rule "Juggernaut vs Assassin, ally aggro"
 			role == "assassin"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are rather mobile and can burst you down when you get low, but they shouldn’t present a problem with your sustain.");
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are rather mobile and can burst you down when you get low, but they shouldnï¿½t present a problem with your sustain.");
 end
 
 //        vs Skirmisher
 
 rule "Juggernaut vs Skirmisher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -93,6 +97,7 @@ end
 
 rule "Juggernaut vs Marksman, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -112,6 +117,7 @@ end
 
 rule "Juggernaut vs Burst, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -132,6 +138,7 @@ end
 
 rule "Juggernaut vs Battlemage, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -152,6 +159,7 @@ end
 
 rule "Juggernaut vs Artillery, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -171,6 +179,7 @@ end
 
 rule "Juggernaut vs Vanguard, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -183,7 +192,7 @@ rule "Juggernaut vs Vanguard, ally aggro"
 			role == "vanguard"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With a lot of sustain, they are quite hard to take down and with overall good damage can be hassle to fight against, but shouldn’t be hard for you to deal with.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With a lot of sustain, they are quite hard to take down and with overall good damage can be hassle to fight against, but shouldnï¿½t be hard for you to deal with.");
 end
 
 
@@ -191,6 +200,7 @@ end
 
 rule "Juggernaut vs Warden, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -203,13 +213,14 @@ rule "Juggernaut vs Warden, ally aggro"
 			role == "warden"
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and deal decent amounts of damage. They are impenetrable tanks, with a lot of sustain and it will feel like it is impossible to defeat them, but it shouldn’t discourage you.");
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and deal decent amounts of damage. They are impenetrable tanks, with a lot of sustain and it will feel like it is impossible to defeat them, but it shouldnï¿½t discourage you.");
 end
 
 //        vs Catcher
 
 rule "Juggernaut vs Catcher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -229,6 +240,7 @@ end
 
 rule "Juggernaut vs Enchanter, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -255,6 +267,7 @@ end
 
 rule "Juggernaut vs Juggernaut, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -274,6 +287,7 @@ end
 
 rule "Juggernaut vs Diver, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -293,6 +307,7 @@ end
 
 rule "Juggernaut vs Assassin, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -312,6 +327,7 @@ end
 
 rule "Juggernaut vs Skirmisher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -331,6 +347,7 @@ end
 
 rule "Juggernaut vs Marksman, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -350,6 +367,7 @@ end
 
 rule "Juggernaut vs Burst, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -369,6 +387,7 @@ end
 
 rule "Juggernaut vs Battlemage, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -389,6 +408,7 @@ end
 
 rule "Juggernaut vs Artillery, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -408,6 +428,7 @@ end
 
 rule "Juggernaut vs Vanguard, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -428,6 +449,7 @@ end
 
 rule "Juggernaut vs Warden, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -447,6 +469,7 @@ end
 
 rule "Juggernaut vs Catcher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -466,6 +489,7 @@ end
 
 rule "Juggernaut vs Enchanter, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",

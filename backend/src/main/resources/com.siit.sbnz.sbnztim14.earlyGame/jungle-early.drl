@@ -10,6 +10,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Juggernaut, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -25,6 +26,7 @@ end
 
 rule "Juggernaut, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -40,6 +42,7 @@ end
 
 rule "Juggernaut, ally hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -55,6 +58,7 @@ end
 
 rule "Juggernaut, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -71,6 +75,7 @@ end
 
 rule "Diver, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -86,6 +91,7 @@ end
 
 rule "Diver, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -101,6 +107,7 @@ end
 
 rule "Diver, ally nothin"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -118,6 +125,7 @@ end
 
 rule "Assassin, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -132,6 +140,7 @@ end
 
 rule "Assassin, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -146,6 +155,7 @@ end
 
 rule "Assassin, ally hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -160,6 +170,7 @@ end
 
 rule "Assassin, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -179,6 +190,7 @@ end
 
 rule "Skirmisher, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -194,6 +206,7 @@ end
 
 rule "Skirmisher, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -209,6 +222,7 @@ end
 
 rule "Skirmisher, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -226,6 +240,7 @@ end
 
 rule "Marksman, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -242,6 +257,7 @@ end
 
 rule "Marksman, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -258,6 +274,7 @@ end
 
 rule "Marksman, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -274,6 +291,7 @@ end
 
 rule "Burst, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -288,6 +306,7 @@ end
 
 rule "Burst, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -302,6 +321,7 @@ end
 
 rule "Burst, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -318,6 +338,7 @@ end
 
 rule "Battlemage, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -333,6 +354,7 @@ end
 
 rule "Battlemage, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -347,6 +369,7 @@ end
 
 rule "Battlemage, ally hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -361,6 +384,7 @@ end
 
 rule "Battlemage, ally nothing"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -377,6 +401,7 @@ end
 
 rule "Artillery, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -392,6 +417,7 @@ end
 
 rule "Vanguard, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -406,6 +432,7 @@ end
 
 rule "Vanguard, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -422,6 +449,7 @@ end
 
 rule "Warden, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -436,6 +464,7 @@ end
 
 rule "Warden, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -452,6 +481,7 @@ end
 
 rule "Catcher, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -468,6 +498,7 @@ end
 
 rule "Enchanter, ally hardCC + hardEngage"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",
@@ -484,6 +515,7 @@ end
 
 rule "Enchanter, ally hardCC"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane == "jungle",

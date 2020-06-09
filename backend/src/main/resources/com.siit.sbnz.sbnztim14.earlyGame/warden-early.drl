@@ -13,6 +13,7 @@ global AdviceStorage adviceStorage;
 		
 rule "Warden vs Juggernaut, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -33,6 +34,7 @@ end
 
 rule "Warden vs Diver, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -51,6 +53,7 @@ end
 
 rule "Warden vs Assassin, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -70,6 +73,7 @@ end
 
 rule "Warden vs Skirmisher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -91,6 +95,7 @@ end
 
 rule "Warden vs Marksman, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -110,6 +115,7 @@ end
 	
 rule "Warden vs Burst, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -130,6 +136,7 @@ end
 	
 rule "Warden vs Battlemage, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -149,6 +156,7 @@ end
 		
 rule "Warden vs Artillery, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -168,6 +176,7 @@ end
 			
 rule "Warden vs Vanguard, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -186,6 +195,7 @@ end
 			
 rule "Warden vs Warden, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -205,6 +215,7 @@ end
 		
 rule "Warden vs Catcher, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -224,6 +235,7 @@ end
 
 rule "Warden vs Enchanter, ally aggro"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -246,6 +258,7 @@ end
 
 rule "Warden vs Juggernaut, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -265,6 +278,7 @@ end
 
 rule "Warden vs Diver, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -285,6 +299,7 @@ end
 
 rule "Warden vs Assassin, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -304,6 +319,7 @@ end
 
 rule "Warden vs Skirmisher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -324,6 +340,7 @@ end
 
 rule "Warden vs Marksman, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -346,6 +363,7 @@ end
 
 rule "Warden vs Burst, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -368,6 +386,7 @@ end
 
 rule "Warden vs Battlemage, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -388,6 +407,7 @@ end
 
 rule "Warden vs Artillery, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -407,6 +427,7 @@ end
 
 rule "Warden vs Vanguard, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -428,6 +449,7 @@ end
 
 rule "Warden vs Warden, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -448,6 +470,7 @@ end
 
 rule "Warden vs Catcher, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -467,6 +490,7 @@ end
 
 rule "Warden vs Enchanter, ally def"
 	agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
