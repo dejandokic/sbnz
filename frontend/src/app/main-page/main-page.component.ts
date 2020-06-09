@@ -31,6 +31,36 @@ export class MainPageComponent implements OnInit, OnDestroy {
     allySupportPrefer: {name: 'aggro'}
   };
 
+  interactionOneResults = {
+    top: '',
+    jungle: '',
+    mid: '',
+    adc: '',
+    support: '',
+    team: ''
+  };
+  champForm: FormGroup;
+
+
+  iter2Current = {
+    bottomLaneState: '',
+    topLaneState: '',
+    midLaneState: '',
+    topEnemyInfo: '',
+    midEnemyInfo: '',
+    bottomEnemyInfo: '',
+    enemyJunglerInfo: ''
+  };
+
+  iter2Form: FormGroup;
+
+  iter2Results = {
+    top: '',
+    mid: '',
+    bottom: ''
+  };
+
+
   private userSub: Subscription;
   isAuthenticated = false;
 
@@ -41,7 +71,6 @@ export class MainPageComponent implements OnInit, OnDestroy {
     adc: [],
     support: []
   };
-  champForm: FormGroup;
 
   constructor(private strategyService: StrategyService, private authService: AuthService) {}
 
@@ -62,6 +91,16 @@ export class MainPageComponent implements OnInit, OnDestroy {
       allyMidPrefer: new FormControl('', Validators.required),
       allyADCPrefer: new FormControl('', Validators.required),
       allySupportPrefer: new FormControl('', Validators.required)
+    });
+
+    this.iter2Form = new FormGroup({
+      topLaneState: new FormControl('Excellent', Validators.required),
+      midLaneState: new FormControl('Excellent', Validators.required),
+      bottomLaneState: new FormControl('Excellent', Validators.required),
+      topEnemyInfo: new FormControl('Shove', Validators.required),
+      midEnemyInfo: new FormControl('Shove', Validators.required),
+      bottomEnemyInfo: new FormControl('Shove', Validators.required),
+      enemyJunglerInfo: new FormControl('Rotate', Validators.required)
     });
 
     this.userSub = this.authService.user.subscribe(user => {
@@ -168,6 +207,35 @@ export class MainPageComponent implements OnInit, OnDestroy {
       this.currentSelected.allySupportPrefer = value;
     });
 
+    // iter2
+    this.iter2Form.get('topLaneState').valueChanges.subscribe((value: any) => {
+      this.iter2Current.topLaneState = value;
+    });
+
+    this.iter2Form.get('midLaneState').valueChanges.subscribe((value: any) => {
+      this.iter2Current.midLaneState = value;
+    });
+
+    this.iter2Form.get('bottomLaneState').valueChanges.subscribe((value: any) => {
+      this.iter2Current.bottomLaneState = value;
+    });
+
+    this.iter2Form.get('topEnemyInfo').valueChanges.subscribe((value: any) => {
+      this.iter2Current.topEnemyInfo = value;
+    });
+
+    this.iter2Form.get('midEnemyInfo').valueChanges.subscribe((value: any) => {
+      this.iter2Current.midEnemyInfo = value;
+    });
+
+    this.iter2Form.get('bottomEnemyInfo').valueChanges.subscribe((value: any) => {
+      this.iter2Current.bottomEnemyInfo = value;
+    });
+
+    this.iter2Form.get('enemyJunglerInfo').valueChanges.subscribe((value: any) => {
+      this.iter2Current.enemyJunglerInfo = value;
+    });
+
     this.champs.forEach((ch: any) => {
       const champ: IChampion = { name: ch.name };
       if (ch.lane && ch.lane.adc) {
@@ -203,6 +271,16 @@ export class MainPageComponent implements OnInit, OnDestroy {
       allyMidPrefer: 'aggro',
       allyADCPrefer: 'aggro',
       allySupportPrefer: 'aggro'
+    });
+
+    this.iter2Form.patchValue({
+      topLaneState: '3',
+      topEnemyInfo: '1',
+      midLaneState: '3',
+      midEnemyInfo: '1',
+      bottomLaneState: '3',
+      bottomEnemyInfo: '1',
+      enemyJunglerInfo: '1'
     });
   }
 
@@ -240,7 +318,76 @@ export class MainPageComponent implements OnInit, OnDestroy {
 
     this.strategyService.getStrategy(champsArray, prefers).subscribe(
       resData => {
-        console.log(resData);
+        let content = [];
+        let lane = [];
+        let message = '';
+        let laneMessage = '';
+
+        resData.forEach((data: string) => {
+          content = data.split(']');
+          message = content[1];
+          lane = content[0].split(',');
+          laneMessage = lane[0];
+          laneMessage = laneMessage.substr(1);
+          console.log(laneMessage, '  ', message);
+          if (laneMessage === 'top') {
+            this.interactionOneResults.top = message;
+          } else if (laneMessage === 'jungle') {
+            this.interactionOneResults.jungle = message;
+          } else if (laneMessage === 'mid') {
+            this.interactionOneResults.mid = message;
+          } else if (laneMessage === 'adc') {
+            this.interactionOneResults.adc = message;
+          } else if (laneMessage === 'support') {
+            this.interactionOneResults.support = message;
+          } else if (laneMessage === 'ALL') {
+            this.interactionOneResults.team = message;
+          }
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  onSubmitIter2() {
+    if (this.iter2Form.invalid) {
+      return;
+    }
+
+    const topLaneState = parseInt(this.iter2Form.get('topLaneState').value);
+    const topEnemyInfo = parseInt(this.iter2Form.get('topEnemyInfo').value);
+    const midLaneState = parseInt(this.iter2Form.get('midLaneState').value);
+    const midEnemyInfo = parseInt(this.iter2Form.get('midEnemyInfo').value);
+    const bottomLaneState = parseInt(this.iter2Form.get('bottomLaneState').value);
+    const bottomEnemyInfo = parseInt(this.iter2Form.get('bottomEnemyInfo').value);
+    const enemyJunglerInfo = parseInt(this.iter2Form.get('enemyJunglerInfo').value);
+
+    const info = [topLaneState, topEnemyInfo, midLaneState, midEnemyInfo, bottomLaneState, bottomEnemyInfo, enemyJunglerInfo];
+    console.log(info);
+    this.strategyService.iter2(info).subscribe(
+      resData => {
+        let content = [];
+        let lane = [];
+        let message = '';
+        let laneMessage = '';
+
+        resData.forEach((data: string) => {
+          content = data.split(']');
+          message = content[1];
+          lane = content[0].split(',');
+          laneMessage = lane[0];
+          laneMessage = laneMessage.substr(1);
+          console.log(laneMessage, '  ', message);
+          if (laneMessage === 'top') {
+            this.iter2Results.top = message;
+          } else if (laneMessage === 'mid') {
+            this.iter2Results.mid = message;
+          } else if (laneMessage === 'adc') {
+            this.iter2Results.bottom = message;
+          }
+        });
       },
       error => {
         console.log(error);

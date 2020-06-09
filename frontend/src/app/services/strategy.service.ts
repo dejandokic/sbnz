@@ -32,8 +32,7 @@ export class StrategyService {
       champ = (champ === 'Velkoz') ? "Vel'Koz" : champ;
       champ = (champ === 'MonkeyKing') ? 'Wukong' : champ;
       champ = (champ === 'XinZhao') ? 'Xin Zhao' : champ;
-      champ = (champ === 'AurelionSol') ? 'AurelionSol' : champ;
-      champ = (champ === 'AurelionSol') ? 'AurelionSol' : champ;
+      champ = (champ === 'Leblanc') ? 'LeBlanc' : champ;
 
       return champ;
     });
@@ -56,6 +55,54 @@ export class StrategyService {
         allyMidPrefer: prefer[2],
         allyADCPrefer: prefer[3],
         allySupportPrefer: prefer[4]
+      }
+    );
+  }
+
+  iter2(info) {
+    return this.http.post<any>(
+      this.strategyInteraction2,
+      {
+        topLaneState: info[0],
+        topEnemyInfo: info[1],
+        midLaneState: info[2],
+        midEnemyInfo: info[3],
+        bottomLaneState: info[4],
+        bottomEnemyInfo: info[5],
+        enemyJunglerInfo: info[6]
+      }
+    );
+  }
+
+  iter3(info) {
+    return this.http.post<any>(
+      this.strategyInteraction3,
+      {
+        topAllyKills: info[0],
+        topEnemyKills: info[1],
+        topAllyTowers: info[2],
+        topEnemyTowers: info[3],
+        midAllyKills: info[4],
+        midEnemyKills: info[5],
+        midAllyTowers: info[6],
+        midEnemyTowers: info[7],
+        bottomAllyKills: info[8],
+        bottomEnemyKills: info[9],
+        bottomAllyTowers: info[10],
+        bottomEnemyTowers: info[11],
+        allyObjectives: info[12],
+        enemyObjectives: info[13]
+      }
+    );
+  }
+
+  iter4(info) {
+    return this.http.post<any>(
+      this.strategyInteraction4,
+      {
+        teamKillsLead: info[0],
+        teamTowersLead: info[1],
+        teamObjectivesLead: info[2]
       }
     );
   }

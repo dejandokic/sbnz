@@ -129,4 +129,255 @@
     <button class="btn btn_make_str" type="submit">MAKE STRATEGY</button>
   </form>
 </div>
+<div class="results" *ngIf="isAuthenticated">
+  <h2 style="text-align: center;">Early game part 1</h2>
+  <h4>{{interactionOneResults.team}}</h4>
+  <h4>Top advice:</h4> <p>{{interactionOneResults.top}}</p>
+  <h4>Jungle advice:</h4><p>{{interactionOneResults.jungle}}</p>
+  <h4>Mid advice: </h4><p>{{interactionOneResults.mid}}</p>
+  <h4>ADC advice:</h4><p>{{interactionOneResults.adc}}</p>
+  <h4>Support advice: </h4><p>{{interactionOneResults.support}}</p>
+</div>
+<div class="interaction-2" *ngIf="isAuthenticated">
+  <form [formGroup]="iter2Form" (ngSubmit)="onSubmitIter2()">
+  <div class="interaction-2-row">
+    <div class="interaction-2-col">
+      <h3>Top</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Lane state:
+        <select formControlName="topLaneState" style="margin-left: 20px;">
+          <option [value]="3">Excellent</option>
+          <option [value]="2">Normal</option>
+          <option [value]="1">Bad</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row;">
+        Enemy info:
+        <select formControlName="topEnemyInfo" style="margin-left: 20px;">
+          <option [value]="1">Shove</option>
+          <option [value]="2">Freeze</option>
+          <option [value]="3">Block</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Mid</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Lane state:
+        <select formControlName="midLaneState" style="margin-left: 20px;">
+          <option [value]="3">Excellent</option>
+          <option [value]="2">Normal</option>
+          <option [value]="1">Bad</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row;">
+        Enemy info:
+        <select formControlName="midEnemyInfo" style="margin-left: 20px;">
+          <option [value]="1">Shove</option>
+          <option [value]="2">Freeze</option>
+          <option [value]="3">Block</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Bottom</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Lane state:
+        <select formControlName="bottomLaneState" style="margin-left: 20px;">
+          <option [value]="3">Excellent</option>
+          <option [value]="2">Normal</option>
+          <option [value]="1">Bad</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row;">
+        Enemy info:
+        <select formControlName="bottomEnemyInfo" style="margin-left: 20px;">
+          <option [value]="1">Shove</option>
+          <option [value]="2">Freeze</option>
+          <option [value]="3">Block</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Enemy jungler</h3>
+      <div style="display: flex; flex-direction: row;">
+        Info:
+        <select formControlName="enemyJunglerInfo" style="margin-left: 20px;">
+          <option [value]="1">Rotate</option>
+          <option [value]="2">Counter jungle</option>
+          <option [value]="3">Only farm</option>
+          <option [value]="4">Camp top</option>
+          <option [value]="5">Camp mid</option>
+          <option [value]="6">Camp bottom</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn_make_str" type="submit" style="margin-top: 60px;">APPLY</button>
+  </form>
+</div>
+<div class="results" *ngIf="isAuthenticated">
+  <h2 style="text-align: center;">Early game part 2</h2>
+  <h4>Top play type advice: </h4><p>{{iter2Results.top}}</p>
+  <h4>Mid play type advice: </h4><p>{{iter2Results.mid}}</p>
+  <h4>Bottom play type advice: </h4><p>{{iter2Results.bottom}}</p>
+</div>
+<div class="interaction-3" *ngIf="isAuthenticated">
+  <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
+  <div class="interaction-2-row">
+    <div class="interaction-2-col">
+      <h3>Top</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Mid</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Bottom</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy kills:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy towers:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+    </div>
+    <div class="interaction-2-col">
+      <h3>Jungle</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Ally objectives:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Enemy objectives:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn_make_str" type="submit" style="margin-top: 60px;">APPLY</button>
+  </form>
+</div>
+<div class="results" *ngIf="isAuthenticated">
+  <h2 style="text-align: center;">Mid game</h2>
+  <h4>Top advice: </h4><p>{{interactionOneResults.mid}}</p>
+  <h4>Mid advice: </h4><p>{{interactionOneResults.mid}}</p>
+  <h4>Bottom advice: </h4><p>{{interactionOneResults.mid}}</p>
+</div>
+<div class="interaction-4" *ngIf="isAuthenticated">
+  <form [formGroup]="champForm" *ngIf="champions.top.length > 0" (ngSubmit)="onSubmit()">
+  <div class="interaction-2-row">
+    <div class="interaction-2-col">
+      <h3>General</h3>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Team kills lead:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row; margin-bottom: 16px;">
+        Team towers lead:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: row;">
+        Team objectives lead:
+        <select formControlName="allyTopPrefer" style="margin-left: 20px;">
+          <option [value]="'aggro'">aggro</option>
+          <option [value]="'def'">def</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn_make_str" type="submit" style="margin-top: 60px;">APPLY</button>
+  </form>
+</div>
+<div class="results" *ngIf="isAuthenticated">
+  <h2 style="text-align: center;">Late game</h2>
+  <h4>General advice: </h4><p>{{interactionOneResults.mid}}</p>
+</div>
 </div>

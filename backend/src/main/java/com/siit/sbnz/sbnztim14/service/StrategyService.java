@@ -149,7 +149,7 @@ public class StrategyService {
         return (TeamComposition) kSession.getGlobal("allyTeamComposition");
     }
 
-    public AdviceStorage getStrategyEarlyGamePartThree(ThirdInteraction ti) {
+    public AdviceStorage getStrategyMidGame(ThirdInteraction ti) {
         kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         MidGame midGameTopLane = new MidGame("top", ti.getTopAllyKills(), ti.getTopEnemyKills(), ti.getTopAllyTowers(),
@@ -178,7 +178,7 @@ public class StrategyService {
     }
 
 
-    public AdviceStorage getStrategyEarlyGamePartFour(FourthInteraction fi) {
+    public AdviceStorage getStrategyLateGame(FourthInteraction fi) {
         kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         LateGame lateGame = new LateGame(fi.isTeamKillsLead(), fi.isTeamTowersLead(), fi.isTeamObjectivesLead());

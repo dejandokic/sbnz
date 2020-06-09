@@ -46,14 +46,14 @@ public class StrategyController {
     @PostMapping(value = "/interaction3")
     @PreAuthorize("hasAuthority('REGISTERED_USER') or hasAuthority('ADMIN')")
     public ResponseEntity<List<String>> thirdInteraction(@RequestBody ThirdInteraction thirdInteraction) {
-        AdviceStorage adviceStorage = strategyService.getStrategyEarlyGamePartThree(thirdInteraction);
+        AdviceStorage adviceStorage = strategyService.getStrategyMidGame(thirdInteraction);
         return new ResponseEntity<>(adviceStorage.getAdvices(), HttpStatus.OK);
     }
 
     @PostMapping(value = "/interaction4")
     @PreAuthorize("hasAuthority('REGISTERED_USER') or hasAuthority('ADMIN')")
     public ResponseEntity<List<String>> fourthInteraction(@RequestBody FourthInteraction fourthInteraction) {
-        AdviceStorage adviceStorage = strategyService.getStrategyEarlyGamePartFour(fourthInteraction);
+        AdviceStorage adviceStorage = strategyService.getStrategyLateGame(fourthInteraction);
         return new ResponseEntity<>(adviceStorage.getAdvices(), HttpStatus.OK);
     }
 
