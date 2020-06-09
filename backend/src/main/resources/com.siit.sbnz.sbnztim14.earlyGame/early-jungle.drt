@@ -22,6 +22,7 @@ template "early-jungle"
 
 rule "@{skillsName}"
     agenda-group "early-game-part-1"
+    salience 5
 	when
 		$ally : AllyChampion(
 			lane == "jungle",

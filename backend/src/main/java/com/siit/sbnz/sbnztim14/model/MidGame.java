@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MidGame {
     private String lane;
+    private boolean adviceGiven;
     private int allyKills;
     private int enemyKills;
     private int allyTowers;

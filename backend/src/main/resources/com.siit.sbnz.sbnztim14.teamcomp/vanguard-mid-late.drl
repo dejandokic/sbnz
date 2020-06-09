@@ -14,6 +14,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Vanguard, mid-late game, (split push), splitPush"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
@@ -29,6 +30,7 @@ end
 
 rule "Vanguard, mid-late game, (split push)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
@@ -46,6 +48,7 @@ end
 
 rule "Vanguard, mid-late game, (siege)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
@@ -63,6 +66,7 @@ end
 
 rule "Vanguard, mid-late game, (protect)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
@@ -80,6 +84,7 @@ end
 
 rule "Vanguard, mid-late game, (attack)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
@@ -98,6 +103,7 @@ end
 
 rule "Vanguard, mid-late game, (catch)"
 	agenda-group "teamcomp-role"
+	salience 1
 	when
 		$ally : AllyChampion(
 			role == "vanguard",
