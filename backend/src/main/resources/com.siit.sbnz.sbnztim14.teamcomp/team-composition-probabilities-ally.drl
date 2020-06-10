@@ -1,4 +1,4 @@
-package com.sample.rules
+package com.siit.sbnz.sbnztim14.teamcomp
 
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
