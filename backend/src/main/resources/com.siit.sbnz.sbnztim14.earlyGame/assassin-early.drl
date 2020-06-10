@@ -11,6 +11,7 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Assassin vs Juggernaut, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -33,6 +34,7 @@ end
 
 rule "Assassin vs Diver, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -53,6 +55,7 @@ end
 
 rule "Assassin vs Assassin, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -74,6 +77,7 @@ end
 
 rule "Assassin vs Skirmisher, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -95,6 +99,7 @@ end
 
 rule "Assassin vs Marksman, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -114,6 +119,7 @@ end
 
 rule "Assassin vs Burst, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -134,6 +140,7 @@ end
 
 rule "Assassin vs Battlemage, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -153,6 +160,7 @@ end
 
 rule "Assassin vs Artillery, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -172,6 +180,7 @@ end
 
 rule "Assassin vs Vanguard, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -191,6 +200,7 @@ end
 
 rule "Assassin vs Warden, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -210,6 +220,7 @@ end
 
 rule "Assassin vs Catcher, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -230,6 +241,7 @@ end
 
 rule "Assassin vs Enchanter, ally aggro"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -249,6 +261,7 @@ end
 
 rule "Assassin vs Juggernaut, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -269,6 +282,7 @@ end
 
 rule "Assassin vs Diver, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -288,6 +302,7 @@ end
 
 rule "Assassin vs Assassin, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -307,6 +322,7 @@ end
 
 rule "Assassin vs Skirmisher, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -326,6 +342,7 @@ end
 
 rule "Assassin vs Marksman, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -345,6 +362,7 @@ end
 
 rule "Assassin vs Burst, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -364,6 +382,7 @@ end
 
 rule "Assassin vs Battlemage, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -383,6 +402,7 @@ end
 
 rule "Assassin vs Artillery, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -402,6 +422,7 @@ end
 
 rule "Assassin vs Vanguard, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -422,6 +443,7 @@ end
 
 rule "Assassin vs Warden, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -442,6 +464,7 @@ end
 
 rule "Assassin vs Catcher, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",
@@ -462,6 +485,7 @@ end
 
 rule "Assassin vs Enchanter, ally def"
     agenda-group "early-game-part-1"
+    salience 1
 	when
 		$ally : AllyChampion(
 			lane != "jungle",

@@ -7,10 +7,9 @@ import org.junit.Test;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
-
 import static org.junit.Assert.assertEquals;
 
-public class EarlyGameTest {
+public class TeamcompTest {
 
     static ChampionService championService = new ChampionService();
     static KieContainer kContainer;
@@ -26,6 +25,8 @@ public class EarlyGameTest {
 
         KieSession kSession = kContainer.newKieSession("ksession-rules");
         kSession.setGlobal("adviceStorage", new AdviceStorage());
+        kSession.setGlobal("allyTeamComposition", new TeamComposition());
+
 
         // Choose 10 champs
         Champion champion1 = championService.getChampionByName("Darius");
@@ -77,30 +78,27 @@ public class EarlyGameTest {
         kSession.insert(enemy4);
         kSession.insert(enemy5);
 
+        TeamCompositionProbability allyTeam = new TeamCompositionProbability("ally");
 
-        kSession.getAgenda().getAgendaGroup("early-game-part-1").setFocus();
-        int fired = kSession.fireAllRules();
+        TeamCompositionProbability enemyTeam = new TeamCompositionProbability("enemy");
+
+        TeamCompositionProbability finalTeam = new TeamCompositionProbability("final");
+
+
+
+        kSession.getAgenda().getAgendaGroup("composition-probability").setFocus();
+        kSession.fireAllRules();
+
         AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
 
-        assertEquals(5, fired);
-        assertEquals(5, adviceStorage.getAdvices().size());
+        System.out.println(adviceStorage.getAdvices());
 
-        for(String str: adviceStorage.getAdvices()){
-            if(str.contains("[top, early]")){
-                assertEquals("[top, early] Against another juggernaut, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. Be careful as they have high sustain, and killing them will often prove difficult in a 1v1 situation.", str);
-            }else if(str.contains("[jungle, early]")){
-                assertEquals("[jungle, early] As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don�t have any escape tools.", str);
-            }else if(str.contains("[mid, early]")){
-                assertEquals("[mid, early] Against another burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you also have a burst potential and with your waveclear you should be safe to farm from your side of the lane.", str);
-            }else if(str.contains("[adc, early]")){
-                assertEquals("[adc, early] Against another marksman, you shouldn’t have problems as long as you stay at a safe distance. You can secure trades with your long range poke and control the lane to punish him with waveclear. Marksman are mobile long range damage dealers, that can punish you over a sustainable amount of time, so try to punish their misspositoning.", str);
-            }else {
-                assertEquals("[support, early] Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain. You have utility, so you should be safe in distant trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler. Try to use your disengage when they get close, but be careful to not waste it.", str);
-            }
-        }
+        assertEquals("TeamComposition [composition=attack]", kSession.getGlobal("allyTeamComposition").toString());
+
         kSession.dispose();
 
 
     }
+
 }
 
