@@ -20,13 +20,14 @@ import static org.junit.Assert.*;
 
 public class QueryingTest {
 
-    static ChampionService championService = new ChampionService();
+    static ChampionService championService;
     static KieContainer kContainer;
     static Random rng;
     KieSession kSession;
 
     @BeforeClass
     public static void beforeClass() {
+        championService = new ChampionService();
         KieServices kieServices = KieServices.Factory.get();
         kContainer = kieServices.getKieClasspathContainer();
         rng = new Random();

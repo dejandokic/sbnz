@@ -40,27 +40,22 @@ public class TeamCompositionProbability {
     
     public void incAttackComp(int inc) {
     	this.attackComp += inc;
-    	System.out.println(this.toString());
     }
     
     public void incCatchComp(int inc) {
     	this.catchComp += inc;
-    	System.out.println(this.toString());
     }
     
     public void incProtectComp(int inc) {
     	this.protectComp += inc;
-    	System.out.println(this.toString());
     }
     
     public void incSiegeComp(int inc) {
     	this.siegeComp += inc;
-    	System.out.println(this.toString());
     }
     
     public void incSplitComp(int inc) {
     	this.splitComp += inc;
-    	System.out.println(this.toString());
     }
 
     public String getTeam() {
