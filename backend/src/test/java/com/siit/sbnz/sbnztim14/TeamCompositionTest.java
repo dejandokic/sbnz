@@ -368,7 +368,7 @@ public class TeamCompositionTest {
         kSession.fireAllRules();
         TeamComposition comp = (TeamComposition)kSession.getGlobal("allyTeamComposition");
 
-        assertEquals("split", comp.getComposition());
+        assertEquals("splitPush", comp.getComposition());
 
         kSession.dispose();
     }

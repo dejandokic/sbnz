@@ -107,7 +107,7 @@ query getGoodProtectComp()
         name != $topName && name != $jungleName && name != $midName,
         allPossibleLanes.contains("adc") == true,
         role == "artillery" || role == "marksman",
-        hardCC == true
+        goodLate == true
     )
     $support: Champion(
         $supportName: name,
@@ -115,5 +115,76 @@ query getGoodProtectComp()
         allPossibleLanes.contains("support") == true,
         hardCC == true &&
         (disengage == true || utility == true)
+    )
+end
+
+query getGoodSiegeComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        poke == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        (role == "warden" || role == "vanguard") ||
+        (disengage == true && hardCC == true)
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        role == "artillery",
+        waveclear == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        poke == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardCC == true,
+        disengage == true
+    )
+end
+
+query getGoodSplitComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        role == "skirmisher" || role == "juggernaut",
+        splitPush == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        role == "skirmisher" || role == "juggernaut",
+        splitPush == true
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        disengage == true,
+        waveclear == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        waveclear == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardCC == true,
+        disengage == true
     )
 end
