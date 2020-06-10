@@ -16,6 +16,7 @@ import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
 import net.bytebuddy.asm.Advice;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.FactHandle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -84,12 +85,12 @@ public class StrategyService {
         kSession.insert(enemy4);
         kSession.insert(enemy5);
 
+        // Early game part 1 rules
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
+
         // Play type rules
         kSession.getAgenda().getAgendaGroup("play-type").setFocus();
         kSession.fireAllRules();
-
-        // Early game part 1 rules
-        kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         kSession.getAgenda().getAgendaGroup("early-game-part-1").setFocus();
         kSession.fireAllRules();
@@ -196,12 +197,15 @@ public class StrategyService {
         kSession.getAgenda().getAgendaGroup("late-game").setFocus();
         kSession.fireAllRules();
 
-//        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
-//        kSession.dispose();
-//        return adviceStorage;
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+        disposeKieSession();
+        return adviceStorage;
+    }
 
-        return (AdviceStorage) kSession.getGlobal("adviceStorage");
-
+    private void disposeKieSession() {
+        for (FactHandle handle : kSession.getFactHandles()) {
+            kSession.delete(handle);
+        }
     }
 
 }

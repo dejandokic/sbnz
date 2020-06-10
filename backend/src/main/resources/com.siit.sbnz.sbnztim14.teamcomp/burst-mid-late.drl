@@ -55,9 +55,7 @@ rule "Burst, mid-late game, (protect)"
 	when
 		$ally : AllyChampion(
 			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			disengage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "protect"
@@ -75,9 +73,7 @@ rule "Burst, mid-late game, (attack)"
 	when
 		$ally : AllyChampion(
 			role == "burst",
-			$allyLane : lane,
-			hardCC == true,
-			hardEngage == true
+			$allyLane : lane
 		)
 		$composition : TeamComposition(
 			composition == "attack"

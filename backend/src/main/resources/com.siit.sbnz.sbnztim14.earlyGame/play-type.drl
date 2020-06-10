@@ -25,6 +25,7 @@ rule "Ally countered by enemy"
         )
     then
         modify($ally){setPlayType("def")}
+        adviceStorage.addAdvice($allyLane, "play-type", "Your champion is countered by enemy, play defensively! ");
 end
 
 rule "Ally strong early, enemy weak early, not countered"
@@ -46,6 +47,8 @@ rule "Ally strong early, enemy weak early, not countered"
         )
     then
         modify($ally){setPlayType("aggro")}
+        adviceStorage.addAdvice($allyLane, "play-type", "Your champion has a lead in early game, be as much as aggressive as you can!! ");
+
 end
 
 rule "Ally weak early, enemy strong early, not countered"
@@ -67,6 +70,8 @@ rule "Ally weak early, enemy strong early, not countered"
         )
     then
         modify($ally){setPlayType("def")}
+        adviceStorage.addAdvice($allyLane, "play-type", "Your enemy has a lead in early game, play defensively!! ");
+
 end
 
 
@@ -91,6 +96,8 @@ rule "Ally strong early, enemy strong early, not countered"
         )
     then
         modify($ally){setPlayType($prefer)}
+        adviceStorage.addAdvice($allyLane, "play-type", "You are equal, play as you want. ");
+
 end
 
 
@@ -115,5 +122,6 @@ rule "Ally weak early, enemy weak early, not countered"
         )
     then
         modify($ally){setPlayType($prefer)}
+        adviceStorage.addAdvice($allyLane, "play-type", "You are equal, play as you want. ");
 end
 

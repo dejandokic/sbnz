@@ -1,6 +1,7 @@
 package com.siit.sbnz.sbnztim14.teamcomp;
 
 import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
@@ -8,13 +9,15 @@ global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 rule "Split vs Split"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    $allyTeam : TeamComposition(
+        composition == "splitPush"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+        splitComp >= siegeComp,
+        splitComp >= attackComp,
+        splitComp >= protectComp,
+        splitComp >= catchComp
     )
  then
     adviceStorage.addAdvice("split","teamcomp","Against another split push comp the big difference is going to come out of who has the strongest laners and wave management. Depending if it is 1-4 or 1-3-1 comp you will have to adapt accordingly. If you are playing with two solo laners and they with one, they can attempt to overtake you in a teamfight so that your solo laners have to come and fight. If you are fighting with one solo laner against their two, they will drag out fights and stall for time so be careful about that. The best way to play against a split push team comp is to either engage on them, while they are lacking in numbers or send your stronger laners to overwhelm and defeat their solo laners, making them incapable of splitting efficiently. ");
@@ -23,13 +26,15 @@ rule "Split vs Split"
 rule "Split vs Siege"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    $allyTeam : TeamComposition(
+            composition == "splitPush"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+        siegeComp >= splitComp,
+        siegeComp >= attackComp,
+        siegeComp >= protectComp,
+        siegeComp >= catchComp
     )
  then
     adviceStorage.addAdvice("split","teamcomp","Against a siege comp you will have an advantage since a split push comp is a hard counter to a siege comp. They have great map control, keeping their towers safe whilist delaying your pushes by poke and disengages. Good thing about this is that you have pressure in multiple lanes at the same time, and usually these comps can’t defend more than one lane effectively. Use this to your advantage, making them run around the map trying to quell your pressure. ");
@@ -39,9 +44,8 @@ rule "Split vs Siege"
 rule "Split vs Protect"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    $allyTeam : TeamComposition(
+                composition == "splitPush"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
@@ -56,9 +60,8 @@ rule "Split vs Protect"
 rule "Split vs Attack"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    $allyTeam : TeamComposition(
+                composition == "splitPush"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
@@ -72,9 +75,8 @@ rule "Split vs Attack"
 rule "Split vs Catch"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    $allyTeam : TeamComposition(
+        composition == "splitPush"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
@@ -91,9 +93,8 @@ rule "Split vs Catch"
 rule "Siege vs Split"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+    $allyTeam : TeamComposition(
+        composition == "siege"
     )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
@@ -106,10 +107,7 @@ rule "Siege vs Split"
 rule "Siege vs Siege"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "siege" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
@@ -122,10 +120,7 @@ rule "Siege vs Siege"
 rule "Siege vs Protect"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "siege" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
@@ -139,10 +134,7 @@ rule "Siege vs Protect"
 rule "Siege vs Attack"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "siege" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
@@ -155,10 +147,7 @@ rule "Siege vs Attack"
 rule "Siege vs Catch"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "siege" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
@@ -174,10 +163,7 @@ rule "Siege vs Catch"
 rule "Protect vs Split"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "protect" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
@@ -189,10 +175,7 @@ rule "Protect vs Split"
 rule "Protect vs Siege"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "protect" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
@@ -205,10 +188,7 @@ rule "Protect vs Siege"
 rule "Protect vs Protect"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "protect" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
@@ -222,10 +202,7 @@ rule "Protect vs Protect"
 rule "Protect vs Attack"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "protect" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
@@ -238,10 +215,7 @@ rule "Protect vs Attack"
 rule "Protect vs Catch"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "protect" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
@@ -257,10 +231,7 @@ rule "Protect vs Catch"
 rule "Attack vs Split"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "attack" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
@@ -272,10 +243,7 @@ rule "Attack vs Split"
 rule "Attack vs Siege"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "attack" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
@@ -288,10 +256,7 @@ rule "Attack vs Siege"
 rule "Attack vs Protect"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "attack" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
@@ -305,10 +270,7 @@ rule "Attack vs Protect"
 rule "Attack vs Attack"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "attack" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
@@ -321,10 +283,7 @@ rule "Attack vs Attack"
 rule "Attack vs Catch"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
-    )
+    $allyTeam : TeamComposition( composition == "attack" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
@@ -340,10 +299,7 @@ rule "Attack vs Catch"
 rule "Catch vs Split"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
-    )
+    $allyTeam : TeamComposition( composition == "catch" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
@@ -355,10 +311,7 @@ rule "Catch vs Split"
 rule "Catch vs Siege"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
-    )
+    $allyTeam : TeamComposition( composition == "catch" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
@@ -371,10 +324,7 @@ rule "Catch vs Siege"
 rule "Catch vs Protect"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
-    )
+    $allyTeam : TeamComposition( composition == "catch" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
@@ -388,10 +338,7 @@ rule "Catch vs Protect"
 rule "Catch vs Attack"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
-    )
+    $allyTeam : TeamComposition( composition == "catch" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
@@ -404,10 +351,7 @@ rule "Catch vs Attack"
 rule "Catch vs Catch"
  agenda-group "teamcomp-versus"
  when
-    $allyTeam : TeamCompositionProbability(
-        team == "final",
-        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
-    )
+    $allyTeam : TeamComposition( composition == "catch" )
     $enemyTeam : TeamCompositionProbability(
         team == "enemy",
         catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
