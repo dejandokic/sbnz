@@ -387,14 +387,14 @@ export class MainPageComponent implements OnInit, OnDestroy {
     });
 
     this.champForm.patchValue({
-      allyTop: this.champions.top[0].name,
-      allyJungle: this.champions.jungle[0].name,
-      allyMid: this.champions.mid[0].name,
-      allyADC: this.champions.adc[0].name,
-      allySupport: this.champions.support[0].name,
+      allyTop: this.champions.top[1].name,
+      allyJungle: this.champions.jungle[1].name,
+      allyMid: this.champions.mid[5].name,
+      allyADC: this.champions.adc[1].name,
+      allySupport: this.champions.support[1].name,
       enemyTop: this.champions.top[0].name,
-      enemyJungle: this.champions.jungle[0].name,
-      enemyMid: this.champions.mid[0].name,
+      enemyJungle: this.champions.jungle[3].name,
+      enemyMid: this.champions.mid[4].name,
       enemyADC: this.champions.adc[0].name,
       enemySupport: this.champions.support[0].name,
       allyTopPrefer: 'aggro',
@@ -476,6 +476,23 @@ export class MainPageComponent implements OnInit, OnDestroy {
         let lane = [];
         let message = '';
         let laneMessage = '';
+        console.log(resData);
+
+        const show = {
+          one: true,
+          two: false,
+          three: false,
+          four: false
+        };
+
+        this.interactionOneResults = {
+          top: '',
+          jungle: '',
+          mid: '',
+          adc: '',
+          support: '',
+          team: ''
+        };
 
         resData.forEach((data: string) => {
           content = data.split(']');
@@ -485,15 +502,15 @@ export class MainPageComponent implements OnInit, OnDestroy {
           laneMessage = laneMessage.substr(1);
           console.log(laneMessage, '  ', message);
           if (laneMessage === 'top') {
-            this.interactionOneResults.top = message;
+            this.interactionOneResults.top += message;
           } else if (laneMessage === 'jungle') {
-            this.interactionOneResults.jungle = message;
+            this.interactionOneResults.jungle += message;
           } else if (laneMessage === 'mid') {
-            this.interactionOneResults.mid = message;
+            this.interactionOneResults.mid += message;
           } else if (laneMessage === 'adc') {
-            this.interactionOneResults.adc = message;
+            this.interactionOneResults.adc += message;
           } else if (laneMessage === 'support') {
-            this.interactionOneResults.support = message;
+            this.interactionOneResults.support += message;
           } else if (laneMessage === 'ALL') {
             this.interactionOneResults.team = message;
           }

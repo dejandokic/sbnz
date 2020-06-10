@@ -193,6 +193,6 @@ salience 5
 			splitComp >= siegeComp
 		)
 	then
-		allyTeamComposition.setComposition("split");
+		allyTeamComposition.setComposition("splitPush");
 end
 		
