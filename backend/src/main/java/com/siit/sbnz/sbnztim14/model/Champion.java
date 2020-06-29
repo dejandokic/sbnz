@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -34,6 +35,14 @@ public class Champion {
     private List<String> goodAgainst;
     private List<String> badAgainst;
     private List<String> allPossibleLanes;
+
+    private int golds;
+    private int goldsForKill;
+    private ArrayList<Item> recommendedItems = new ArrayList<>();
+    private Item wantedItem;
+    private ArrayList<Item> toBuy = new ArrayList<>();
+    private ArrayList<Item> bought = new ArrayList<>();
+
 
     @Override
     public String toString() {
