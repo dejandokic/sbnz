@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Event {
 
     private String lane;
-    private Champion mainRole;
-    private Champion secondRole;
+    private AllyChampion allyChampion;
+    private EnemyChampion enemyChampion;
     private EventType eventType;
 }
