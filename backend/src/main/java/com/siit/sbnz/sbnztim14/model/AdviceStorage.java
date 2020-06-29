@@ -13,8 +13,14 @@ import java.util.ArrayList;
 @AllArgsConstructor
 public class AdviceStorage {
     private ArrayList<String> advices = new ArrayList<>();
+    private ArrayList<String> event = new ArrayList<>();
 
     public void addAdvice(String lane, String period, String adviceText) {
         advices.add("[" +  lane + ", " + period + "] " + adviceText);
     }
+
+    public void addEventAdvice(String champion, String advice){
+        event.add("As " + champion + " you should " + advice);
+    }
+
 }

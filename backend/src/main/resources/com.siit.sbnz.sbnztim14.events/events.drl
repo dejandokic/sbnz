@@ -1,0 +1,45 @@
+package com.siit.sbnz.sbnztim14.events;
+
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.Item;
+import com.siit.sbnz.sbnztim14.model.Event;
+
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "Helth item"
+    agenda-group "events"
+    salience (6 - $same)/($list.size() + 1)
+    when
+        $ev1: Event(
+            $name: name,
+            event == "Enemy killed me",
+            passed == true
+        )
+        ally: AllyChampion(
+            name == $name,
+            $list: items
+        )
+        Number($same: intValue >= 0)
+            from accumulate(
+            Item(
+                $t: this,
+                this memberOf $list
+            ),
+            count($t)
+        )
+        Number(intValue >= 2)
+            from accumulate(
+                $ev2: Event(
+                    event == $ev1.event,
+                    name == $name,
+                    this meets[2m] $ev1,
+                    pass == true
+                ),
+                count($ev2)
+            )
+    then
+        modify($ev1){ passed = false };
+        adviceStorage.addEventAdvice($name, "Buy a healt item option");
+end

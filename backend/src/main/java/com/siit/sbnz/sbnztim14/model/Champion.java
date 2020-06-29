@@ -34,6 +34,7 @@ public class Champion {
     private List<String> goodAgainst;
     private List<String> badAgainst;
     private List<String> allPossibleLanes;
+    private List<Item> items;
 
     @Override
     public String toString() {
