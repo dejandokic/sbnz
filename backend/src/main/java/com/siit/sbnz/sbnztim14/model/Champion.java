@@ -16,6 +16,7 @@ public class Champion {
     private String name;
     private String lane;
     private String role;
+    private ChampionType championType;
 
     private boolean goodEarly;
     private boolean goodMid;
