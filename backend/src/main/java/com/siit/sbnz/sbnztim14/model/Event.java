@@ -9,6 +9,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+<<<<<<< Updated upstream
+=======
+@Role(Role.Type.EVENT)
+@Expires("30m")
+>>>>>>> Stashed changes
 public class Event {
 
     private String lane;
