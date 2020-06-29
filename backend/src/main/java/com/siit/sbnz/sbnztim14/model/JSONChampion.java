@@ -10,6 +10,7 @@ import java.util.ArrayList;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class JSONChampion {
     private String name;
+    private ChampionType championType;
     private JSONClass champClass;
     private JSONLane lane;
     private JSONRole role;
@@ -20,6 +21,7 @@ public class JSONChampion {
     public Champion convertToEntity() {
         Champion champ = new Champion();
         champ.setName(this.getName());
+        champ.setChampionType(this.championType);
         ArrayList<String> allPossibleLanes = new ArrayList<>();
         if(lane.isAdc()) {
             allPossibleLanes.add("adc");
