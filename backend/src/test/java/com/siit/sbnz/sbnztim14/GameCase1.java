@@ -123,7 +123,7 @@ public class GameCase1 {
         AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
 
         System.out.println(adviceStorage.getAdvices().get(0));
-        assertEquals(3, fired);
+        assertEquals(1, fired);
 
         kSession.dispose();
     }
