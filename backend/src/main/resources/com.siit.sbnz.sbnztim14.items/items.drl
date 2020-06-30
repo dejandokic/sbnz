@@ -3,7 +3,7 @@ package com.siit.sbnz.sbnztim14.lateGame
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
-import com.siit.sbnz.sbnztim14.model.Event;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
 import com.siit.sbnz.sbnztim14.model.Item;
 
 rule "proba"
