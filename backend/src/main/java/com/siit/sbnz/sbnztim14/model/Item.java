@@ -19,4 +19,5 @@ public class Item {
     private int magicResist;
     private int armor;
     private ArrayList<Item> items = new ArrayList<>();
+    private int gold;
 }

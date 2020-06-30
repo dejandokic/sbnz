@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.lateGame
+package com.siit.sbnz.sbnztim14.additionalRules
 
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
@@ -18,10 +18,10 @@ rule "increase value"
         )
         $ally: AllyChampion()
         Number($val: intValue() > 0 )from accumulate(
-            $e: Event(
+            $e: GameEvent(
                 lane == $ally.lane,
                 allyChampion == $ally,
-                eventType == EventType.ALLY_KILL
+                eventType == EventType.ALLY_KILLS
             ),
             count($e)
         )
@@ -40,10 +40,10 @@ rule "decrease value"
         $ally: AllyChampion()
         Number($val: intValue() > 0 )
         from accumulate(
-            $e: Event(
+            $e: GameEvent(
                 lane == $ally.lane,
                 allyChampion == $ally,
-                eventType == EventType.ENEMY_KILL
+                eventType == EventType.ENEMY_KILLS
             ),
             count($e)
         )
@@ -54,7 +54,7 @@ end
 
 # Pravila za kupovinu na osnovu vrednosti u ItemBuy factu
 
-rule "Buy offensive item AD"
+rule "Buy Infinity Edge"
     agenda-group "items"
     salience 6 - $br
     when
@@ -78,8 +78,43 @@ rule "Buy offensive item AD"
         $enemy: EnemyChampion(
             lane == $lane
         )
-
+        $item: Item(
+            name = "Infinity Edge"
+        )
     then
+        modify($ally){ setWantedItem($item) };
 
+end
+
+
+rule "Buy "
+    agenda-group "items"
+    salience 6 - $br
+    when
+        $i: ItemBuy(
+            allyChampion == $ally,
+            enemyChampion == $enemy,
+            $lane: lane
+        )
+        eval($i.value >= 3)
+        $ally: AllyChampion(
+            lane == $lane
+        )
+        Number($br: intValue())
+        from accumulate(
+            AllyChampion(
+                $this: this,
+                wantedItem!=null
+            ),
+            count($this)
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $item: Item(
+            name = "Infinity Edge"
+        )
+    then
+        modify($ally){ setWantedItem($item) };
 
 end

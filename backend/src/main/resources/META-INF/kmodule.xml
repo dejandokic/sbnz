@@ -9,7 +9,7 @@
            com.siit.sbnz.sbnztim14.midGame,
            com.siit.sbnz.sbnztim14.lateGame,
            com.siit.sbnz.sbnztim14.querying,
-           com.siit.sbnz.sbnztim14.additional-rules">
+           com.siit.sbnz.sbnztim14.additionalRules">
         <ksession name="ksession-rules"/>
     </kbase>
 
