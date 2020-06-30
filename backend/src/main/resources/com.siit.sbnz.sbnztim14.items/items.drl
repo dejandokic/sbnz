@@ -5,12 +5,81 @@ import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.Event;
 import com.siit.sbnz.sbnztim14.model.Item;
+import com.siit.sbnz.sbnztim14.model.ItemBuy;
+import com.siit.sbnz.sbnztim14.model.EventType;
 
-rule "proba"
+rule "increase value"
     agenda-group "items"
-
+    salience 100
     when
-        $ally: AllyChampion(
+        $i: ItemBuy(
+            allyChampion == $ally,
+            lane == $ally.lane
+        )
+        $ally: AllyChampion()
+        Number($val: intValue() > 0 )from accumulate(
+            $e: Event(
+                lane == $ally.lane,
+                allyChampion == $ally,
+                eventType == EventType.ALLY_KILL
+            ),
+            count($e)
+        )
+    then
+        modify($i){ setValue(getValue() + $val) };
+end
 
+rule "decrease value"
+    agenda-group "items"
+    salience 100
+    when
+        $i: ItemBuy(
+            allyChampion == $ally,
+            lane == $ally.lane
+        )
+        $ally: AllyChampion()
+        Number($val: intValue() > 0 )
+        from accumulate(
+            $e: Event(
+                lane == $ally.lane,
+                allyChampion == $ally,
+                eventType == EventType.ENEMY_KILL
+            ),
+            count($e)
+        )
+    then
+        modify($i){ setValue(getValue() - $val) };
+end
+
+
+# Pravila za kupovinu na osnovu vrednosti u ItemBuy factu
+
+rule "Buy offensive item AD"
+    agenda-group "items"
+    salience 6 - $br
+    when
+        $i: ItemBuy(
+            allyChampion == $ally,
+            enemyChampion == $enemy,
+            $lane: lane
+        )
+        eval($i.value >= 3)
+        $ally: AllyChampion(
+            lane == $lane
+        )
+        Number($br: intValue())
+        from accumulate(
+            AllyChampion(
+                $this: this,
+                wantedItem!=null
+            ),
+            count($this)
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
         )
 
+    then
+
+
+end
