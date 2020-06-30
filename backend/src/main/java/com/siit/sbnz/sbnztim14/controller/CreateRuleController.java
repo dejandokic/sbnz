@@ -5,21 +5,12 @@ import com.siit.sbnz.sbnztim14.model.EarlyGameRule;
 import com.siit.sbnz.sbnztim14.model.EarlyJungleRule;
 import com.siit.sbnz.sbnztim14.model.MidLateGameRule;
 import com.siit.sbnz.sbnztim14.service.NewRulesService;
-import lombok.RequiredArgsConstructor;
-import org.apache.http.protocol.HTTP;
-import org.drools.template.ObjectDataCompiler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/new-rule")
