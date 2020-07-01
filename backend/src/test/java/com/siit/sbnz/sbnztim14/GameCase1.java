@@ -118,19 +118,19 @@ public class GameCase1 {
         assertEquals(0, enemy1.getGolds());
         assertEquals(300, enemy1.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ENEMY_KILLS));
         assertEquals(0, ally1.getGolds());
         assertEquals(300, ally1.getGoldsForKill());
         assertEquals(300, enemy1.getGolds());
         assertEquals(400, enemy1.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ENEMY_KILLS));
         assertEquals(0, ally1.getGolds());
         assertEquals(300, ally1.getGoldsForKill());
         assertEquals(600, enemy1.getGolds());
         assertEquals(500, enemy1.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("mid", ally3, null, EventType.ENEMY_TOWER_DESTROYED));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ENEMY_TOWER_DESTROYED));
         assertEquals(200, ally1.getGolds());
         assertEquals(300, ally1.getGoldsForKill());
         assertEquals(200, ally2.getGolds());
@@ -142,19 +142,19 @@ public class GameCase1 {
         assertEquals(200, ally5.getGolds());
         assertEquals(300, ally5.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ALLY_KILLS));
         assertEquals(700, ally1.getGolds());
         assertEquals(400, ally1.getGoldsForKill());
         assertEquals(600, enemy1.getGolds());
         assertEquals(300, enemy1.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_KILLS));
         assertEquals(500, ally3.getGolds());
         assertEquals(400, ally3.getGoldsForKill());
         assertEquals(0, enemy3.getGolds());
         assertEquals(300, enemy3.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_TOWER_DESTROYED));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_TOWER_DESTROYED));
         assertEquals(800, enemy1.getGolds());
         assertEquals(300, enemy1.getGoldsForKill());
         assertEquals(200, enemy2.getGolds());
@@ -166,7 +166,7 @@ public class GameCase1 {
         assertEquals(200, enemy5.getGolds());
         assertEquals(300, enemy5.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("jungle", ally1, null, EventType.OBJECT_KILLED));
+        eventOccurred(kSession, new GameEvent("jungle", EventType.OBJECT_KILLED));
         assertEquals(850, ally1.getGolds());
         assertEquals(400, ally1.getGoldsForKill());
         assertEquals(350, ally2.getGolds());
@@ -178,7 +178,7 @@ public class GameCase1 {
         assertEquals(350, ally5.getGolds());
         assertEquals(300, ally5.getGoldsForKill());
 
-        eventOccurred(kSession, new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("adc", EventType.ALLY_KILLS));
         assertEquals(650, ally4.getGolds());
         assertEquals(400, ally4.getGoldsForKill());
         assertEquals(200, enemy4.getGolds());
@@ -188,22 +188,22 @@ public class GameCase1 {
         // Where should jungler gank rules
 
         // Older
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("adc", EventType.ALLY_KILLS));
 
         // Newer
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ENEMY_KILLS));
-        eventOccurred(kSession, new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("support", ally5, enemy5, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid",  EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("adc", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("support", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("adc", EventType.ALLY_KILLS));
 
         JunglerConclusion junglerConclusion = new JunglerConclusion("");
         FactHandle jungleConclusionFH = kSession.insert(junglerConclusion);
@@ -213,9 +213,9 @@ public class GameCase1 {
         assertEquals("mid", junglerConclusion.getNextGank());
         kSession.delete(jungleConclusionFH);
 
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
-        eventOccurred(kSession, new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("mid", EventType.ALLY_KILLS));
 
         JunglerConclusion junglerConclusion2 = new JunglerConclusion("");
         FactHandle jungleConclusionFH2 = kSession.insert(junglerConclusion2);
