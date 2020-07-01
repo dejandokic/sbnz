@@ -11,6 +11,7 @@ import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
@@ -64,21 +65,24 @@ public class ItemsTest {
         kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
         kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
 
+
         kSession.getAgenda().getAgendaGroup("items").setFocus();
         int valu = kSession.fireAllRules();
 
-//        ArrayList<Item> i = new ArrayList<>();
-//
-//
-//        for(Item it: itemService.getAllItems()){
-//            if(it.getName().equals("Rabadons Deatchap")){
-//                i.add(it);
-//            }
-//        }
-//
-//        ally1.setBought(i);
-//
-//        kSession.update(fact, ally1);
+
+        ArrayList<Item> i = new ArrayList<>();
+
+        for(Item it: itemService.getAllItems()){
+            if(it.getName().equals("Rabadons Deathcap")){
+                i.add(it);
+            }
+        }
+
+        ally1.setBought(i);
+
+        ally1.setWantedItem(null);
+
+        System.out.println(ally1.getWantedItem() + " dada");
 
         int valu2 = kSession.fireAllRules();
 

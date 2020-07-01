@@ -58,50 +58,13 @@ rule "decrease value"
         )
     then
         modify($i){ setValue($i.getValue() - $val) };
-        System.out.println($i);
         System.out.println($val);
-end
-
-
-rule "Buy Rabadons Deathcap"
-    agenda-group "items"
-    salience 6
-    when
-        $ally: AllyChampion(
-            $lane: lane,
-            wantedItem == null,
-            championType == ChampionType.AP
-        )
-        $enemy: EnemyChampion(
-            lane == $lane
-        )
-        $i: ItemBuy(
-            allyChampion == $ally,
-            enemyChampion == $enemy,
-            lane == $lane
-        )
-        eval($i.getValue() >= 3)
-        $item: Item(
-            name == "Rabadons Deathcap"
-        )
-//        $l: List() from collect(
-            Number($br: intValue > -1)
-                from accumulate(
-                    $temp: Item(
-                        name == "Rabadons Deathcap"
-//                      this memberOf $ally.getBought()
-                    ),
-                    count($temp)
-            )
-//        )
-    then
-        System.out.println($br);
 end
 
 
 rule "Buy Rabadons Deathcap2"
     agenda-group "items"
-    salience 5.5 - $br
+    salience (5.5 - $br)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -112,22 +75,59 @@ rule "Buy Rabadons Deathcap2"
             lane == $lane
         )
         $i: ItemBuy(
-            allyChampion == $ally,
-            enemyChampion == $enemy,
-            lane == $lane
+            lane == $lane,
+            value >= 3
         )
-        eval($i.getValue() >= 3)
         $item: Item(
             name == "Rabadons Deathcap2"
         )
         Number($br: intValue > -1)
-        from accumulate(
-            $temp: Item(
-                name == "Rabadons Deathcap2",
-                this memberOf $ally.getBought()
-            ),
-            count($temp)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Rabadons Deathcap2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
         )
     then
-        System.out.println("proso2");
+        modify($ally){ setWantedItem($item) };
+        System.out.println($ally.getWantedItem().toString());
+        System.out.println($br + " DVA");
 end
+
+
+rule "Buy Rabadons Deathcap"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 3
+        )
+        $item: Item(
+            name == "Rabadons Deathcap"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Rabadons Deathcap",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+        System.out.println($ally.getWantedItem().toString());
+        System.out.println($br);
+end
+
