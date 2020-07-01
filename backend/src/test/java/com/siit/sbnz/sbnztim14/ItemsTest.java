@@ -132,21 +132,21 @@ public class ItemsTest {
         }
 
 
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("jungle", ally2, enemy2, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("jungle", ally2, enemy2, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("jungle", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("jungle", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ENEMY_KILLS));
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ENEMY_KILLS));
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("support", ally5, enemy5, EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("support", EventType.ENEMY_KILLS));
 
 
         kSession.getAgenda().getAgendaGroup("items").setFocus();
