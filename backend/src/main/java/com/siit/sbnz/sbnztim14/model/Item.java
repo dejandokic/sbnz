@@ -14,9 +14,14 @@ import java.util.ArrayList;
 public class Item {
 
     private String name;
-    private int attackDamage;
-    private int abilityPower;
-    private int magicResist;
-    private int armor;
+    private int attackDamage = 0;
+    private int abilityPower = 0;
+    private int magicResist = 0;
+    private int armor = 0;
     private ArrayList<Item> items = new ArrayList<>();
+    private int gold;
+
+    public Item(Item item){
+        this(item.getName(),item.getAttackDamage(),item.getAbilityPower(),item.getMagicResist(),item.getArmor(),new ArrayList<Item>(), item.getGold());
+    }
 }

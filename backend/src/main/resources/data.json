@@ -2,6 +2,7 @@
   "champions": [
     {
       "name": "Aatrox",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -53,6 +54,7 @@
     },
     {
       "name": "Ahri",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -104,6 +106,7 @@
     },
     {
       "name": "Akali",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -155,6 +158,7 @@
     },
     {
       "name": "Alistar",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -206,6 +210,7 @@
     },
     {
       "name": "Amumu",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -257,6 +262,7 @@
     },
     {
       "name": "Anivia",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -308,6 +314,7 @@
     },
     {
       "name": "Annie",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -359,6 +366,7 @@
     },
     {
       "name": "Aphelios",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -410,6 +418,7 @@
     },
     {
       "name": "Ashe",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -461,6 +470,7 @@
     },
     {
       "name": "Aurelion Sol",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -512,6 +522,7 @@
     },
     {
       "name": "Azir",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -563,6 +574,7 @@
     },
     {
       "name": "Bard",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -614,6 +626,7 @@
     },
     {
       "name": "Blitzcrank",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -665,6 +678,7 @@
     },
     {
       "name": "Brand",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -716,6 +730,7 @@
     },
     {
       "name": "Braum",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -767,6 +782,7 @@
     },
     {
       "name": "Caitlyn",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -818,6 +834,7 @@
     },
     {
       "name": "Camille",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -869,6 +886,7 @@
     },
     {
       "name": "Cassiopeia",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -920,6 +938,7 @@
     },
     {
       "name": "Cho'Gath",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -971,6 +990,7 @@
     },
     {
       "name": "Corki",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1022,6 +1042,7 @@
     },
     {
       "name": "Darius",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -1073,6 +1094,7 @@
     },
     {
       "name": "Diana",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1124,6 +1146,7 @@
     },
     {
       "name": "Dr. Mundo",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -1175,6 +1198,7 @@
     },
     {
       "name": "Draven",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1226,6 +1250,7 @@
     },
     {
       "name": "Ekko",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1277,6 +1302,7 @@
     },
     {
       "name": "Elise",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -1328,6 +1354,7 @@
     },
     {
       "name": "Evelynn",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1379,6 +1406,7 @@
     },
     {
       "name": "Ezreal",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1430,6 +1458,7 @@
     },
     {
       "name": "Fiddlesticks",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1481,6 +1510,7 @@
     },
     {
       "name": "Fiora",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1532,6 +1562,7 @@
     },
     {
       "name": "Fizz",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1583,6 +1614,7 @@
     },
     {
       "name": "Galio",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1634,6 +1666,7 @@
     },
     {
       "name": "Gangplank",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -1685,6 +1718,7 @@
     },
     {
       "name": "Garen",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -1736,6 +1770,7 @@
     },
     {
       "name": "Gnar",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -1787,6 +1822,7 @@
     },
     {
       "name": "Gragas",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1838,6 +1874,7 @@
     },
     {
       "name": "Graves",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1889,6 +1926,7 @@
     },
     {
       "name": "Hecarim",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -1940,6 +1978,7 @@
     },
     {
       "name": "Heimerdinger",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -1991,6 +2030,7 @@
     },
     {
       "name": "Illaoi",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -2042,6 +2082,7 @@
     },
     {
       "name": "Irelia",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -2093,6 +2134,7 @@
     },
     {
       "name": "Ivern",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2144,6 +2186,7 @@
     },
     {
       "name": "Janna",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2195,6 +2238,7 @@
     },
     {
       "name": "Jarvan IV",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -2246,6 +2290,7 @@
     },
     {
       "name": "Jax",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2297,6 +2342,7 @@
     },
     {
       "name": "Jayce",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2348,6 +2394,7 @@
     },
     {
       "name": "Jhin",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2399,6 +2446,7 @@
     },
     {
       "name": "Jinx",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2450,6 +2498,7 @@
     },
     {
       "name": "Kai'Sa",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2501,6 +2550,7 @@
     },
     {
       "name": "Kalista",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2552,6 +2602,7 @@
     },
     {
       "name": "Karma",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2603,6 +2654,7 @@
     },
     {
       "name": "Karthus",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2654,6 +2706,7 @@
     },
     {
       "name": "Kassadin",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2705,6 +2758,7 @@
     },
     {
       "name": "Katarina",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2756,6 +2810,7 @@
     },
     {
       "name": "Kayle",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2807,6 +2862,7 @@
     },
     {
       "name": "Kayn",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2858,6 +2914,7 @@
     },
     {
       "name": "Kennen",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2909,6 +2966,7 @@
     },
     {
       "name": "Kha'Zix",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -2960,6 +3018,7 @@
     },
     {
       "name": "Kindred",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3011,6 +3070,7 @@
     },
     {
       "name": "Kled",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -3062,6 +3122,7 @@
     },
     {
       "name": "Kog'Maw",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3113,6 +3174,7 @@
     },
     {
       "name": "LeBlanc",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3164,6 +3226,7 @@
     },
     {
       "name": "Lee Sin",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -3215,6 +3278,7 @@
     },
     {
       "name": "Leona",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3266,6 +3330,7 @@
     },
     {
       "name": "Lissandra",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3317,6 +3382,7 @@
     },
     {
       "name": "Lucian",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3368,6 +3434,7 @@
     },
     {
       "name": "Lulu",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3419,6 +3486,7 @@
     },
     {
       "name": "Lux",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3470,6 +3538,7 @@
     },
     {
       "name": "Malphite",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3521,6 +3590,7 @@
     },
     {
       "name": "Malzahar",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3572,6 +3642,7 @@
     },
     {
       "name": "Maokai",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3623,6 +3694,7 @@
     },
     {
       "name": "Master Yi",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3674,6 +3746,7 @@
     },
     {
       "name": "Miss Fortune",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3725,6 +3798,7 @@
     },
     {
       "name": "Mordekaiser",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -3776,6 +3850,7 @@
     },
     {
       "name": "Morgana",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3827,6 +3902,7 @@
     },
     {
       "name": "Nami",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3878,6 +3954,7 @@
     },
     {
       "name": "Nasus",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -3929,6 +4006,7 @@
     },
     {
       "name": "Nautilus",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -3980,6 +4058,7 @@
     },
     {
       "name": "Neeko",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4031,6 +4110,7 @@
     },
     {
       "name": "Nidalee",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4082,6 +4162,7 @@
     },
     {
       "name": "Nocturne",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4133,6 +4214,7 @@
     },
     {
       "name": "Nunu",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4184,6 +4266,7 @@
     },
     {
       "name": "Olaf",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -4235,6 +4318,7 @@
     },
     {
       "name": "Orianna",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4286,6 +4370,7 @@
     },
     {
       "name": "Ornn",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4337,6 +4422,7 @@
     },
     {
       "name": "Pantheon",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -4388,6 +4474,7 @@
     },
     {
       "name": "Poppy",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4439,6 +4526,7 @@
     },
     {
       "name": "Pyke",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4490,6 +4578,7 @@
     },
     {
       "name": "Qiyana",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4541,6 +4630,7 @@
     },
     {
       "name": "Quinn",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4592,6 +4682,7 @@
     },
     {
       "name": "Rakan",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4643,6 +4734,7 @@
     },
     {
       "name": "Rammus",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4694,6 +4786,7 @@
     },
     {
       "name": "Rek'Sai",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -4745,6 +4838,7 @@
     },
     {
       "name": "Renekton",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -4796,6 +4890,7 @@
     },
     {
       "name": "Rengar",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4847,6 +4942,7 @@
     },
     {
       "name": "Riven",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4898,6 +4994,7 @@
     },
     {
       "name": "Rumble",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -4949,6 +5046,7 @@
     },
     {
       "name": "Ryze",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5000,6 +5098,7 @@
     },
     {
       "name": "Sejuani",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5051,6 +5150,7 @@
     },
     {
       "name": "Senna",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5102,6 +5202,7 @@
     },
     {
       "name": "Sett",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -5153,6 +5254,7 @@
     },
     {
       "name": "Shaco",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5204,6 +5306,7 @@
     },
     {
       "name": "Shen",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5255,6 +5358,7 @@
     },
     {
       "name": "Shyvana",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -5306,6 +5410,7 @@
     },
     {
       "name": "Singed",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5357,6 +5462,7 @@
     },
     {
       "name": "Sion",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5408,6 +5514,7 @@
     },
     {
       "name": "Sivir",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5459,6 +5566,7 @@
     },
     {
       "name": "Skarner",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -5510,6 +5618,7 @@
     },
     {
       "name": "Sona",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5561,6 +5670,7 @@
     },
     {
       "name": "Soraka",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5612,6 +5722,7 @@
     },
     {
       "name": "Swain",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5663,6 +5774,7 @@
     },
     {
       "name": "Sylas",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5714,6 +5826,7 @@
     },
     {
       "name": "Syndra",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5765,6 +5878,7 @@
     },
     {
       "name": "Tahm Kench",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5816,6 +5930,7 @@
     },
     {
       "name": "Taliyah",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5867,6 +5982,7 @@
     },
     {
       "name": "Talon",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5918,6 +6034,7 @@
     },
     {
       "name": "Taric",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -5969,6 +6086,7 @@
     },
     {
       "name": "Teemo",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6020,6 +6138,7 @@
     },
     {
       "name": "Thresh",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6071,6 +6190,7 @@
     },
     {
       "name": "Tristana",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6122,6 +6242,7 @@
     },
     {
       "name": "Trundle",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -6173,6 +6294,7 @@
     },
     {
       "name": "Tryndamere",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6224,6 +6346,7 @@
     },
     {
       "name": "Twisted Fate",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6275,6 +6398,7 @@
     },
     {
       "name": "Twitch",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6326,6 +6450,7 @@
     },
     {
       "name": "Udyr",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -6377,6 +6502,7 @@
     },
     {
       "name": "Urgot",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -6428,6 +6554,7 @@
     },
     {
       "name": "Varus",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6479,6 +6606,7 @@
     },
     {
       "name": "Vayne",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6530,6 +6658,7 @@
     },
     {
       "name": "Veigar",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6581,6 +6710,7 @@
     },
     {
       "name": "Vel'Koz",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6632,6 +6762,7 @@
     },
     {
       "name": "Vi",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -6683,6 +6814,7 @@
     },
     {
       "name": "Viktor",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6734,6 +6866,7 @@
     },
     {
       "name": "Vladimir",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6785,6 +6918,7 @@
     },
     {
       "name": "Volibear",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -6836,6 +6970,7 @@
     },
     {
       "name": "Warwick",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -6887,6 +7022,7 @@
     },
     {
       "name": "Wukong",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -6938,6 +7074,7 @@
     },
     {
       "name": "Xayah",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -6989,6 +7126,7 @@
     },
     {
       "name": "Xerath",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7040,6 +7178,7 @@
     },
     {
       "name": "Xin Zhao",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": true,
@@ -7091,6 +7230,7 @@
     },
     {
       "name": "Yasuo",
+	  "championType": "AD",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7142,6 +7282,7 @@
     },
     {
       "name": "Yorick",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": true,
         "diver": false,
@@ -7193,6 +7334,7 @@
     },
     {
       "name": "Yuumi",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7244,6 +7386,7 @@
     },
     {
       "name": "Zac",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7295,6 +7438,7 @@
     },
     {
       "name": "Zed",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7346,6 +7490,7 @@
     },
     {
       "name": "Ziggs",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7397,6 +7542,7 @@
     },
     {
       "name": "Zilean",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7448,6 +7594,7 @@
     },
     {
       "name": "Zoe",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
@@ -7499,6 +7646,7 @@
     },
     {
       "name": "Zyra",
+	  "championType": "AP",
       "champClass": {
         "juggernaut": false,
         "diver": false,
