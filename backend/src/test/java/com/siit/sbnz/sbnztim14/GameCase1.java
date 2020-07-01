@@ -30,6 +30,12 @@ public class GameCase1 {
         kContainer = kieServices.getKieClasspathContainer();
     }
 
+    private void eventOccurred(KieSession session, GameEvent event) {
+        session.insert(event);
+        session.getAgenda().getAgendaGroup("after-event").setFocus();
+        session.fireAllRules();
+    }
+
     @Test
     public void changePlayTypeTest() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
@@ -124,6 +130,13 @@ public class GameCase1 {
 
         System.out.println(adviceStorage.getAdvices().get(0));
         assertEquals(1, fired);
+
+        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", ally1, null, EventType.ENEMY_TOWER_DESTROYED));
+        eventOccurred(kSession, new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
+        eventOccurred(kSession, new GameEvent("top", ally1, null, EventType.OBJECT_KILLED));
 
         kSession.dispose();
     }

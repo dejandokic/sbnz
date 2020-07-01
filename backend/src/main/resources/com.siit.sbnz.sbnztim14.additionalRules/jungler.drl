@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.jungler
+package com.siit.sbnz.sbnztim14.additionalRules
 
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;

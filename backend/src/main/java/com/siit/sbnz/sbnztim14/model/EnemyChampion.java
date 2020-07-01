@@ -1,8 +1,10 @@
 package com.siit.sbnz.sbnztim14.model;
 
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @NoArgsConstructor
+@ToString
 public class EnemyChampion extends Champion {
 
     public EnemyChampion(Champion cha) {
