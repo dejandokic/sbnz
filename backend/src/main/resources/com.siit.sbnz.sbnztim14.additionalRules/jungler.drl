@@ -25,25 +25,25 @@ rule "Jungler should gank top lane"
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
-        Number($goodLast8: intValue >= -1) from accumulate(
+        Number($goodLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, lane == "top")
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($badLast8: intValue >= -1) from accumulate(
+        Number($badLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf badEvents, lane == "top")
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($goodWholeGame: intValue >= -1) from accumulate(
+        Number($goodWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf goodEvents, lane == "top")
             from window AllEventsWindow,
             count($allEv)
         )
 
-        Number($badWholeGame: intValue >= -1) from accumulate(
+        Number($badWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf badEvents, lane == "top")
             from window AllEventsWindow,
             count($allEv)
@@ -70,25 +70,25 @@ rule "Jungler should gank mid lane"
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
-        Number($goodLast8: intValue >= -1) from accumulate(
+        Number($goodLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, lane == "mid")
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($badLast8: intValue >= -1) from accumulate(
+        Number($badLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf badEvents, lane == "mid")
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($goodWholeGame: intValue >= -1) from accumulate(
+        Number($goodWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf goodEvents, lane == "mid")
             from window AllEventsWindow,
             count($allEv)
         )
 
-        Number($badWholeGame: intValue >= -1) from accumulate(
+        Number($badWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf badEvents, lane == "mid")
             from window AllEventsWindow,
             count($allEv)
@@ -114,25 +114,25 @@ rule "Jungler should gank bottom lane"
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
-        Number($goodLast8: intValue >= -1) from accumulate(
+        Number($goodLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($badLast8: intValue >= -1) from accumulate(
+        Number($badLast8: intValue >= 0) from accumulate(
             GameEvent($ev: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($goodWholeGame: intValue >= -1) from accumulate(
+        Number($goodWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
             from window AllEventsWindow,
             count($allEv)
         )
 
-        Number($badWholeGame: intValue >= -1) from accumulate(
+        Number($badWholeGame: intValue >= 0) from accumulate(
             GameEvent($allEv: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
             from window AllEventsWindow,
             count($allEv)

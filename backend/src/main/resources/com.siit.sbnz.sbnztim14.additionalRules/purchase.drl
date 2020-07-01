@@ -1,0 +1,64 @@
+package com.siit.sbnz.sbnztim14.additionalRules
+
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import com.siit.sbnz.sbnztim14.model.Item;
+import com.siit.sbnz.sbnztim14.model.JunglerConclusion;
+import java.util.ArrayList;
+
+rule "ally buys item (item is not last part of wanted item)"
+    agenda-group "purchase-item"
+    when
+        $ally: AllyChampion(
+            $allyLane: lane,
+            $toBuyItems: toBuy,
+            $allyGolds: golds,
+            wantedItem != null
+        )
+        Number($value: intValue > 1) from accumulate(
+            Item($item:this, $allyGolds >= gold) from $toBuyItems,
+            count($item)
+        )
+    then
+        Item boughtItem = $ally.getToBuy().get(0);
+        int golds = $ally.getGolds();
+        golds = golds - boughtItem.getGold();
+        ArrayList<Item> toBuy = $ally.getToBuy();
+        toBuy.remove(0);
+        ArrayList<Item> bought = $ally.getBought();
+        bought.add(boughtItem);
+
+        modify($ally){setToBuy(toBuy), setBought(bought), setGolds(golds)}
+end
+
+rule "ally buys item (item is last part of wanted item)"
+    agenda-group "purchase-item"
+    when
+        $ally: AllyChampion(
+            $allyLane: lane,
+            $toBuyItems: toBuy,
+            $allyGolds: golds,
+            wantedItem != null
+        )
+        Number($value: intValue == 1) from accumulate(
+            Item($item:this, $allyGolds >= gold) from $toBuyItems,
+            count($item)
+        )
+    then
+        Item boughtItem = $ally.getToBuy().get(0);
+        int golds = $ally.getGolds();
+        golds = golds - boughtItem.getGold();
+        ArrayList<Item> toBuy = $ally.getToBuy();
+        toBuy.remove(0);
+        ArrayList<Item> bought = $ally.getBought();
+        for(int i=0;i<bought.size();i++) {
+            if (bought.get(i).getGold() < 700) {
+                bought.remove(i);
+            }
+        }
+        bought.add($ally.getWantedItem());
+
+        modify($ally){setToBuy(toBuy), setBought(bought), setGolds(golds), setWantedItem(null)}
+end

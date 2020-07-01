@@ -224,6 +224,8 @@ public class GameCase1 {
         assertEquals("top", junglerConclusion2.getNextGank());
         kSession.delete(jungleConclusionFH2);
 
+
+
         kSession.dispose();
     }
 }
