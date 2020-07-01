@@ -14,7 +14,5 @@ import org.kie.api.definition.type.Role;
 public class GameEvent {
 
     private String lane;
-    private AllyChampion allyChampion;
-    private EnemyChampion enemyChampion;
     private EventType eventType;
 }
