@@ -1,14 +1,12 @@
-package com.siit.sbnz.sbnztim14.jungler
+package com.siit.sbnz.sbnztim14.additionalRules
 
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.GameEvent;
 import com.siit.sbnz.sbnztim14.model.EventType;
-import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.model.JunglerConclusion;
 import java.util.ArrayList;
 
-global AdviceStorage adviceStorage;
 global ArrayList<EventType> goodEvents;
 global ArrayList<EventType> badEvents;
 
@@ -23,9 +21,9 @@ declare window AllEventsWindow
 end
 
 rule "Jungler should gank top lane"
-    salience (-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-    - ($goodLast8 - $badLast8) + 10)
-    agenda-group "jungler-where-to-gank-next"
+    salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+        -3 * ($goodLast8 - $badLast8) + 100
+    no-loop
     when
         Number($goodLast8: intValue >= -1) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, lane == "top")
@@ -51,24 +49,26 @@ rule "Jungler should gank top lane"
             count($allEv)
         )
 
-        not(JunglerConclusion())
+        not(JunglerConclusion(nextGank != ""))
+        $jc: JunglerConclusion()
     then
-            System.out.println("TOP");
-            System.out.println($goodLast8);
-            System.out.println($badLast8);
-            System.out.println($goodWholeGame);
-            System.out.println($badWholeGame);
-        System.out.println((-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-                                       - ($goodLast8 - $badLast8)));
+        System.out.println("TOP");
+        System.out.println($goodLast8);
+        System.out.println($badLast8);
+        System.out.println($goodWholeGame);
+        System.out.println($badWholeGame);
+        System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+                                   -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
-        insert(new JunglerConclusion("top"));
-		adviceStorage.addAdvice("jungle", "general", "Jungler should gank TOP lane as soon as possible!");
+
+        modify($jc){setNextGank("top")}
 end
 
+
 rule "Jungler should gank mid lane"
-    salience (-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-    - ($goodLast8 - $badLast8) + 10)
-    agenda-group "jungler-where-to-gank-next"
+    salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+        -3 * ($goodLast8 - $badLast8) + 100
+    no-loop
     when
         Number($goodLast8: intValue >= -1) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, lane == "mid")
@@ -94,60 +94,60 @@ rule "Jungler should gank mid lane"
             count($allEv)
         )
 
-        not(JunglerConclusion())
+        not(JunglerConclusion(nextGank != ""))
+        $jc: JunglerConclusion()
     then
         System.out.println("MID");
         System.out.println($goodLast8);
         System.out.println($badLast8);
         System.out.println($goodWholeGame);
         System.out.println($badWholeGame);
-        System.out.println((-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-                                       - ($goodLast8 - $badLast8)));
+        System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+                                   -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
-        insert(new JunglerConclusion("mid"));
-		adviceStorage.addAdvice("jungle", "general", "Jungler should gank MID lane as soon as possible!");
+        modify($jc){setNextGank("mid")}
 end
 
 
 rule "Jungler should gank bottom lane"
-    salience (-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-    - ($goodLast8 - $badLast8) + 10)
-    agenda-group "jungler-where-to-gank-next"
+    salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+        -3 * ($goodLast8 - $badLast8) + 100
+    no-loop
     when
         Number($goodLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf goodEvents, lane == "bottom")
+            GameEvent($ev: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
         Number($badLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf badEvents, lane == "bottom")
+            GameEvent($ev: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
         Number($goodWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf goodEvents, lane == "bottom")
+            GameEvent($allEv: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
             from window AllEventsWindow,
             count($allEv)
         )
 
         Number($badWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf badEvents, lane == "bottom")
+            GameEvent($allEv: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
             from window AllEventsWindow,
             count($allEv)
         )
 
-        not(JunglerConclusion())
+        not(JunglerConclusion(nextGank != ""))
+        $jc: JunglerConclusion()
     then
         System.out.println("BOTTOM");
         System.out.println($goodLast8);
         System.out.println($badLast8);
         System.out.println($goodWholeGame);
         System.out.println($badWholeGame);
-        System.out.println((-0.15 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-                                       - ($goodLast8 - $badLast8)));
+        System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
+                                   -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
-        insert(new JunglerConclusion("bottom"));
-		adviceStorage.addAdvice("jungle", "general", "Jungler should gank BOTTOM lane as soon as possible!");
+        modify($jc){setNextGank("bottom")}
 end
