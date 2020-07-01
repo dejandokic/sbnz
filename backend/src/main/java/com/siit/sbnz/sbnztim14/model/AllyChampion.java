@@ -10,7 +10,6 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class AllyChampion extends Champion {
     private String playType = "aggro";
 
@@ -21,5 +20,10 @@ public class AllyChampion extends Champion {
                 cha.getGoodAgainst(), cha.getBadAgainst(), cha.getAllPossibleLanes(), cha.getGolds(), cha.getGoldsForKill(),
                 cha.getRecommendedItems(), cha.getWantedItem(), cha.getToBuy(), cha.getBought());
         this.playType = playType;
+    }
+
+    @Override
+    public String toString() {
+        return "=>  [" + this.getLane() + "] " + this.getName() + ", Golds: " + this.getGolds() + ", GoldForKill: " + this.getGoldsForKill();
     }
 }

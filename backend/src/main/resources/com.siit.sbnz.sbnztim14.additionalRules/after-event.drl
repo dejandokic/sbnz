@@ -17,6 +17,7 @@ end
 
 rule "Ally champion killed enemy champ"
     agenda-group "after-event"
+    no-loop
     when
         $ally: AllyChampion($allyLane: lane)
         $enemy: EnemyChampion(lane == $allyLane)
@@ -36,13 +37,16 @@ rule "Ally champion killed enemy champ"
         modify($enemy){
             setGoldsForKill(300)
         }
-        System.out.println("Ally killed: " + $ally);
+        System.out.println();
+        System.out.println("Ally kills");
+        System.out.println("Ally: " + $ally);
         System.out.println("Enemy: " + $enemy);
 
 end
 
-rule "Tower destroyed"
+rule "Ally team destroyed enemy tower"
     agenda-group "after-event"
+    no-loop
     when
         $ally: AllyChampion()
         Number(intValue > 0) from accumulate(
@@ -56,11 +60,33 @@ rule "Tower destroyed"
         modify($ally){
             setGolds($ally.getGolds() + 200)
         }
+        System.out.println();
         System.out.println("Ally destoyed tower: " + $ally);
+end
+
+rule "Enemy team destroyed ally tower"
+    agenda-group "after-event"
+    no-loop
+    when
+        $enemy: EnemyChampion()
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.ALLY_TOWER_DESTROYED
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($enemy){
+            setGolds($enemy.getGolds() + 200)
+        }
+        System.out.println();
+        System.out.println("Enemy destoyed tower: " + $enemy);
 end
 
 rule "Objective killed"
     agenda-group "after-event"
+    no-loop
     when
         $ally: AllyChampion()
         Number(intValue > 0) from accumulate(
@@ -74,13 +100,16 @@ rule "Objective killed"
         modify($ally){
             setGolds($ally.getGolds() + 150)
         }
+        System.out.println();
         System.out.println("Ally objective killed: " + $ally);
 end
 
 rule "Enemy champion killed ally champ"
     agenda-group "after-event"
+    no-loop
     when
         $enemy: EnemyChampion($enemyLane: lane)
+        $ally: AllyChampion(lane == $enemyLane)
         Number(intValue > 0) from accumulate(
             GameEvent(
                 $event: this,
@@ -91,7 +120,15 @@ rule "Enemy champion killed ally champ"
         )
     then
         modify($enemy){
-            setGolds($enemy.getGolds() + 100)
+            setGolds($enemy.getGolds() + $ally.getGoldsForKill()),
+            setGoldsForKill($enemy.getGoldsForKill() + 100)
         }
-        System.out.println("Enemy killed: " + $enemy);
+
+        modify($ally){
+            setGoldsForKill(300)
+        }
+        System.out.println();
+        System.out.println("Enemy kills");
+        System.out.println("Ally: " + $ally);
+        System.out.println("Enemy: " + $enemy);
 end

@@ -4,7 +4,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @NoArgsConstructor
-@ToString
 public class EnemyChampion extends Champion {
 
     public EnemyChampion(Champion cha) {
@@ -13,5 +12,10 @@ public class EnemyChampion extends Champion {
                 cha.isSustain(), cha.isUtility(), cha.isMobility(), cha.isAoeDamage(), cha.isSplitPush(),
                 cha.getGoodAgainst(), cha.getBadAgainst(), cha.getAllPossibleLanes(), cha.getGolds(), cha.getGoldsForKill(),
                 cha.getRecommendedItems(), cha.getWantedItem(), cha.getToBuy(), cha.getBought());
+    }
+
+    @Override
+    public String toString() {
+        return "=>  [" + this.getLane() + "] " + this.getName() + ", Golds: " + this.getGolds() + ", GoldForKill: " + this.getGoldsForKill();
     }
 }
