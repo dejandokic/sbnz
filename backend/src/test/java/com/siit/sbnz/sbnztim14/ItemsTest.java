@@ -35,9 +35,9 @@ public class ItemsTest {
 
         // Choose 10 champs
         Champion champion1 = championService.getChampionByName("Annie");
-        champion1.setLane("top");
+        champion1.setLane("mid");
         Champion champion2 = championService.getChampionByName("Akali");
-        champion2.setLane("top");
+        champion2.setLane("mid");
 
         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
 
@@ -45,13 +45,10 @@ public class ItemsTest {
 
 
         ItemBuy itemBuy1 = new ItemBuy();
-        itemBuy1.setAllyChampion(ally1);
-        itemBuy1.setEnemyChampion(enemy1);
-        itemBuy1.setLane("top");
+        itemBuy1.setLane("mid");
         itemBuy1.setValue(0);
 
-
-        FactHandle fact = kSession.insert(ally1);
+        kSession.insert(ally1);
         kSession.insert(enemy1);
         kSession.insert(itemBuy1);
 
@@ -60,10 +57,10 @@ public class ItemsTest {
         }
 
 
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", ally1, enemy1, EventType.ALLY_KILLS));
 
 
         kSession.getAgenda().getAgendaGroup("items").setFocus();
@@ -84,6 +81,7 @@ public class ItemsTest {
 
         System.out.println(ally1.getWantedItem() + " dada");
 
+        kSession.getAgenda().getAgendaGroup("items").setFocus();
         int valu2 = kSession.fireAllRules();
 
         System.out.println(valu + " - " + valu2);

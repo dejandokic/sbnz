@@ -13,6 +13,7 @@ import java.util.List
 import java.util.Arrays;
 
 rule "increase value"
+    lock-on-active
     agenda-group "items"
     salience 100
     when
@@ -20,45 +21,43 @@ rule "increase value"
             $allyLane: lane
         )
         $i: ItemBuy(
-            allyChampion == $ally,
             lane == $allyLane
         )
         Number($val: intValue() > 0)
         from accumulate(
             $e: GameEvent(
                 lane == $allyLane,
-                allyChampion == $ally,
                 eventType == EventType.ALLY_KILLS
             ),
             count($e)
         )
     then
         modify($i){ setValue($val) };
-        System.out.println($i);
-        System.out.println($val);
+        System.out.println("increase");
 end
 
 rule "decrease value"
+    lock-on-active
     agenda-group "items"
     salience 50
     when
-        $ally: AllyChampion()
+        $ally: AllyChampion(
+            $allyLane: lane
+        )
         $i: ItemBuy(
-            allyChampion == $ally,
-            lane == $ally.lane
+            lane == $allyLane
         )
         Number($val: intValue() > 0)
         from accumulate(
             $e: GameEvent(
-                lane == $ally.lane,
-                allyChampion == $ally,
+                lane == $allyLane,
                 eventType == EventType.ENEMY_KILLS
             ),
             count($e)
         )
     then
         modify($i){ setValue($i.getValue() - $val) };
-        System.out.println($val);
+        System.out.println("decrease");
 end
 
 

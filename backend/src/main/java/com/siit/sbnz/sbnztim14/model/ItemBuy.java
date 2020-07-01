@@ -12,8 +12,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemBuy {
-    private AllyChampion allyChampion;
-    private EnemyChampion enemyChampion;
     private String lane;
     private int value;
 }
