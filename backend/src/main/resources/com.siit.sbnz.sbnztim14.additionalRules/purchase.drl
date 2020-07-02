@@ -30,6 +30,8 @@ rule "ally buys item (item is not last part of wanted item)"
         ArrayList<Item> bought = $ally.getBought();
         bought.add(boughtItem);
 
+        System.out.println(" -> " + golds + " " + boughtItem.getName() + "( " + (golds + boughtItem.getGold() + " - " + boughtItem.getGold()) + " )");
+
         modify($ally){setToBuy(toBuy), setBought(bought), setGolds(golds)}
 end
 
@@ -42,7 +44,11 @@ rule "ally buys item (item is last part of wanted item)"
             $allyGolds: golds,
             wantedItem != null
         )
-        Number($value: intValue == 1) from accumulate(
+        Number(intValue == 1) from accumulate(
+            Item($item:this) from $toBuyItems,
+            count($item)
+        )
+        Number(intValue == 1) from accumulate(
             Item($item:this, $allyGolds >= gold) from $toBuyItems,
             count($item)
         )
@@ -53,12 +59,17 @@ rule "ally buys item (item is last part of wanted item)"
         ArrayList<Item> toBuy = $ally.getToBuy();
         toBuy.remove(0);
         ArrayList<Item> bought = $ally.getBought();
-        for(int i=0;i<bought.size();i++) {
-            if (bought.get(i).getGold() < 700) {
-                bought.remove(i);
+
+        bought.add(boughtItem);
+        System.out.println(" -> " + golds + " " + boughtItem.getName() + "( " + (golds + boughtItem.getGold() + " - " + boughtItem.getGold()) + " )");
+
+        ArrayList<Item> newBought = new ArrayList<>();
+        for(Item item: bought){
+            if (item.getGold() > 1200) {
+                newBought.add(item);
             }
         }
-        bought.add($ally.getWantedItem());
+        newBought.add($ally.getWantedItem());
 
-        modify($ally){setToBuy(toBuy), setBought(bought), setGolds(golds), setWantedItem(null)}
+        modify($ally){setToBuy(toBuy), setBought(newBought), setGolds(golds), setWantedItem(null)}
 end
