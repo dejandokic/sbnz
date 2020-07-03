@@ -18,14 +18,15 @@ end
 
 rule "Testing"
     agenda-group "backward-chaining"
+    salience $gold
     when
-        $item: Item(hasBeenInBackwards == false, $name: name)
+        $item: Item(hasBeenInBackwards == false, $name: name, $gold: gold)
         backwardsChainCall(toLookFor, $name, $treeObject;)
         $list: List() from collect(FactTreeItem(parent == $treeObject.self))
     then
-        System.out.println($treeObject);
+//        System.out.println($treeObject);
         for (Object childItem: $list) {
-            System.out.println(childItem);
+//            System.out.println(childItem);
             delete(childItem);
         }
         delete($treeObject);
