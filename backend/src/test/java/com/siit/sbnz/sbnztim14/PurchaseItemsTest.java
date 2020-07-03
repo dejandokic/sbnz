@@ -9,21 +9,29 @@ import com.siit.sbnz.sbnztim14.service.ChampionService;
 import com.siit.sbnz.sbnztim14.service.ItemService;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.kie.api.runtime.rule.FactHandle;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class PurchaseItemsTest {
+
+    @Autowired
+    private ItemService itemService;
 
     static ChampionService championService = new ChampionService();
     static KieContainer kContainer;
-    static ItemService itemService = new ItemService();
 
     @BeforeClass
     public static void beforeClass() {
@@ -43,6 +51,7 @@ public class PurchaseItemsTest {
         // Ally team
         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
 
+        System.out.println(itemService);
         ArrayList<Item> allItems = itemService.getAllItems();
         ArrayList<Item> toBuy = new ArrayList<>();
         Item wantedItem = null;

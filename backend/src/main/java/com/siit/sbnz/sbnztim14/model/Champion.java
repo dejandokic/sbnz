@@ -35,7 +35,7 @@ public class Champion {
 
     private List<String> goodAgainst;
     private List<String> badAgainst;
-    private List<String> allPossibleLanes;
+    private List<String> allPossibleLanes = new ArrayList<>();
 
     private int golds = 0;
     private int goldsForKill = 300;

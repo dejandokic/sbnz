@@ -26,6 +26,7 @@ agenda-group "composition-probability"
 		total -= $enemyComp.getCatchComp() > 40 ? 0.15 * $enemyComp.getCatchComp() : 0;
 		total -= $enemyComp.getProtectComp() > 40 ? 0.25 * $enemyComp.getProtectComp() : 0;
 		modify($finalComp){setAttackComp(total)}
+		System.out.println($finalComp);
 end
  
 rule "Increase Ally Catch probability if opponent might play Attack or Split, decrease if opponent might play Protect or Siege"
@@ -48,6 +49,7 @@ agenda-group "composition-probability"
 		total -= $enemyComp.getProtectComp() > 40 ? 0.15 * $enemyComp.getProtectComp() : 0;
 		total -= $enemyComp.getSiegeComp() > 40 ? 0.25 * $enemyComp.getSiegeComp() : 0;
 		modify($finalComp){setCatchComp(total)}
+		System.out.println($finalComp);
 end
  
 rule "Increase Ally Protect probability if opponent might play Catch or Attack, decrease if opponent might play Siege or Split"
@@ -70,6 +72,7 @@ agenda-group "composition-probability"
 		total -= $enemyComp.getSiegeComp() > 40 ? 0.15 * $enemyComp.getSiegeComp() : 0;
 		total -= $enemyComp.getSplitComp() > 40 ? 0.25 * $enemyComp.getSplitComp() : 0;
 		modify($finalComp){setProtectComp(total)}
+		System.out.println($finalComp);
 end
  
 rule "Increase Ally Siege probability if opponent might play Protect or Catch, decrease if opponent might play Split or Attack"
@@ -92,6 +95,7 @@ agenda-group "composition-probability"
 		total -= $enemyComp.getSplitComp() > 40 ? 0.15 * $enemyComp.getSplitComp() : 0;
 		total -= $enemyComp.getAttackComp() > 40 ? 0.25 * $enemyComp.getAttackComp() : 0;
 		modify($finalComp){setSiegeComp(total)}
+		System.out.println($finalComp);
 end
  
 rule "Increase Ally Split probability if opponent might play Siege or Protect, decrease if opponent might play Attack or Catch"
@@ -114,6 +118,7 @@ agenda-group "composition-probability"
 		total -= $enemyComp.getAttackComp() > 40 ? 0.15 * $enemyComp.getAttackComp() : 0;
 		total -= $enemyComp.getCatchComp() > 40 ? 0.25 * $enemyComp.getCatchComp() : 0;
 		modify($finalComp){setSplitComp(total)}
+		System.out.println($finalComp);
 end
 
 rule "If Attack is larger or equal than others choose Attack as TeamComposition"
@@ -123,13 +128,14 @@ salience 1
 	when
 		$finalComp : TeamCompositionProbability(
 			team == "final",
-			attackComp >= catchComp &&
-			attackComp >= protectComp &&
-			attackComp >= siegeComp &&
-			attackComp >= splitComp
+			eval(attackComp >= catchComp) &&
+			eval(attackComp >= protectComp) &&
+			eval(attackComp >= siegeComp) &&
+			eval(attackComp >= splitComp)
 		)
 	then
 		allyTeamComposition.setComposition("attack");
+		System.out.println($finalComp);
 end
 
 rule "If Catch is larger or equal than others choose Catch as TeamComposition"
@@ -139,13 +145,14 @@ salience 2
 	when
 		$finalComp : TeamCompositionProbability(
 			team == "final",
-			catchComp >= attackComp &&
-			catchComp >= protectComp &&
-			catchComp >= siegeComp &&
-			catchComp >= splitComp
+			eval(catchComp >= attackComp) &&
+			eval(catchComp >= protectComp) &&
+			eval(catchComp >= siegeComp) &&
+			eval(catchComp >= splitComp)
 		)
 	then
 		allyTeamComposition.setComposition("catch");
+		System.out.println($finalComp);
 end
 
 rule "If Protect is larger or equal than others choose Protect as TeamComposition"
@@ -155,13 +162,14 @@ salience 3
 	when
 		$finalComp : TeamCompositionProbability(
 			team == "final",
-			protectComp >= attackComp &&
-			protectComp >= catchComp &&
-			protectComp >= siegeComp &&
-			protectComp >= splitComp
+			eval(protectComp >= attackComp) &&
+			eval(protectComp >= catchComp) &&
+			eval(protectComp >= siegeComp) &&
+			eval(protectComp >= splitComp)
 		)
 	then
 		allyTeamComposition.setComposition("protect");
+		System.out.println($finalComp);
 end
 
 rule "If Siege is larger or equal than others choose Siege as TeamComposition"
@@ -171,13 +179,14 @@ salience 4
 	when
 		$finalComp : TeamCompositionProbability(
 			team == "final",
-			siegeComp >= attackComp &&
-			siegeComp >= catchComp &&
-			siegeComp >= protectComp &&
-			siegeComp >= splitComp
+			eval(siegeComp >= attackComp) &&
+			eval(siegeComp >= catchComp) &&
+			eval(siegeComp >= protectComp) &&
+			eval(siegeComp >= splitComp)
 		)
 	then
 		allyTeamComposition.setComposition("siege");
+		System.out.println($finalComp);
 end
 
 rule "If Split is larger or equal than others choose Split as TeamComposition"
@@ -187,12 +196,13 @@ salience 5
 	when
 		$finalComp : TeamCompositionProbability(
 			team == "final",
-			splitComp >= attackComp &&
-			splitComp >= catchComp &&
-			splitComp >= protectComp &&
-			splitComp >= siegeComp
+			eval(splitComp >= attackComp) &&
+			eval(splitComp >= catchComp) &&
+			eval(splitComp >= protectComp) &&
+			eval(splitComp >= siegeComp)
 		)
 	then
 		allyTeamComposition.setComposition("splitPush");
+		System.out.println($finalComp);
 end
 		

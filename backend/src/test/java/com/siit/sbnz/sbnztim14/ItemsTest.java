@@ -3,11 +3,21 @@ package com.siit.sbnz.sbnztim14;
 import com.siit.sbnz.sbnztim14.model.*;
 import com.siit.sbnz.sbnztim14.service.ChampionService;
 import com.siit.sbnz.sbnztim14.service.ItemService;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
+import org.kie.api.runtime.rule.QueryResults;
+import org.kie.api.runtime.rule.QueryResultsRow;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.ArrayList;
+import java.util.List;
 import org.kie.api.runtime.rule.FactHandle;
 
 import java.util.ArrayList;
@@ -17,17 +27,67 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class ItemsTest {
 
-    static ItemService itemService = new ItemService();
+    @Autowired
+    private ItemService itemService;
 
-    static ChampionService championService = new ChampionService();
+    static ChampionService championService;
     static KieContainer kContainer;
+    KieSession kSession;
 
     @BeforeClass
     public static void beforeClass() {
         KieServices kieServices = KieServices.Factory.get();
         kContainer = kieServices.getKieClasspathContainer();
+        championService = new ChampionService();
+    }
+
+    @Before
+    public void beforeEach() {
+        kSession = kContainer.newKieSession("ksession-rules");
+    }
+
+    @Test
+    public void getItemFactTreeTest() {
+        Item toBuy = itemService.getItemByName("Infinity Edge");
+        List<Item> boughtItems = new ArrayList<>();
+        boughtItems.add(new Item(itemService.getItemByName("Short Sword")));
+        boughtItems.add(new Item(itemService.getItemByName("Serrated Dirk")));
+        boughtItems.add(new Item(itemService.getItemByName("Amplifying Tome")));
+        boughtItems.add(new Item(itemService.getItemByName("Abyssal Mask")));
+        boughtItems.add(new Item(itemService.getItemByName("Short Sword")));
+        List<Item> retList = itemService.getRemainingItemsToBuy(toBuy, boughtItems);
+
+        assertEquals(1, retList.size());
+        assertEquals("Infinity Edge", retList.get(0).getName());
+
+        toBuy = itemService.getItemByName("Spirit Visage");
+        for (Item iterItem: boughtItems) {
+            iterItem.setHasBeenInBackwards(false);
+        }
+        retList = itemService.getRemainingItemsToBuy(toBuy, boughtItems);
+
+        assertEquals(4, retList.size());
+
+        int numSV = 0, numNC = 0, numNMM = 0;
+        for (Item iterItem: retList) {
+            if (iterItem.getName().equals("Null-Magic Mantle")) {
+                numNMM++;
+            }
+            if (iterItem.getName().equals("Negatron Cloack")) {
+                numNC++;
+            }
+            if (iterItem.getName().equals("Spirit Visage")) {
+                numSV++;
+            }
+        }
+
+        assertEquals(1, numSV);
+        assertEquals(1, numNC);
+        assertEquals(2, numNMM);
     }
 
     @Test
@@ -154,7 +214,7 @@ public class ItemsTest {
 
         assertEquals(9, valu);
 
-        assertEquals("Infinity Edge2",ally1.getWantedItem().getName());
+        assertEquals("Infinity Edge",ally1.getWantedItem().getName());
 
         assertEquals(0,ally2.getBought().size());
 
