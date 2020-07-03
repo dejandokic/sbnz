@@ -1,4 +1,4 @@
-package com.siit.sbnz.sbnztim14.items
+package com.siit.sbnz.sbnztim14.additionalRules
 
 import com.siit.sbnz.sbnztim14.model.FactTreeItem;
 import com.siit.sbnz.sbnztim14.model.Item;
@@ -10,9 +10,9 @@ global List remainingItems;
 
 
 query backwardsChainCall( String parent, String self, FactTreeItem $retItem)
-  $retItem := FactTreeItem(parent, self;)
-  or
-  (FactTreeItem(parent, newParent;) and backwardsChainCall( newParent, self, $retItem; ) )
+    $retItem := FactTreeItem(parent, self;)
+    or
+    (FactTreeItem(parent, newParent;) and backwardsChainCall( newParent, self, $retItem; ) )
 end
 
 

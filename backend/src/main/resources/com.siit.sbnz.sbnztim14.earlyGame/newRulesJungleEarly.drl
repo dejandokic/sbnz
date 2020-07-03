@@ -8,25 +8,3 @@ import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 
-
-rule "hardCC + waveclear + disengage"
-    agenda-group "early-game-part-1"
-    salience 5
-	when
-		$ally : AllyChampion(
-			lane == "jungle",
-			role == "battlemage",
-			$allyLane: lane,
-			hardCC == true,
-			hardEngage == false,
-			poke == false,
-			waveclear == true,
-			disengage == true,
-			sustain == false,
-			utility == false
-		)
-	then
-		adviceStorage.addAdvice($allyLane, "early", "TEST");
-end
-
-
