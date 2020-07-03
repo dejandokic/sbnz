@@ -23,16 +23,18 @@ end
 //    GameEvent() over window:time( 60m )
 //end
 
-rule "Jungler should gank top lane"
+// Same behavior to top and mid lane, dynamic calculation proceeded
+rule "Jungler should gank top or mid lane"
     salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
+        $ally: AllyChampion($allyLane: lane, lane=="top" || lane=="mid")
         Number($goodLast8: intValue) from accumulate(
             GameEvent(
                 $ev: this,
                 eventType memberOf goodEvents,
-                lane == "top"
+                lane == $allyLane
             )
             from window LastEightEventsWindow,
             count($ev)
@@ -42,7 +44,7 @@ rule "Jungler should gank top lane"
             GameEvent(
                 $ev: this,
                 eventType memberOf badEvents,
-                lane == "top"
+                lane == $allyLane
             )
             from window LastEightEventsWindow,
             count($ev)
@@ -52,7 +54,7 @@ rule "Jungler should gank top lane"
             GameEvent(
                 $allEv: this,
                 eventType memberOf goodEvents,
-                lane == "top"
+                lane == $allyLane
             ),
 //            from window AllEventsWindow,
             count($allEv)
@@ -62,7 +64,7 @@ rule "Jungler should gank top lane"
             GameEvent(
                 $allEv: this,
                 eventType memberOf badEvents,
-                lane == "top"
+                lane == $allyLane
             ),
 //            from window AllEventsWindow,
             count($allEv)
@@ -72,7 +74,7 @@ rule "Jungler should gank top lane"
 
         $jc: JunglerConclusion()
     then
-        System.out.println("TOP");
+        System.out.println($allyLane.toUpperCase());
         System.out.println($goodLast8);
         System.out.println($badLast8);
         System.out.println($goodWholeGame);
@@ -81,56 +83,11 @@ rule "Jungler should gank top lane"
                                    -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
 
-        modify($jc){setNextGank("top")}
+        modify($jc){setNextGank($allyLane)}
 end
 
 
-rule "Jungler should gank mid lane"
-    salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-        -3 * ($goodLast8 - $badLast8) + 100
-    no-loop
-    when
-        Number($goodLast8: intValue) from accumulate(
-            GameEvent($ev: this, eventType memberOf goodEvents, lane == "mid")
-            from window LastEightEventsWindow,
-            count($ev)
-        )
-
-        Number($badLast8: intValue) from accumulate(
-            GameEvent($ev: this, eventType memberOf badEvents, lane == "mid")
-            from window LastEightEventsWindow,
-            count($ev)
-        )
-
-        Number($goodWholeGame: intValue) from accumulate(
-            GameEvent($allEv: this, eventType memberOf goodEvents, lane == "mid"),
-//            from window AllEventsWindow,
-            count($allEv)
-        )
-
-        Number($badWholeGame: intValue) from accumulate(
-            GameEvent($allEv: this, eventType memberOf badEvents, lane == "mid"),
-//            from window AllEventsWindow,
-            count($allEv)
-        )
-
-        not(JunglerConclusion(nextGank != ""))
-
-        $jc: JunglerConclusion()
-    then
-        System.out.println("MID");
-        System.out.println($goodLast8);
-        System.out.println($badLast8);
-        System.out.println($goodWholeGame);
-        System.out.println($badWholeGame);
-        System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-                                   -3 * ($goodLast8 - $badLast8) + 100);
-        System.out.println();
-        modify($jc){setNextGank("mid")}
-end
-
-
-rule "Jungler should gank bottom lane"
+rule "Jungler should gank bottom (adc and support roles) lane"
     salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
@@ -171,5 +128,6 @@ rule "Jungler should gank bottom lane"
         System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
                                    -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
+
         modify($jc){setNextGank("bottom")}
 end
