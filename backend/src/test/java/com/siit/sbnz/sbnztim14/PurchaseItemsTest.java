@@ -27,11 +27,11 @@ import static org.junit.Assert.assertNull;
 @SpringBootTest
 public class PurchaseItemsTest {
 
+    @Autowired
+    private ItemService itemService;
+
     static ChampionService championService = new ChampionService();
     static KieContainer kContainer;
-
-    @Autowired
-    static ItemService itemService;
 
     @BeforeClass
     public static void beforeClass() {
@@ -51,6 +51,7 @@ public class PurchaseItemsTest {
         // Ally team
         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
 
+        System.out.println(itemService);
         ArrayList<Item> allItems = itemService.getAllItems();
         ArrayList<Item> toBuy = new ArrayList<>();
         Item wantedItem = null;

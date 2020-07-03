@@ -1,6 +1,7 @@
 package com.siit.sbnz.sbnztim14;
 
 
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 import com.siit.sbnz.sbnztim14.model.AllyChampion;
 import com.siit.sbnz.sbnztim14.model.Champion;
 import com.siit.sbnz.sbnztim14.model.EnemyChampion;
@@ -29,6 +30,7 @@ public class PlayTypeTest {
     @Test
     public void enemyCounterAlly() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         // Darius countered by Kennen
         // Annie countered by Morgana
@@ -90,6 +92,9 @@ public class PlayTypeTest {
 
         kSession.getAgenda().getAgendaGroup("play-type").setFocus();
         int fired = kSession.fireAllRules();
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+
+        assertEquals(4, adviceStorage.getAdvices().size());
 
         assertEquals("def", allyTop.getPlayType());
         assertEquals("def", allyMid.getPlayType());
@@ -104,6 +109,7 @@ public class PlayTypeTest {
     @Test
     public void earlyGameStrongVSWeak() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         // Ally 5 champs
         Champion champion1 = championService.getChampionByName("Darius");
@@ -162,6 +168,9 @@ public class PlayTypeTest {
 
         kSession.getAgenda().getAgendaGroup("play-type").setFocus();
         int fired = kSession.fireAllRules();
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+
+        assertEquals(4, adviceStorage.getAdvices().size());
 
         assertEquals("aggro", allyTop.getPlayType());
         assertEquals("def", allyMid.getPlayType());
@@ -175,6 +184,7 @@ public class PlayTypeTest {
     @Test
     public void earlyGameBothStrongOrWeak() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         // Fiora and Dr. Mundo both top, both weak in early
         // Fizz and Ekko, both mid, both strong in early
@@ -237,6 +247,9 @@ public class PlayTypeTest {
 
         kSession.getAgenda().getAgendaGroup("play-type").setFocus();
         int fired = kSession.fireAllRules();
+        AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
+
+        assertEquals(4, adviceStorage.getAdvices().size());
 
         assertEquals("aggro", allyTop.getPlayType());
         assertEquals("def", allyMid.getPlayType());

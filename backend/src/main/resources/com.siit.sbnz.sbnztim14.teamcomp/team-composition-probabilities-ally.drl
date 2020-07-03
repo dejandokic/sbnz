@@ -11,6 +11,7 @@ import java.util.List;
 
 rule "Ally team, number of champions with HardEngage for Attack comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -24,10 +25,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{-20, 13, 28, 36, 38, 40};
 		modify($comp){incAttackComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with HardCC for Attack comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -41,10 +44,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 3, 8, 17, 23, 25};
 		modify($comp){incAttackComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with AoeDamage for Attack comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -58,12 +63,14 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 8, 17, 29, 33, 35};
 		modify($comp){incAttackComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 //    CATCH
 
 rule "Ally team, number of ASS/DIV/CAT/BUR champions for Catch comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -80,10 +87,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 10, 27, 42, 50, 50};
 		modify($comp){incCatchComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Mobility for Catch comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -97,10 +106,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 7, 15, 27, 35, 35};
 		modify($comp){incCatchComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with HardCC for Catch comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -114,12 +125,14 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 2, 7, 11, 14, 15};
 		modify($comp){incCatchComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 //    PROTECT
 
 rule "Ally team, number of hyper-carries for Protect comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -137,10 +150,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 27, 40, 20, 0, 0};
 		modify($comp){incProtectComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, if a hyper-carry has disengage better Protect comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		exists AllyChampion(
@@ -156,10 +171,12 @@ agenda-group "composition-probability"
 		) @Watch (!*, team)
 	then
 		modify($comp){incProtectComp(10)}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Disengage CC for Protect comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -174,10 +191,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{-5, 8, 20, 29, 33, 35};
 		modify($comp){incProtectComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Utility for Protect comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -191,12 +210,14 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 8, 13, 15, 15, 15};
 		modify($comp){incProtectComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 //    SIEGE
 
 rule "Ally team, number of champions with Poke for Siege comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -210,10 +231,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{-10, 5, 20, 32, 36, 40};
 		modify($comp){incSiegeComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Disengage CC for Siege comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -228,10 +251,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 10, 20, 25, 28, 30};
 		modify($comp){incSiegeComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, if ART exists better Siege comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		exists AllyChampion(
@@ -242,10 +267,12 @@ agenda-group "composition-probability"
 		) @Watch (!*, team)
 	then
 		modify($comp){incSiegeComp(15)}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Waveclear for Siege comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -259,12 +286,14 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 9, 15, 15, 15, 15};
 		modify($comp){incSiegeComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 //    SPLIT
 
 rule "Ally team, number of champions with SplitPush for Split comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -278,10 +307,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 20, 35, 35, 35, 35};
 		modify($comp){incSplitComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of JUG/SKI champions with SplitPush for Split comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -297,10 +328,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 10, 15, 15, 15, 15};
 		modify($comp){incSplitComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Waveclear for Split comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -314,10 +347,12 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 9, 18, 25, 28, 30};
 		modify($comp){incSplitComp(incs[$list.size()])}
+		System.out.println($comp);
 end
 
 rule "Ally team, number of champions with Disengage for Split comp"
 agenda-group "composition-probability"
+salience 6
 
 	when
 		$list : List() from collect(
@@ -331,4 +366,5 @@ agenda-group "composition-probability"
 	then
 		int[] incs = new int[]{0, 5, 13, 18, 20, 20};
 		modify($comp){incSplitComp(incs[$list.size()])}
+		System.out.println($comp);
 end
