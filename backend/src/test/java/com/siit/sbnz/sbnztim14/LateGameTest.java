@@ -101,7 +101,7 @@ public class LateGameTest {
 
         System.out.println(adv.getAdvices().get(0));
         //Ally towers, Enemy kills objectives
-        assertEquals("[siege, late] With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it�s not hard to fight in lanes since you have a lot of waveclear, but if you lacks kills you will never be able to defend yourself properly.", adv.getAdvices().get(0));
+        assertEquals("[siege, late] With a better tower control you are in the lead, even if they have more kills and objectives, but they can turn it on you fairly easily. With your team comp, it's not hard to fight in lanes since you have a lot of waveclear, but if you lacks kills you will never be able to defend yourself properly.", adv.getAdvices().get(0));
 
 
 

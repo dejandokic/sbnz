@@ -214,7 +214,7 @@ public class ItemsTest {
 
         assertEquals(9, valu);
 
-        assertEquals("Infinity Edge",ally1.getWantedItem().getName());
+        assertEquals("Infinity Edge2",ally1.getWantedItem().getName());
 
         assertEquals(0,ally2.getBought().size());
 
