@@ -3,6 +3,7 @@ package com.siit.sbnz.sbnztim14;
 import com.siit.sbnz.sbnztim14.model.*;
 import com.siit.sbnz.sbnztim14.service.ChampionService;
 import com.siit.sbnz.sbnztim14.service.ItemService;
+import org.drools.core.factmodel.Fact;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.kie.api.KieServices;
@@ -90,6 +91,7 @@ public class ItemsTest {
 
 
         for(Item it: itemService.getAllItems()){
+            kSession.insert(it);
             //Wanted item already set
             if(it.getName().equals("Mercurial Scimitar")){
                 ally2.setWantedItem(it);
@@ -126,27 +128,22 @@ public class ItemsTest {
         kSession.insert(itemBuy4);
         kSession.insert(itemBuy5);
 
-        // Insert items
-        for(Item it: itemService.getAllItems()){
-            kSession.insert(it);
-        }
 
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("top", ally1, enemy1, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("jungle", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("jungle", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("jungle", ally2, enemy2, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("jungle", ally2, enemy2, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
-        kSession.insert(new GameEvent("mid", ally3, enemy3, EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("adc", EventType.ALLY_KILLS));
 
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ENEMY_KILLS));
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ENEMY_KILLS));
-        kSession.insert(new GameEvent("adc", ally4, enemy4, EventType.ALLY_KILLS));
-
-        kSession.insert(new GameEvent("support", ally5, enemy5, EventType.ENEMY_KILLS));
+        kSession.insert(new GameEvent("support", EventType.ENEMY_KILLS));
 
 
         kSession.getAgenda().getAgendaGroup("items").setFocus();
@@ -174,5 +171,53 @@ public class ItemsTest {
 
 
     }
+
+    @Test
+    public void testic(){
+
+
+        KieSession kSession = kContainer.newKieSession("ksession-rules");
+
+        Champion champion1 = championService.getChampionByName("Darius");
+        champion1.setLane("top");
+        Champion champion2 = championService.getChampionByName("Nasus");
+        champion2.setLane("top");
+
+         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
+
+        EnemyChampion enemy1 = new EnemyChampion(champion2);
+
+        ItemBuy itemBuy1 = new ItemBuy();
+        itemBuy1.setLane("top");
+        itemBuy1.setValue(0);
+
+
+
+        FactHandle fact = kSession.insert(ally1);
+        kSession.insert(enemy1);
+        kSession.insert(itemBuy1);
+
+        for(Item it: itemService.getAllItems()){
+            kSession.insert(it);
+            if(it.getName().equals("Infinity Edge")){
+                ArrayList<Item> list = new ArrayList<>();
+                list.add(it);
+                ally1.setBought(list);
+                kSession.update(fact, ally1);
+            }
+        }
+
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+
+        kSession.getAgenda().getAgendaGroup("items").setFocus();
+        int valu = kSession.fireAllRules();
+
+        assertEquals("Infinity Edge2",ally1.getWantedItem().getName());
+
+
+    }
+
 }
 

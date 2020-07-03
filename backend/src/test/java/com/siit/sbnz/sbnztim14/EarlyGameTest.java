@@ -89,7 +89,7 @@ public class EarlyGameTest {
             if(str.contains("[top, early]")){
                 assertEquals("[top, early] Against another juggernaut, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. Be careful as they have high sustain, and killing them will often prove difficult in a 1v1 situation.", str);
             }else if(str.contains("[jungle, early]")){
-                assertEquals("[jungle, early] As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don�t have any escape tools.", str);
+                assertEquals("[jungle, early] As an assassin your mobility and sneak are your strongest weapons, so focus on ganking as much as possible. You can put a lot of pressure on the enemy with your mobility, but since you lack the followup CC try to attack them when they don't have any escape tools.", str);
             }else if(str.contains("[mid, early]")){
                 assertEquals("[mid, early] Against another burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable, so use your CC and range to punish their misspositioning and disengage from prolonged trades. Do not be afraid to trade, since you also have a burst potential and with your waveclear you should be safe to farm from your side of the lane.", str);
             }else if(str.contains("[adc, early]")){

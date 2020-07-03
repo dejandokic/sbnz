@@ -6,8 +6,54 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.MidGame;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "Modify values"
+	agenda-group "mid-game"
+    salience 100
+    when
+        $ally: AllyChampion(
+            $allyLane: lane
+        )
+        $mid: MidGame(
+            lane == $allyLane
+        )
+        Number($allyKills: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ALLY_KILLS ),
+            count($this)
+        )
+        Number($enemyKills: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_KILLS ),
+            count($this)
+        )
+        Number($allyTowers: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ALLY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($enemyTowers: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($allyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.OBJECT_KILLED ),
+            count($this)
+        )
+        Number($enemyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_OBJECT_KILLED ),
+            count($this)
+        )
+    then
+        modify($mid){ setAllyKills($allyKills)};
+        modify($mid){ setAllyObjectives($allyObjectives)};
+        modify($mid){ setEnemyKills($enemyKills)};
+        modify($mid){ setEnemyTowers($enemyTowers)};
+        modify($mid){ setAllyObjectives($allyObjectives)};
+        modify($mid){ setEnemyObjectives($enemyObjectives)};
+ end
 
 
 // ATTACK

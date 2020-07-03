@@ -106,7 +106,7 @@ public class MidGameTest {
             }else if(str.contains("[jungle, mid]")){
                 assertEquals("[jungle, mid] You should try keeping up the pressure with objectives, keeping your team close around objective spawn times, and making them regret attempting to take it from you.", str);
             }else if(str.contains("[mid, mid]")){
-                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate with them.", str);
+                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate with them.", str);
             }
         }
 
