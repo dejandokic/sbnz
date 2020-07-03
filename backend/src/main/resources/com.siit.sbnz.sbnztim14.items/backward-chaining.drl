@@ -1,0 +1,43 @@
+package com.siit.sbnz.sbnztim14.items
+
+import com.siit.sbnz.sbnztim14.model.FactTreeItem;
+import com.siit.sbnz.sbnztim14.model.Item;
+import java.util.List;
+
+
+global String toLookFor;
+global List remainingItems;
+
+
+query backwardsChainCall( String parent, String self, FactTreeItem $retItem)
+  $retItem := FactTreeItem(parent, self;)
+  or
+  (FactTreeItem(parent, newParent;) and backwardsChainCall( newParent, self, $retItem; ) )
+end
+
+
+rule "Testing"
+    agenda-group "backward-chaining"
+    when
+        $item: Item(hasBeenInBackwards == false, $name: name)
+        backwardsChainCall(toLookFor, $name, $treeObject;)
+        $list: List() from collect(FactTreeItem(parent == $treeObject.self))
+    then
+        System.out.println($treeObject);
+        for (Object childItem: $list) {
+            System.out.println(childItem);
+            delete(childItem);
+        }
+        delete($treeObject);
+        modify($item){setHasBeenInBackwards(true);}
+end
+
+
+rule "Final rule to return remaining items"
+    agenda-group "backward-chaining"
+    salience -99999
+    when
+        $factTreeItem: FactTreeItem()
+    then
+        remainingItems.add($factTreeItem);
+end

@@ -20,7 +20,9 @@ public class Item {
     private int armor = 0;
     private ArrayList<Item> items = new ArrayList<>();
 
+    private boolean hasBeenInBackwards = false;
+
     public Item(Item item){
-        this(item.getName(),item.getAttackDamage(),item.getAbilityPower(),item.getMagicResist(),item.getArmor(),new ArrayList<Item>());
+        this(item.getName(),item.getAttackDamage(),item.getAbilityPower(),item.getMagicResist(),item.getArmor(),new ArrayList<Item>(), false);
     }
 }
