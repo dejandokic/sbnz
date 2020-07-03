@@ -16,7 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-	</properties>
+        <kie.version>6.5.0.Final</kie.version>
+    </properties>
 
 	<dependencies>
 		<!-- SPRING BOOT -->
@@ -80,19 +81,24 @@
             <scope>test</scope>
         </dependency>
 
-		<!-- DROOLS -->
+
+        <!-- DROOLS -->
+
 		<dependency>
 			<groupId>org.kie</groupId>
 			<artifactId>kie-ci</artifactId>
-			<version>6.5.0.Final</version>
+			<version>${kie.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-spring</artifactId>
+			<version>${kie.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-templates</artifactId>
-			<version>6.5.0.Final</version>
+			<version>${kie.version}</version>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>

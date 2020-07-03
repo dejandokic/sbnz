@@ -10,10 +10,10 @@ public class ItemService {
 
         ArrayList<Item> items = new ArrayList<>();
 
-        Item armorMini = new Item("Cloth Armor",0,0,0,1,new ArrayList<>());
-        Item mrMini = new Item("Null-Magic Mantle",0,0,1,0,new ArrayList<>());
-        Item adMini = new Item("Short Sword",1,0,0,0,new ArrayList<>());
-        Item apMini = new Item("Amplifying Tome",0,1,0,0,new ArrayList<>());
+        Item armorMini = new Item("Cloth Armor",0,0,0,1,new ArrayList<>(),300);
+        Item mrMini = new Item("Null-Magic Mantle",0,0,1,0,new ArrayList<>(),450);
+        Item adMini = new Item("Short Sword",1,0,0,0,new ArrayList<>(),360);
+        Item apMini = new Item("Amplifying Tome",0,1,0,0,new ArrayList<>(),435);
 
         ArrayList<Item> armorMiniList = new ArrayList<>();
         armorMiniList.add(new Item(armorMini));
@@ -32,95 +32,192 @@ public class ItemService {
         apMiniList.add(new Item(apMini));
 
 
-        Item armorMiddle = new Item("Wardens Mail",0,0,0,2, armorMiniList);
-        Item mrMiddle = new Item("Negatron Cloack",0,0,2,0, mrMiniList);
-        Item apMiddle = new Item("Blasting Wand",0,2,0,0, apMiniList);
-        Item adMiddle = new Item("Serrated Dirk",2,0,0,0, adMiniList);
+        Item armorMiddle = new Item("Wardens Mail",0,0,0,2, armorMiniList,300);
+        Item mrMiddle = new Item("Negatron Cloack",0,0,2,0, mrMiniList,450);
+        Item apMiddle = new Item("Blasting Wand",0,2,0,0, apMiniList,500);
+        Item adMiddle = new Item("Serrated Dirk",2,0,0,0, adMiniList,450);
 
 
 
-        Item armorFull = new Item("Thorn Mail",0,0,0,3,new ArrayList<>());
+        Item armorFull = new Item("Thorn Mail",0,0,0,3,new ArrayList<>(),3150);
         armorFull.getItems().add(new Item(armorMiddle));
         armorFull.getItems().get(0).getItems().add(new Item(armorMini));
         armorFull.getItems().get(0).getItems().add(new Item(armorMini));
         armorFull.getItems().add(new Item(armorMini));
 
-        Item mrFul = new Item("Abyssal Mask",0,0,3,0,new ArrayList<>());
+        Item armorFull2 = new Item("Thorn Mail2",0,0,0,3,new ArrayList<>(),3150);
+        armorFull2.getItems().add(new Item(armorMiddle));
+        armorFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armorFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armorFull2.getItems().add(new Item(armorMini));
+
+
+
+        Item mrFul = new Item("Abyssal Mask",0,0,3,0,new ArrayList<>(),3350);
         mrFul.getItems().add(new Item(mrMiddle));
         mrFul.getItems().get(0).getItems().add(new Item(mrMini));
         mrFul.getItems().get(0).getItems().add(new Item(mrMini));
         mrFul.getItems().add(new Item(mrMini));
 
-        Item apFul = new Item("Rabadons Deathcap",0,3,0,0,new ArrayList<>());
+
+        Item mrFul2 = new Item("Abyssal Mask2",0,0,3,0,new ArrayList<>(),3350);
+        mrFul2.getItems().add(new Item(mrMiddle));
+        mrFul2.getItems().get(0).getItems().add(new Item(mrMini));
+        mrFul2.getItems().get(0).getItems().add(new Item(mrMini));
+        mrFul2.getItems().add(new Item(mrMini));
+
+
+
+        Item apFul = new Item("Rabadons Deathcap",0,3,0,0,new ArrayList<>(),3600);
         apFul.getItems().add(new Item(apMiddle));
         apFul.getItems().get(0).getItems().add(new Item(apMini));
         apFul.getItems().get(0).getItems().add(new Item(apMini));
         apFul.getItems().add(new Item(apMini));
 
-        Item adFul = new Item("Infinity Edge",3,0,0,0,new ArrayList<>());
+
+        Item apFul2 = new Item("Rabadons Deathcap2",0,3,0,0,new ArrayList<>(),3600);
+        apFul2.getItems().add(new Item(apMiddle));
+        apFul2.getItems().get(0).getItems().add(new Item(apMini));
+        apFul2.getItems().get(0).getItems().add(new Item(apMini));
+        apFul2.getItems().add(new Item(apMini));
+
+
+
+        Item adFul = new Item("Infinity Edge",3,0,0,0,new ArrayList<>(),3600);
         adFul.getItems().add(new Item(adMiddle));
         adFul.getItems().get(0).getItems().add(new Item(adMini));
         adFul.getItems().get(0).getItems().add(new Item(adMini));
         adFul.getItems().add(new Item(adMini));
 
 
-        Item armor2adFull = new Item("Randuins Omen",1,0,0,2,new ArrayList<>());
+        Item adFul2 = new Item("Infinity Edge2",3,0,0,0,new ArrayList<>(),3600);
+        adFul2.getItems().add(new Item(adMiddle));
+        adFul2.getItems().get(0).getItems().add(new Item(adMini));
+        adFul2.getItems().get(0).getItems().add(new Item(adMini));
+        adFul2.getItems().add(new Item(adMini));
+
+
+
+        Item armor2adFull = new Item("Randuins Omen",1,0,0,2,new ArrayList<>(),2900);
         armor2adFull.getItems().add(new Item(armorMiddle));
         armor2adFull.getItems().get(0).getItems().add(new Item(armorMini));
         armor2adFull.getItems().get(0).getItems().add(new Item(armorMini));
         armor2adFull.getItems().add(new Item(adMini));
 
 
-        Item armor2apFull = new Item("Iron Locket",0,1,0,2,new ArrayList<>());
+
+        Item armor2adFull2 = new Item("Randuins Omen2",1,0,0,2,new ArrayList<>(),2900);
+        armor2adFull2.getItems().add(new Item(armorMiddle));
+        armor2adFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armor2adFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armor2adFull2.getItems().add(new Item(adMini));
+
+
+        Item armor2apFull = new Item("Iron Locket",0,1,0,2,new ArrayList<>(),3250);
         armor2apFull.getItems().add(new Item(armorMiddle));
         armor2apFull.getItems().get(0).getItems().add(new Item(armorMini));
         armor2apFull.getItems().get(0).getItems().add(new Item(armorMini));
         armor2apFull.getItems().add(new Item(apMini));
 
 
+        Item armor2apFull2 = new Item("Iron Locket2",0,1,0,2,new ArrayList<>(),3250);
+        armor2apFull2.getItems().add(new Item(armorMiddle));
+        armor2apFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armor2apFull2.getItems().get(0).getItems().add(new Item(armorMini));
+        armor2apFull2.getItems().add(new Item(apMini));
 
-        Item mr2adFull = new Item("Maw of Malmortius",1,0,2,0,new ArrayList<>());
+
+
+
+        Item mr2adFull = new Item("Maw of Malmortius",1,0,2,0,new ArrayList<>(),3500);
         mr2adFull.getItems().add(new Item(mrMiddle));
         mr2adFull.getItems().get(0).getItems().add(new Item(mrMini));
         mr2adFull.getItems().get(0).getItems().add(new Item(mrMini));
         mr2adFull.getItems().add(new Item(adMini));
 
 
-        Item mr2apFull = new Item("Spirit Visage",0,1,2,0,new ArrayList<>());
+        Item mr2adFull2 = new Item("Maw of Malmortius2",1,0,2,0,new ArrayList<>(),3500);
+        mr2adFull2.getItems().add(new Item(mrMiddle));
+        mr2adFull2.getItems().get(0).getItems().add(new Item(mrMini));
+        mr2adFull2.getItems().get(0).getItems().add(new Item(mrMini));
+        mr2adFull2.getItems().add(new Item(adMini));
+
+
+
+        Item mr2apFull = new Item("Spirit Visage",0,1,2,0,new ArrayList<>(),2800);
         mr2apFull.getItems().add(new Item(mrMiddle));
         mr2apFull.getItems().get(0).getItems().add(new Item(mrMini));
         mr2apFull.getItems().get(0).getItems().add(new Item(mrMini));
         mr2apFull.getItems().add(new Item(apMini));
 
 
+        Item mr2apFull2 = new Item("Spirit Visage2",0,1,2,0,new ArrayList<>(),2800);
+        mr2apFull2.getItems().add(new Item(mrMiddle));
+        mr2apFull2.getItems().get(0).getItems().add(new Item(mrMini));
+        mr2apFull2.getItems().get(0).getItems().add(new Item(mrMini));
+        mr2apFull2.getItems().add(new Item(apMini));
 
-        Item ad2armorFull = new Item("Iceborn Gauntlet",2,0,0,1,new ArrayList<>());
+
+
+
+        Item ad2armorFull = new Item("Iceborn Gauntlet",2,0,0,1,new ArrayList<>(),2900);
         ad2armorFull.getItems().add(new Item(adMiddle));
         ad2armorFull.getItems().get(0).getItems().add(new Item(adMini));
         ad2armorFull.getItems().get(0).getItems().add(new Item(adMini));
         ad2armorFull.getItems().add(new Item(armorMini));
 
 
-        Item ad2mrFull = new Item("Mercurial Scimitar",2,0,1,0,new ArrayList<>());
+        Item ad2armorFull2 = new Item("Iceborn Gauntlet2",2,0,0,1,new ArrayList<>(),2900);
+        ad2armorFull2.getItems().add(new Item(adMiddle));
+        ad2armorFull2.getItems().get(0).getItems().add(new Item(adMini));
+        ad2armorFull2.getItems().get(0).getItems().add(new Item(adMini));
+        ad2armorFull2.getItems().add(new Item(armorMini));
+
+
+        Item ad2mrFull = new Item("Mercurial Scimitar",2,0,1,0,new ArrayList<>(),3400);
         ad2mrFull.getItems().add(new Item(adMiddle));
         ad2mrFull.getItems().get(0).getItems().add(new Item(adMini));
         ad2mrFull.getItems().get(0).getItems().add(new Item(adMini));
         ad2mrFull.getItems().add(new Item(mrMini));
 
 
+        Item ad2mrFull2 = new Item("Mercurial Scimitar2",2,0,1,0,new ArrayList<>(),3400);
+        ad2mrFull2.getItems().add(new Item(adMiddle));
+        ad2mrFull2.getItems().get(0).getItems().add(new Item(adMini));
+        ad2mrFull2.getItems().get(0).getItems().add(new Item(adMini));
+        ad2mrFull2.getItems().add(new Item(mrMini));
 
-        Item ap2armorFull = new Item("Zhonyas Hourglass",0,2,0,1,new ArrayList<>());
+
+
+
+        Item ap2armorFull = new Item("Zhonyas Hourglass",0,2,0,1,new ArrayList<>(),3200);
         ap2armorFull.getItems().add(new Item(apMiddle));
         ap2armorFull.getItems().get(0).getItems().add(new Item(apMini));
         ap2armorFull.getItems().get(0).getItems().add(new Item(apMini));
         ap2armorFull.getItems().add(new Item(armorMini));
 
 
-        Item ap2mrFull = new Item("Banshees Veil",0,2,1, 0,new ArrayList<>());
+        Item ap2armorFull2 = new Item("Zhonyas Hourglass2",0,2,0,1,new ArrayList<>(),3200);
+        ap2armorFull2.getItems().add(new Item(apMiddle));
+        ap2armorFull2.getItems().get(0).getItems().add(new Item(apMini));
+        ap2armorFull2.getItems().get(0).getItems().add(new Item(apMini));
+        ap2armorFull2.getItems().add(new Item(armorMini));
+
+
+
+        Item ap2mrFull = new Item("Banshees Veil",0,2,1, 0,new ArrayList<>(),2850);
         ap2mrFull.getItems().add(new Item(apMiddle));
         ap2mrFull.getItems().get(0).getItems().add(new Item(apMini));
         ap2mrFull.getItems().get(0).getItems().add(new Item(apMini));
         ap2mrFull.getItems().add(new Item(mrMini));
+
+
+        Item ap2mrFull2 = new Item("Banshees Veil2",0,2,1, 0,new ArrayList<>(),2850);
+        ap2mrFull2.getItems().add(new Item(apMiddle));
+        ap2mrFull2.getItems().get(0).getItems().add(new Item(apMini));
+        ap2mrFull2.getItems().get(0).getItems().add(new Item(apMini));
+        ap2mrFull2.getItems().add(new Item(mrMini));
+
 
         items.add(armorMini);
         items.add(mrMini);
@@ -138,10 +235,21 @@ public class ItemService {
         items.add(armor2adFull);
         items.add(armor2apFull);
 
+        items.add(armorFull2);
+        items.add(armor2adFull2);
+        items.add(armor2apFull2);
+
+
 
         items.add(mrFul);
         items.add(mr2adFull);
         items.add(mr2apFull);
+
+
+        items.add(mrFul2);
+        items.add(mr2adFull2);
+        items.add(mr2apFull2);
+
 
 
 
@@ -150,10 +258,21 @@ public class ItemService {
         items.add(ad2mrFull);
 
 
+        items.add(adFul2);
+        items.add(ad2armorFull2);
+        items.add(ad2mrFull2);
+
+
 
         items.add(apFul);
         items.add(ap2armorFull);
         items.add(ap2mrFull);
+
+
+        items.add(apFul2);
+        items.add(ap2armorFull2);
+        items.add(ap2mrFull2);
+
 
         return items;
     }
