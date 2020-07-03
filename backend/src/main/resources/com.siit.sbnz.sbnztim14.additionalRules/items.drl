@@ -1,0 +1,883 @@
+package com.siit.sbnz.sbnztim14.additionalRules
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.Item;
+import com.siit.sbnz.sbnztim14.model.ItemBuy;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import com.siit.sbnz.sbnztim14.model.ChampionType
+import java.util.ArrayList;
+import java.util.List
+import java.util.Arrays;
+
+rule "increase value"
+    lock-on-active
+    agenda-group "items"
+    salience 100
+    when
+        $ally: AllyChampion(
+            $allyLane: lane
+        )
+        $i: ItemBuy(
+            lane == $allyLane
+        )
+        Number($val: intValue() > 0)
+        from accumulate(
+            $e: GameEvent(
+                lane == $allyLane,
+                eventType == EventType.ALLY_KILLS
+            ),
+            count($e)
+        )
+    then
+        modify($i){ setValue($val) };
+        System.out.println("increase");
+end
+
+rule "decrease value"
+    lock-on-active
+    agenda-group "items"
+    salience 50
+    when
+        $ally: AllyChampion(
+            $allyLane: lane
+        )
+        $i: ItemBuy(
+            lane == $allyLane
+        )
+        Number($val: intValue() > 0)
+        from accumulate(
+            $e: GameEvent(
+                lane == $allyLane,
+                eventType == EventType.ENEMY_KILLS
+            ),
+            count($e)
+        )
+    then
+        modify($i){ setValue($i.getValue() - $val) };
+        System.out.println("decrease");
+end
+
+
+
+rule "Buy Rabadons Deathcap"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 3
+        )
+        $item: Item(
+            name == "Rabadons Deathcap"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Rabadons Deathcap",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Rabadons Deathcap2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 3
+        )
+        $item: Item(
+            name == "Rabadons Deathcap2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Rabadons Deathcap2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+
+rule "Buy Infinity Edge"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 3
+        )
+        $item: Item(
+            name == "Infinity Edge"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Infinity Edge",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Infinity Edge2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 3
+        )
+        $item: Item(
+            name == "Infinity Edge2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Infinity Edge2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Thorn Mail"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value <= -3
+        )
+        $item: Item(
+            name == "Thorn Mail"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Thorn Mail",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Thorn Mail2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value <= -3
+        )
+        $item: Item(
+            name == "Thorn Mail2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Thorn Mail2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Abyssal Mask"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value <= -3
+        )
+        $item: Item(
+            name == "Abyssal Mask"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Abyssal Mask",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Abyssal Mask2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value <= -3
+        )
+        $item: Item(
+            name == "Abyssal Mask2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Abyssal Mask2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Randuins Omen"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Randuins Omen"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Randuins Omen",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Randuins Omen2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Randuins Omen2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Randuins Omen2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Iron Locket"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Iron Locket"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Iron Locket",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Iron Locket2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Iron Locket2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Iron Locket2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Maw of Malmortius"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Maw of Malmortius"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Maw of Malmortius",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Maw of Malmortius2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Maw of Malmortius2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Maw of Malmortius2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Spirit Visage"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Spirit Visage"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Spirit Visage",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Spirit Visage2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= -2 && value < 0
+        )
+        $item: Item(
+            name == "Spirit Visage2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Spirit Visage2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Iceborn Gauntlet"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Iceborn Gauntlet"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Iceborn Gauntlet",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Iceborn Gauntlet2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Iceborn Gauntlet2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Iceborn Gauntlet2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Mercurial Scimitar"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Mercurial Scimitar"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Mercurial Scimitar",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Mercurial Scimitar2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AD
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Mercurial Scimitar2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Mercurial Scimitar2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Zhonyas Hourglass"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Zhonyas Hourglass"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Zhonyas Hourglass",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Zhonyas Hourglass2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AD
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Zhonyas Hourglass2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Zhonyas Hourglass2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+
+rule "Buy Banshees Veil"
+    agenda-group "items"
+    salience (6 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Banshees Veil"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Banshees Veil",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+
+
+rule "Buy Banshees Veil2"
+    agenda-group "items"
+    salience (5.5 - $br)
+    when
+        $ally: AllyChampion(
+            $lane: lane,
+            wantedItem == null,
+            championType == ChampionType.AP
+        )
+        $enemy: EnemyChampion(
+            lane == $lane,
+            championType == ChampionType.AP
+        )
+        $i: ItemBuy(
+            lane == $lane,
+            value >= 0 && value <=2
+        )
+        $item: Item(
+            name == "Banshees Veil2"
+        )
+        Number($br: intValue > -1)
+            from accumulate(
+                Item(
+                    $temp: this,
+                    name == "Banshees Veil2",
+                    this memberOf $ally.getBought()
+                ),
+                count($temp)
+        )
+    then
+        modify($ally){ setWantedItem($item) };
+end
+

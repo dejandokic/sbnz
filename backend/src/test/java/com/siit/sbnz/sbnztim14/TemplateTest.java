@@ -7,7 +7,7 @@ import org.drools.template.ObjectDataCompiler;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.kie.api.KieServices;
-import org.kie.api.definition.rule.All;
+//import org.kie.api.definition.rule.All;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 

@@ -1,6 +1,7 @@
 package com.siit.sbnz.sbnztim14.model;
 
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @NoArgsConstructor
 public class EnemyChampion extends Champion {
@@ -9,6 +10,12 @@ public class EnemyChampion extends Champion {
         super(cha.getName(), cha.getLane(), cha.getRole(), cha.getChampionType(), cha.isGoodEarly(), cha.isGoodMid(), cha.isGoodLate(),
                 cha.isHardCC(), cha.isHardEngage(), cha.isDisengage(), cha.isPoke(), cha.isWaveclear(),
                 cha.isSustain(), cha.isUtility(), cha.isMobility(), cha.isAoeDamage(), cha.isSplitPush(),
-                cha.getGoodAgainst(), cha.getBadAgainst(), cha.getAllPossibleLanes(), cha.getGolds(), cha.getGoldsForKill(), cha.getRecommendedItems(), cha.getWantedItem(), cha.getToBuy(), cha.getBought());
+                cha.getGoodAgainst(), cha.getBadAgainst(), cha.getAllPossibleLanes(), cha.getGolds(), cha.getGoldsForKill(),
+                cha.getRecommendedItems(), cha.getWantedItem(), cha.getToBuy(), cha.getBought());
+    }
+
+    @Override
+    public String toString() {
+        return "=>  [" + this.getLane() + "] " + this.getName() + ", Golds: " + this.getGolds() + ", GoldForKill: " + this.getGoldsForKill();
     }
 }

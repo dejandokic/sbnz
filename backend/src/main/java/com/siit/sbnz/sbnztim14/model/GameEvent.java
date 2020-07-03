@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.kie.api.definition.type.Expires;
 import org.kie.api.definition.type.Role;
 
 @Getter
@@ -12,11 +11,8 @@ import org.kie.api.definition.type.Role;
 @NoArgsConstructor
 @AllArgsConstructor
 @Role(Role.Type.EVENT)
-@Expires("10m")
-public class Event {
+public class GameEvent {
 
     private String lane;
-    private AllyChampion allyChampion;
-    private EnemyChampion enemyChampion;
     private EventType eventType;
 }
