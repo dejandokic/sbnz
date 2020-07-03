@@ -61,8 +61,33 @@ public class ItemsTest {
         boughtItems.add(new Item(itemService.getItemByName("Short Sword")));
         List<Item> retList = itemService.getRemainingItemsToBuy(toBuy, boughtItems);
 
-        System.out.println("\n\n");
-        System.out.println(retList);
+        assertEquals(1, retList.size());
+        assertEquals("Infinity Edge", retList.get(0).getName());
+
+        toBuy = itemService.getItemByName("Spirit Visage");
+        for (Item iterItem: boughtItems) {
+            iterItem.setHasBeenInBackwards(false);
+        }
+        retList = itemService.getRemainingItemsToBuy(toBuy, boughtItems);
+
+        assertEquals(4, retList.size());
+
+        int numSV = 0, numNC = 0, numNMM = 0;
+        for (Item iterItem: retList) {
+            if (iterItem.getName().equals("Null-Magic Mantle")) {
+                numNMM++;
+            }
+            if (iterItem.getName().equals("Negatron Cloack")) {
+                numNC++;
+            }
+            if (iterItem.getName().equals("Spirit Visage")) {
+                numSV++;
+            }
+        }
+
+        assertEquals(1, numSV);
+        assertEquals(1, numNC);
+        assertEquals(2, numNMM);
     }
 
     @Test
@@ -189,7 +214,7 @@ public class ItemsTest {
 
         assertEquals(9, valu);
 
-        assertEquals("Infinity Edge2",ally1.getWantedItem().getName());
+        assertEquals("Infinity Edge",ally1.getWantedItem().getName());
 
         assertEquals(0,ally2.getBought().size());
 

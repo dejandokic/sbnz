@@ -16,7 +16,7 @@ query backwardsChainCall( String parent, String self, FactTreeItem $retItem)
 end
 
 
-rule "Testing"
+rule "If bought item is contained in tree of wanted item, remove it and it's children from the tree"
     agenda-group "backward-chaining"
     salience $gold
     when
