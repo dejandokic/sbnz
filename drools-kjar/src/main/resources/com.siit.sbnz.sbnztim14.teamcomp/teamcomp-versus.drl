@@ -1,0 +1,361 @@
+package com.siit.sbnz.sbnztim14.teamcomp;
+
+import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "Split vs Split"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+        composition == "splitPush"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        splitComp >= siegeComp,
+        splitComp >= attackComp,
+        splitComp >= protectComp,
+        splitComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("split","teamcomp","Against another split push comp the big difference is going to come out of who has the strongest laners and wave management. Depending if it is 1-4 or 1-3-1 comp you will have to adapt accordingly. If you are playing with two solo laners and they with one, they can attempt to overtake you in a teamfight so that your solo laners have to come and fight. If you are fighting with one solo laner against their two, they will drag out fights and stall for time so be careful about that. The best way to play against a split push team comp is to either engage on them, while they are lacking in numbers or send your stronger laners to overwhelm and defeat their solo laners, making them incapable of splitting efficiently. ");
+ end
+
+rule "Split vs Siege"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+            composition == "splitPush"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        siegeComp >= splitComp,
+        siegeComp >= attackComp,
+        siegeComp >= protectComp,
+        siegeComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("split","teamcomp","Against a siege comp you will have an advantage since a split push comp is a hard counter to a siege comp. They have great map control, keeping their towers safe whilist delaying your pushes by poke and disengages. Good thing about this is that you have pressure in multiple lanes at the same time, and usually these comps can’t defend more than one lane effectively. Use this to your advantage, making them run around the map trying to quell your pressure. ");
+ end
+
+
+rule "Split vs Protect"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+                composition == "splitPush"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("split","teamcomp","Against a protect comp you will have an advantage since a split push comp is a soft counter to a protect comp. They all revolve around protecting one carry, that is going to get them the win, but since your teams strength doesn’t lay in teamfighs there is no need for it. By splitting up, you will force them to split up as well and by them having only one or maybe two primary sources of damage, it will be impossible to block all your lane pushing attempts.");
+ end
+
+
+
+rule "Split vs Attack"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+                composition == "splitPush"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("split","teamcomp","Against an attack comp you will have a disadvantage since an attack comp is a hard counter to a split push comp. They will engage and blow up any teamfight as soon as they get the chance, and with your lack of manpower in lanes it will be either impossible to split and you will be forced to group or you will have to risk it and maybe lose more than you can take back from them by pushing solo lanes. In this comp your map awareness is really important. You need to keep them at bay, avoid open fights and communicate well with solo laners so they know when they need to back off and when to continue pressuring.");
+ end
+
+
+rule "Split vs Catch"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+        composition == "splitPush"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
+    )
+ then
+    adviceStorage.addAdvice("split","teamcomp","Against a catch comp you will have a disadvantage since a catch comp is a soft counter to a split push comp. They focus on killing solo laners and wondering enemies before teamfights, as then they can fight as a bigger group or even push lanes interruptedly. Since your solo laners will be your weakness here, try to play close to them or keep someone close just in case. Map awareness and vision is key here, that is the only thing that can help you win this, by not giving up kills and leads to them early on. If you have a chance engage on them, take a few kills and make them reposition so they can’t just wander around the map.");
+ end
+
+
+ // SIEGE
+
+
+rule "Siege vs Split"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition(
+        composition == "siege"
+    )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("siege","teamcomp","Against a split push comp you have a disadvantage since a split push comp is a hard counter to a siege comp. They have a lot of map pressure, playing in multiple lanes be it 1-4 or 1-3-1, you will have a hard time defending against that. You can try to split up, sending one champion with good waveclear or poke to defend against solo laners but be careful that they are enough to stop them, since solo laners usually have great engages and good tenacity. If you decide otherwise, then I suggest you pushing for team pushes, by using your siege and poke capabilities push the rest of the team out and take more from them than they can from you, making their solo laners reconsider leaving their team behind to fight you.");
+ end
+
+rule "Siege vs Siege"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "siege" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("siege","teamcomp","Against another siege comp you will need to play smart. You will need to see who has better waveclear or poke. If they have a lot of siege opportunities, then you will need to rotate quickly to avoid getting stalled by them. If they have more poke, than try to engage on them before fights get impossible. Even though engaging is not smart with your comp, that is also the only way to defeat the opponent, so this will be a matchup of wits. ");
+ end
+
+
+rule "Siege vs Protect"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "siege" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("siege","teamcomp","Against a protect comp you will have an advantage since a catch comp is a hard counter to a protect comp. Their whole teamcomp revolves around protecting the carry, and utilizing their power in teamfighting. You have the advantage, since you would avoid fights by poking them and rendering their fight attempts impossible. If you take out or lower the health of protectors then the carry can’t fight by himself, and you can siege them without problem.");
+ end
+
+
+
+rule "Siege vs Attack"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "siege" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("siege","teamcomp","Against an attack comp you will have a disadvantage since an attack comp is a soft counter to a siege comp. You will try to poke them and not let them push your towers, and using your waveclear counterpush and take objectives when they back off but, they have great tower diver potential and extreme engage capabilities. You will really need to utilize all the disengages you have when they come for you, or rotate out of fights as quickly as possible pressuring them somewhere else. This will be a hard matchup, if you cant poke and chase them away before they engage.");
+ end
+
+
+rule "Siege vs Catch"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "siege" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
+    )
+ then
+    adviceStorage.addAdvice("siege","teamcomp","Against a catch comp you will have an advantage since a siege comp is a soft counter to a catch comp. Playing against them shouldn’t be an issue if you stick together. They really excel at picking off wandering enemies, but by sticking together and poking them out of lane or engages you should be safe. Use your overwhelming waveclear to siege towers and make it unacceptable of them to send some players off the lane and attempt to pick off other teammates. ");
+ end
+
+
+ // PROTECT
+
+
+rule "Protect vs Split"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "protect" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("protect","teamcomp","Against a split push comp you will have a disadvantage since a split push comp is a soft counter to a protect comp. They will focus on a divide and conquer strategy, where they will push 2 or 3 lanes simultaneously, and with your comp where it all revolves around sticking together it will be quite tough to defeat them. Best way would be to send your tanks to contest their split pushers and the rest of the team should engage where you can still win smaller team fights. ");
+ end
+
+rule "Protect vs Siege"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "protect" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("protect","teamcomp","Against a siege comp you will have a disadvantage since a siege comp is a hard counter to a protect comp. You will have trouble fighting in open fights, since their whole scheme is to poke you out before fights and push lanes without you being able to contest. Your whole teamcomp revolves around fighting in teamfights and they try to avoid it. It will be very hard for you to win this matchup, but it’s not impossible. Focus on letting them push without them poking you down, and when they overstep or get close engage if you can and start up a teamfight.");
+ end
+
+
+rule "Protect vs Protect"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "protect" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("protect","teamcomp","Against another protect comp you will have to win this by either having a more capable carry or by having better protection for your carry. Here you will need to focus on early game to mid game leads, to push your carry to an earlier peaking point. If you can take the advantage the game will be a shoe in.");
+ end
+
+
+
+rule "Protect vs Attack"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "protect" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("protect","teamcomp","Against an attack comp you will have an advantage since a protect comp is a soft counter to an attack comp. Their whole concept revolves around hard engages and spells that burst down enemies quickly, but with your protective teamplay they shouldn’t be able to do so. Still be careful when you fight, as if they catch you unprepared or they have a lead they can surpass your defense quickly and easily.  Focus on gaining leads early, pushing your carry to peak as fast as possible.\t");
+ end
+
+
+rule "Protect vs Catch"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "protect" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
+    )
+ then
+    adviceStorage.addAdvice("protect","teamcomp","Against a catch comp you will have an advantage since a protect comp is a hard counter to a catch comp. Your team is all about protection and grouping up together, and they try to catch unsuspected enemies that miss position. If you just play like you are supposed to, use a lot of map vision and awareness, they will not be able to get the hand on you. They usually have weak teamfights, so abuse that and always force fights when you can for objectives.");
+ end
+
+
+ // ATTACK
+
+
+rule "Attack vs Split"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "attack" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("attack","teamcomp","Against a split push comp you will have an advantage since an attack comp is a hard counter to a split push comp. They focus on splitting up their team, either 1-4 or 1-3-1 rotations, so they are rather weak in teamfights. With your overwhelming engages and CC, you should be able to win fights with ease, even with lesser members. You can always either split up, to contest them, and win that way which is a bit more risky if you do not have strong solo champions, or you can just group up and push against the rest of their team while their solo laners have to decide to either come back and help them or continue to push to see if they can get any benefits. \t");
+ end
+
+rule "Attack vs Siege"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "attack" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("attack","teamcomp","Against a siege comp you will have an advantage since an attack comp is a soft counter to a siege comp. They will only poke you out of fights, avoiding all out trades and waveclear you to your base. Do not let them have free damage on you or more map pressure since this is how you can easily lose. Let them push a bit, and when they move out from their towers that is when you hard engage and clean house. You shouldn’t have to many problems if you do this a few times, since they will be quite behind.");
+ end
+
+
+rule "Attack vs Protect"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "attack" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("attack","teamcomp","Against a protect comp you will have a disadvantage since a protect comp is a soft counter to an attack comp. They only have one good damage dealer, compared to your team that is far less, but they make it up in protection and utility. They will make it impossible for you to move to them and kill their damage dealer, so you need to either catch them off guard or have an overwhelming advantage. Try to take leads early, that will push you to victory a lot.");
+ end
+
+
+
+rule "Attack vs Attack"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "attack" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("attack","teamcomp","Against another attack comp you will just have to see who plays smarter and has better players. The difference in damage will be equal to the difference in skill and early leads. You can always avoid fighting them when you know they have their cooldowns up or when they are grouped together, but it is safe to assume they will play the same way as you will. Do not let them pressure you early to mid or you will for sure lose late game.");
+ end
+
+
+rule "Attack vs Catch"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "attack" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
+    )
+ then
+    adviceStorage.addAdvice("attack","teamcomp","Against an catch comp you will have an disadvantage since a catch comp is a hard counter to an attack comp. Your whole idea is to fight them all in and devastate them, but they will avoid it any way possible or rather make it impossible for you to do so. They use a lot of mobility, moving about the map and catching you off guard. Be careful about getting picked out, use a lot of map awareness and try to move close together so others can respond if you need help. In all in fights you win, but in situations with less players you most certainly lose.");
+ end
+
+
+ // CATCH
+
+
+rule "Catch vs Split"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "catch" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        splitComp >= siegeComp && splitComp >= attackComp && splitComp >= protectComp && splitComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("catch","teamcomp","Against a split push comp you will have an advantage since a catch comp is a counter to a split push comp. With how their team works, they will often split up in 1-4 or 1-3-1 situations, and they will make it easy for you to take them out separately. Be careful about their solo laners, as they are often quite sturdy and hard to fight alone but with a few people you can take them out and rotate for objectives while they will not be able to contest. Or you can take out some of their wandering players, then forcing teamfights which are devastating for them.");
+ end
+
+rule "Catch vs Siege"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "catch" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        siegeComp >= splitComp && siegeComp >= attackComp && siegeComp >= protectComp && siegeComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("catch","teamcomp","Against a siege comp you will have a disadvantage since a siege comp is a soft counter to a catch comp. They often group together, protecting their lanes with waveclear and poke, making it hard for you to engage. They don’t roam as much either, so picking them off will be a challenge. Use your mobility to force them to split up to protect multiple lanes, and among that chaos of running around the map to catch up to you, place some players strategically in good places to take them out and then force teamfights. ");
+ end
+
+
+rule "Catch vs Protect"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "catch" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        protectComp >= splitComp && protectComp >= attackComp && protectComp >= siegeComp && protectComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("catch","teamcomp","Against a protect comp you will have a disadvantage since a protect comp is a hard counter to a catch comp. They only have one or maybe two hard carries, while others are there to protect them, so that means your target is only one champ. The hard part is that they always move together, rarely roam or split up so it won’t be easy to get to him. Use their side of the map, place yourselves strategically, and try to infuse fear in them by picking some of the utility champions. Even if you cant kill the carry, you can force them to think twice about moving fearlessly in their own jungle.");
+ end
+
+
+
+rule "Catch vs Attack"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "catch" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        attackComp >= splitComp && attackComp >= siegeComp && attackComp >= protectComp && attackComp >= catchComp
+    )
+ then
+    adviceStorage.addAdvice("catch","teamcomp","Against an attack comp you will have an advantage since a catch comp is a hard counter to a catch comp. They like to group up, hard engage and wombo combo you to death, but you can easily avoid it by picking them of one by one. Use the map and your mobility to your advantage, either take out their engagers so that they will be powerless but to let you push them up the lane or take out their damage dealers so they can’t fight even if they wanted to.");
+ end
+
+
+rule "Catch vs Catch"
+ agenda-group "teamcomp-versus"
+ when
+    $allyTeam : TeamComposition( composition == "catch" )
+    $enemyTeam : TeamCompositionProbability(
+        team == "enemy",
+        catchComp >= splitComp && catchComp >= attackComp && catchComp >= protectComp && catchComp >= siegeComp
+    )
+ then
+    adviceStorage.addAdvice("catch","teamcomp","Against another catch comp you will have to battle it out on the map awareness department. Who has more mobility and map vision will win this matchup. By taking out their engagers and assassins you will be able to take objectives uncontestably or by taking out their carries they won’t be able to contest to your pushes either by lacking in up front damage. Be careful though, since they will have the same plan as you, so try to outsmart them and think outside of the box.");
+ end

@@ -1,0 +1,134 @@
+package com.siit.sbnz.sbnztim14.additionalRules
+
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.JunglerConclusion;
+import java.util.ArrayList;
+
+global AdviceStorage adviceStorage;
+
+declare window LastEventWindow
+    @doc("Last event in game")
+    GameEvent() over window:length( 1 )
+end
+
+rule "Ally champion killed enemy champ"
+    agenda-group "after-event"
+    no-loop
+    when
+        $ally: AllyChampion($allyLane: lane)
+        $enemy: EnemyChampion(lane == $allyLane)
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.ALLY_KILLS,
+                lane == $allyLane
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($ally){
+            setGolds($ally.getGolds() + $enemy.getGoldsForKill()),
+            setGoldsForKill($ally.getGoldsForKill() + 100)
+        }
+        modify($enemy){
+            setGoldsForKill(300)
+        }
+        System.out.println();
+        System.out.println("Ally kills");
+        System.out.println("Ally: " + $ally);
+        System.out.println("Enemy: " + $enemy);
+
+end
+
+rule "Ally team destroyed enemy tower"
+    agenda-group "after-event"
+    no-loop
+    when
+        $ally: AllyChampion()
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.ENEMY_TOWER_DESTROYED
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($ally){
+            setGolds($ally.getGolds() + 200)
+        }
+        System.out.println();
+        System.out.println("Ally destoyed tower: " + $ally);
+end
+
+rule "Enemy team destroyed ally tower"
+    agenda-group "after-event"
+    no-loop
+    when
+        $enemy: EnemyChampion()
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.ALLY_TOWER_DESTROYED
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($enemy){
+            setGolds($enemy.getGolds() + 200)
+        }
+        System.out.println();
+        System.out.println("Enemy destoyed tower: " + $enemy);
+end
+
+rule "Objective killed"
+    agenda-group "after-event"
+    no-loop
+    when
+        $ally: AllyChampion()
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.OBJECT_KILLED
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($ally){
+            setGolds($ally.getGolds() + 150)
+        }
+        System.out.println();
+        System.out.println("Ally objective killed: " + $ally);
+end
+
+rule "Enemy champion killed ally champ"
+    agenda-group "after-event"
+    no-loop
+    when
+        $enemy: EnemyChampion($enemyLane: lane)
+        $ally: AllyChampion(lane == $enemyLane)
+        Number(intValue > 0) from accumulate(
+            GameEvent(
+                $event: this,
+                eventType == EventType.ENEMY_KILLS,
+                lane == $enemyLane
+            ) from window LastEventWindow,
+            count($event)
+        )
+    then
+        modify($enemy){
+            setGolds($enemy.getGolds() + $ally.getGoldsForKill()),
+            setGoldsForKill($enemy.getGoldsForKill() + 100)
+        }
+
+        modify($ally){
+            setGoldsForKill(300)
+        }
+        System.out.println();
+        System.out.println("Enemy kills");
+        System.out.println("Ally: " + $ally);
+        System.out.println("Enemy: " + $enemy);
+end

@@ -1,0 +1,332 @@
+package com.siit.sbnz.sbnztim14.midGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.MidGame;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+// CATCH
+// aggro
+
+rule "Catch, ally lane kills and towers, ally aggro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5,
+			allyTowers >= enemyTowers
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should take this opportunity to rotate to take out enemies on other lanes and push objectives.");
+end
+
+
+rule "Catch, ally lane towers, enemy lane kills, ally aggro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5,
+            allyTowers >= enemyTowers
+        )
+    then
+        
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, so try not to give up a bigger lead so switch to a more defensive playstyle and ask for help to fight them off your lane.");
+end
+
+
+rule "Catch, ally lane kills, enemy lane towers, ally aggro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5,
+			enemyTowers >= allyTowers
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should take this opportunity to take lane objectives and rotate to take out enemies on other lanes.");
+end
+
+
+rule "Catch, enemy lane kills and towers, ally aggro"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5,
+			enemyTowers >= allyTowers
+        )
+    then
+        
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills and towers, so try not to give up a bigger lead so switch to a more defensive playstyle if they stay, but continue aggresivly if you follow up on a rotation.");
+end
+
+rule "Catch, ally lane towers, ally aggro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers,
+			(allyKills <= enemyKills && enemyKills-allyKills <= 4) || (allyKills > enemyKills && allyKills - enemyKills <= 4)
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to help your team and take objectives by first eliminating the enemy.");
+end
+
+rule "Catch, enemy lane towers, ally aggro"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "aggro",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers,
+			(allyKills <= enemyKills && enemyKills-allyKills <= 4) || (allyKills > enemyKills && allyKills - enemyKills <= 4)
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should change to a more defensive play style, but if they rotate follow up by rotating as well.");
+end
+
+
+// def
+
+rule "Catch, ally lane kills and lane towers, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5,
+			allyTowers >= enemyTowers
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should switch to a more aggressive platystyle and roam the map more.");
+end
+
+
+rule "Catch, ally lane towers, enemy lane kills, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5,
+			allyTowers >= enemyTowers
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so ask for help from your team while they try to take down your tower.");
+end
+
+
+rule "Catch, ally lane kills, enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyKills >= enemyKills + 5,
+			enemyTowers >= allyTowers
+		)
+	then
+
+		adviceStorage.addAdvice($allyLane, "mid", "With a kill lead you should switch to a more aggressive platystyle and take their tower objective.");
+end
+
+
+rule "Catch, enemy lane kills, enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyKills >= allyKills + 5,
+			enemyTowers >= allyTowers
+		)
+	then
+
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so ask for help from your team while trying to catch up.");
+end
+
+
+rule "Catch, ally lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyTowers > enemyTowers,
+			(allyKills <= enemyKills && enemyKills-allyKills <= 4) || (allyKills > enemyKills && allyKills - enemyKills <= 4)
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "With their tower gone, you can safely rotate to gank other lanes and take objectives.");
+end
+
+rule "Catch, enemy lane towers, ally def"
+	agenda-group "mid-game"
+	salience 0
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			playType == "def",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyTowers > allyTowers,
+			(allyKills <= enemyKills && enemyKills-allyKills <= 4) || (allyKills > enemyKills && allyKills - enemyKills <= 4)
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate rotate with them and gank other lanes.");
+end
+
+
+// jungle
+
+rule "Catch (jungle), ally objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			allyObjectives >= enemyObjectives + 2
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "You should try keeping up the pressure with objectives, using map control to pick off enemies before objectives or to bait them to come to you.");
+end
+
+rule "Catch (jungle), enemy objectives"
+	agenda-group "mid-game"
+	salience 1
+	when
+		$ally : AllyChampion(
+			lane == "jungle",
+			$allyLane : lane
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+		$midGame : MidGame(
+			lane == $allyLane,
+			enemyObjectives >= allyObjectives + 2
+		)
+	then
+	    
+		adviceStorage.addAdvice($allyLane, "mid", "Since you are lacking in objectives, your only and best option would be to take out enemies before objectives spawn so map control is key here.");
+end

@@ -104,6 +104,7 @@
 			<artifactId>drools-templates</artifactId>
 			<version>${kie.version}</version>
 		</dependency>
+
 	</dependencies>
 
 	<build>

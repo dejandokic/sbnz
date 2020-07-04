@@ -1,0 +1,52 @@
+template header
+allyType
+enemyType
+skillsName
+playType
+hardCC
+hardEngage
+poke
+waveclear
+disengage
+sustain
+utility
+advice
+
+package com.siit.sbnz.sbnztim14.earlyGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+template "early-lane"
+
+
+rule "@{skillsName}"
+    agenda-group "early-game-part-1"
+    salience 5
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "@{allyType}",
+			$allyLane: lane,
+			hardCC == @{hardCC},
+			hardEngage == @{hardEngage},
+			poke == @{poke},
+			waveclear == @{waveclear},
+			disengage == @{disengage},
+			sustain == @{sustain},
+			utility == @{utility},
+			playType == "@{playType}"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "@{enemyType}"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "@{advice}");
+end
+
+end template

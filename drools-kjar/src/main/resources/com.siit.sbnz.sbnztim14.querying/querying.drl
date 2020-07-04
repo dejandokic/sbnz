@@ -1,0 +1,190 @@
+package com.siit.sbnz.sbnztim14.backwardChaining
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.BCData;
+import com.siit.sbnz.sbnztim14.utilities.BackwardChainingHelper;
+
+query getGoodAttackComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        hardEngage == true,
+        hardCC == true,
+        aoeDamage == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        hardEngage == true,
+        hardCC == true,
+        aoeDamage == true
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        hardCC == true,
+        aoeDamage == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        hardCC == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardEngage == true,
+        hardCC == true
+    )
+end
+
+query getGoodCatchComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        role == "assassin" || role == "diver",
+        hardCC == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        role == "assassin" || role == "diver" || role == "catcher" || role == "burst",
+        mobility == true,
+        hardCC == true
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        role == "assassin" || role == "burst",
+        allPossibleLanes.contains("mid") == true,
+        hardCC == true,
+        mobility == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        hardCC == true || mobility == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        role == "diver" || role == "catcher",
+        allPossibleLanes.contains("support") == true,
+        mobility == true,
+        hardCC == true
+    )
+end
+
+query getGoodProtectComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        role == "warden" || role == "vanguard",
+        hardCC == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        (role == "warden" || role == "vanguard") ||
+        (disengage == true && hardCC == true)
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        role == "artillery" || role == "burst" || role == "battlemage",
+        goodLate == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        role == "artillery" || role == "marksman",
+        goodLate == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardCC == true &&
+        (disengage == true || utility == true)
+    )
+end
+
+query getGoodSiegeComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        poke == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        (role == "warden" || role == "vanguard") ||
+        (disengage == true && hardCC == true)
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        role == "artillery",
+        waveclear == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        poke == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardCC == true,
+        disengage == true
+    )
+end
+
+query getGoodSplitComp()
+    $top: Champion(
+        $topName: name,
+        allPossibleLanes.contains("top") == true,
+        role == "skirmisher" || role == "juggernaut",
+        splitPush == true
+    )
+    $jungle: Champion(
+        $jungleName: name,
+        name != $topName,
+        allPossibleLanes.contains("jungle") == true,
+        role == "skirmisher" || role == "juggernaut",
+        splitPush == true
+    )
+    $mid: Champion(
+        $midName: name,
+        name != $topName && name != $jungleName,
+        allPossibleLanes.contains("mid") == true,
+        disengage == true,
+        waveclear == true
+    )
+    $adc: Champion(
+        $adcName: name,
+        name != $topName && name != $jungleName && name != $midName,
+        allPossibleLanes.contains("adc") == true,
+        waveclear == true
+    )
+    $support: Champion(
+        $supportName: name,
+        name != $topName && name != $jungleName && name != $midName && name != $adcName,
+        allPossibleLanes.contains("support") == true,
+        hardCC == true,
+        disengage == true
+    )
+end
