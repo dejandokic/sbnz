@@ -1,0 +1,31 @@
+template header
+allyType
+skillsName
+hardCC
+hardEngage
+advice
+
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+template "early-jungle"
+
+rule "@{allyType} vs @{enemyType}, ally @{skillsName}"
+	when
+		$ally : AllyChampion(
+			lane == "jungler",
+			role == @{allyType},
+			$allyLane: lane,
+			hardCC: @{hardCC},
+			hardEngage: @{hardEngage}
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", @{advice});
+end
+
+end template
