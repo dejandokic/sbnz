@@ -7,4 +7,29 @@ import com.siit.sbnz.sbnztim14.model.AdviceStorage;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
+rule "dada"
+    agenda-group "early-game-part-1"
+    salience 5
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			hardCC == true,
+			hardEngage == true,
+			poke == false,
+			waveclear == false,
+			disengage == false,
+			sustain == true,
+			utility == false,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+end
+
 
