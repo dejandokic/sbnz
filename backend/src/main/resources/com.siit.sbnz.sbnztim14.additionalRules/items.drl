@@ -64,7 +64,7 @@ end
 
 rule "Buy Rabadons Deathcap"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -97,7 +97,7 @@ end
 
 rule "Buy Rabadons Deathcap2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -132,7 +132,7 @@ end
 
 rule "Buy Infinity Edge"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -165,7 +165,7 @@ end
 
 rule "Buy Infinity Edge2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -199,7 +199,7 @@ end
 
 rule "Buy Thorn Mail"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -233,7 +233,7 @@ end
 
 rule "Buy Thorn Mail2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -267,7 +267,7 @@ end
 
 rule "Buy Abyssal Mask"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -301,7 +301,7 @@ end
 
 rule "Buy Abyssal Mask2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -334,7 +334,7 @@ end
 
 rule "Buy Randuins Omen"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -368,7 +368,7 @@ end
 
 rule "Buy Randuins Omen2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -403,7 +403,7 @@ end
 
 rule "Buy Iron Locket"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -437,7 +437,7 @@ end
 
 rule "Buy Iron Locket2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -472,7 +472,7 @@ end
 
 rule "Buy Maw of Malmortius"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -506,7 +506,7 @@ end
 
 rule "Buy Maw of Malmortius2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -540,7 +540,7 @@ end
 
 rule "Buy Spirit Visage"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -574,7 +574,7 @@ end
 
 rule "Buy Spirit Visage2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -609,7 +609,7 @@ end
 
 rule "Buy Iceborn Gauntlet"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -643,7 +643,7 @@ end
 
 rule "Buy Iceborn Gauntlet2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -678,7 +678,7 @@ end
 
 rule "Buy Mercurial Scimitar"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -712,7 +712,7 @@ end
 
 rule "Buy Mercurial Scimitar2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -747,7 +747,7 @@ end
 
 rule "Buy Zhonyas Hourglass"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -781,7 +781,7 @@ end
 
 rule "Buy Zhonyas Hourglass2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -816,7 +816,7 @@ end
 
 rule "Buy Banshees Veil"
     agenda-group "items"
-    salience (6 - $br)
+    salience (6 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,
@@ -850,7 +850,7 @@ end
 
 rule "Buy Banshees Veil2"
     agenda-group "items"
-    salience (5.5 - $br)
+    salience (5.5 - $br*2)
     when
         $ally: AllyChampion(
             $lane: lane,

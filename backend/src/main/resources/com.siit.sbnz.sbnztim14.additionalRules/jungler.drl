@@ -15,44 +15,66 @@ declare window LastEightEventsWindow
     GameEvent() over window:length( 8 )
 end
 
-declare window AllEventsWindow
-    @doc("All events in the game")
-    GameEvent() over window:time( 60m )
-end
+// We could also use window (60 minutes) for fetching all events from game
+// commented code below
 
-rule "Jungler should gank top lane"
+//declare window AllEventsWindow
+//    @doc("All events in the game")
+//    GameEvent() over window:time( 60m )
+//end
+
+// Same behavior to top and mid lane, dynamic calculation proceeded
+rule "Jungler should gank top or mid lane"
     salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
-        Number($goodLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf goodEvents, lane == "top")
+        $ally: AllyChampion($allyLane: lane, lane=="top" || lane=="mid")
+        Number($goodLast8: intValue) from accumulate(
+            GameEvent(
+                $ev: this,
+                eventType memberOf goodEvents,
+                lane == $allyLane
+            )
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($badLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf badEvents, lane == "top")
+        Number($badLast8: intValue) from accumulate(
+            GameEvent(
+                $ev: this,
+                eventType memberOf badEvents,
+                lane == $allyLane
+            )
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($goodWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf goodEvents, lane == "top")
-            from window AllEventsWindow,
+        Number($goodWholeGame: intValue) from accumulate(
+            GameEvent(
+                $allEv: this,
+                eventType memberOf goodEvents,
+                lane == $allyLane
+            ),
+//            from window AllEventsWindow,
             count($allEv)
         )
 
-        Number($badWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf badEvents, lane == "top")
-            from window AllEventsWindow,
+        Number($badWholeGame: intValue) from accumulate(
+            GameEvent(
+                $allEv: this,
+                eventType memberOf badEvents,
+                lane == $allyLane
+            ),
+//            from window AllEventsWindow,
             count($allEv)
         )
 
         not(JunglerConclusion(nextGank != ""))
+
         $jc: JunglerConclusion()
     then
-        System.out.println("TOP");
+        System.out.println($allyLane.toUpperCase());
         System.out.println($goodLast8);
         System.out.println($badLast8);
         System.out.println($goodWholeGame);
@@ -61,84 +83,41 @@ rule "Jungler should gank top lane"
                                    -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
 
-        modify($jc){setNextGank("top")}
+        modify($jc){setNextGank($allyLane)}
 end
 
 
-rule "Jungler should gank mid lane"
+rule "Jungler should gank bottom (adc and support roles) lane"
     salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
         -3 * ($goodLast8 - $badLast8) + 100
     no-loop
     when
-        Number($goodLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf goodEvents, lane == "mid")
-            from window LastEightEventsWindow,
-            count($ev)
-        )
-
-        Number($badLast8: intValue >= -1) from accumulate(
-            GameEvent($ev: this, eventType memberOf badEvents, lane == "mid")
-            from window LastEightEventsWindow,
-            count($ev)
-        )
-
-        Number($goodWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf goodEvents, lane == "mid")
-            from window AllEventsWindow,
-            count($allEv)
-        )
-
-        Number($badWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf badEvents, lane == "mid")
-            from window AllEventsWindow,
-            count($allEv)
-        )
-
-        not(JunglerConclusion(nextGank != ""))
-        $jc: JunglerConclusion()
-    then
-        System.out.println("MID");
-        System.out.println($goodLast8);
-        System.out.println($badLast8);
-        System.out.println($goodWholeGame);
-        System.out.println($badWholeGame);
-        System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-                                   -3 * ($goodLast8 - $badLast8) + 100);
-        System.out.println();
-        modify($jc){setNextGank("mid")}
-end
-
-
-rule "Jungler should gank bottom lane"
-    salience -1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
-        -3 * ($goodLast8 - $badLast8) + 100
-    no-loop
-    when
-        Number($goodLast8: intValue >= -1) from accumulate(
+        Number($goodLast8: intValue) from accumulate(
             GameEvent($ev: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($badLast8: intValue >= -1) from accumulate(
+        Number($badLast8: intValue) from accumulate(
             GameEvent($ev: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
             from window LastEightEventsWindow,
             count($ev)
         )
 
-        Number($goodWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support"))
-            from window AllEventsWindow,
+        Number($goodWholeGame: intValue) from accumulate(
+            GameEvent($allEv: this, eventType memberOf goodEvents, (lane == "adc" || lane == "support")),
+//            from window AllEventsWindow,
             count($allEv)
         )
 
-        Number($badWholeGame: intValue >= -1) from accumulate(
-            GameEvent($allEv: this, eventType memberOf badEvents, (lane == "adc" || lane == "support"))
-            from window AllEventsWindow,
+        Number($badWholeGame: intValue) from accumulate(
+            GameEvent($allEv: this, eventType memberOf badEvents, (lane == "adc" || lane == "support")),
+//            from window AllEventsWindow,
             count($allEv)
         )
 
         not(JunglerConclusion(nextGank != ""))
+
         $jc: JunglerConclusion()
     then
         System.out.println("BOTTOM");
@@ -149,5 +128,6 @@ rule "Jungler should gank bottom lane"
         System.out.println(-1 * (($goodWholeGame - $goodLast8) - ($badWholeGame - $badLast8))
                                    -3 * ($goodLast8 - $badLast8) + 100);
         System.out.println();
+
         modify($jc){setNextGank("bottom")}
 end

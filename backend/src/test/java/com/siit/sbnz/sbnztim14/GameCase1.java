@@ -224,6 +224,18 @@ public class GameCase1 {
         assertEquals("top", junglerConclusion2.getNextGank());
         kSession.delete(jungleConclusionFH2);
 
+        eventOccurred(kSession, new GameEvent("adc", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("support", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("adc", EventType.ENEMY_KILLS));
+        eventOccurred(kSession, new GameEvent("support", EventType.ENEMY_KILLS));
+
+        JunglerConclusion junglerConclusion3 = new JunglerConclusion("");
+        FactHandle jungleConclusionFH3 = kSession.insert(junglerConclusion3);
+        fired = kSession.fireAllRules();
+        assertEquals(1, fired);
+        assertEquals("bottom", junglerConclusion3.getNextGank());
+        kSession.delete(jungleConclusionFH3);
+
         kSession.dispose();
     }
 }
