@@ -302,7 +302,7 @@ rule "Split push (split pusher), enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane more so they have to come back and defend.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane more so they have to come back and defend.");
 end
 
 
@@ -594,7 +594,7 @@ rule "Split push (other), enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate to your team.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate to your team.");
 end
 
 

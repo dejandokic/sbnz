@@ -27,6 +27,10 @@ public class LateGameTest {
         lateGame.setTeamObjectives(false);
         lateGame.setTeamTowers(false);
 
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_OBJECT_KILLED));
+
         kieSession.insert(teamComposition);
         kieSession.insert(lateGame);
         kieSession.getAgenda().getAgendaGroup("late-game").setFocus();
@@ -58,6 +62,11 @@ public class LateGameTest {
         lateGame.setTeamKills(true);
         lateGame.setTeamObjectives(true);
         lateGame.setTeamTowers(false);
+
+
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("top",EventType.OBJECT_KILLED));
 
         kieSession.insert(teamComposition);
         kieSession.insert(lateGame);
@@ -91,6 +100,10 @@ public class LateGameTest {
         lateGame.setTeamKills(false);
         lateGame.setTeamObjectives(false);
         lateGame.setTeamTowers(true);
+
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_OBJECT_KILLED));
 
         kieSession.insert(teamComposition);
         kieSession.insert(lateGame);

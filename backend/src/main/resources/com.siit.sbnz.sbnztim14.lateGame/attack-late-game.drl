@@ -13,6 +13,7 @@ import java.util.List;
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
 rule "Check team progress"
+    no-loop
     agenda-group "late-game"
     salience 100
     when
@@ -42,8 +43,9 @@ rule "Check team progress"
             count($this)
         )
     then
-        modify($lateGame){ setTeamKills( $allyKills>=$enemyKills ), setTeamTowers( $allyTowers>=$enemyTowers), setTeamObjectives( $allyObjectives>=$enemyObjectives )};
-
+        modify($lateGame){ setTeamKills( $allyKills>=$enemyKills )};
+        modify($lateGame){ setTeamTowers( $allyTowers>=$enemyTowers )};
+        modify($lateGame){ setTeamObjectives( $allyObjectives>=$enemyObjectives )};
  end
 
 

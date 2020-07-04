@@ -275,7 +275,7 @@ rule "Protect (carry), ally lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "With a tower lead you shouldn�t play defensively anymore so rotate to push other lanes, but be together with your team always.");
+		adviceStorage.addAdvice($allyLane, "mid", "With a tower lead you shouldn't play defensively anymore so rotate to push other lanes, but be together with your team always.");
 end
 
 rule "Protect (carry), enemy lane towers, ally def"
@@ -297,7 +297,7 @@ rule "Protect (carry), enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since they pushed you up quite a bit, even if you did try to play safely that didn�t go well, so farming up to catch up is your only choice but be there for your team to defend other lanes. ");
+		adviceStorage.addAdvice($allyLane, "mid", "Since they pushed you up quite a bit, even if you did try to play safely that didn't go well, so farming up to catch up is your only choice but be there for your team to defend other lanes. ");
 end
 
 
@@ -487,7 +487,7 @@ rule "Protect (other), ally lane towers, enemy lane kills, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn�t help much, so ask for help from your team to get back in game.");
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so ask for help from your team to get back in game.");
 end
 
 
@@ -533,7 +533,7 @@ rule "Protect (other), enemy lane kills and towers, ally def"
 		)
 	then
 
-		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn�t help much, so ask for help from your team to get back in game.");
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so ask for help from your team to get back in game.");
 end
 
 
@@ -579,7 +579,7 @@ rule "Protect (other), enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate rotate with them to help your team as well.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate rotate with them to help your team as well.");
 end
 
 
