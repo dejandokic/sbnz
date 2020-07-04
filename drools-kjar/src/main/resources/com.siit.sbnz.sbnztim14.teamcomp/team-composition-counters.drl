@@ -1,0 +1,208 @@
+package com.siit.sbnz.sbnztim14.teamcomp
+
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.TeamCompositionProbability;
+import com.siit.sbnz.sbnztim14.model.TeamComposition;
+
+global TeamComposition allyTeamComposition;
+ 
+rule "Increase Ally Attack probability if opponent might play Split or Siege, decrease if opponent might play Catch or Protect"
+agenda-group "composition-probability"
+
+	when
+		$allyComp : TeamCompositionProbability(
+			team == "ally"
+		)
+		$enemyComp : TeamCompositionProbability(
+			team == "enemy"
+		)
+		$finalComp : TeamCompositionProbability(
+			team == "final"
+		) @Watch(!*, team)
+	then
+		int total = $allyComp.getAttackComp();
+		total += $enemyComp.getSplitComp() > 40 ? 0.15 * $enemyComp.getSplitComp() : 0;
+		total += $enemyComp.getSiegeComp() > 40 ? 0.25 * $enemyComp.getSiegeComp() : 0;
+		total -= $enemyComp.getCatchComp() > 40 ? 0.15 * $enemyComp.getCatchComp() : 0;
+		total -= $enemyComp.getProtectComp() > 40 ? 0.25 * $enemyComp.getProtectComp() : 0;
+		modify($finalComp){setAttackComp(total)}
+		System.out.println($finalComp);
+end
+ 
+rule "Increase Ally Catch probability if opponent might play Attack or Split, decrease if opponent might play Protect or Siege"
+agenda-group "composition-probability"
+
+	when
+		$allyComp : TeamCompositionProbability(
+			team == "ally"
+		)
+		$enemyComp : TeamCompositionProbability(
+			team == "enemy"
+		)
+		$finalComp : TeamCompositionProbability(
+			team == "final"
+		) @Watch(!*, team)
+	then
+		int total = $allyComp.getCatchComp();
+		total += $enemyComp.getAttackComp() > 40 ? 0.15 * $enemyComp.getAttackComp() : 0;
+		total += $enemyComp.getSplitComp() > 40 ? 0.25 * $enemyComp.getSplitComp() : 0;
+		total -= $enemyComp.getProtectComp() > 40 ? 0.15 * $enemyComp.getProtectComp() : 0;
+		total -= $enemyComp.getSiegeComp() > 40 ? 0.25 * $enemyComp.getSiegeComp() : 0;
+		modify($finalComp){setCatchComp(total)}
+		System.out.println($finalComp);
+end
+ 
+rule "Increase Ally Protect probability if opponent might play Catch or Attack, decrease if opponent might play Siege or Split"
+agenda-group "composition-probability"
+
+	when
+		$allyComp : TeamCompositionProbability(
+			team == "ally"
+		)
+		$enemyComp : TeamCompositionProbability(
+			team == "enemy"
+		)
+		$finalComp : TeamCompositionProbability(
+			team == "final"
+		) @Watch(!*, team)
+	then
+		int total = $allyComp.getProtectComp();
+		total += $enemyComp.getCatchComp() > 40 ? 0.15 * $enemyComp.getCatchComp() : 0;
+		total += $enemyComp.getAttackComp() > 40 ? 0.25 * $enemyComp.getAttackComp() : 0;
+		total -= $enemyComp.getSiegeComp() > 40 ? 0.15 * $enemyComp.getSiegeComp() : 0;
+		total -= $enemyComp.getSplitComp() > 40 ? 0.25 * $enemyComp.getSplitComp() : 0;
+		modify($finalComp){setProtectComp(total)}
+		System.out.println($finalComp);
+end
+ 
+rule "Increase Ally Siege probability if opponent might play Protect or Catch, decrease if opponent might play Split or Attack"
+agenda-group "composition-probability"
+
+	when
+		$allyComp : TeamCompositionProbability(
+			team == "ally"
+		)
+		$enemyComp : TeamCompositionProbability(
+			team == "enemy"
+		)
+		$finalComp : TeamCompositionProbability(
+			team == "final"
+		) @Watch(!*, team)
+	then
+		int total = $allyComp.getSiegeComp();
+		total += $enemyComp.getProtectComp() > 40 ? 0.15 * $enemyComp.getProtectComp() : 0;
+		total += $enemyComp.getCatchComp() > 40 ? 0.25 * $enemyComp.getCatchComp() : 0;
+		total -= $enemyComp.getSplitComp() > 40 ? 0.15 * $enemyComp.getSplitComp() : 0;
+		total -= $enemyComp.getAttackComp() > 40 ? 0.25 * $enemyComp.getAttackComp() : 0;
+		modify($finalComp){setSiegeComp(total)}
+		System.out.println($finalComp);
+end
+ 
+rule "Increase Ally Split probability if opponent might play Siege or Protect, decrease if opponent might play Attack or Catch"
+agenda-group "composition-probability"
+
+	when
+		$allyComp : TeamCompositionProbability(
+			team == "ally"
+		)
+		$enemyComp : TeamCompositionProbability(
+			team == "enemy"
+		)
+		$finalComp : TeamCompositionProbability(
+			team == "final"
+		) @Watch(!*, team)
+	then
+		int total = $allyComp.getSplitComp();
+		total += $enemyComp.getSiegeComp() > 40 ? 0.15 * $enemyComp.getSiegeComp() : 0;
+		total += $enemyComp.getProtectComp() > 40 ? 0.25 * $enemyComp.getProtectComp() : 0;
+		total -= $enemyComp.getAttackComp() > 40 ? 0.15 * $enemyComp.getAttackComp() : 0;
+		total -= $enemyComp.getCatchComp() > 40 ? 0.25 * $enemyComp.getCatchComp() : 0;
+		modify($finalComp){setSplitComp(total)}
+		System.out.println($finalComp);
+end
+
+rule "If Attack is larger or equal than others choose Attack as TeamComposition"
+agenda-group "composition-probability"
+salience 1
+
+	when
+		$finalComp : TeamCompositionProbability(
+			team == "final",
+			eval(attackComp >= catchComp) &&
+			eval(attackComp >= protectComp) &&
+			eval(attackComp >= siegeComp) &&
+			eval(attackComp >= splitComp)
+		)
+	then
+		allyTeamComposition.setComposition("attack");
+		System.out.println($finalComp);
+end
+
+rule "If Catch is larger or equal than others choose Catch as TeamComposition"
+agenda-group "composition-probability"
+salience 2
+
+	when
+		$finalComp : TeamCompositionProbability(
+			team == "final",
+			eval(catchComp >= attackComp) &&
+			eval(catchComp >= protectComp) &&
+			eval(catchComp >= siegeComp) &&
+			eval(catchComp >= splitComp)
+		)
+	then
+		allyTeamComposition.setComposition("catch");
+		System.out.println($finalComp);
+end
+
+rule "If Protect is larger or equal than others choose Protect as TeamComposition"
+agenda-group "composition-probability"
+salience 3
+
+	when
+		$finalComp : TeamCompositionProbability(
+			team == "final",
+			eval(protectComp >= attackComp) &&
+			eval(protectComp >= catchComp) &&
+			eval(protectComp >= siegeComp) &&
+			eval(protectComp >= splitComp)
+		)
+	then
+		allyTeamComposition.setComposition("protect");
+		System.out.println($finalComp);
+end
+
+rule "If Siege is larger or equal than others choose Siege as TeamComposition"
+agenda-group "composition-probability"
+salience 4
+
+	when
+		$finalComp : TeamCompositionProbability(
+			team == "final",
+			eval(siegeComp >= attackComp) &&
+			eval(siegeComp >= catchComp) &&
+			eval(siegeComp >= protectComp) &&
+			eval(siegeComp >= splitComp)
+		)
+	then
+		allyTeamComposition.setComposition("siege");
+		System.out.println($finalComp);
+end
+
+rule "If Split is larger or equal than others choose Split as TeamComposition"
+agenda-group "composition-probability"
+salience 5
+
+	when
+		$finalComp : TeamCompositionProbability(
+			team == "final",
+			eval(splitComp >= attackComp) &&
+			eval(splitComp >= catchComp) &&
+			eval(splitComp >= protectComp) &&
+			eval(splitComp >= siegeComp)
+		)
+	then
+		allyTeamComposition.setComposition("splitPush");
+		System.out.println($finalComp);
+end
+		

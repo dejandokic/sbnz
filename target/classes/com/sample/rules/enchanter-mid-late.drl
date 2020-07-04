@@ -1,0 +1,260 @@
+package com.sample.rules
+
+import com.sample.model.Champion;
+import com.sample.model.AllyChampion;
+import com.sample.model.EnemyChampion;
+import com.sample.model.TeamComposition;
+import com.sample.AdviceStorage;
+
+global com.sample.AdviceStorage adviceStorage;
+
+
+// SPLIT PUSH
+
+rule "Enchanter, mid-late game, (split push), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a split push comp your position is to support your team while the solo laner pushes towers. You need to use your hard CC to keep enemies at bay, whilist using utility to keep your team safe. Use disengages when the enemy gets you by surprise to escape getting killed.");
+end
+
+rule "Enchanter, mid-late game, (split push), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a split push comp your position is to support your team while the solo laner pushes towers. You need to use your hard CC to keep enemies at bay, whilist using utility to keep your team safe. ");
+end
+
+rule "Enchanter, mid-late game, (split push), ally utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == false,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "splitPush"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a split push comp your position is to support your team while the solo laner pushes towers. Using utility to keep your team safe and disengages to avoid their engages is a great way to support.");
+end
+
+
+// Siege
+
+
+rule "Enchanter, mid-late game, (siege), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a siege comp your job is to help your team avoid unnecessary fights. Use your CC to control enemy engages, combining your disengages and utility to give your team enough time to escape fights.");
+end
+
+rule "Enchanter, mid-late game, (siege), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a siege comp your job is to help your team avoid unnecessary fights. Use your CC to control enemy engages, using your utility to give your team boost if fights happen.");
+end
+
+rule "Enchanter, mid-late game, (siege), ally utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == false,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "siege"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a siege comp your job is to help your team avoid unnecessary fights. Use your utility to help your team in fights and your disengages to give your teammates a chance to escape fights that become too much to handle.");
+end
+
+
+// Protect
+
+
+rule "Enchanter, mid-late game, (protect), ally hardCC + utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your hard CC to keep enemies at bay, utilizing utility and disengages for your carry to stay alive.");
+end
+
+rule "Enchanter, mid-late game, (protect), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true,
+			disengage == false
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your hard CC to keep enemies at bay, utilizing utility to keep your carry viable in a fight for a longer period of time.");
+end
+
+rule "Enchanter, mid-late game, (protect), ally utility + disengage"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == false,
+			utility == true,
+			disengage == true
+		)
+		$composition : TeamComposition(
+			composition == "protect"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in a protect comp your position is beside your carry, saving them from all incoming attacks. Use your utility to keep your carry’s health high and disengages to help him avoid certain death.");
+end
+
+// Attack
+
+rule "Enchanter, mid-late game, (attack), ally hardCC + hardEngage + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			hardEngage == true,
+			utility == true
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in an attack comp your focus should be to assist your team in taking down enemies. Use your hard CC to prevent enemies escape and hard engages to assist in fight initiations. You have a lot of utility, so that should be helpful in sustaining your teams health.");
+end
+
+rule "Enchanter, mid-late game, (attack), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			hardEngage == false,
+			utility == true
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in an attack comp your focus should be to assist your team in taking down enemies. Use your hard CC to prevent enemies escape and your utility to sustain your teams health.");
+end
+
+rule "Enchanter, mid-late game, (attack), ally utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == false,
+			hardEngage == false,
+			utility == true
+		)
+		$composition : TeamComposition(
+			composition == "attack"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "As an enchanter in an attack comp your focus should be to assist your team in taking down enemies. Use your utility to sustain your teams health and allow them to fight for a prolonged period of time.");
+end
+
+// Catch
+
+rule "Enchanter, mid-late game, (catch), ally hardCC + utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == true,
+			utility == true
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "");
+end
+
+rule "Enchanter, mid-late game, (catch), ally utility"
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "enchanter",
+			$allyLane : lane,
+			hardCC == false,
+			utility == true
+		)
+		$composition : TeamComposition(
+			composition == "catch"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "mid-late", "");
+end

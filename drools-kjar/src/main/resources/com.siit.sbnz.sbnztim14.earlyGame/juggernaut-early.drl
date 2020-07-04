@@ -1,0 +1,510 @@
+package com.siit.sbnz.sbnztim14.earlyGame
+
+import com.siit.sbnz.sbnztim14.model.Champion;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+
+global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+//Juggernaut
+//
+//    aggro
+//
+//        vs Juggernaut
+
+rule "Juggernaut vs Juggernaut, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another juggernaut, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. Be careful as they have high sustain, and killing them will often prove difficult in a 1v1 situation.");
+end
+
+
+//        vs Diver
+
+rule "Juggernaut vs Diver, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are highly mobile and can put pressure on you quite quickly, but they shouldn't present a problem with your sustain.");
+end
+
+//        vs Assassin
+
+rule "Juggernaut vs Assassin, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage.  They are rather mobile and can burst you down when you get low, but they shouldn't present a problem with your sustain.");
+end
+
+//        vs Skirmisher
+
+rule "Juggernaut vs Skirmisher, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skirmisher, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. They are not as mobile, but they have the toolkit to deal with every situation, so be wary of that.");
+end
+
+
+//        vs Marksman
+
+rule "Juggernaut vs Marksman, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. They are mobile long range damage dealers that can punish you over a sustainable amount of time, so try to punish their misspositioning.");
+end
+
+//        vs Burst
+
+rule "Juggernaut vs Burst, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. They have a lot of CC, and once you are locked down they will burst you with ease, so try to bait out their engages.");
+end
+
+
+//        vs Battlemage
+
+rule "Juggernaut vs Battlemage, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With their highly sustainable damage you need to be careful in prolonged fights, so try to keep your trades short.");
+end
+
+
+//        vs Artillery
+
+rule "Juggernaut vs Artillery, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. Using their poke and long range you will get punished all the time, so try to get in close to trade.");
+end
+
+//        vs Vanguard
+
+rule "Juggernaut vs Vanguard, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. With a lot of sustain, they are quite hard to take down and with overall good damage can be hassle to fight against, but shouldn't be hard for you to deal with.");
+end
+
+
+//        vs Warden
+
+rule "Juggernaut vs Warden, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, with your highly potent engage and hard crowd control you can lock them down and deal decent amounts of damage. They are impenetrable tanks, with a lot of sustain and it will feel like it is impossible to defeat them, but it shouldn't discourage you.");
+end
+
+//        vs Catcher
+
+rule "Juggernaut vs Catcher, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. They specialize in area lockdowns, using their overwhelming CC to lock down opponents and punish them.");
+end
+
+//        vs Enchanter
+
+rule "Juggernaut vs Enchanter, ally aggro"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "aggro"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, with your highly potent engage and hard crowd control you can lock them down and deal devastating amounts of damage. They are quite fragile on their own, but with their wast utility they can keep themselves and others safe.");
+end
+
+
+//    end aggro
+
+
+    
+//    def
+//
+//        vs Juggernaut
+
+rule "Juggernaut vs Juggernaut, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "juggernaut"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against another juggernaut, with their hard CC and often hurtful trades you really need to be careful when you pick your fights. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Diver
+
+rule "Juggernaut vs Diver, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "diver"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a diver, with their hard engage and mobility you really need to be careful how you position. You have a lot of sustain, so you should be safe in trades and saving your CC for when they engage should keep you safe or secure a kill with a help from a jungler.");
+end
+
+//        vs Assassin
+
+rule "Juggernaut vs Assassin, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "assassin"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an assassin, with their burst potential and mobility you really need to be careful how you position. You have a lot of sustain, so you should be safe in trades and saving your CC for when they engage should keep you safe or secure a kill with a help from a jungler.");
+end
+
+//        vs Skirmisher
+
+rule "Juggernaut vs Skirmisher, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "skirmisher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a skrimisher, with their durability in fights and high damage output you need to choose your duels carefully. They lack in gap closers, but they make it up in lane pressure. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Marksman
+
+rule "Juggernaut vs Marksman, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "marksman"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a marksman, with their ranged damage and poke you need to be able to witstand it during the laning phase. They are not as tanky, so trading and killing them once they are low should be the plan. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Burst
+
+rule "Juggernaut vs Burst, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "burst"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a burster, with heavy CC and burst potential you will need to pick your fights carefully. They don't have a lot of sustain, and once they use their abilities they become very vulnerable. You have a lot of sustain, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Battlemage
+
+rule "Juggernaut vs Battlemage, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "battlemage"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a battlemage, with their overwhelming sustained area damage you need to prevent long trades. They have sustain, where they are ready to prevent death for a long time. You have a lot of sustain, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+
+//        vs Artillery
+
+rule "Juggernaut vs Artillery, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "artillery"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an artillery, be carefull against their superior range and poke possibilities. They don't have a lot of mobility, and are fairly weak once you get in close range. You have a lot of sustain, so you should be safe against their poke and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Vanguard
+
+rule "Juggernaut vs Vanguard, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "vanguard"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a vanguard, you need to be aware of their tankiness and sustain, but don't underestimate their damage. They are not as mobile, so quick trades should be in your favor. You have a lot of sustain, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+
+//        vs Warden
+
+rule "Juggernaut vs Warden, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "warden"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a warden, you need to find a way to penetrate their defense. They lack the mobility and damage, but can feel overwhelmingly tough to face because of their sustain. You have a lot of sustain as well, so you should be safe in trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Catcher
+
+rule "Juggernaut vs Catcher, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "catcher"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against a catcher, be carefull of their heavy CC lockdowns. They are not as strong when their abilities are on cooldown so fight them than. You have a lot of sustain, so you should be safe in short trades and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+//        vs Enchanter
+
+rule "Juggernaut vs Enchanter, ally def"
+	agenda-group "early-game-part-1"
+    salience 1
+	when
+		$ally : AllyChampion(
+			lane != "jungle",
+			role == "juggernaut",
+			$allyLane: lane,
+			playType == "def"
+		)
+		$enemy : EnemyChampion(
+			lane == $allyLane,
+			role == "enchanter"
+		)
+	then
+		adviceStorage.addAdvice($allyLane, "early", "Against an enchanter, you should know they don't have a lot of damage output. They still have quite a bit of utility and CC, so do not engage carelessly. You have a lot of sustain, so you should be safe against their poke and saving your CC for ganks will definitely either keep you safe or lead to a kill from your jungler.");
+end
+
+
+//    end def
+

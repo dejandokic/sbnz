@@ -1,9 +1,6 @@
 package com.siit.sbnz.sbnztim14;
 
-import com.siit.sbnz.sbnztim14.model.AdviceStorage;
-import com.siit.sbnz.sbnztim14.model.AllyChampion;
-import com.siit.sbnz.sbnztim14.model.MidGame;
-import com.siit.sbnz.sbnztim14.model.TeamComposition;
+import com.siit.sbnz.sbnztim14.model.*;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 import org.kie.api.KieServices;
@@ -53,31 +50,71 @@ public class MidGameTest {
 
         MidGame midGame = new MidGame();
         midGame.setLane("top");
-        midGame.setAllyKills(10);
-        midGame.setEnemyKills(4);
+        midGame.setAllyKills(0);
+        midGame.setEnemyKills(0);
         midGame.setAllyTowers(0);
-        midGame.setEnemyTowers(2);
+        midGame.setEnemyTowers(0);
+
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top",EventType.ALLY_KILLS));
+
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("top",EventType.ENEMY_TOWER_DESTROYED));
 
 
         MidGame midGame2 = new MidGame();
         midGame2.setLane("mid");
-        midGame2.setAllyKills(4);
-        midGame2.setEnemyKills(4);
-        midGame2.setAllyTowers(1);
-        midGame2.setEnemyTowers(3);
+        midGame2.setAllyKills(0);
+        midGame2.setEnemyKills(0);
+        midGame2.setAllyTowers(0);
+        midGame2.setEnemyTowers(0);
+
+
+        kieSession.insert(new GameEvent("mid",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("mid",EventType.ALLY_KILLS));
+
+        kieSession.insert(new GameEvent("mid",EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("mid",EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("mid",EventType.ALLY_TOWER_DESTROYED));
+
+        kieSession.insert(new GameEvent("mid",EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("mid",EventType.ENEMY_TOWER_DESTROYED));
+
 
         MidGame midGame3 = new MidGame();
         midGame3.setLane("jungle");
-        midGame3.setAllyObjectives(3);
+        midGame3.setAllyObjectives(0);
         midGame3.setEnemyObjectives(0);
+
+        kieSession.insert(new GameEvent("jungle",EventType.OBJECT_KILLED));
+        kieSession.insert(new GameEvent("jungle",EventType.OBJECT_KILLED));
+        kieSession.insert(new GameEvent("jungle",EventType.OBJECT_KILLED));
+
+
 
         MidGame midGame4 = new MidGame();
         midGame4.setLane("adc");
-        midGame4.setAllyKills(3);
-        midGame4.setEnemyKills(2);
-        midGame4.setAllyTowers(1);
-        midGame4.setEnemyTowers(1);
+        midGame4.setAllyKills(0);
+        midGame4.setEnemyKills(0);
+        midGame4.setAllyTowers(0);
+        midGame4.setEnemyTowers(0);
 
+
+        kieSession.insert(new GameEvent("adc",EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("adc",EventType.ALLY_KILLS));
+
+        kieSession.insert(new GameEvent("adc",EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("adc",EventType.ALLY_TOWER_DESTROYED));
+
+        kieSession.insert(new GameEvent("adc",EventType.ENEMY_TOWER_DESTROYED));
 
         kieSession.insert(ally);
         kieSession.insert(ally2);
@@ -95,7 +132,7 @@ public class MidGameTest {
         AdviceStorage adv = (AdviceStorage) kieSession.getGlobal("adviceStorage");
 
         //RULES FOR: TOP(Ally kills), JUNGLE(Ally objectives), MID(Enemy towers)
-        assertEquals(3, rules);
+        assertEquals(7, rules);
         assertEquals(3, adv.getAdvices().size());
 
         System.out.println(adv.getAdvices());
@@ -106,7 +143,7 @@ public class MidGameTest {
             }else if(str.contains("[jungle, mid]")){
                 assertEquals("[jungle, mid] You should try keeping up the pressure with objectives, keeping your team close around objective spawn times, and making them regret attempting to take it from you.", str);
             }else if(str.contains("[mid, mid]")){
-                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate with them.", str);
+                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate with them.", str);
             }
         }
 
@@ -149,29 +186,76 @@ public class MidGameTest {
 
         MidGame midGame = new MidGame();
         midGame.setLane("top");
-        midGame.setAllyKills(10);
-        midGame.setEnemyKills(4);
+        midGame.setAllyKills(0);
+        midGame.setEnemyKills(0);
         midGame.setAllyTowers(0);
-        midGame.setEnemyTowers(2);
+        midGame.setEnemyTowers(0);
+
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
+
+
+        kieSession.insert(new GameEvent("top", EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("top", EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("top", EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("top", EventType.ENEMY_TOWER_DESTROYED));
+
+
 
         MidGame midGame2 = new MidGame();
         midGame2.setLane("mid");
-        midGame2.setAllyKills(4);
-        midGame2.setEnemyKills(4);
-        midGame2.setAllyTowers(1);
-        midGame2.setEnemyTowers(3);
+        midGame2.setAllyKills(0);
+        midGame2.setEnemyKills(0);
+        midGame2.setAllyTowers(0);
+        midGame2.setEnemyTowers(0);
+
+
+        kieSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("mid", EventType.ALLY_KILLS));
+
+        kieSession.insert(new GameEvent("mid", EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("mid", EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("mid", EventType.ALLY_TOWER_DESTROYED));
+
+        kieSession.insert(new GameEvent("mid", EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("mid", EventType.ENEMY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("mid", EventType.ENEMY_TOWER_DESTROYED));
+
 
         MidGame midGame3 = new MidGame();
         midGame3.setLane("jungle");
         midGame3.setAllyObjectives(0);
         midGame3.setEnemyObjectives(0);
 
+
         MidGame midGame4 = new MidGame();
         midGame4.setLane("adc");
-        midGame4.setAllyKills(3);
-        midGame4.setEnemyKills(2);
-        midGame4.setAllyTowers(2);
-        midGame4.setEnemyTowers(1);
+        midGame4.setAllyKills(0);
+        midGame4.setEnemyKills(0);
+        midGame4.setAllyTowers(0);
+        midGame4.setEnemyTowers(0);
+
+
+        kieSession.insert(new GameEvent("adc", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("adc", EventType.ALLY_KILLS));
+        kieSession.insert(new GameEvent("adc", EventType.ALLY_KILLS));
+
+        kieSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+        kieSession.insert(new GameEvent("adc", EventType.ENEMY_KILLS));
+
+        kieSession.insert(new GameEvent("adc", EventType.ALLY_TOWER_DESTROYED));
+        kieSession.insert(new GameEvent("adc", EventType.ALLY_TOWER_DESTROYED));
+
+        kieSession.insert(new GameEvent("adc", EventType.ENEMY_TOWER_DESTROYED));
 
 
         kieSession.insert(ally);
@@ -190,7 +274,7 @@ public class MidGameTest {
         AdviceStorage adv = (AdviceStorage) kieSession.getGlobal("adviceStorage");
 
         //RULES FOR: TOP(Splitpush, Ally kills), MID(Enemy towers), BOT(Ally towers)
-        assertEquals(3, rules);
+        assertEquals(7, rules);
         assertEquals(3, adv.getAdvices().size());
 
         System.out.println(adv.getAdvices());
@@ -201,7 +285,7 @@ public class MidGameTest {
             }else if(str.contains("[adc, mid]")){
                 assertEquals("[adc, mid] With their tower gone, you can safely rotate to be with your team and push things like objectives and towers with your teamfight ability.", str);
             }else if(str.contains("[mid, mid]")){
-                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate with them.", str);
+                assertEquals("[mid, mid] Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate with them.", str);
             }
         }
 

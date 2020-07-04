@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <kbase name="rules"
+           eventProcessingMode="stream"
+           packages="
+           com.siit.sbnz.sbnztim14.teamcomp,
+           com.siit.sbnz.sbnztim14.earlyGame,
+           com.siit.sbnz.sbnztim14.midGame,
+           com.siit.sbnz.sbnztim14.lateGame,
+           com.siit.sbnz.sbnztim14.querying,
+           com.siit.sbnz.sbnztim14.additionalRules">
+        <ksession name="ksession-rules"/>
+    </kbase>
+
+</kmodule>
