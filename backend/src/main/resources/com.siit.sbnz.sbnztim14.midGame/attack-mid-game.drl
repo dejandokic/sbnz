@@ -6,8 +6,55 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.MidGame;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "Modify values"
+    no-loop
+	agenda-group "mid-game"
+    salience 100
+    when
+        $ally: AllyChampion(
+            $allyLane: lane
+        )
+        $mid: MidGame(
+            lane == $allyLane
+        )
+        Number($allyKills: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ALLY_KILLS ),
+            count($this)
+        )
+        Number($enemyKills: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_KILLS ),
+            count($this)
+        )
+        Number($allyTowers: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ALLY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($enemyTowers: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($allyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.OBJECT_KILLED ),
+            count($this)
+        )
+        Number($enemyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, lane == $allyLane, eventType == EventType.ENEMY_OBJECT_KILLED ),
+            count($this)
+        )
+    then
+        modify($mid){ setAllyKills($allyKills)};
+        modify($mid){ setAllyTowers($allyTowers)};
+        modify($mid){ setEnemyKills($enemyKills)};
+        modify($mid){ setEnemyTowers($enemyTowers)};
+        modify($mid){ setAllyObjectives($allyObjectives)};
+        modify($mid){ setEnemyObjectives($enemyObjectives)};
+ end
 
 
 // ATTACK
@@ -232,7 +279,7 @@ rule "Attack, enemy lane kills and towers, ally def"
 		    enemyTowers >= allyTowers
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills and towers, and even if you were playing defensively it didn�t help much, so ask for help from your team while trying to catch up.");
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills and towers, and even if you were playing defensively it didn't help much, so ask for help from your team while trying to catch up.");
 end
 
 
@@ -275,7 +322,7 @@ rule "Attack, enemy lane towers, ally def"
 			(allyKills <= enemyKills && enemyKills-allyKills <= 4) || (allyKills > enemyKills && allyKills - enemyKills <= 4) 
 		)
 	then
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate with them.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate with them.");
 end
 
 

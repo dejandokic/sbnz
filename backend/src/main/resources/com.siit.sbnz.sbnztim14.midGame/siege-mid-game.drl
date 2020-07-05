@@ -6,6 +6,9 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.MidGame;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
 
@@ -195,7 +198,7 @@ rule "Siege, ally lane towers, enemy lane kills, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn�t help much, so ask for help from your team while you deny his push attempts.");
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so ask for help from your team while you deny his push attempts.");
 end
 
 
@@ -241,7 +244,7 @@ rule "Siege, enemy lane kills and towers, ally def"
 		)
 	then
 
-		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn�t help much, so farm up and catch up as fast as possible");
+		adviceStorage.addAdvice($allyLane, "mid", "You are behind in kills, and even if you were playing defensively it didn't help much, so farm up and catch up as fast as possible");
 end
 
 
@@ -287,7 +290,7 @@ rule "Siege, enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate push their lane back or rotate to your team.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate push their lane back or rotate to your team.");
 end
 
 

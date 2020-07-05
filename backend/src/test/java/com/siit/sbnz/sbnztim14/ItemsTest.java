@@ -138,9 +138,6 @@ public class ItemsTest {
         itemBuy5.setLane("support");
         itemBuy5.setValue(0);
 
-
-
-
         for(Item it: itemService.getAllItems()){
             //Wanted item already set
             if(it.getName().equals("Mercurial Scimitar")){
@@ -182,7 +179,6 @@ public class ItemsTest {
         for(Item it: itemService.getAllItems()){
             kSession.insert(it);
         }
-
 
         kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));
         kSession.insert(new GameEvent("top", EventType.ALLY_KILLS));

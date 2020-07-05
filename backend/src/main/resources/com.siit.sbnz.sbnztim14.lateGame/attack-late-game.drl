@@ -6,8 +6,47 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.LateGame;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
+
+rule "Check team progress"
+    no-loop
+    agenda-group "late-game"
+    salience 100
+    when
+        $lateGame: LateGame()
+        Number($allyKills: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.ALLY_KILLS ),
+            count($this)
+        )
+        Number($enemyKills: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.ENEMY_KILLS ),
+            count($this)
+        )
+        Number($allyTowers: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.ALLY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($enemyTowers: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.ENEMY_TOWER_DESTROYED ),
+            count($this)
+        )
+        Number($allyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.OBJECT_KILLED ),
+            count($this)
+        )
+        Number($enemyObjectives: intValue ) from accumulate(
+            GameEvent($this: this, eventType == EventType.ENEMY_OBJECT_KILLED ),
+            count($this)
+        )
+    then
+        modify($lateGame){ setTeamKills( $allyKills>=$enemyKills )};
+        modify($lateGame){ setTeamTowers( $allyTowers>=$enemyTowers )};
+        modify($lateGame){ setTeamObjectives( $allyObjectives>=$enemyObjectives )};
+ end
 
 
 // ATTACK

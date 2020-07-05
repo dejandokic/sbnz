@@ -6,9 +6,11 @@ import com.siit.sbnz.sbnztim14.model.EnemyChampion;
 import com.siit.sbnz.sbnztim14.model.TeamComposition;
 import com.siit.sbnz.sbnztim14.model.MidGame;
 import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import com.siit.sbnz.sbnztim14.model.GameEvent;
+import com.siit.sbnz.sbnztim14.model.EventType;
+import java.util.List;
 
 global com.siit.sbnz.sbnztim14.model.AdviceStorage adviceStorage;
-
 
 // CATCH
 // aggro
@@ -283,7 +285,7 @@ rule "Catch, enemy lane towers, ally def"
 		)
 	then
 	    
-		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can�t handle them alone, but if they rotate rotate with them and gank other lanes.");
+		adviceStorage.addAdvice($allyLane, "mid", "Since your towers got pushed, if they stay on the lane you should ask for help as you can't handle them alone, but if they rotate rotate with them and gank other lanes.");
 end
 
 
