@@ -26,9 +26,8 @@ public class PlayTypeTest {
         kContainer = kieServices.getKieClasspathContainer();
     }
 
-    // Top and mid will be countered, so they change preferred aggro play type to def
     @Test
-    public void enemyCounterAlly() {
+    public void playTypeGeneral() {
         KieSession kSession = kContainer.newKieSession("ksession-rules");
         kSession.setGlobal("adviceStorage", new AdviceStorage());
 
@@ -36,23 +35,23 @@ public class PlayTypeTest {
         // Annie countered by Morgana
 
         // Ally 5 champs
-        Champion champion1 = championService.getChampionByName("Darius");
+        Champion champion1 = championService.getChampionByName("Malphite");
         champion1.setLane("top");
         Champion champion2 = championService.getChampionByName("Rengar");
         champion2.setLane("jungle");
-        Champion champion3 = championService.getChampionByName("Annie");
+        Champion champion3 = championService.getChampionByName("Cassiopeia");
         champion3.setLane("mid");
-        Champion champion4 = championService.getChampionByName("Vayne");
+        Champion champion4 = championService.getChampionByName("Ashe");
         champion4.setLane("adc");
         Champion champion5 = championService.getChampionByName("Zilean");
         champion5.setLane("support");
 
         // Enemy 5 champs
-        Champion champion6 = championService.getChampionByName("Kennen");
+        Champion champion6 = championService.getChampionByName("Renekton");
         champion6.setLane("top");
         Champion champion7 = championService.getChampionByName("Sejuani");
         champion7.setLane("jungle");
-        Champion champion8 = championService.getChampionByName("Morgana");
+        Champion champion8 = championService.getChampionByName("Irelia");
         champion8.setLane("mid");
         Champion champion9 = championService.getChampionByName("Varus");
         champion9.setLane("adc");
@@ -62,9 +61,9 @@ public class PlayTypeTest {
         // Ally team
         AllyChampion allyTop = new AllyChampion(champion1, "aggro");
         AllyChampion allyJungle = new AllyChampion(champion2, "aggro");
-        AllyChampion allyMid = new AllyChampion(champion3, "aggro");
+        AllyChampion allyMid = new AllyChampion(champion3, "def");
         AllyChampion allyADC = new AllyChampion(champion4, "aggro");
-        AllyChampion allySupport = new AllyChampion(champion5, "aggro");
+        AllyChampion allySupport = new AllyChampion(champion5, "def");
 
         // Enemy team
         EnemyChampion enemyTop = new EnemyChampion(champion6);
@@ -87,17 +86,22 @@ public class PlayTypeTest {
         kSession.insert(enemyADC);
         kSession.insert(enemySupport);
 
+        // <----- PLAY TYPE RULES ----->
         assertEquals("aggro", allyTop.getPlayType());
-        assertEquals("aggro", allyMid.getPlayType());
+        assertEquals("def", allyMid.getPlayType());
+        assertEquals("aggro", allyADC.getPlayType());
 
         kSession.getAgenda().getAgendaGroup("play-type").setFocus();
         int fired = kSession.fireAllRules();
         AdviceStorage adviceStorage = (AdviceStorage) kSession.getGlobal("adviceStorage");
 
         assertEquals(4, adviceStorage.getAdvices().size());
+        assertEquals(4, fired);
+        kSession.setGlobal("adviceStorage", new AdviceStorage());
 
         assertEquals("def", allyTop.getPlayType());
-        assertEquals("def", allyMid.getPlayType());
+        assertEquals("aggro", allyMid.getPlayType());
+        assertEquals("aggro", allyADC.getPlayType());
 
         kSession.dispose();
     }

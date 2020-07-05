@@ -28,6 +28,25 @@ rule "Ally countered by enemy"
         adviceStorage.addAdvice($allyLane, "play-type", "Your champion is countered by enemy, play defensively! ");
 end
 
+rule "Enemy countered by ally champ"
+    agenda-group "play-type"
+    lock-on-active
+    when
+        $enemy : EnemyChampion(
+            $allyLane: lane,
+            $allyName: name,
+            $allyBadAgainst: badAgainst,
+            lane != "jungle"
+        )
+        $ally : AllyChampion(
+            lane == $allyLane,
+            goodAgainst contains $allyName || name memberOf $allyBadAgainst
+        )
+    then
+        modify($ally){setPlayType("aggro")}
+        adviceStorage.addAdvice($allyLane, "play-type", "Your champion counters enemy, play aggressive! ");
+end
+
 rule "Ally strong early, enemy weak early, not countered"
     agenda-group "play-type"
     lock-on-active
@@ -37,13 +56,18 @@ rule "Ally strong early, enemy weak early, not countered"
             $allyName: name,
             $allyBadAgainst: badAgainst,
             lane != "jungle",
-            goodEarly == true
+            goodEarly == true,
+            $allyGoodAgainst: goodAgainst
         )
         $enemy : EnemyChampion(
             lane == $allyLane,
+            $enemyName: name,
+            $enemyBadAgainst: badAgainst,
             goodEarly == false,
             goodAgainst not contains $allyName,
-            name not memberOf $allyBadAgainst
+            name not memberOf $allyBadAgainst,
+            $allyGoodAgainst not contains name,
+            $allyName not memberOf badAgainst
         )
     then
         modify($ally){setPlayType("aggro")}
@@ -52,27 +76,32 @@ rule "Ally strong early, enemy weak early, not countered"
 end
 
 rule "Ally weak early, enemy strong early, not countered"
-    agenda-group "play-type"
-    lock-on-active
-    when
-        $ally : AllyChampion(
-            $allyLane: lane,
-            $allyName: name,
-            $allyBadAgainst: badAgainst,
-            lane != "jungle",
-            goodEarly == false
-        )
-        $enemy : EnemyChampion(
-            lane == $allyLane,
-            goodEarly == true,
-            goodAgainst not contains $allyName,
-            name not memberOf $allyBadAgainst
-        )
-    then
-        modify($ally){setPlayType("def")}
-        adviceStorage.addAdvice($allyLane, "play-type", "Your enemy has a lead in early game, play defensively!! ");
+       agenda-group "play-type"
+       lock-on-active
+       when
+           $ally : AllyChampion(
+               $allyLane: lane,
+               $allyName: name,
+               $allyBadAgainst: badAgainst,
+               lane != "jungle",
+               goodEarly == false,
+               $allyGoodAgainst: goodAgainst
+           )
+           $enemy : EnemyChampion(
+               lane == $allyLane,
+               goodEarly == true,
+               $enemyName: name,
+               $enemyBadAgainst: badAgainst,
+               goodAgainst not contains $allyName,
+               name not memberOf $allyBadAgainst,
+               $allyGoodAgainst not contains name,
+               $allyName not memberOf badAgainst
+           )
+       then
+           modify($ally){setPlayType("def")}
+           adviceStorage.addAdvice($allyLane, "play-type", "Your enemy has a lead in early game, play defensively!! ");
 
-end
+   end
 
 
 // Ally will start with playType which he/she prefers
@@ -86,13 +115,18 @@ rule "Ally strong early, enemy strong early, not countered"
             $allyBadAgainst: badAgainst,
             lane != "jungle",
             goodEarly == true,
-            $prefer: playType
+            $prefer: playType,
+            $allyGoodAgainst: goodAgainst
         )
         $enemy : EnemyChampion(
             lane == $allyLane,
             goodEarly == true,
+            $enemyName: name,
+            $enemyBadAgainst: badAgainst,
             goodAgainst not contains $allyName,
-            name not memberOf $allyBadAgainst
+            name not memberOf $allyBadAgainst,
+            $allyGoodAgainst not contains name,
+            $allyName not memberOf badAgainst
         )
     then
         modify($ally){setPlayType($prefer)}
@@ -112,13 +146,18 @@ rule "Ally weak early, enemy weak early, not countered"
             $allyBadAgainst: badAgainst,
             lane != "jungle",
             goodEarly == false,
-            $prefer: playType
+            $prefer: playType,
+            $allyGoodAgainst: goodAgainst
         )
         $enemy : EnemyChampion(
             lane == $allyLane,
             goodEarly == false,
+            $enemyName: name,
+            $enemyBadAgainst: badAgainst,
             goodAgainst not contains $allyName,
-            name not memberOf $allyBadAgainst
+            name not memberOf $allyBadAgainst,
+            $allyGoodAgainst not contains name,
+            $allyName not memberOf badAgainst
         )
     then
         modify($ally){setPlayType($prefer)}

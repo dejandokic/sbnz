@@ -1,0 +1,29 @@
+package com.siit.sbnz.sbnztim14.additionalRules
+
+import com.siit.sbnz.sbnztim14.model.Item;
+import com.siit.sbnz.sbnztim14.model.AllyChampion;
+import com.siit.sbnz.sbnztim14.model.ChampionType;
+import com.siit.sbnz.sbnztim14.model.EnemyChampion;
+import com.siit.sbnz.sbnztim14.model.AdviceStorage;
+import java.util.List;
+
+global AdviceStorage adviceStorage;
+
+rule "Possibly ally team needs more armor"
+    agenda-group "complex-rule"
+    when
+        $enemyAd: List() from collect(EnemyChampion(championType == ChampionType.AD))
+        accumulate(
+         	AllyChampion($ally: this, wantedItem != null, wantedItem.armor == 0, $boughtItems: bought) and
+         	Number(intValue() < 2) from accumulate(
+         		Item($itemArmorVal: armor) from $boughtItems,
+         		sum($itemArmorVal)
+         	),
+         	$allyWeak: collectList($ally)
+         )
+         eval($enemyAd.size() >= 4)
+         eval($allyWeak.size() >= 3)
+    then
+        adviceStorage.addAdvice("general","teamcomp","The enemy team could quickly wipe out your team. Your weak links should buy some temporary armor before continuing their intended purchases.");
+
+end

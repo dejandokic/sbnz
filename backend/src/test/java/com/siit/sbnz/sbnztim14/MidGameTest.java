@@ -32,21 +32,16 @@ public class MidGameTest {
         ally.setLane("top");
         ally.setPlayType("aggro");
 
-
         AllyChampion ally2 = new AllyChampion();
         ally2.setLane("mid");
         ally2.setPlayType("def");
 
-
-
         AllyChampion ally3 = new AllyChampion();
         ally3.setLane("jungle");
-
 
         AllyChampion ally4 = new AllyChampion();
         ally4.setLane("adc");
         ally4.setPlayType("aggro");
-
 
         TeamComposition teamComposition = new TeamComposition();
         teamComposition.setComposition("attack");

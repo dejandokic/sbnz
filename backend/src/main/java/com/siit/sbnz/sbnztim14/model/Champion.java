@@ -40,7 +40,7 @@ public class Champion {
     private int golds = 0;
     private int goldsForKill = 300;
     private ArrayList<Item> recommendedItems = new ArrayList<>();
-    private Item wantedItem;
+    private Item wantedItem = new Item();
     private ArrayList<Item> toBuy = new ArrayList<>();
     private ArrayList<Item> bought = new ArrayList<>();
 

@@ -52,26 +52,15 @@ public class PurchaseItemsTest {
         AllyChampion ally1 = new AllyChampion(champion1, "aggro");
 
         System.out.println(itemService);
-        ArrayList<Item> allItems = itemService.getAllItems();
         ArrayList<Item> toBuy = new ArrayList<>();
-        Item wantedItem = null;
 
-        for (Item item : allItems) {
-            if (item.getName().equals("Zhonyas Hourglass")) {
-                wantedItem = item;
-                System.out.println(item.getName() + " " + item.getGold());
-            }
-            if (item.getName().equals("Amplifying Tome")) {
-                toBuy.add(item);
-                toBuy.add(item);
-                toBuy.add(item);
-                System.out.println(item.getName() + " " + item.getGold());
-            }
-            if (item.getName().equals("Blasting Wand")) {
-                toBuy.add(item);
-                System.out.println(item.getName() + " " + item.getGold());
-            }
-        }
+        Item wantedItem = itemService.getItemByName("Zhonyas Hourglass");
+        Item smallItem = itemService.getItemByName("Amplifying Tome");
+        toBuy.add(smallItem);
+        toBuy.add(smallItem);
+        toBuy.add(smallItem);
+        Item mediumItem = itemService.getItemByName("Blasting Wand");
+        toBuy.add(mediumItem);
 
         ally1.setWantedItem(wantedItem);
         ally1.setToBuy(toBuy);
